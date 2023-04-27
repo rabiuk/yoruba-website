@@ -48,7 +48,6 @@ export const IntroBackground = styled.div`
 `;
 
 export const IntroWrapper = styled.div`
-  /* height: 430px; */
   width: 50%;
   z-index: 1;
 `;
@@ -69,7 +68,6 @@ export const IntroH1 = styled.h1`
 `;
 
 export const IntroP = styled.p`
-  /* grid-column: 1 / 9; */
   font-size: 22px;
   color: #fafafa;
   z-index: 1;

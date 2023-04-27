@@ -11,16 +11,18 @@ import {
   MobileIcon,
   NavMenu,
   NavItem,
-  NavLinks,
+  NavLinksS,
   NavBtn,
   NavBtnLink,
   NavLinksR,
   NavLinksDiv,
 } from "./NavbarElements";
 import Sidebar from "../Sidebar/Sidebar";
+import Dropdown from "./NavbarDropDown/Dropdown";
 const Navbar = ({ home, toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
+  const [showDropDown, setshowDropDown] = useState(false);
 
   const navigate = useNavigate();
   const changeNav = () => {
@@ -77,7 +79,12 @@ const Navbar = ({ home, toggle }) => {
               {home ? (
                 <>
                   <NavItem>
-                    <NavLinks
+                    <NavLinksS to="/" className="home" onClick={toggleHome}>
+                      Home
+                    </NavLinksS>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinksS
                       to={"about"}
                       smooth={true}
                       duration={500}
@@ -86,10 +93,10 @@ const Navbar = ({ home, toggle }) => {
                       offset={0}
                     >
                       About
-                    </NavLinks>
+                    </NavLinksS>
                   </NavItem>
                   <NavItem>
-                    <NavLinks
+                    <NavLinksS
                       to="learn"
                       smooth={true}
                       duration={500}
@@ -98,10 +105,10 @@ const Navbar = ({ home, toggle }) => {
                       offset={0}
                     >
                       Learn
-                    </NavLinks>
+                    </NavLinksS>
                   </NavItem>
                   <NavItem>
-                    <NavLinks
+                    <NavLinksS
                       to="proverbs-and-wisdom"
                       smooth={true}
                       duration={500}
@@ -110,12 +117,17 @@ const Navbar = ({ home, toggle }) => {
                       offset={0}
                     >
                       Proverbs & Wisdom
-                    </NavLinks>
+                    </NavLinksS>
                   </NavItem>
                 </>
               ) : (
                 // When home = {false}
                 <>
+                  <NavItem>
+                    <NavLinksR to="/" onClick={toggleHome}>
+                      Home
+                    </NavLinksR>
+                  </NavItem>
                   <NavItem>
                     <NavLinksDiv
                       onClick={() => handleNavItemClick("#about")}
@@ -128,9 +140,13 @@ const Navbar = ({ home, toggle }) => {
                       About
                     </NavLinksDiv>
                   </NavItem>
-                  <NavItem>
-                    <NavLinksDiv
-                      onClick={() => handleNavItemClick("#learn")}
+                  <NavItem
+                    onMouseEnter={() => setshowDropDown(true)}
+                    onMouseLeave={() => setshowDropDown(false)}
+                  >
+                    <NavLinksR
+                      to="/improve-skills/learn-the-yoruba-alphabet"
+                      // onClick={() => handleNavItemClick("#learn")}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -138,11 +154,12 @@ const Navbar = ({ home, toggle }) => {
                       offset={-80}
                     >
                       Learn
-                    </NavLinksDiv>
+                    </NavLinksR>
+                    {showDropDown && <Dropdown title="Learn" />}
                   </NavItem>
                   <NavItem>
-                    <NavLinksDiv
-                      onClick={() => handleNavItemClick("#proverbs-and-wisdom")}
+                    <NavLinksR
+                      to="/proverbs&wisdom"
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -150,7 +167,7 @@ const Navbar = ({ home, toggle }) => {
                       offset={-80}
                     >
                       Proverbs & Wisdom
-                    </NavLinksDiv>
+                    </NavLinksR>
                   </NavItem>
                 </>
               )}

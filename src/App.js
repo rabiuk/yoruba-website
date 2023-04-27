@@ -6,7 +6,7 @@ import SigninPage from "./pages/signin";
 // import Navbar from "./components/Navbar";
 import ImproveSkillsPage from "./pages/improve-skills-page";
 import MoreAboutYorubaPage from "./pages/more-about-yoruba-page";
-import DiveDeeperPage from "./pages/dive-deeper-page";
+import ProverbsAndWisdom from "./pages/proverbs&wisdom-page";
 import BasicPhrasesIPage from "./pages/Lessons/BasicPhrasesI/lesson-three-learn-basic-phrases-i-page";
 import BasicPhrasesIIPage from "./pages/lesson-four-learn-basic-phrases-ii-page";
 import BasicPhrasesIIIPage from "./pages/lesson-five-learn-basic-phrases-iii-page";
@@ -25,7 +25,7 @@ function App() {
       {/* <Sidebar></Sidebar> */}
       {/* <Navbar></Navbar> */}
       <Routes>
-        <Route path="/yoruba-website" element={<Home />} exact />
+        <Route path="/" element={<Home />} exact />
         <Route path="/signin" element={<SigninPage />} exact />
         <Route path="/improve-skills" element={<ImproveSkillsPage />} exact />
         <Route
@@ -33,7 +33,7 @@ function App() {
           element={<MoreAboutYorubaPage />}
           exact
         />
-        <Route path="/dive-deeper-page" element={<DiveDeeperPage />} exact />
+        <Route path="/proverbs&wisdom" element={<ProverbsAndWisdom />} exact />
         <Route
           path="/improve-skills/learn-the-yoruba-alphabet"
           element={<LearnTheYorubaAlphabetPage />}

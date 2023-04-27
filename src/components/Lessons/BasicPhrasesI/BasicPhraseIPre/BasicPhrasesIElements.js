@@ -41,25 +41,21 @@ export const IntroBackground = styled.div`
   background-color: #010606;
   height: 430px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
 `;
 
 export const IntroWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, 75px);
-  grid-gap: 20px;
-  grid-template-rows: 80px 100px 75px;
-  /* grid-row-gap: 20px; */
-  justify-content: center;
-  /* background: white; */
-  height: 430px;
-  width: 100%;
-  /* z-index: 3; */
+  width: 50%;
+  z-index: 1;
 `;
 
 export const IntroH1 = styled.h1`
+  text-align: center;
   margin-top: 20px;
-  grid-column: 1 / 9;
   color: #ff7043;
   font-size: 48px;
   @media screen and (max-width: 768px) {
@@ -71,7 +67,7 @@ export const IntroH1 = styled.h1`
 `;
 
 export const IntroP = styled.p`
-  grid-column: 1 / 9;
+  text-align: center;
   font-size: 22px;
   color: #fafafa;
   @media screen and (max-width: 768px) {
@@ -87,7 +83,7 @@ export const BtnContainer = styled.div`
   grid-row: 3;
   grid-column: 1;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   /* justify-content: space-evenly; */
 `;
 export const BtnWrapper = styled.div`

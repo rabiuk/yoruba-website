@@ -48,7 +48,7 @@ export const homeObjThree = {
   description:
     "Immerse yourself in the captivating realm of Yoruba proverbs, a tradition cherished by the Yoruba people for their significant cultural value. These insightful sayings embody the culture's values and wisdom, serving as a fascinating resource that strengthens your connection with the Yoruba language and heritage.",
   buttonLabel: "Dive Deeper",
-  pageLink: "/dive-deeper-page",
+  pageLink: "/proverbs&wisdom",
   img: require("../../images/yoruba-man-teaching-kids.jpg"),
   alt: "",
   dark: true,

@@ -77,9 +77,11 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
-  margin-right: -22px;
-  grid-column: 17;
-
+  margin-left: 30px;
+  /* grid-column: 17; */
+  justify-content: space-evenly;
+  width: 30%;
+  gap: 5px;
   @media screen and (max-width: 760px) {
     display: none;
   }
@@ -89,18 +91,23 @@ export const NavItem = styled.li`
   height: 80px;
 `;
 
-export const NavLinks = styled(LinkScroll)`
+export const NavLinksS = styled(LinkScroll)`
   /* color: ${({ isTransparent }) =>
     isTransparent ? "#00695C" : "#FAFAFA"}; */
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 1rem;
+  /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
 
   &.active {
     border-bottom: 3px solid #ff7043;
+  }
+
+  &.home {
+    font-weight: bold;
+    color: #ff7043;
   }
 `;
 
@@ -109,7 +116,7 @@ export const NavLinksR = styled(LinkR)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 1rem;
+  /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
 `;
@@ -119,7 +126,7 @@ export const NavLinksDiv = styled.div`
   display: flex;
   align-items: center;
   /* text-decoration: none; */
-  padding: 1rem;
+  /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
 `;
