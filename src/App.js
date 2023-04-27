@@ -25,7 +25,7 @@ function App() {
       {/* <Sidebar></Sidebar> */}
       {/* <Navbar></Navbar> */}
       <Routes>
-        <Route path="/" element={<Home />} exact />
+        <Route path="/yoruba-website" element={<Home />} exact />
         <Route path="/signin" element={<SigninPage />} exact />
         <Route path="/improve-skills" element={<ImproveSkillsPage />} exact />
         <Route
