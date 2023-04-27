@@ -1,37 +1,31 @@
 import React from "react";
 import {
-  BasicPhrasesIContainer,
-  BasicPhrasesIBg,
-  BasicPhrasesIIntroContent,
-  BasicPhrasesIIntroH1,
-  BasicPhrasesIIntroP,
-  BasicPhrasesIntroContainer,
-  BasicPhrasesIBtnWrapper,
-  BasicPhrasesIBtnContainer,
+  Container,
+  IntroBackground,
+  IntroWrapper,
+  IntroH1,
+  IntroP,
+  BtnContainer,
+  BtnWrapper,
 } from "./BasicPhrasesIElements";
 import { ButtonLink, ButtonScroll } from "../../../ButtonElements";
 
 const BasicPhrasesI = () => {
   return (
     <>
-      <BasicPhrasesIContainer>
-        <BasicPhrasesIBg></BasicPhrasesIBg>
-        <BasicPhrasesIntroContainer>
-          <BasicPhrasesIIntroContent>
-            <BasicPhrasesIIntroH1>Basic Phrases I: Verbs</BasicPhrasesIIntroH1>
-            <BasicPhrasesIIntroP>
-              Welcome to Basic Phrases I: Verbs, the third lesson in our
-              comprehensive Yoruba language curriculum. In this lesson, you'll
-              learn essential Yoruba verbs that form the building blocks of
-              everyday communication. By the end of this lesson, you'll be able
-              to use these verbs in various contexts and have a solid foundation
-              for constructing simple sentences in Yoruba. Refer to the Lesson
-              section below (or click "Learn") to view the lesson content. Once
-              you have familiarized yourself with the material, you may click on
-              "Start Quiz".
-            </BasicPhrasesIIntroP>
-            <BasicPhrasesIBtnContainer>
-              <BasicPhrasesIBtnWrapper>
+      <Container>
+        {/* <Bg></Bg> */}
+        <IntroBackground>
+          <IntroWrapper>
+            <IntroH1>Basic Phrases I: Verbs</IntroH1>
+            <IntroP>
+              In this lesson, you'll master essential verbs for everyday
+              communication. Here, you'll learn the words and what they mean,
+              building your foundation for speaking Yoruba. Click "Learn" to
+              explore the content and "Start Quiz" to test your skills.
+            </IntroP>
+            <BtnContainer>
+              <BtnWrapper>
                 <ButtonScroll
                   to="#"
                   smooth={true}
@@ -45,11 +39,10 @@ const BasicPhrasesI = () => {
                 >
                   Learn
                 </ButtonScroll>
-              </BasicPhrasesIBtnWrapper>
-              <BasicPhrasesIBtnWrapper>
+              </BtnWrapper>
+              <BtnWrapper>
                 <ButtonLink
                   to="quiz"
-                  // lesson-three-learn-basic-phrases-i-quiz-page
                   smooth={true}
                   duration={500}
                   spy={true}
@@ -61,11 +54,11 @@ const BasicPhrasesI = () => {
                 >
                   Start Quiz
                 </ButtonLink>
-              </BasicPhrasesIBtnWrapper>
-            </BasicPhrasesIBtnContainer>
-          </BasicPhrasesIIntroContent>
-        </BasicPhrasesIntroContainer>
-      </BasicPhrasesIContainer>
+              </BtnWrapper>
+            </BtnContainer>
+          </IntroWrapper>
+        </IntroBackground>
+      </Container>
     </>
   );
 };

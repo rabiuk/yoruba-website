@@ -13,7 +13,7 @@ const SidebarLink = styled(Link)`
   margin: 10px 0px 20px 0px;
   /* top right bottom left */
   text-decoration: none;
-  font-size: 25px;
+  font-size: 16px;
 
   &:hover {
     background: #252831;
@@ -34,7 +34,7 @@ const DropDownLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: #f5f5f5;
-  font-size: 18px;
+  font-size: 12px;
 
   &:hover {
     background: #ff7043;

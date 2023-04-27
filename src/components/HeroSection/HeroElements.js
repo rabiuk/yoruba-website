@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MdArrowForward, MdArrowRight } from "react-icons/md";
+import { MdArrowDownward, MdArrowDropDown } from "react-icons/md";
 
 export const HeroContainer = styled.div`
   /* background: #0c0c0c; */
@@ -111,12 +111,12 @@ export const HeroBtnWrapper = styled.div`
   align-items: center;
 `;
 
-export const ArrowForward = styled(MdArrowForward)`
+export const ArrowForward = styled(MdArrowDownward)`
   margin-left: 8px;
   font-size: 20px;
 `;
 
-export const ArrowRight = styled(MdArrowRight)`
+export const ArrowRight = styled(MdArrowDropDown)`
   margin-left: 8px;
   font-size: 20px;
 `;

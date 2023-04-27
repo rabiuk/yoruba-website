@@ -20,13 +20,16 @@ import {
 import Sidebar from "../Sidebar/Sidebar";
 const Navbar = ({ home, toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const navigate = useNavigate();
   const changeNav = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 800) {
       setScrollNav(true);
+      setIsTransparent(false);
     } else {
       setScrollNav(false);
+      setIsTransparent(true);
     }
   };
 
@@ -55,10 +58,16 @@ const Navbar = ({ home, toggle }) => {
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <ScrollToTop />
-        <Nav scrollNav={scrollNav}>
-          <NavbarContainer home={home}>
-            <Sidebar />
-            <NavLogo to="/" onClick={toggleHome}>
+        <Nav home={home} scrollNav={scrollNav}>
+          {!home ? (
+            <>
+              <Sidebar />
+            </>
+          ) : (
+            <></>
+          )}
+          <NavbarContainer home={home} isTransparent={isTransparent}>
+            <NavLogo to="/" onClick={toggleHome} isTransparent={isTransparent}>
               Yoruba
             </NavLogo>
             <MobileIcon onClick={toggle}>
@@ -74,7 +83,7 @@ const Navbar = ({ home, toggle }) => {
                       duration={500}
                       spy={true}
                       exact="true"
-                      offset={-80}
+                      offset={0}
                     >
                       About
                     </NavLinks>
@@ -86,7 +95,7 @@ const Navbar = ({ home, toggle }) => {
                       duration={500}
                       spy={true}
                       exact="true"
-                      offset={-80}
+                      offset={0}
                     >
                       Learn
                     </NavLinks>
@@ -98,7 +107,7 @@ const Navbar = ({ home, toggle }) => {
                       duration={500}
                       spy={true}
                       exact="true"
-                      offset={-80}
+                      offset={0}
                     >
                       Proverbs & Wisdom
                     </NavLinks>

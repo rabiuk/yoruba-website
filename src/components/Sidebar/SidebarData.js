@@ -38,7 +38,7 @@ export const SidebarData = [
     subNav: [
       {
         title: "I",
-        path: "#",
+        path: "/improve-skills/learn-the-yoruba-alphabet",
         icon: <IoIcons.IoIosSquareOutline />,
       },
       {

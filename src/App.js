@@ -13,7 +13,8 @@ import BasicPhrasesIIIPage from "./pages/lesson-five-learn-basic-phrases-iii-pag
 import AdvancedPhrasesIPage from "./pages/lesson-six-learn-advanced-phrases-i-page";
 import AdvancedPhrasesIIPage from "./pages/lesson-seven-learn-advanced-phrases-ii-page";
 
-import LearnTheYorubaAlphabetPage from "./pages/learn-the-yoruba-alphabet-page";
+import LearnTheYorubaAlphabetPage from "./pages/Lessons/YorubaAlphabet/learn-the-yoruba-alphabet-page";
+import LearnTheYorubaAlphabetQuizPage from "./pages/Lessons/YorubaAlphabet/learn-the-yoruba-alphabet-quiz-page";
 import LearningNumbersPage from "./pages/lesson-two-learning-numbers-page";
 import BasicPhrasesIQuizPage from "./pages/Lessons/BasicPhrasesI/lesson-three-learn-basic-phrases-i-quiz-page";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -36,6 +37,11 @@ function App() {
         <Route
           path="/improve-skills/learn-the-yoruba-alphabet"
           element={<LearnTheYorubaAlphabetPage />}
+          exact
+        />
+        <Route
+          path="/improve-skills/learn-the-yoruba-alphabet/quiz"
+          element={<LearnTheYorubaAlphabetQuizPage />}
           exact
         />
         <Route

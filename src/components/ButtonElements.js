@@ -16,6 +16,7 @@ export const ButtonScroll = styled(Link)`
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease—in—out;
+  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5);
 
   &:hover {
     transition: all 0.2s ease—in—out;
