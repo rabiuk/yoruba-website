@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/yoruba-website/static/css/main.010c43d8.css",
+    "main.js": "/yoruba-website/static/js/main.b643aae2.js",
+    "static/media/yoruba-culture-celebration.png": "/yoruba-website/static/media/yoruba-culture-celebration.a37e8c47d4c0ce48c4ae.png",
+    "static/media/yoruba-man-teaching-kids.jpg": "/yoruba-website/static/media/yoruba-man-teaching-kids.d900c12a3aec7666b03f.jpg",
+    "static/media/twin-logo-three.png": "/yoruba-website/static/media/twin-logo-three.4b85bd190a65f37de4f7.png",
+    "static/media/questionmark-lightbult-stairs.png": "/yoruba-website/static/media/questionmark-lightbult-stairs.93be98546f0ceff98cc1.png",
+    "static/media/notepad-with-pencil.png": "/yoruba-website/static/media/notepad-with-pencil.458845c091271b3962f4.png",
+    "static/media/laptop-displaying-bird.png": "/yoruba-website/static/media/laptop-displaying-bird.2341049ba46429d3d422.png",
+    "static/media/yoruba-flashcard-black.png": "/yoruba-website/static/media/yoruba-flashcard-black.6c59609a0682f2e5e31b.png",
+    "index.html": "/yoruba-website/index.html",
+    "main.010c43d8.css.map": "/yoruba-website/static/css/main.010c43d8.css.map",
+    "main.b643aae2.js.map": "/yoruba-website/static/js/main.b643aae2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.010c43d8.css",
+    "static/js/main.b643aae2.js"
+  ]
+}
