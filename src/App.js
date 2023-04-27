@@ -1,24 +1,80 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/index";
+import SigninPage from "./pages/signin";
+// import Navbar from "./components/Navbar";
+import ImproveSkillsPage from "./pages/improve-skills-page";
+import MoreAboutYorubaPage from "./pages/more-about-yoruba-page";
+import DiveDeeperPage from "./pages/dive-deeper-page";
+import BasicPhrasesIPage from "./pages/Lessons/BasicPhrasesI/lesson-three-learn-basic-phrases-i-page";
+import BasicPhrasesIIPage from "./pages/lesson-four-learn-basic-phrases-ii-page";
+import BasicPhrasesIIIPage from "./pages/lesson-five-learn-basic-phrases-iii-page";
+import AdvancedPhrasesIPage from "./pages/lesson-six-learn-advanced-phrases-i-page";
+import AdvancedPhrasesIIPage from "./pages/lesson-seven-learn-advanced-phrases-ii-page";
+
+import LearnTheYorubaAlphabetPage from "./pages/learn-the-yoruba-alphabet-page";
+import LearningNumbersPage from "./pages/lesson-two-learning-numbers-page";
+import BasicPhrasesIQuizPage from "./pages/Lessons/BasicPhrasesI/lesson-three-learn-basic-phrases-i-quiz-page";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <Sidebar></Sidebar> */}
+      {/* <Navbar></Navbar> */}
+      <Routes>
+        <Route path="/" element={<Home />} exact />
+        <Route path="/signin" element={<SigninPage />} exact />
+        <Route path="/improve-skills" element={<ImproveSkillsPage />} exact />
+        <Route
+          path="/more-about-yoruba-page"
+          element={<MoreAboutYorubaPage />}
+          exact
+        />
+        <Route path="/dive-deeper-page" element={<DiveDeeperPage />} exact />
+        <Route
+          path="/improve-skills/learn-the-yoruba-alphabet"
+          element={<LearnTheYorubaAlphabetPage />}
+          exact
+        />
+        <Route
+          path="/lesson-two-learning-numbers"
+          element={<LearningNumbersPage />}
+          exact
+        />
+        <Route
+          path="/improve-skills/lesson-three-learn-basic-phrases-i"
+          element={<BasicPhrasesIPage />}
+          exact
+        />
+        <Route
+          path="/lesson-four-learn-basic-phrases-ii"
+          element={<BasicPhrasesIIPage />}
+          exact
+        />
+        <Route
+          path="/lesson-five-learn-basic-phrases-iii"
+          element={<BasicPhrasesIIIPage />}
+          exact
+        />
+        <Route
+          path="/lesson-six-learn-advanced-phrases-i"
+          element={<AdvancedPhrasesIPage />}
+          exact
+        />
+        <Route
+          path="/lesson-seven-learn-advanced-phrases-ii"
+          element={<AdvancedPhrasesIIPage />}
+          exact
+        />
+        <Route
+          path="/improve-skills/lesson-three-learn-basic-phrases-i/quiz"
+          element={<BasicPhrasesIQuizPage />}
+          exact
+        />
+      </Routes>
+    </Router>
   );
 }
 
