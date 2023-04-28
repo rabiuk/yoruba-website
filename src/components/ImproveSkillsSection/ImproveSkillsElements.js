@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { MdArrowDownward, MdArrowDropDown } from "react-icons/md";
 
 export const ImproveSkillsContainer = styled.div`
   color: #fff;
   background: ${({ lightBg }) => (lightBg ? "#f5f5dc" : "#0c0c0c")};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -85,6 +90,11 @@ export const Subtitle = styled.p`
 export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
+
+  &.next-btn {
+    margin-top: 20px;
+    margin-bottom: 400px;
+  }
 `;
 
 export const ImgWrap = styled.div`
@@ -93,10 +103,34 @@ export const ImgWrap = styled.div`
   &.learn-section {
     max-width: 400px;
   }
+  &.welcome-hands {
+    margin-top: 80px;
+  }
 `;
 
 export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
+`;
+export const ArrowDownward = styled(MdArrowDownward)`
+  margin-left: 8px;
+  font-size: 20px;
+`;
+
+export const ArrowDropDown = styled(MdArrowDropDown)`
+  margin-left: 8px;
+  font-size: 20px;
+`;
+
+export const H1 = styled.h1`
+  font-size: 48px;
+  font-weight: 900;
+  color: #424242;
+`;
+export const P = styled.p`
+  text-align: center;
+  font-size: 20px;
+  color: #424242;
+  width: 45vw;
 `;

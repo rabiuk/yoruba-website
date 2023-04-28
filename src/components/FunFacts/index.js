@@ -1,7 +1,7 @@
 import React from "react";
-import Icon1 from "../../images/africa-map.png";
-import Icon2 from "../../images/music-tone-two.png";
-import Icon3 from "../../images/twin-logo-three.png";
+import Icon1 from "../../images/map-of-africa.png";
+import Icon2 from "../../images/tone(1).png";
+import Icon3 from "../../images/twins(1).png";
 import {
   FunFactsContainer,
   FunFactsH1,

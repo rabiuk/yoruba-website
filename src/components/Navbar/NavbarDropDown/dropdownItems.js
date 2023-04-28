@@ -7,18 +7,18 @@ export const dropdownItems = [
     subItems: [
       {
         id: 1,
-        title: "I",
-        path: "/improve-skills",
+        title: "Lesson I",
+        path: "/improve-skills/learn-the-yoruba-alphabet",
       },
       {
         id: 2,
-        title: "II",
-        path: "/improve-skills",
+        title: "Lesson II",
+        path: "#",
       },
       {
         id: 3,
-        title: "III",
-        path: "/improve-skills",
+        title: "Lesson III",
+        path: "/improve-skills/lesson-three-learn-basic-phrases-i",
       },
     ],
   },

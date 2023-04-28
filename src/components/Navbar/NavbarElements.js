@@ -27,14 +27,11 @@ export const NavbarContainer = styled.div`
   height: 100px;
   z-index: 1;
   width: 100%;
-  /* padding: 0 0px; */
-  /* max-width: 100vw; */
+
   max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
-  /* display: grid;
-  grid-template-columns: 120px 120px 120px 120px;
-  grid-template-rows: 100px; */
+
 
   & * {
     color: ${({ home, isTransparent }) =>
@@ -44,7 +41,6 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  /* color: #fff; */
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -52,10 +48,7 @@ export const NavLogo = styled(LinkR)`
   align-items: center;
   font-weight: bold;
   text-decoration: none;
-  /* margin-left: 22.56vw;
-  margin-right: 400px; */
 
-  /* grid-column: 2/3; */
 `;
 export const MobileIcon = styled.div`
   display: none;
@@ -79,9 +72,9 @@ export const NavMenu = styled.ul`
   text-align: center;
   margin-left: 30px;
   /* grid-column: 17; */
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   width: 30%;
-  gap: 5px;
+  /* gap: 5px; */
   @media screen and (max-width: 760px) {
     display: none;
   }
@@ -89,6 +82,8 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
   height: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
 `;
 
 export const NavLinksS = styled(LinkScroll)`
@@ -100,9 +95,13 @@ export const NavLinksS = styled(LinkScroll)`
   /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
+  &:hover {
+    color: #ff7043;
+  }
 
   &.active {
     border-bottom: 3px solid #ff7043;
+    color: #ff7043;
   }
 
   &.home {
@@ -118,7 +117,14 @@ export const NavLinksR = styled(LinkR)`
   text-decoration: none;
   /* padding: 1rem; */
   height: 100%;
+  width: fit-content;
   cursor: pointer;
+  &:hover {
+    color: #ff7043;
+  }
+  &.active {
+    color: #ff7043;
+  }
 `;
 
 export const NavLinksDiv = styled.div`
@@ -129,6 +135,9 @@ export const NavLinksDiv = styled.div`
   /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
+  &:hover {
+    color: #ff7043;
+  }
 `;
 
 export const NavBtn = styled.nav`

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/MobileSidebar";
-import ImproveSkillsSection from "../components/ImproveSkillsSection";
+import ImproveSkillsWelcome from "../components/ImproveSkillsSection";
 import ScrollToTop from "../components/ScrollToTop";
 import {
   homeObjOne,
@@ -21,10 +21,10 @@ const ImproveSkillsPage = () => {
       <ScrollToTop />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar home={false} toggle={toggle} />
-      <ImproveSkillsSection {...homeObjOne} />
+      {/* <ImproveSkillsSection {...homeObjOne} />
       <ImproveSkillsSection {...homeObjTwo} />
-      <ImproveSkillsSection {...homeObjThree} />
-
+      <ImproveSkillsSection {...homeObjThree} /> */}
+      <ImproveSkillsWelcome></ImproveSkillsWelcome>
       <Footer />
     </>
   );

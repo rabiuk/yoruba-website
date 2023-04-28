@@ -8,8 +8,8 @@ import {
   HeroH22,
   HeroP,
   HeroBtnWrapper,
-  ArrowForward,
-  ArrowRight,
+  ArrowDropDown,
+  ArrowDownward,
 } from "./HeroElements";
 
 import { ButtonScroll } from "../ButtonElements";
@@ -40,13 +40,13 @@ const HeroSection = () => {
             duration={500}
             spy={true}
             exact="true"
-            offset={-80}
+            offset={0}
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
             dark="true"
           >
-            Start Learning {hover ? <ArrowForward /> : <ArrowRight />}
+            Start Learning {hover ? <ArrowDownward /> : <ArrowDropDown />}
           </ButtonScroll>
         </HeroBtnWrapper>
       </HeroContent>

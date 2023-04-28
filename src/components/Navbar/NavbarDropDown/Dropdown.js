@@ -15,22 +15,26 @@ const Dropdown = ({ title }) => {
   return (
     <>
       {showDropDown && (
-        <UnorderedList onClick={() => setshowDropDown(!showDropDown)}>
-          {dropdownItems.map((item) => {
-            return item.title === title
-              ? item.subItems.map((subItem) => {
-                  return (
-                    <Wrapper>
-                      <List key={subItem.id}>
-                        <ListItem onClick={() => setshowDropDown(false)}>
-                          <Link to={subItem.path}>{subItem.title}</Link>
-                        </ListItem>
-                      </List>
-                    </Wrapper>
-                  );
-                })
-              : null;
-          })}
+        <UnorderedList
+          // showDropDown={showDropDown}
+          onClick={() => setshowDropDown(!showDropDown)}
+        >
+          <Wrapper>
+            {dropdownItems.map((item) => {
+              return item.title === title
+                ? item.subItems.map((subItem) => {
+                    return (
+                      <ListItem
+                        key={subItem.id}
+                        onClick={() => setshowDropDown(false)}
+                      >
+                        <Link to={subItem.path}>{subItem.title}</Link>
+                      </ListItem>
+                    );
+                  })
+                : null;
+            })}
+          </Wrapper>
         </UnorderedList>
       )}
     </>

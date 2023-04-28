@@ -7,29 +7,45 @@ export const UnorderedList = styled.ul`
   list-style: none;
   text-align: start;
   top: 80px;
+  /* opacity: ${(showDropDown) => (showDropDown ? "1" : "0")}; */
+  transition: opacity 0.3s ease-in-out;
 `;
 export const Wrapper = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  background: #0c0c0c;
+  /* border-top-left-radius: 10px; */
+  /* border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; */
+  overflow: hidden;
 `;
 
 export const List = styled.li`
-  background: #424242;
   cursor: pointer;
 `;
 export const ListItem = styled.li`
-  padding-top: 10px;
-  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
 
-  &:hover {
-    background: #353535;
-  }
+  /* &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  } */
 `;
 
 export const Link = styled(LinkR)`
+  font-size: 12px;
+  text-align: center;
   text-decoration: none;
   color: #fafafa;
+  width: 100%;
   padding: 16px;
+  &:hover {
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    color: #ff7043;
+  }
 `;

@@ -61,13 +61,13 @@ const Navbar = ({ home, toggle }) => {
       <IconContext.Provider value={{ color: "#fff" }}>
         <ScrollToTop />
         <Nav home={home} scrollNav={scrollNav}>
-          {!home ? (
+          {/* {!home ? (
             <>
               <Sidebar />
             </>
           ) : (
             <></>
-          )}
+          )} */}
           <NavbarContainer home={home} isTransparent={isTransparent}>
             <NavLogo to="/" onClick={toggleHome} isTransparent={isTransparent}>
               Yoruba
@@ -145,6 +145,7 @@ const Navbar = ({ home, toggle }) => {
                     onMouseLeave={() => setshowDropDown(false)}
                   >
                     <NavLinksR
+                      className={showDropDown ? "active" : "non-active"}
                       to="/improve-skills/learn-the-yoruba-alphabet"
                       // onClick={() => handleNavItemClick("#learn")}
                       smooth={true}

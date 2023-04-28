@@ -1,8 +1,8 @@
 export const homeObjOne = {
   id: "about",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "",
   headline: "Improve Your Skills",
   description:
@@ -10,16 +10,16 @@ export const homeObjOne = {
   buttonLabel: "Next",
   pageLink: "learn",
   imgStart: true,
-  img: require("../../images/questionmark-lightbult-stairs.png"),
+  img: require("../../images/welcome-hands.png"),
   alt: "",
-  dark: true, //is Dark
+  dark: false, //is Dark
   primary: true, //if dark then primary
-  darkText: false, //dark text?
+  darkText: true, //dark text?
   className: "about-section",
 };
 
 export const homeObjTwo = {
-  id: "learn",
+  id: "curriculum",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
@@ -39,10 +39,10 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  id: "proverbs-and-wisdom",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  id: "interactive-quizes",
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "Test Your Knowledge After Each Lesson",
   headline: "INTERACTIVE QUIZZES",
   description:
@@ -52,8 +52,8 @@ export const homeObjThree = {
   imgStart: true,
   img: require("../../images/laptop-displaying-bird.png"),
   alt: "",
-  dark: true,
+  dark: false,
   primary: true,
-  darkText: false,
+  darkText: true,
   className: "proverbs-and-wisdom-section",
 };
