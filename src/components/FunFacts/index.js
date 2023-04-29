@@ -1,7 +1,7 @@
 import React from "react";
-import Icon1 from "../../images/map-of-africa.png";
-import Icon2 from "../../images/tone(1).png";
-import Icon3 from "../../images/twins(1).png";
+import { ReactComponent as MapAfricaSVG } from "../../images/map-of-africa.svg";
+import { ReactComponent as ToneSVG } from "../../images/tone(1).svg";
+import { ReactComponent as TwinSVG } from "../../images/twins(1).svg";
 import {
   FunFactsContainer,
   FunFactsH1,
@@ -10,6 +10,7 @@ import {
   FunFactsIcon,
   FunFactsP,
   FunFactsWrapper,
+  FunFactsSVGIcon,
 } from "./FunFactsElements";
 
 const FunFacts = () => {
@@ -18,7 +19,9 @@ const FunFacts = () => {
       <FunFactsH1>Fun Facts</FunFactsH1>
       <FunFactsWrapper>
         <FunFactsCard>
-          <FunFactsIcon src={Icon1}></FunFactsIcon>
+          <FunFactsSVGIcon>
+            <MapAfricaSVG />
+          </FunFactsSVGIcon>
           <FunFactsH2>Origins</FunFactsH2>
           <FunFactsP>
             The Yoruba people reside mainly in southwest Nigeria, Benin, and
@@ -27,7 +30,9 @@ const FunFacts = () => {
           </FunFactsP>
         </FunFactsCard>
         <FunFactsCard>
-          <FunFactsIcon src={Icon2}></FunFactsIcon>
+          <FunFactsSVGIcon>
+            <ToneSVG />
+          </FunFactsSVGIcon>
           <FunFactsH2>Tonal language</FunFactsH2>
           <FunFactsP>
             Yoruba is a tonal language with three basic tones (high, mid, and
@@ -35,7 +40,9 @@ const FunFacts = () => {
           </FunFactsP>
         </FunFactsCard>
         <FunFactsCard>
-          <FunFactsIcon src={Icon3}></FunFactsIcon>
+          <FunFactsSVGIcon>
+            <TwinSVG />
+          </FunFactsSVGIcon>
           <FunFactsH2>Twins</FunFactsH2>
           <FunFactsP>
             Yoruba has one of the highest twin birth rates in the world, with

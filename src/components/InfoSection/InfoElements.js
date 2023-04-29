@@ -93,6 +93,11 @@ export const ImgWrap = styled.div`
   &.learn-section {
     max-width: 400px;
   }
+  svg {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+  }
 `;
 
 export const Img = styled.img`

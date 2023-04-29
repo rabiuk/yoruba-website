@@ -13,12 +13,17 @@ export const dropdownItems = [
       {
         id: 2,
         title: "Lesson II",
-        path: "#",
+        path: "/improve-skills/numbers-and-counting",
       },
       {
         id: 3,
         title: "Lesson III",
         path: "/improve-skills/lesson-three-learn-basic-phrases-i",
+      },
+      {
+        id: 4,
+        title: "Lesson IV",
+        path: "/improve-skills/lesson-three-learn-basic-phrases-ii",
       },
     ],
   },

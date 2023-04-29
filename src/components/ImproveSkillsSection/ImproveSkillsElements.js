@@ -98,6 +98,7 @@ export const BtnWrap = styled.div`
 `;
 
 export const ImgWrap = styled.div`
+  display: flex;
   max-width: 555px;
   height: 100%;
   &.learn-section {
@@ -105,6 +106,16 @@ export const ImgWrap = styled.div`
   }
   &.welcome-hands {
     margin-top: 80px;
+  }
+  svg {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+  }
+  &.curriculum-section {
+    max-height: 500px;
+    max-width: 300px;
+    margin-top: -40px;
   }
 `;
 

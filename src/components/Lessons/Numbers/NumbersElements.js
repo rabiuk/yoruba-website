@@ -24,18 +24,6 @@ export const Container = styled.div`
   }
 `;
 
-// export const Bg = styled.div`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   background: white;
-// `;
-
 export const IntroBackground = styled.div`
   background-color: rgba(0, 105, 92, 1);
   /* background-image: linear-gradient(to right, #424242, #424242); */

@@ -1,3 +1,7 @@
+import { ReactComponent as YorubaCultureCelebrationSVG } from "../../images/yoruba-culture-celebration.svg";
+import { ReactComponent as FlashCardSVG } from "../../images/yoruba-flashcard.svg";
+import { ReactComponent as ElderSVG } from "../../images/yoruba-man-teaching-kids.svg";
+
 export const homeObjOne = {
   id: "about",
   lightBg: false,
@@ -10,7 +14,7 @@ export const homeObjOne = {
   buttonLabel: "More About Yoruba",
   pageLink: "/more-about-yoruba-page",
   imgStart: false,
-  img: require("../../images/yoruba-culture-celebration.png"),
+  img: <YorubaCultureCelebrationSVG />,
   alt: "Yoruba culture celebration",
   dark: true, //is Dark
   primary: true, //if dark then primary
@@ -30,7 +34,7 @@ export const homeObjTwo = {
   buttonLabel: "Improve Your Skills",
   pageLink: "/improve-skills",
   imgStart: true,
-  img: require("../../images/yoruba-flashcard-black.png"),
+  img: <FlashCardSVG></FlashCardSVG>,
   alt: "Yoruba flashcard",
   dark: false,
   primary: true,
@@ -49,7 +53,7 @@ export const homeObjThree = {
     "Immerse yourself in the captivating realm of Yoruba proverbs, a tradition cherished by the Yoruba people for their significant cultural value. These insightful sayings embody the culture's values and wisdom, serving as a fascinating resource that strengthens your connection with the Yoruba language and heritage.",
   buttonLabel: "Dive Deeper",
   pageLink: "/proverbs&wisdom",
-  img: require("../../images/yoruba-man-teaching-kids.jpg"),
+  img: <ElderSVG></ElderSVG>,
   alt: "",
   dark: true,
   primary: true,

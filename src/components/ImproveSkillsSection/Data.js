@@ -1,24 +1,8 @@
-export const homeObjOne = {
-  id: "about",
-  lightBg: true,
-  lightText: false,
-  lightTextDesc: false,
-  topLine: "",
-  headline: "Improve Your Skills",
-  description:
-    "Welcome to the Improve Your Skills section, offering a structured curriculum for Yoruba language proficiency and cultural understanding. Explore Yoruba through our progressive lessons and quizzes, designed for all skill levels.",
-  buttonLabel: "Next",
-  pageLink: "learn",
-  imgStart: true,
-  img: require("../../images/welcome-hands.png"),
-  alt: "",
-  dark: false, //is Dark
-  primary: true, //if dark then primary
-  darkText: true, //dark text?
-  className: "about-section",
-};
+import { ReactComponent as WelcomeElder } from "../../images/welcome-hands.svg";
+import { ReactComponent as Notepad } from "../../images/notepad-with-pencil.svg";
+import { ReactComponent as Laptop } from "../../images/laptop-displaying-bird.svg";
 
-export const homeObjTwo = {
+export const homeObjOne = {
   id: "curriculum",
   lightBg: true,
   lightText: false,
@@ -30,15 +14,15 @@ export const homeObjTwo = {
   buttonLabel: "View Curriculum",
   pageLink: "#",
   imgStart: false,
-  img: require("../../images/notepad-with-pencil.png"),
+  img: <Notepad />,
   alt: "",
   dark: false,
   primary: true,
   darkText: true,
-  className: "learn-section",
+  className: "curriculum-section",
 };
 
-export const homeObjThree = {
+export const homeObjTwo = {
   id: "interactive-quizes",
   lightBg: true,
   lightText: false,
@@ -50,7 +34,7 @@ export const homeObjThree = {
   buttonLabel: "Start",
   pageLink: "/improve-skills/learn-the-yoruba-alphabet",
   imgStart: true,
-  img: require("../../images/laptop-displaying-bird.png"),
+  img: <Laptop />,
   alt: "",
   dark: false,
   primary: true,

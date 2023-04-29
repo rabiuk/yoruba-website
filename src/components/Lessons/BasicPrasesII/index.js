@@ -1,11 +1,10 @@
 import React from "react";
-import { ReactComponent as AlphabetBlocks } from "../../../images/alphabet-blocks.svg";
+// import { ReactComponent as YorubaManAndWoman } from "../../../../images/yoruba-man-and-woman.svg";
+
 import {
   Container,
-  Bg,
   IntroWrapper,
   IntroBackground,
-  IntroContent,
   Content1,
   Content2,
   ImgWrap,
@@ -13,22 +12,24 @@ import {
   IntroP,
   BtnWrapper,
   BtnContainer,
-} from "./YorubaAlphabetElements";
-import { ButtonLink, ButtonScroll } from "../../ButtonElements";
+} from "./BasicPhrasesIIElements";
+import { ButtonLink, ButtonScroll } from "../../../components/ButtonElements";
 
-const YorubaAlphabet = () => {
+const BasicPhrasesII = () => {
   return (
     <>
       <Container>
         <IntroBackground>
           <IntroWrapper>
             <Content1>
-              <IntroH1>Learn The Yoruba Alphabet</IntroH1>
+              <IntroH1>Basic Phrases II (Nouns)</IntroH1>
               <IntroP>
-                Explore Yoruba's alphabet with engaging flashcards in an
-                interactive quiz. Learn letter sounds and example words, flip
-                cards to reveal pronunciation and meaning, and use next/previous
-                buttons to learn at your pace.
+                Following up on the essential verbs learned in Basic Phrases I,
+                this lesson will help you master essential nouns for everyday
+                communication. Here, you'll learn the words and what they mean,
+                continuing to build your foundation for speaking Yoruba. Click
+                "Learn" to explore the content and "Start Quiz" to test your
+                skills.
               </IntroP>
               <BtnContainer>
                 <BtnWrapper>
@@ -64,9 +65,7 @@ const YorubaAlphabet = () => {
               </BtnContainer>
             </Content1>
             <Content2>
-              <ImgWrap>
-                <AlphabetBlocks />
-              </ImgWrap>
+              <ImgWrap>{/* <YorubaManAndWoman /> */}</ImgWrap>
             </Content2>
           </IntroWrapper>
         </IntroBackground>
@@ -76,4 +75,4 @@ const YorubaAlphabet = () => {
   );
 };
 
-export default YorubaAlphabet;
+export default BasicPhrasesII;

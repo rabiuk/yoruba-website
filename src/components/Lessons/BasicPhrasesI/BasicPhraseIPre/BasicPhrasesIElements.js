@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   /* background: red; */
   display: flex;
-  /* grid-template-columns: repeat(12, 75px);
-  grid-gap: 20px; */
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: 1000px;
   position: relative;
   z-index: 1;
@@ -38,26 +37,52 @@ export const Container = styled.div`
 // `;
 
 export const IntroBackground = styled.div`
-  background-color: #010606;
+  background-color: rgba(0, 105, 92, 1);
+  /* background-image: linear-gradient(to right, #424242, #424242); */
   height: 430px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 `;
 
 export const IntroWrapper = styled.div`
-  width: 50%;
+  margin: 80px 7.5vw;
+  width: fit-content;
   z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* creates 2 columns of equal width */
+  grid-gap: 10px; /* adds a gap of 10px between columns */
+  justify-content: center; /* centers items horizontally */
+  align-items: center; /* centers items vertically */
+`;
+
+export const Content1 = styled.div`
+  /* display: flex; */
+`;
+export const Content2 = styled.div`
+  /* display: flex; */
+`;
+export const ImgWrap = styled.div`
+  /* margin-top: 40px; */
+  max-width: 555px;
+  height: 80%;
+  width: 80%;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const IntroH1 = styled.h1`
-  text-align: center;
   margin-top: 20px;
-  color: #ff7043;
+  /* grid-column: 1 / 9; */
+  color: #fafafa;
   font-size: 48px;
+  font-weight: 900;
+  z-index: 1;
+  text-align: center;
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
@@ -67,9 +92,10 @@ export const IntroH1 = styled.h1`
 `;
 
 export const IntroP = styled.p`
-  text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   color: #fafafa;
+  z-index: 1;
+  text-align: center;
   @media screen and (max-width: 768px) {
     font-size: 22px;
   }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ButtonLink } from "../ButtonElements";
 import { ButtonScroll } from "../ButtonElements";
-import { homeObjOne, homeObjTwo, homeObjThree } from "./Data";
+import { homeObjOne, homeObjTwo } from "./Data";
 import {
   ImproveSkillsContainer,
   ImproveSkillsWrapper,
@@ -67,11 +67,7 @@ const ImproveSkillsSection = ({
             </TextWrapper>
           </Column1>
           <Column2>
-            <ImgWrap className={className}>
-              {/* <Img /> */}
-              {/* <Img alt={alt} /> */}
-              <Img src={img} alt={alt} />
-            </ImgWrap>
+            <ImgWrap className={className}>{img}</ImgWrap>
           </Column2>
         </ImproveSkillsRow>
       </ImproveSkillsWrapper>
@@ -116,8 +112,8 @@ const ImproveSkillsWelcome = () => {
         </BtnWrap>
 
         {/* <ImproveSkillsSection {...homeObjOne}></ImproveSkillsSection> */}
+        <ImproveSkillsSection {...homeObjOne}></ImproveSkillsSection>
         <ImproveSkillsSection {...homeObjTwo}></ImproveSkillsSection>
-        <ImproveSkillsSection {...homeObjThree}></ImproveSkillsSection>
       </ImproveSkillsContainer>
     </>
   );

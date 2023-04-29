@@ -60,6 +60,16 @@ export const FunFactsIcon = styled.img`
   width: 160px;
   margin-bottom: 10px;
 `;
+export const FunFactsSVGIcon = styled.div`
+  width: 160px; // Or any desired width
+  height: 160px; // Or any desired height
+  display: inline-block;
+  margin-bottom: 10px;
+  svg {
+    width: 100%; // Make the SVG fill the container's width
+    height: 100%; // Make the SVG fill the container's height
+  }
+`;
 
 export const FunFactsH1 = styled.h1`
   font-size: 2.5rem;
