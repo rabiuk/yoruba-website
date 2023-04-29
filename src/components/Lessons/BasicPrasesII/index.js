@@ -1,5 +1,5 @@
 import React from "react";
-// import { ReactComponent as Chalkboard } from "../../../images/blackboard-with-chalk-texture(2).svg";
+import { ReactComponent as Nouns } from "../../../images/Nouns.svg";
 
 import {
   Container,
@@ -65,7 +65,9 @@ const BasicPhrasesII = () => {
               </BtnContainer>
             </Content1>
             <Content2>
-              <ImgWrap>{/* <Chalkboard /> */}</ImgWrap>
+              <ImgWrap>
+                <Nouns />
+              </ImgWrap>
             </Content2>
           </IntroWrapper>
         </IntroBackground>
