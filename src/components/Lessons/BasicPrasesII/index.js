@@ -1,5 +1,5 @@
 import React from "react";
-// import { ReactComponent as YorubaManAndWoman } from "../../../../images/yoruba-man-and-woman.svg";
+// import { ReactComponent as Chalkboard } from "../../../images/blackboard-with-chalk-texture(2).svg";
 
 import {
   Container,
@@ -65,7 +65,7 @@ const BasicPhrasesII = () => {
               </BtnContainer>
             </Content1>
             <Content2>
-              <ImgWrap>{/* <YorubaManAndWoman /> */}</ImgWrap>
+              <ImgWrap>{/* <Chalkboard /> */}</ImgWrap>
             </Content2>
           </IntroWrapper>
         </IntroBackground>
