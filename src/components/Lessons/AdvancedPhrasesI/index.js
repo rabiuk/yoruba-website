@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Nouns } from "../../../images/Nouns(1).svg";
+import { ReactComponent as Phrases } from "../../../images/yoruba-man-and-woman.svg";
 
 import {
   Container,
@@ -12,10 +12,10 @@ import {
   IntroP,
   BtnWrapper,
   BtnContainer,
-} from "./BasicPhrasesIIElements";
+} from "./AdvancedPhrasesIElements";
 import { ButtonLink, ButtonScroll } from "../../../components/ButtonElements";
 
-const BasicPhrasesII = () => {
+const AdvancedPhrasesI = () => {
   return (
     <>
       <Container>
@@ -66,7 +66,7 @@ const BasicPhrasesII = () => {
             </Content1>
             <Content2>
               <ImgWrap>
-                <Nouns />
+                <Phrases />
               </ImgWrap>
             </Content2>
           </IntroWrapper>
@@ -77,4 +77,4 @@ const BasicPhrasesII = () => {
   );
 };
 
-export default BasicPhrasesII;
+export default AdvancedPhrasesI;

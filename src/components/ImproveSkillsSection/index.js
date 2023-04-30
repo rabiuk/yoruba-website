@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { ButtonLink } from "../ButtonElements";
-import { ButtonScroll } from "../ButtonElements";
+import { ButtonLink, ButtonScroll, Button } from "../ButtonElements";
 import { homeObjOne, homeObjTwo } from "./Data";
 import {
   ImproveSkillsContainer,
@@ -20,6 +19,8 @@ import {
   ArrowDownward,
   ArrowDropDown,
 } from "./ImproveSkillsElements";
+import { ReactComponent as WelcomeElder } from "../../images/elder2.svg";
+import CurriculumModal from "./CurriculumModal/CurriculumModal";
 
 const ImproveSkillsSection = ({
   lightBg,
@@ -39,6 +40,7 @@ const ImproveSkillsSection = ({
   dark2,
   className,
 }) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
       {/* <ImproveSkillsContainer lightBg={lightBg} id={id}> */}
@@ -49,21 +51,38 @@ const ImproveSkillsSection = ({
               <TopLine>{topLine}</TopLine>
               <Heading lightText={lightText}>{headline}</Heading>
               <Subtitle darkText={darkText}>{description}</Subtitle>
-              <BtnWrap>
-                <ButtonLink
-                  to={pageLink}
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                >
-                  {buttonLabel}
-                </ButtonLink>
-              </BtnWrap>
+              {id === "curriculum" ? (
+                <>
+                  <BtnWrap>
+                    <Button
+                      onClick={() => setOpenModal(true)}
+                      primary={primary ? 1 : 0}
+                      dark={dark ? 1 : 0}
+                      dark2={dark2 ? 1 : 0}
+                    >
+                      {buttonLabel}
+                    </Button>
+                  </BtnWrap>
+                </>
+              ) : (
+                <>
+                  <BtnWrap>
+                    <ButtonLink
+                      to={pageLink}
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      exact="true"
+                      offset={-80}
+                      primary={primary ? 1 : 0}
+                      dark={dark ? 1 : 0}
+                      dark2={dark2 ? 1 : 0}
+                    >
+                      {buttonLabel}
+                    </ButtonLink>
+                  </BtnWrap>
+                </>
+              )}
             </TextWrapper>
           </Column1>
           <Column2>
@@ -71,6 +90,9 @@ const ImproveSkillsSection = ({
           </Column2>
         </ImproveSkillsRow>
       </ImproveSkillsWrapper>
+      {id === "curriculum" && (
+        <CurriculumModal open={openModal} onClose={() => setOpenModal(false)} />
+      )}
       {/* </ImproveSkillsContainer> */}
     </>
   );
@@ -85,8 +107,8 @@ const ImproveSkillsWelcome = () => {
   return (
     <>
       <ImproveSkillsContainer lightBg={true}>
-        <ImgWrap className="welcome-hands">
-          <Img src={require("../../images/welcome-hands.png")} alt={"alt"} />
+        <ImgWrap>
+          <WelcomeElder className="welcome-hands" />
         </ImgWrap>
         <H1>Improve Your Skills</H1>
         <P>

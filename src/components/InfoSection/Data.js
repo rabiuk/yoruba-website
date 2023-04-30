@@ -31,7 +31,7 @@ export const homeObjTwo = {
   headline: "Unlock Your Language Potential",
   description:
     "Discover the ultimate destination for evaluating and improving your Yoruba language skills. Featuring interactive quizzes and lessons for all skill levels, you'll challenge your grammar, vocabulary, and pronunciation. Embark on this engaging learning experience to boost your Yoruba proficiency and connect with the language's vibrant culture.",
-  buttonLabel: "Improve Your Skills",
+  buttonLabel: "Lets Go",
   pageLink: "/improve-skills",
   imgStart: true,
   img: <FlashCardSVG></FlashCardSVG>,
@@ -44,9 +44,9 @@ export const homeObjTwo = {
 
 export const homeObjThree = {
   id: "proverbs-and-wisdom",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "Proverbs & Wisdom",
   headline: "Explore Cultural Insights",
   description:
@@ -55,8 +55,8 @@ export const homeObjThree = {
   pageLink: "/proverbs&wisdom",
   img: <ElderSVG></ElderSVG>,
   alt: "",
-  dark: true,
+  dark: false,
   primary: true,
-  darkText: false,
+  darkText: true,
   className: "proverbs-and-wisdom-section",
 };

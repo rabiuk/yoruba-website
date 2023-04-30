@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as YorubaManAndWoman } from "../../../../images/yoruba-man-and-woman.svg";
+import { ReactComponent as YorubaMan } from "../../../../images/yoruba-man-facing-camera.svg";
 
 import {
   Container,
@@ -64,7 +64,7 @@ const BasicPhrasesI = () => {
             </Content1>
             <Content2>
               <ImgWrap>
-                <YorubaManAndWoman />
+                <YorubaMan />
               </ImgWrap>
             </Content2>
           </IntroWrapper>

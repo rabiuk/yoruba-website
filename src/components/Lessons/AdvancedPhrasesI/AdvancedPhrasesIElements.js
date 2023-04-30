@@ -24,18 +24,6 @@ export const Container = styled.div`
   }
 `;
 
-// export const Bg = styled.div`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   background: white;
-// `;
-
 export const IntroBackground = styled.div`
   background-color: rgba(0, 105, 92, 1);
   /* background-image: linear-gradient(to right, #424242, #424242); */
@@ -62,13 +50,14 @@ export const Content1 = styled.div`
   /* display: flex; */
 `;
 export const Content2 = styled.div`
-  /* display: flex; */
+  display: flex;
+  justify-content: center;
 `;
 export const ImgWrap = styled.div`
-  margin-top: -40px;
-  max-width: 555px;
-  height: 60%;
-  width: 60%;
+  margin-top: 80px;
+  max-width: 700px;
+  width: 100%;
+  height: 100%;
   svg {
     width: 100%;
     height: 100%;

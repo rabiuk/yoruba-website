@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { dropdownItems } from "./dropdownItems";
+import { dropdownItems } from "./dropdowndata";
 import {
   UnorderedList,
   List,

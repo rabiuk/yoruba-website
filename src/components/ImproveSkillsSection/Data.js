@@ -1,4 +1,3 @@
-import { ReactComponent as WelcomeElder } from "../../images/welcome-hands.svg";
 import { ReactComponent as Notepad } from "../../images/notepad-with-pencil.svg";
 import { ReactComponent as Laptop } from "../../images/laptop-displaying-bird.svg";
 

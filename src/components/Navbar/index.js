@@ -42,7 +42,8 @@ const Navbar = ({ home, toggle }) => {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
-  const handleNavItemClick = (section) => {
+  const handleNavItemClick = (e, section) => {
+    e.preventDefault();
     if (section === "#learn") {
       navigate("/improve-skills/");
       scroll.scrollToTop();
@@ -146,8 +147,8 @@ const Navbar = ({ home, toggle }) => {
                   >
                     <NavLinksR
                       className={showDropDown ? "active" : "non-active"}
-                      to="/improve-skills/learn-the-yoruba-alphabet"
-                      // onClick={() => handleNavItemClick("#learn")}
+                      to="/improve-skills"
+                      onClick={(e) => handleNavItemClick(e, "#learn")}
                       smooth={true}
                       duration={500}
                       spy={true}

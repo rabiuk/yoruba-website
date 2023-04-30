@@ -23,7 +23,12 @@ export const dropdownItems = [
       {
         id: 4,
         title: "Lesson IV",
-        path: "/improve-skills/lesson-three-learn-basic-phrases-ii",
+        path: "/improve-skills/lesson-four-learn-basic-phrases-ii",
+      },
+      {
+        id: 5,
+        title: "Lesson V",
+        path: "/improve-skills/lesson-five-learn-advanced-phrases-i",
       },
     ],
   },

@@ -16,7 +16,6 @@ export const ImproveSkillsContainer = styled.div`
 
 export const ImproveSkillsWrapper = styled.div`
   display: grid;
-  z-index: 1;
   height: 860px;
   width: 100%;
   max-width: 1100px;
@@ -24,6 +23,7 @@ export const ImproveSkillsWrapper = styled.div`
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+  z-index: 0;
 `;
 
 export const ImproveSkillsRow = styled.div`
@@ -99,17 +99,18 @@ export const BtnWrap = styled.div`
 
 export const ImgWrap = styled.div`
   display: flex;
-  max-width: 555px;
-  height: 100%;
+  justify-content: center;
+
   &.learn-section {
     max-width: 400px;
   }
-  &.welcome-hands {
-    margin-top: 80px;
+  svg.welcome-hands {
+    max-width: 300px;
+    max-height: 300px;
   }
   svg {
     width: 100%;
-    margin: 0 0 10px 0;
+    margin: 0px 0px 10px 0px;
     padding-right: 0;
   }
   &.curriculum-section {
@@ -121,7 +122,7 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  margin: 0 0 10px 0;
+  margin: 0px 0px 10px 0px;
   padding-right: 0;
 `;
 export const ArrowDownward = styled(MdArrowDownward)`

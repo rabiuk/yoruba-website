@@ -9,8 +9,8 @@ import MoreAboutYorubaPage from "./pages/more-about-yoruba-page";
 import ProverbsAndWisdom from "./pages/proverbs&wisdom-page";
 import BasicPhrasesIPage from "./pages/Lessons/BasicPhrasesI/lesson-three-learn-basic-phrases-i-page";
 import BasicPhrasesIIPage from "./pages/Lessons/BasicPhrasesII/basic-phrases-ii-page";
-import BasicPhrasesIIIPage from "./pages/lesson-five-learn-basic-phrases-iii-page";
-import AdvancedPhrasesIPage from "./pages/lesson-six-learn-advanced-phrases-i-page";
+// import BasicPhrasesIIIPage from "./pages/lesson-five-learn-basic-phrases-iii-page";
+import AdvancedPhrasesIPage from "./pages/Lessons/AdvancedPhrasesI/advanced-phrases-i-page";
 import AdvancedPhrasesIIPage from "./pages/lesson-seven-learn-advanced-phrases-ii-page";
 
 import LearnTheYorubaAlphabetPage from "./pages/Lessons/YorubaAlphabet/learn-the-yoruba-alphabet-page";
@@ -55,13 +55,13 @@ function App() {
           exact
         />
         <Route
-          path="/improve-skills/lesson-three-learn-basic-phrases-ii"
+          path="/improve-skills/lesson-four-learn-basic-phrases-ii"
           element={<BasicPhrasesIIPage />}
           exact
         />
         <Route
-          path="/lesson-five-learn-basic-phrases-iii"
-          element={<BasicPhrasesIIIPage />}
+          path="/improve-skills/lesson-five-learn-advanced-phrases-i"
+          element={<AdvancedPhrasesIPage />}
           exact
         />
         <Route
