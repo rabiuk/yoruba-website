@@ -18,6 +18,7 @@ import LearnTheYorubaAlphabetQuizPage from "./pages/Lessons/YorubaAlphabet/learn
 import LearningNumbersPage from "./pages/Lessons/Numbers/numbers-and-counting-page";
 import BasicPhrasesIQuizPage from "./pages/Lessons/BasicPhrasesI/lesson-three-learn-basic-phrases-i-quiz-page";
 import Sidebar from "./components/Sidebar/Sidebar";
+import NumbersAndCountingQuizPage from "./pages/Lessons/Numbers/numbers-and-counting-quiz-page";
 
 function App() {
   return (
@@ -47,6 +48,11 @@ function App() {
         <Route
           path="/improve-skills/numbers-and-counting"
           element={<LearningNumbersPage />}
+          exact
+        />
+        <Route
+          path="/improve-skills/numbers-and-counting/quiz"
+          element={<NumbersAndCountingQuizPage />}
           exact
         />
         <Route
