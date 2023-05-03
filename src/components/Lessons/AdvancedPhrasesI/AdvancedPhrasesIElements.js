@@ -54,8 +54,8 @@ export const Content2 = styled.div`
   justify-content: center;
 `;
 export const ImgWrap = styled.div`
-  margin-top: 80px;
-  max-width: 700px;
+  margin-top: 165px;
+  max-width: 800px;
   width: 100%;
   height: 100%;
   svg {

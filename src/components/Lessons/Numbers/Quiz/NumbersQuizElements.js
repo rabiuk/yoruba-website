@@ -64,6 +64,19 @@ export const QuestionH1 = styled.h1`
     font-size: 32px;
   }
 `;
+
+export const H1 = styled.h1`
+  color: #424242;
+  font-size: 48px;
+  text-align: center;
+  z-index: 3;
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
+`;
 export const ChoicesContainer = styled.div`
   margin-top: 40px;
   margin-bottom: 20px;

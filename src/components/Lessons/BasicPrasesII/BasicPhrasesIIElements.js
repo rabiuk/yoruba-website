@@ -56,8 +56,8 @@ export const ImgWrap = styled.div`
   /* margin-top: 40px; */
   margin-left: 5vw;
   max-width: 555px;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   svg {
     width: 100%;
     height: 100%;

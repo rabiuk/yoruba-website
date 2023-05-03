@@ -21,6 +21,8 @@ import {
 
 const BasicPhrasesIQuizComp = (props) => {
   const { verbsData } = props;
+  // print the verbsData to the console
+  console.log(verbsData);
 
   const [showFinalResult, setFinalResult] = useState(false);
 

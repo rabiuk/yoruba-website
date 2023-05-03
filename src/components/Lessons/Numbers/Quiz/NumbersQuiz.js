@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import generateVerbsData from "./data";
+import yorubaNumbers from "./data";
 import { Button } from "../../../ButtonElements";
 import {
   QuizContainer,
@@ -17,21 +17,70 @@ import {
   SelectAChoicePromptH2,
   FinalResultWrap,
   FinalResultH2,
+  H1,
 } from "./NumbersQuizElements";
 
-const NumbersQuiz = (props) => {
-  const { verbsData } = props;
+const convertObj = (obj) => {
+  // We need to shuffle the object first
+  // Convert object to array
+  let objArray = Object.entries(obj);
 
-  const [showFinalResult, setFinalResult] = useState(false);
+  // Shuffle the array
+  for (let i = objArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [objArray[i], objArray[j]] = [objArray[j], objArray[i]];
+  }
 
+  // update the object with the shuffled array
+  obj = Object.fromEntries(objArray);
+
+  // Now we can convert the object to an array of questions
+  const questions = [];
+  const objKeys = Object.keys(obj);
+
+  for (let i = 0; i < objKeys.length; i++) {
+    const key = objKeys[i];
+    const answer = obj[key];
+    const otherAnswers = objKeys.filter((v) => v !== key);
+    const choices = [answer];
+
+    while (choices.length < 4) {
+      const randomVerb =
+        otherAnswers[Math.floor(Math.random() * otherAnswers.length)];
+      const randomAnswer = obj[randomVerb];
+
+      if (!choices.includes(randomAnswer)) {
+        choices.push(randomAnswer);
+      }
+    }
+
+    // We push each question object to the questions array
+    questions.push({
+      id: i,
+      question: key,
+      choices: shuffle(choices),
+      answer: answer,
+    });
+  }
+
+  return questions;
+};
+
+const shuffle = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+export const NumbersQuiz = (props) => {
+  const [numbersData, setNumbersData] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [question, setQuestion] = useState(
-    verbsData[currentQuestionIndex].question
-  );
+  const [question, setQuestion] = useState("");
   const [choices, setChoices] = useState([]);
-  const [correctAnswer, setCorrectAnswer] = useState(
-    verbsData[currentQuestionIndex].answer
-  );
+  const [correctAnswer, setCorrectAnswer] = useState("");
+
   //   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
   // State to store submit button clicked status
@@ -42,17 +91,26 @@ const NumbersQuiz = (props) => {
   const [score, setScore] = useState(0);
 
   const [isQuizOver, setIsQuizOver] = useState(false);
+  const [showFinalResult, setFinalResult] = useState(false);
 
+  // Load verbsData on component mount
   useEffect(() => {
-    setQuestion(verbsData[currentQuestionIndex].question);
-    setSelectedChoiceIndex(null);
-    setIsCorrect(null);
-    setChoices(shuffleChoices(verbsData[currentQuestionIndex].choices));
-    setCorrectAnswer(verbsData[currentQuestionIndex].answer);
-  }, [currentQuestionIndex]);
+    setNumbersData(convertObj(yorubaNumbers));
+  }, []);
+
+  // Update dependent states when verbsData changes
+  useEffect(() => {
+    if (numbersData.length > 0) {
+      setQuestion(numbersData[currentQuestionIndex].question);
+      setChoices(numbersData[currentQuestionIndex].choices);
+      setCorrectAnswer(numbersData[currentQuestionIndex].answer);
+      setSelectedChoiceIndex(null);
+      setIsCorrect(null);
+    }
+  }, [numbersData, currentQuestionIndex]);
 
   const loadNextQuestion = () => {
-    if (currentQuestionIndex < verbsData.length - 1) {
+    if (currentQuestionIndex < numbersData.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
       //Quiz is over
@@ -60,18 +118,6 @@ const NumbersQuiz = (props) => {
       setFinalResult(true);
     }
     setIsButtonClicked(false);
-  };
-
-  const shuffleChoices = (array) => {
-    const shuffledArray = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [
-        shuffledArray[j],
-        shuffledArray[i],
-      ];
-    }
-    return shuffledArray;
   };
 
   const handleChoiceClicked = (choiceIndex) => {
@@ -98,110 +144,113 @@ const NumbersQuiz = (props) => {
       setIsCorrect(false);
     }
   };
-
-  return (
-    <QuizContainer>
-      <QuizBg></QuizBg>
-      {!isQuizOver && (
-        <>
-          <QuestionContainer>
-            <QuestionH1>{question}</QuestionH1>
-          </QuestionContainer>
-          <ChoicesContainer>
-            <ChoiceWrapper
-              selected={selectedChoiceIndex === 0}
-              isButtonClicked={isButtonClicked}
-              isCorrect={isCorrect && selectedChoiceIndex === 0}
-              isCurrentChoiceCorrect={choices[0] === correctAnswer}
-              onClick={() => !isButtonClicked && handleChoiceClicked(0)}
-            >
-              <Choice>{choices[0]}</Choice>
-              {/*Choice 1*/}
-            </ChoiceWrapper>
-            <ChoiceWrapper
-              selected={selectedChoiceIndex === 1}
-              isButtonClicked={isButtonClicked}
-              isCorrect={isCorrect && selectedChoiceIndex === 1}
-              isCurrentChoiceCorrect={choices[1] === correctAnswer}
-              onClick={() => !isButtonClicked && handleChoiceClicked(1)}
-            >
-              <Choice>{choices[1]}</Choice>
-              {/*Choice 2*/}
-            </ChoiceWrapper>
-            <ChoiceWrapper
-              selected={selectedChoiceIndex === 2}
-              isButtonClicked={isButtonClicked}
-              isCorrect={isCorrect && selectedChoiceIndex === 2}
-              isCurrentChoiceCorrect={choices[2] === correctAnswer}
-              onClick={() => !isButtonClicked && handleChoiceClicked(2)}
-            >
-              <Choice>{choices[2]}</Choice>
-              {/*Choice 3*/}
-            </ChoiceWrapper>
-            <ChoiceWrapper
-              selected={selectedChoiceIndex === 3}
-              isButtonClicked={isButtonClicked}
-              isCorrect={isCorrect && selectedChoiceIndex === 3}
-              isCurrentChoiceCorrect={choices[3] === correctAnswer}
-              onClick={() => !isButtonClicked && handleChoiceClicked(3)}
-            >
-              <Choice>{choices[3]}</Choice>
-              {/*Choice 4*/}
-            </ChoiceWrapper>
-          </ChoicesContainer>
-          <ButtonContainer>
-            {!isButtonClicked && (
-              <SubmitBtnContainer>
-                <BtnWrappper onClick={handleSubmit}>
-                  <Button
-                    primary={true ? 1 : 0}
-                    dark={true ? 1 : 0}
-                    dark2={true ? 1 : 0}
-                  >
-                    Submit
-                  </Button>
-                </BtnWrappper>
-              </SubmitBtnContainer>
+  if (numbersData.length === 0) {
+    return (
+      <QuizContainer>
+        <QuizBg></QuizBg>
+        <H1>Loading...</H1>
+      </QuizContainer>
+    );
+  } else {
+    return (
+      <QuizContainer>
+        <QuizBg></QuizBg>
+        {!isQuizOver && (
+          <>
+            <QuestionContainer>
+              <QuestionH1>{question}</QuestionH1>
+            </QuestionContainer>
+            <ChoicesContainer>
+              <ChoiceWrapper
+                selected={selectedChoiceIndex === 0}
+                isButtonClicked={isButtonClicked}
+                isCorrect={isCorrect && selectedChoiceIndex === 0}
+                isCurrentChoiceCorrect={choices[0] === correctAnswer}
+                onClick={() => !isButtonClicked && handleChoiceClicked(0)}
+              >
+                <Choice>{choices[0]}</Choice>
+                {/*Choice 1*/}
+              </ChoiceWrapper>
+              <ChoiceWrapper
+                selected={selectedChoiceIndex === 1}
+                isButtonClicked={isButtonClicked}
+                isCorrect={isCorrect && selectedChoiceIndex === 1}
+                isCurrentChoiceCorrect={choices[1] === correctAnswer}
+                onClick={() => !isButtonClicked && handleChoiceClicked(1)}
+              >
+                <Choice>{choices[1]}</Choice>
+                {/*Choice 2*/}
+              </ChoiceWrapper>
+              <ChoiceWrapper
+                selected={selectedChoiceIndex === 2}
+                isButtonClicked={isButtonClicked}
+                isCorrect={isCorrect && selectedChoiceIndex === 2}
+                isCurrentChoiceCorrect={choices[2] === correctAnswer}
+                onClick={() => !isButtonClicked && handleChoiceClicked(2)}
+              >
+                <Choice>{choices[2]}</Choice>
+                {/*Choice 3*/}
+              </ChoiceWrapper>
+              <ChoiceWrapper
+                selected={selectedChoiceIndex === 3}
+                isButtonClicked={isButtonClicked}
+                isCorrect={isCorrect && selectedChoiceIndex === 3}
+                isCurrentChoiceCorrect={choices[3] === correctAnswer}
+                onClick={() => !isButtonClicked && handleChoiceClicked(3)}
+              >
+                <Choice>{choices[3]}</Choice>
+                {/*Choice 4*/}
+              </ChoiceWrapper>
+            </ChoicesContainer>
+            <ButtonContainer>
+              {!isButtonClicked && (
+                <SubmitBtnContainer>
+                  <BtnWrappper onClick={handleSubmit}>
+                    <Button
+                      primary={true ? 1 : 0}
+                      dark={true ? 1 : 0}
+                      dark2={true ? 1 : 0}
+                    >
+                      Submit
+                    </Button>
+                  </BtnWrappper>
+                </SubmitBtnContainer>
+              )}
+              {/* Add conditional rendering for the NextBtnContainer */}
+              {isButtonClicked && (
+                <NextBtnContainer>
+                  <BtnWrappper onClick={() => loadNextQuestion()}>
+                    <Button
+                      primary={true ? 1 : 0}
+                      dark={true ? 1 : 0}
+                      dark2={true ? 1 : 0}
+                    >
+                      Next
+                    </Button>
+                  </BtnWrappper>
+                </NextBtnContainer>
+              )}
+            </ButtonContainer>
+            {showPlsSelectAChoice && (
+              <SelectAChoiceWrap>
+                <SelectAChoicePromptH2>
+                  Please Select A Choice
+                </SelectAChoicePromptH2>
+              </SelectAChoiceWrap>
             )}
-            {/* Add conditional rendering for the NextBtnContainer */}
-            {isButtonClicked && (
-              <NextBtnContainer>
-                <BtnWrappper onClick={() => loadNextQuestion()}>
-                  <Button
-                    primary={true ? 1 : 0}
-                    dark={true ? 1 : 0}
-                    dark2={true ? 1 : 0}
-                  >
-                    Next
-                  </Button>
-                </BtnWrappper>
-              </NextBtnContainer>
-            )}
-          </ButtonContainer>
-          {showPlsSelectAChoice && (
-            <SelectAChoiceWrap>
-              <SelectAChoicePromptH2>
-                Please Select A Choice
-              </SelectAChoicePromptH2>
-            </SelectAChoiceWrap>
-          )}
-        </>
-      )}
+          </>
+        )}
 
-      {isQuizOver && (
-        <FinalResultWrap>
-          <FinalResultH2>
-            Your final score is {score} out of {verbsData.length} (
-            {((score * 100) / verbsData.length).toFixed(0)}%)
-          </FinalResultH2>
-        </FinalResultWrap>
-      )}
-    </QuizContainer>
-  );
+        {isQuizOver && (
+          <FinalResultWrap>
+            <FinalResultH2>
+              Your final score is {score} out of {numbersData.length} (
+              {((score * 100) / numbersData.length).toFixed(0)}%)
+            </FinalResultH2>
+          </FinalResultWrap>
+        )}
+      </QuizContainer>
+    );
+  }
 };
-const Quiz = () => {
-  const verbsData = generateVerbsData();
-  return <NumbersQuiz verbsData={verbsData} />;
-};
-
-export default Quiz;
+export default NumbersQuiz;

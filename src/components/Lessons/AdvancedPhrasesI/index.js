@@ -13,7 +13,7 @@ import {
   BtnWrapper,
   BtnContainer,
 } from "./AdvancedPhrasesIElements";
-import { ButtonLink, ButtonScroll } from "../../../components/ButtonElements";
+import { ButtonLink, ButtonScroll } from "../../ButtonElements";
 
 const AdvancedPhrasesI = () => {
   return (
@@ -22,7 +22,7 @@ const AdvancedPhrasesI = () => {
         <IntroBackground>
           <IntroWrapper>
             <Content1>
-              <IntroH1>Basic Phrases II (Nouns)</IntroH1>
+              <IntroH1>Advanced Phrases I </IntroH1>
               <IntroP>
                 Following up on the essential verbs learned in Basic Phrases I,
                 this lesson will help you master essential nouns for everyday
