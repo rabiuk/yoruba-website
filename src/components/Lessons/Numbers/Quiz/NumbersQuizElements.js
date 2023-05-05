@@ -174,6 +174,9 @@ export const SelectAChoicePromptH2 = styled.h2`
 
 export const FinalResultWrap = styled.div`
   margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   z-index: 3;
 `;

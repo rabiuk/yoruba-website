@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import yorubaNumbers from "./data";
+import yorubaVerbs from "./data";
 import {
   QuizContainer,
   QuizBg,
@@ -16,7 +16,7 @@ import {
   FinalResultWrap,
   FinalResultH2,
   H1,
-} from "./NumbersQuizElements";
+} from "./BasicPhrasesIQuizElements";
 import { BtnWrappper, Button } from "../../../ButtonElements";
 import ModalComplete from "../../../Modals/ModalComplete/ModalComplete";
 
@@ -74,8 +74,8 @@ const shuffle = (array) => {
   return array;
 };
 
-export const NumbersQuiz = (props) => {
-  const [numbersData, setNumbersData] = useState([]);
+export const VerbsQuiz = (props) => {
+  const [verbsData, setVerbsData] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [question, setQuestion] = useState("");
   const [choices, setChoices] = useState([]);
@@ -96,22 +96,22 @@ export const NumbersQuiz = (props) => {
 
   // Load verbsData on component mount
   useEffect(() => {
-    setNumbersData(convertObj(yorubaNumbers));
+    setVerbsData(convertObj(yorubaVerbs));
   }, []);
 
   // Update dependent states when verbsData changes
   useEffect(() => {
-    if (numbersData.length > 0) {
-      setQuestion(numbersData[currentQuestionIndex].question);
-      setChoices(numbersData[currentQuestionIndex].choices);
-      setCorrectAnswer(numbersData[currentQuestionIndex].answer);
+    if (verbsData.length > 0) {
+      setQuestion(verbsData[currentQuestionIndex].question);
+      setChoices(verbsData[currentQuestionIndex].choices);
+      setCorrectAnswer(verbsData[currentQuestionIndex].answer);
       setSelectedChoiceIndex(null);
       setIsCorrect(null);
     }
-  }, [numbersData, currentQuestionIndex]);
+  }, [verbsData, currentQuestionIndex]);
 
   const loadNextQuestion = () => {
-    if (currentQuestionIndex < numbersData.length - 1) {
+    if (currentQuestionIndex < verbsData.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
       //Quiz is over
@@ -145,7 +145,7 @@ export const NumbersQuiz = (props) => {
       setIsCorrect(false);
     }
   };
-  if (numbersData.length === 0) {
+  if (verbsData.length === 0) {
     return (
       <>
         <QuizContainer>
@@ -248,8 +248,8 @@ export const NumbersQuiz = (props) => {
           {isQuizOver && (
             <FinalResultWrap>
               <FinalResultH2>
-                Your final score is {score} out of {numbersData.length} (
-                {((score * 100) / numbersData.length).toFixed(0)}%)
+                Your final score is {score} out of {verbsData.length} (
+                {((score * 100) / verbsData.length).toFixed(0)}%)
               </FinalResultH2>
               <BtnWrappper onClick={() => setOpenModal(true)}>
                 <Button
@@ -266,18 +266,18 @@ export const NumbersQuiz = (props) => {
         <ModalComplete
           open={openModal}
           onClose={() => setOpenModal(false)}
-          title={"Good Work!"}
+          title={"Fantastic job! "}
           body={
-            "You have completed the Numbers & Counting section in Yoruba! You're making great progress!"
+            "You have completed the Basic Phrases I (Verbs) section in Yoruba! Your Yoruba language skills are coming along nicely."
           }
           continue_text={
-            "Continue to the next section to learn simple everyday phrases in Yoruba!"
+            "Continue to the next section to learn simple everyday nouns in Yoruba!"
           }
-          continue_link={"/improve-skills/lesson-three-learn-basic-phrases-i"}
-          continue_link_text={"Basic Phrases I (Verbs)"}
+          continue_link={"/improve-skills/lesson-four-learn-basic-phrases-ii"}
+          continue_link_text={"Basic Phrases II (Nouns)"}
         />
       </>
     );
   }
 };
-export default NumbersQuiz;
+export default VerbsQuiz;

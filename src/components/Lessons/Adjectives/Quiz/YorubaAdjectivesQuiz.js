@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import yorubaNumbers from "./data";
+import yorubaAdjectives from "./data";
 import {
   QuizContainer,
   QuizBg,
@@ -16,7 +16,7 @@ import {
   FinalResultWrap,
   FinalResultH2,
   H1,
-} from "./NumbersQuizElements";
+} from "./YorubaAdjectiveQuizElements";
 import { BtnWrappper, Button } from "../../../ButtonElements";
 import ModalComplete from "../../../Modals/ModalComplete/ModalComplete";
 
@@ -74,8 +74,8 @@ const shuffle = (array) => {
   return array;
 };
 
-export const NumbersQuiz = (props) => {
-  const [numbersData, setNumbersData] = useState([]);
+export const AdjectivesQuiz = (props) => {
+  const [adjectivesData, setAdjectivesData] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [question, setQuestion] = useState("");
   const [choices, setChoices] = useState([]);
@@ -94,24 +94,24 @@ export const NumbersQuiz = (props) => {
   const [showFinalResult, setFinalResult] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  // Load verbsData on component mount
+  // Load adjectivesData on component mount
   useEffect(() => {
-    setNumbersData(convertObj(yorubaNumbers));
+    setAdjectivesData(convertObj(yorubaAdjectives));
   }, []);
 
-  // Update dependent states when verbsData changes
+  // Update dependent states when adjectivesData changes
   useEffect(() => {
-    if (numbersData.length > 0) {
-      setQuestion(numbersData[currentQuestionIndex].question);
-      setChoices(numbersData[currentQuestionIndex].choices);
-      setCorrectAnswer(numbersData[currentQuestionIndex].answer);
+    if (adjectivesData.length > 0) {
+      setQuestion(adjectivesData[currentQuestionIndex].question);
+      setChoices(adjectivesData[currentQuestionIndex].choices);
+      setCorrectAnswer(adjectivesData[currentQuestionIndex].answer);
       setSelectedChoiceIndex(null);
       setIsCorrect(null);
     }
-  }, [numbersData, currentQuestionIndex]);
+  }, [adjectivesData, currentQuestionIndex]);
 
   const loadNextQuestion = () => {
-    if (currentQuestionIndex < numbersData.length - 1) {
+    if (currentQuestionIndex < adjectivesData.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
       //Quiz is over
@@ -145,7 +145,7 @@ export const NumbersQuiz = (props) => {
       setIsCorrect(false);
     }
   };
-  if (numbersData.length === 0) {
+  if (adjectivesData.length === 0) {
     return (
       <>
         <QuizContainer>
@@ -248,8 +248,8 @@ export const NumbersQuiz = (props) => {
           {isQuizOver && (
             <FinalResultWrap>
               <FinalResultH2>
-                Your final score is {score} out of {numbersData.length} (
-                {((score * 100) / numbersData.length).toFixed(0)}%)
+                Your final score is {score} out of {adjectivesData.length} (
+                {((score * 100) / adjectivesData.length).toFixed(0)}%)
               </FinalResultH2>
               <BtnWrappper onClick={() => setOpenModal(true)}>
                 <Button
@@ -266,18 +266,18 @@ export const NumbersQuiz = (props) => {
         <ModalComplete
           open={openModal}
           onClose={() => setOpenModal(false)}
-          title={"Good Work!"}
+          title={"Excellent progress! "}
           body={
-            "You have completed the Numbers & Counting section in Yoruba! You're making great progress!"
+            "You have completed the Basic Phrases II (Adjectives) section! Your command of the Yoruba language is getting better with each new skill you learn."
           }
           continue_text={
-            "Continue to the next section to learn simple everyday phrases in Yoruba!"
+            "Continue to the next section where you'll learn the fundamentals of forming sentences in the Yoruba language."
           }
-          continue_link={"/improve-skills/lesson-three-learn-basic-phrases-i"}
-          continue_link_text={"Basic Phrases I (Verbs)"}
+          continue_link={"/improve-skills/lesson-five-learn-advanced-phrases-i"}
+          continue_link_text={"Advanced Phrases I"}
         />
       </>
     );
   }
 };
-export default NumbersQuiz;
+export default AdjectivesQuiz;

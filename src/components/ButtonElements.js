@@ -66,3 +66,10 @@ export const Button = styled.button`
     background: ${({ primary }) => (primary ? "#424242" : "#01BF71")};
   }
 `;
+
+export const BtnWrappper = styled.div`
+  align-items: center;
+  z-index: 3;
+  transform: scale(1.15);
+  margin: 0 20px;
+`;

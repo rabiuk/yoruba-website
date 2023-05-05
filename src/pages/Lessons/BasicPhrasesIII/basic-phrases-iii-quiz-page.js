@@ -4,9 +4,9 @@ import ScrollToTop from "../../../components/ScrollToTop";
 import Sidebar from "../../../components/MobileSidebar";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
-import BasicPhrasesIQuizComp from "../../../components/Lessons/BasicPhrasesI/BasicPhrasesIQuiz/BasicPhrasesIQuiz";
+import BasicPhrasesIIIQuizComp from "../../../components/Lessons/Adjectives/Quiz/YorubaAdjectivesQuiz";
 
-const BasicPhrasesIQuizPage = () => {
+const BasicPhrasesIIIQuizPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -17,10 +17,10 @@ const BasicPhrasesIQuizPage = () => {
       <ScrollToTop />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar />
-      <BasicPhrasesIQuizComp />
+      <BasicPhrasesIIIQuizComp />
       <Footer />
     </>
   );
 };
 
-export default BasicPhrasesIQuizPage;
+export default BasicPhrasesIIIQuizPage;

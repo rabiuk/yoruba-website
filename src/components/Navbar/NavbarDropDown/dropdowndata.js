@@ -28,6 +28,11 @@ export const dropdownItems = [
       {
         id: 5,
         title: "Lesson V",
+        path: "/improve-skills/lesson-five-learn-basic-phrases-iii",
+      },
+      {
+        id: 6,
+        title: "Lesson VI",
         path: "/improve-skills/lesson-five-learn-advanced-phrases-i",
       },
     ],

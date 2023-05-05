@@ -7,11 +7,11 @@ import {
   CardInner,
   CardText,
   BtnContainer,
-  BtnWrappper,
   EmphasizedText,
 } from "./YorubaAlphabetQuizElements";
 import { alphabetsData } from "./alphabet_data";
-import { Button } from "../../../ButtonElements";
+import { Button, BtnWrappper } from "../../../ButtonElements";
+import ModalComplete from "../../../Modals/ModalComplete/ModalComplete";
 
 const YorubaAlphabetQuiz = (props) => {
   const { alphabetData } = props;
@@ -33,6 +33,7 @@ const YorubaAlphabetQuiz = (props) => {
   const [isWord, setIsWord] = useState(false);
   const [isNextClicked, setIsNextClicked] = useState(false);
   const [isFinish, setIsFinish] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleCardClick = () => {
     setIsFlipped(!isFlipped);
@@ -82,65 +83,80 @@ const YorubaAlphabetQuiz = (props) => {
   const emphasizedIndices = getEmphasizedIndices(word, emphasized);
 
   return (
-    <Container>
-      <Card onClick={() => handleCardClick()}>
-        <CardInner
-          isWord={isWord}
-          isFlipped={isFlipped}
-          isNextClicked={isNextClicked}
-        >
-          <CardFront>
-            <EmphasizedText>{card}</EmphasizedText>{" "}
-            <CardText>({pronounciation})</CardText>
-          </CardFront>
-          <CardBack>
-            <CardText>
-              {word.split("").map((letter, index) => {
-                return emphasizedIndices.includes(index) ? (
-                  <EmphasizedText key={index}>{letter}</EmphasizedText>
-                ) : (
-                  letter
-                );
-              })}
-              <CardText>({translation})</CardText>
-            </CardText>
-          </CardBack>
-        </CardInner>
-      </Card>
-      <BtnContainer>
-        <BtnWrappper onClick={() => loadPreviousCard()}>
-          <Button
-            primary={true ? 1 : 0}
-            dark={true ? 1 : 0}
-            dark2={true ? 1 : 0}
+    <>
+      <Container>
+        <Card onClick={() => handleCardClick()}>
+          <CardInner
+            isWord={isWord}
+            isFlipped={isFlipped}
+            isNextClicked={isNextClicked}
           >
-            Previous
-          </Button>
-        </BtnWrappper>
-        {!isFinish && (
-          <BtnWrappper onClick={() => loadNextCard()}>
+            <CardFront>
+              <EmphasizedText>{card}</EmphasizedText>{" "}
+              <CardText>({pronounciation})</CardText>
+            </CardFront>
+            <CardBack>
+              <CardText>
+                {word.split("").map((letter, index) => {
+                  return emphasizedIndices.includes(index) ? (
+                    <EmphasizedText key={index}>{letter}</EmphasizedText>
+                  ) : (
+                    letter
+                  );
+                })}
+                <CardText>({translation})</CardText>
+              </CardText>
+            </CardBack>
+          </CardInner>
+        </Card>
+        <BtnContainer>
+          <BtnWrappper onClick={() => loadPreviousCard()}>
             <Button
               primary={true ? 1 : 0}
               dark={true ? 1 : 0}
               dark2={true ? 1 : 0}
             >
-              Next
+              Previous
             </Button>
           </BtnWrappper>
-        )}
-        {isFinish && (
-          <BtnWrappper>
-            <Button
-              primary={true ? 1 : 0}
-              dark={true ? 1 : 0}
-              dark2={true ? 1 : 0}
-            >
-              Done
-            </Button>
-          </BtnWrappper>
-        )}
-      </BtnContainer>
-    </Container>
+          {!isFinish && (
+            <BtnWrappper onClick={() => loadNextCard()}>
+              <Button
+                primary={true ? 1 : 0}
+                dark={true ? 1 : 0}
+                dark2={true ? 1 : 0}
+              >
+                Next
+              </Button>
+            </BtnWrappper>
+          )}
+          {isFinish && (
+            <BtnWrappper onClick={() => setOpenModal(true)}>
+              <Button
+                primary={true ? 1 : 0}
+                dark={true ? 1 : 0}
+                dark2={true ? 1 : 0}
+              >
+                Done
+              </Button>
+            </BtnWrappper>
+          )}
+        </BtnContainer>
+      </Container>
+      <ModalComplete
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        title={"Good Work!"}
+        body={
+          "You have completed the Yoruba Alphabet Flashcards section! You're now one step closer to mastering the beautiful Yoruba language."
+        }
+        continue_text={
+          "Continue to the next section to learn how to count in Yoruba!"
+        }
+        continue_link={"/improve-skills/numbers-and-counting"}
+        continue_link_text={"Continue to Numbers & Counting"}
+      />
+    </>
   );
 };
 
