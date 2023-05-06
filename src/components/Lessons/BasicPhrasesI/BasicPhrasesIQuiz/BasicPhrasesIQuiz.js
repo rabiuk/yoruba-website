@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import yorubaVerbs from "./data";
+import { ReactComponent as Clipboard } from "../../../../images/clipboard-checkmark.svg";
 import {
   QuizContainer,
   QuizBg,
@@ -266,6 +267,7 @@ export const VerbsQuiz = (props) => {
         <ModalComplete
           open={openModal}
           onClose={() => setOpenModal(false)}
+          svg={<Clipboard />}
           title={"Fantastic job! "}
           body={
             "You have completed the Basic Phrases I (Verbs) section in Yoruba! Your Yoruba language skills are coming along nicely."

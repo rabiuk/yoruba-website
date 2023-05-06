@@ -54,10 +54,10 @@ export const Content2 = styled.div`
 `;
 export const ImgWrap = styled.div`
   /* margin-top: 40px; */
-  margin-left: 5vw;
-  max-width: 555px;
-  width: 40%;
-  height: 40%;
+  /* margin-left: 5vw; */
+  /* max-width: 555px; */
+  width: 100%;
+  height: 100%;
   svg {
     width: 100%;
     height: 100%;

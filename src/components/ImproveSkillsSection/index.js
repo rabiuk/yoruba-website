@@ -129,7 +129,8 @@ const ImproveSkillsWelcome = () => {
             onMouseLeave={onHover}
             primary={true}
           >
-            Next {hover ? <ArrowDownward /> : <ArrowDropDown />}
+            {/* Next {hover ? <ArrowDownward /> : <ArrowDropDown />} */}
+            Next <ArrowDownward />
           </ButtonScroll>
         </BtnWrap>
 

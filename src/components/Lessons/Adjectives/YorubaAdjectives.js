@@ -1,5 +1,5 @@
 import React from "react";
-// import { ReactComponent as Nouns } from "../../../images/Nouns(1).svg";
+import { ReactComponent as TallShort } from "../../../images/tall-short.svg";
 
 import {
   Container,
@@ -65,7 +65,9 @@ const BasicPhrasesII = () => {
               </BtnContainer>
             </Content1>
             <Content2>
-              <ImgWrap>{/* <Nouns /> */}</ImgWrap>
+              <ImgWrap>
+                <TallShort />
+              </ImgWrap>
             </Content2>
           </IntroWrapper>
         </IntroBackground>

@@ -14,7 +14,7 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 export const Container = styled.div`
-  max-width: 45vw;
+  max-width: 50vw;
   height: fit-content;
   width: 100%;
   position: fixed;
@@ -23,13 +23,45 @@ export const Container = styled.div`
   transform: translate(-50%, -50%);
   position: relative;
   box-sizing: border-box;
+  display: flex;
   font-size: 20px;
   border-radius: 10px;
   background: #fafafa;
+  overflow: hidden;
   /* background-image: linear-gradient(#f5f5f0 1.2rem, #ccc 1.3rem); */
   background-size: 100% 1.3rem;
   /* line-height: 1.5rem; */
-  padding: 3rem 0.5rem 3rem 4.5rem;
+  /* padding: 3rem 0.5rem 3rem 4.5rem; */
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+`;
+
+export const ImgWrap = styled.div`
+  width: 60%;
+  height: 25vw;
+  position: relative;
+  top: 0;
+  right: 0;
+  background-color: ${({ bg_color }) => (bg_color ? bg_color : "#ff7043")};
+  padding: 1rem 1rem 1rem 1rem;
+
+
+  svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+  }
+`;
+
+export const ModalRight = styled.div`
+  width: 100%;
+  padding-left: 2rem;
+  /* padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* align-items: center; */
 `;
 
 export const MarginLine = styled.div`

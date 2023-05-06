@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ReactComponent as YorubaMan } from "../../../../images/yoruba-man-hands-on-hips.svg";
 import yorubaNumbers from "./data";
 import {
   QuizContainer,
@@ -266,6 +267,8 @@ export const NumbersQuiz = (props) => {
         <ModalComplete
           open={openModal}
           onClose={() => setOpenModal(false)}
+          svg={<YorubaMan />}
+          bg_color={"#00695C"}
           title={"Good Work!"}
           body={
             "You have completed the Numbers & Counting section in Yoruba! You're making great progress!"

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ReactComponent as ElderToShow } from "../../../../images/elder-rasing-hands.svg";
 import {
   Container,
   Card,
@@ -146,6 +147,8 @@ const YorubaAlphabetQuiz = (props) => {
       <ModalComplete
         open={openModal}
         onClose={() => setOpenModal(false)}
+        svg={<ElderToShow />}
+        bg_color={"#FF7043"}
         title={"Good Work!"}
         body={
           "You have completed the Yoruba Alphabet Flashcards section! You're now one step closer to mastering the beautiful Yoruba language."
