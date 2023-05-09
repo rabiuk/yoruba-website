@@ -1,0 +1,28 @@
+const yorubaNouns = {
+  ọmọ: "child",
+  ọkọ: "husband",
+  iyawo: "wife",
+  obìnrin: "woman",
+  ọkùnrin: "man",
+  ilé: "house",
+  // ọjọ: "day",
+  // osù: "month",
+  // ọdún: "year",
+  // áàrọ̀: "morning",
+  // ọsan: "afternoon",
+  // ìrọlẹ: "evening",
+  // eré: "game/play",
+  // ọrọ: "speech",
+  // oúnjẹ: "food",
+  // omi: "water",
+  // oògùn: "medicine",
+  // èsò: "clothing",
+  // ọwọ: "hand",
+  // èsè: "foot or leg",
+  // ẹní: "person",
+  // aṣíwájú: "leader",
+  // iná: "fire",
+  // ìwà: "character/behavior",
+};
+
+export default yorubaNouns;
