@@ -4,7 +4,6 @@ const path = require("path");
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
-    // Enables the styled-components SWC transform
     styledComponents: true,
   },
   swcMinify: true,
@@ -18,7 +17,11 @@ const nextConfig = {
     });
 
     // Set up the alias
-    config.resolve.alias["@"] = path.join(__dirname, "src", "app");
+    config.resolve.alias["@/components"] = path.join(
+      __dirname,
+      "src",
+      "components"
+    );
 
     return config;
   },
