@@ -2,18 +2,37 @@
 import React from "react";
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import NounsQuiz from "@/components/Lessons/Nouns/NounsQuiz";
+import GrowingSaplingSVG from "@/components/svg/GrowingSaplingSVG.svg";
+import yorubaNounsData from "./data";
+import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
+import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
 
 const NounsQuizPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
       <ScrollToTop />
-      <NounsQuiz />
+      <InteractiveQuiz
+        data={yorubaNounsData}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
+      <ModalComplete
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        title={"Impressive work! "}
+        svg={<GrowingSaplingSVG />}
+        bg_color={"#00695C"}
+        body={
+          "You have completed the Nouns section in Yoruba! Your understanding of the Yoruba language is growing stronger with each step."
+        }
+        continue_text={
+          "Continue to the next section to learn simple everyday nouns in Yoruba!"
+        }
+        continue_link={"/lessons/adjectives/learn"}
+        continue_link_text={"Adjectives"}
+      />
     </>
   );
 };

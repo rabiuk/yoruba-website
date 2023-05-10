@@ -1,6 +1,5 @@
 import React from "react";
 import TallShortSVG from "../../svg/TallShortSVG.svg";
-
 import {
   Container,
   IntroWrapper,
@@ -13,7 +12,7 @@ import {
   BtnWrapper,
   BtnContainer,
 } from "./AdjectivesElements";
-import { ButtonLink, ButtonScroll } from "../../ButtonElements";
+import { ButtonLink, ButtonScroll } from "@/components/ButtonElements";
 
 const Adjectives = () => {
   return (

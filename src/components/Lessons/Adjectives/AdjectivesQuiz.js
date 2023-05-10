@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import yorubaAdjectives from "./data";
-import { ManClappingSVG } from "@/components/svg"; // fist use of @ alias
 import {
   QuizContainer,
   QuizBg,
