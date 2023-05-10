@@ -1,19 +1,25 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import Adjectives from "@/components/Lessons/Adjectives/Adjectives";
+import IntroLabel from "@/components/IntroLabel/IntroLabel";
+import TallShortSVG from "@/components/svg/TallShortSVG.svg";
 
 const AdjectivesPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
       <ScrollToTop />
-      <Adjectives />
+      <IntroLabel
+        title="Adjectives"
+        description="Moving on from Nouns, this lesson will focus on essential Yoruba
+                adjectives for daily communication. You'll learn the adjectives
+                and their meanings, further strengthening your foundation in the
+                Yoruba language. Click 'Learn' to delve into the content, and
+                'Start Quiz' to assess your understanding of these important
+                adjectives."
+        scrollToID="#"
+        quizPath="/lessons/adjectives/quiz"
+        svg={<TallShortSVG className="adjectives-svg" />}
+      />
     </>
   );
 };

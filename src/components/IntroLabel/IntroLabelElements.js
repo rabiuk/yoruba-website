@@ -24,6 +24,18 @@ export const Container = styled.div`
   }
 `;
 
+// export const Bg = styled.div`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   background: white;
+// `;
+
 export const IntroBackground = styled.div`
   background-color: rgba(0, 105, 92, 1);
   /* background-image: linear-gradient(to right, #424242, #424242); */
@@ -54,13 +66,28 @@ export const Content2 = styled.div`
 `;
 export const ImgWrap = styled.div`
   /* margin-top: 40px; */
-  /* margin-left: 5vw; */
-  /* max-width: 555px; */
-  width: 100%;
-  height: 100%;
+  max-width: 555px;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   svg {
     width: 100%;
     height: 100%;
+  }
+  .verbs-svg {
+    width: 85%;
+    height: 85%;
+    margin-top: -40px;
+  }
+  .nouns-svg {
+    width: 70%;
+    height: 70%;
+  }
+  .adjectives-svg {
+    transform: scale(1.25);
   }
 `;
 

@@ -1,19 +1,23 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import Verbs from "@/components/Lessons/Verbs/Verbs";
+import IntroLabel from "@/components/IntroLabel/IntroLabel";
+import ManFacingCameraSVG from "@/components/svg/ManFacingCameraSVG.svg";
 
 const VerbsPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
       <ScrollToTop />
-      <Verbs />
+      <IntroLabel
+        title="Verbs"
+        description="In this lesson, you'll master essential verbs for everyday
+                communication. Here, you'll learn the words and what they mean,
+                building your foundation for speaking Yoruba. Click 'Learn' to
+                explore the content and 'Start Quiz' to test your skills."
+        scrollToID="#"
+        quizPath="/lessons/verbs/quiz"
+        svg={<ManFacingCameraSVG className="verbs-svg" />}
+      />
     </>
   );
 };

@@ -1,19 +1,25 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import Nouns from "@/components/Lessons/Nouns/Nouns";
+import IntroLabel from "@/components/IntroLabel/IntroLabel";
+import NounsSVG from "@/components/svg/NounsSVG.svg";
 
 const NounsPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
       <ScrollToTop />
-      <Nouns />
+      <IntroLabel
+        title="Nouns"
+        description="Following up on the essential verbs learned in Verbs, this
+                lesson will help you master essential nouns for everyday
+                communication. Here, you'll learn the words and what they mean,
+                continuing to build your foundation for speaking Yoruba. Click
+                'Learn' to explore the content and 'Start Quiz' to test your
+                skills."
+        scrollToID="#"
+        quizPath="/lessons/nouns/quiz"
+        svg={<NounsSVG className="nouns-svg" />}
+      />
     </>
   );
 };

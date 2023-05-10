@@ -1,19 +1,24 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import NumbersAndCounting from "@/components/Lessons/Numbers/Numbers";
+import IntroLabel from "@/components/IntroLabel/IntroLabel";
+import BlackBoardWithNumbersSVG from "@/components/svg/BlackBoardWithNumbersSVG.svg";
 
 const NumbersAndCountingPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
       <ScrollToTop />
-      <NumbersAndCounting />
+      <IntroLabel
+        title="Numbers & Counting"
+        description="In this lesson, you'll master essential numbers and counting
+                techniques for everyday communication. Here, you'll learn the
+                numbers and what they mean, building your foundation for
+                speaking Yoruba. Click 'Learn' to explore the content and 'Start
+                Quiz' to test your skills."
+        scrollToID="#"
+        quizPath="/lessons/numbers-and-counting/quiz"
+        svg={<BlackBoardWithNumbersSVG />}
+      />
     </>
   );
 };

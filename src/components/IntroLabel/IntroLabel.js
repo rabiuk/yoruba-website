@@ -1,6 +1,4 @@
 import React from "react";
-import BlackBoardWithNumbersSVG from "../../svg/BlackBoardWithNumbersSVG.svg";
-
 import {
   Container,
   IntroWrapper,
@@ -12,28 +10,22 @@ import {
   IntroP,
   BtnWrapper,
   BtnContainer,
-} from "./NumbersElements";
-import { ButtonLink, ButtonScroll } from "../../../components/ButtonElements";
+} from "./IntroLabelElements";
+import { ButtonLink, ButtonScroll } from "@/components/ButtonElements";
 
-const Numbers = () => {
+const InrtoLabel = ({ title, description, scrollToID, quizPath, svg }) => {
   return (
     <>
       <Container>
         <IntroBackground>
           <IntroWrapper>
             <Content1>
-              <IntroH1>Numbers & Counting</IntroH1>
-              <IntroP>
-                In this lesson, you'll master essential numbers and counting
-                techniques for everyday communication. Here, you'll learn the
-                numbers and what they mean, building your foundation for
-                speaking Yoruba. Click "Learn" to explore the content and "Start
-                Quiz" to test your skills.
-              </IntroP>
+              <IntroH1>{title}</IntroH1>
+              <IntroP>{description}</IntroP>
               <BtnContainer>
                 <BtnWrapper>
                   <ButtonScroll
-                    to="#"
+                    to={scrollToID}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -48,7 +40,7 @@ const Numbers = () => {
                 </BtnWrapper>
                 <BtnWrapper>
                   <ButtonLink
-                    href="/lessons/numbers-and-counting/quiz"
+                    href={quizPath}
                     primary={true ? 1 : 0}
                     dark={true ? 1 : 0}
                     dark2={true ? 1 : 0}
@@ -59,9 +51,7 @@ const Numbers = () => {
               </BtnContainer>
             </Content1>
             <Content2>
-              <ImgWrap>
-                <BlackBoardWithNumbersSVG />
-              </ImgWrap>
+              <ImgWrap>{svg}</ImgWrap>
             </Content2>
           </IntroWrapper>
         </IntroBackground>
@@ -71,4 +61,4 @@ const Numbers = () => {
   );
 };
 
-export default Numbers;
+export default InrtoLabel;
