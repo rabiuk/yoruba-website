@@ -114,7 +114,8 @@ export const NavLinksS = styled(LinkScroll)`
 `;
 
 export const NavLinksR = styled(Link)`
-  color: #fafafa;
+  /* color: #fafafa; */
+  color: ${({ isInLearn }) => (isInLearn ? "#ff7043" : "#fafafa")};
   display: flex;
   align-items: center;
   text-decoration: none;

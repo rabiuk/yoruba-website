@@ -1,13 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
-// import { useNavigate } from "react-router-dom";
 import { useRouter, usePathname } from "next/navigation";
 import ScrollToTop from "../ScrollToTop";
-// import dynamic from "next/dynamic";
 
 import {
   Nav,
@@ -21,15 +18,16 @@ import {
   NavBtn,
   NavBtnLink,
   NavLinksR,
-  NavLinksDiv,
 } from "./NavbarElements";
-// import Sidebar from "../Sidebar/Sidebar";
 import Dropdown from "./NavbarDropDown/Dropdown";
-const Navbar = ({ home, toggle }) => {
+const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
   const [showDropDown, setshowDropDown] = useState(false);
   const [isHome, setIsHome] = useState(false);
+  const [isInLearn, setIsInLearn] = useState(false);
+  const [isInAbout, setIsInAbout] = useState(false);
+  const [isInProverbs, setIsInProverbs] = useState(false);
   const router = useRouter();
   const currentPage = usePathname();
 
@@ -48,9 +46,13 @@ const Navbar = ({ home, toggle }) => {
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
 
-    // Set isHome based on the current route
     setIsHome(currentPage === "/");
-  }, [currentPage]); // Add router.pathname to the dependency array
+    setIsInLearn(
+      currentPage.includes("improve-skills") || currentPage.includes("lessons")
+    );
+    setIsInAbout(currentPage.includes("about"));
+    setIsInProverbs(currentPage.includes("proverbs-and-wisdom"));
+  }, [currentPage]);
 
   const toggleHome = () => {
     scroll.scrollToTop();
@@ -146,15 +148,12 @@ const Navbar = ({ home, toggle }) => {
                 // When isHome = {false}
                 <>
                   <NavItem>
-                    {/* <NavLinksR to="/" onClick={toggleHome}>
-                      Home
-                    </NavLinksR> */}
                     <NavLinksR href="/">Home</NavLinksR>
                   </NavItem>
                   <NavItem>
                     <NavLinksR
                       href="/about"
-                      // onClick={() => handleNavItemClick("#about")}
+                      className={isInAbout ? "active" : "non-active"}
                     >
                       About
                     </NavLinksR>
@@ -165,24 +164,19 @@ const Navbar = ({ home, toggle }) => {
                   >
                     <NavLinksR
                       href="/improve-skills"
-                      className={showDropDown ? "active" : "non-active"}
+                      className={
+                        showDropDown || isInLearn ? "active" : "non-active"
+                      }
                     >
                       Learn
                     </NavLinksR>
                     {showDropDown && <Dropdown title="Learn" />}
                   </NavItem>
                   <NavItem>
-                    {/* <NavLinksR
-                      to="/proverbs&wisdom"
-                      smooth={true}
-                      duration={500}
-                      spy={true}
-                      exact="true"
-                      offset={-80}
+                    <NavLinksR
+                      href="/proverbs-and-wisdom"
+                      className={isInProverbs ? "active" : "non-active"}
                     >
-                      Proverbs & Wisdom
-                    </NavLinksR> */}
-                    <NavLinksR href="/proverbs-and-wisdom">
                       Proverbs & Wisdom
                     </NavLinksR>
                   </NavItem>
@@ -190,17 +184,6 @@ const Navbar = ({ home, toggle }) => {
               )}
             </NavMenu>
             <NavBtn>
-              {/* <NavBtnLink
-                to="/signin"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-                // activeClass="active"
-              >
-                Sign In
-              </NavBtnLink> */}
               <NavBtnLink href="/signin">Sign In</NavBtnLink>
             </NavBtn>
           </NavbarContainer>
@@ -211,4 +194,3 @@ const Navbar = ({ home, toggle }) => {
 };
 
 export default Navbar;
-// export default dynamic(() => Promise.resolve(Navbar), { ssr: false });

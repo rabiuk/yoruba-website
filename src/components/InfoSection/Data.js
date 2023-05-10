@@ -12,7 +12,7 @@ export const homeObjOne = {
   description:
     "Yoruba culture is known for its deep roots in traditions, art, music, food, and religion, which have been passed down through generations. Our aim is to showcase these elements and share their stories with the world. We offer a range of resources, from language learning tools to cultural insights, to help you immerse yourself in the world of Yoruba and appreciate its uniqueness.",
   buttonLabel: "More About Yoruba",
-  pageLink: "/more-about-yoruba-page",
+  pageLink: "/about",
   imgStart: false,
   imgSrc: <YorubaCultureCelebrationSVG style={{ fontSize: 600 }} />,
   alt: "Yoruba culture celebration",
@@ -56,7 +56,7 @@ export const homeObjThree = {
   description:
     "Immerse yourself in the captivating realm of Yoruba proverbs, a tradition cherished by the Yoruba people for their significant cultural value. These insightful sayings embody the culture's values and wisdom, serving as a fascinating resource that strengthens your connection with the Yoruba language and heritage.",
   buttonLabel: "Dive Deeper",
-  pageLink: "/proverbs&wisdom",
+  pageLink: "/proverbs-and-wisdom",
   imgSrc: <YorubaManTeachingKidsSVG style={{ fontSize: 600 }} />,
   alt: "Yoruba elder teaching kids",
   // width: 555,
