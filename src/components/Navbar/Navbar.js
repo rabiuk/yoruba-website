@@ -48,20 +48,19 @@ const Navbar = ({ toggle }) => {
 
     setIsHome(currentPage === "/");
     setIsInLearn(
-      currentPage.includes("improve-skills") || currentPage.includes("lessons")
+      currentPage.includes("learn") || currentPage.includes("lessons")
     );
     setIsInAbout(currentPage.includes("about"));
     setIsInProverbs(currentPage.includes("proverbs-and-wisdom"));
   }, [currentPage]);
 
-  const toggleHome = () => {
+  const scrollToTop = () => {
     scroll.scrollToTop();
   };
   const handleNavItemClick = (e, section) => {
     e.preventDefault();
     if (section === "#learn") {
-      // navigate("/improve-skills/");
-      router.push("/improve-skills/");
+      router.push("/learn/");
       if (typeof window !== "undefined") {
         window.scrollTo(0, 0);
       }
@@ -85,7 +84,12 @@ const Navbar = ({ toggle }) => {
         <Nav home={isHome} scrollNav={scrollNav}>
           <NavbarContainer home={isHome} isTransparent={isTransparent}>
             <NavLogoLink href="/">
-              <NavLogo isTransparent={isTransparent}>Yoruba</NavLogo>
+              <NavLogo
+                isTransparent={isTransparent}
+                onClick={() => scrollToTop()}
+              >
+                Yoruba
+              </NavLogo>
             </NavLogoLink>
             <MobileIcon onClick={toggle}>
               <FaBars></FaBars>
@@ -102,7 +106,7 @@ const Navbar = ({ toggle }) => {
                       exact="true"
                       offset={0}
                       className="home"
-                      onClick={toggleHome}
+                      onClick={scrollToTop}
                     >
                       Home
                     </NavLinksS>
@@ -153,7 +157,7 @@ const Navbar = ({ toggle }) => {
                   <NavItem>
                     <NavLinksR
                       href="/about"
-                      className={isInAbout ? "active" : "non-active"}
+                      className={isInAbout ? "active bold" : "non-active"}
                     >
                       About
                     </NavLinksR>
@@ -163,9 +167,18 @@ const Navbar = ({ toggle }) => {
                     onMouseLeave={() => setshowDropDown(false)}
                   >
                     <NavLinksR
-                      href="/improve-skills"
+                      href="/learn"
+                      // className={
+                      //   showDropDown || isInLearn ? "active bold" : "non-active"
+                      // }
                       className={
-                        showDropDown || isInLearn ? "active" : "non-active"
+                        showDropDown && isInLearn
+                          ? "active bold"
+                          : showDropDown && !isInLearn
+                          ? "active"
+                          : isInLearn
+                          ? "active bold"
+                          : "non-active"
                       }
                     >
                       Learn
@@ -175,7 +188,7 @@ const Navbar = ({ toggle }) => {
                   <NavItem>
                     <NavLinksR
                       href="/proverbs-and-wisdom"
-                      className={isInProverbs ? "active" : "non-active"}
+                      className={isInProverbs ? "active bold" : "non-active"}
                     >
                       Proverbs & Wisdom
                     </NavLinksR>

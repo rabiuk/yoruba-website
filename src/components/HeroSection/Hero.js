@@ -14,8 +14,7 @@ import {
 } from "./HeroElements";
 
 import { ButtonScroll } from "@/components/ButtonElements";
-// import Link from "next/link";
-const HeroSection = () => {
+const HeroSection = ({ BackgroundComponent }) => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
@@ -25,10 +24,11 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <HeroBg></HeroBg>
+      {/* <Carousel /> */}
+      {/* {BackgroundComponent} */}
       <HeroContent>
         <HeroH1>Let's Learn Yoruba</HeroH1>
         <HeroH2>Ẹkú dédé àsikoyí</HeroH2>
-        {/* <HeroH22>(Welcome)</HeroH22> */}
         <HeroH22>&#40;Welcome&#41;</HeroH22>
         <HeroP>
           Welcome to [insert website name here] , here we celebrate the beauty

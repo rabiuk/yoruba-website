@@ -34,7 +34,7 @@ export const homeObjTwo = {
   description:
     "Discover the ultimate destination for evaluating and improving your Yoruba language skills. Featuring interactive quizzes and lessons for all skill levels, you'll challenge your grammar, vocabulary, and pronunciation. Embark on this engaging learning experience to boost your Yoruba proficiency and connect with the language's vibrant culture.",
   buttonLabel: "Lets Go",
-  pageLink: "/improve-skills",
+  pageLink: "/learn",
   imgStart: true,
   imgSrc: <YorubaFlashCardSVG style={{ fontSize: 600 }} />,
   alt: "Yoruba flashcard",

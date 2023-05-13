@@ -7,9 +7,11 @@ import {
   homeObjTwo,
   homeObjThree,
 } from "@/components/InfoSection/Data";
+import Carousel from "@/components/Carousel/CarouselSS";
 export default function Home() {
   return (
     <>
+      {/* <HeroSection BackgroundComponent={<Carousel />} /> */}
       <HeroSection />
       <InfoSection {...homeObjOne} />
       <FunFacts />

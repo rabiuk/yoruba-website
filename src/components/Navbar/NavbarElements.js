@@ -6,15 +6,13 @@ import { Link as LinkScroll } from "react-scroll";
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "#0c0c0c" : "transparent") : "#0c0c0c"};
+  transition: 0.5s;
   height: 80px;
-  /* margin-top: -80px; */
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   font-size: 1rem;
   position: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "sticky" : "relative") : "sticky"};
-  /* position: sticky; */
   top: 0;
   z-index: 10;
 
@@ -128,6 +126,9 @@ export const NavLinksR = styled(Link)`
   }
   &.active {
     color: #ff7043;
+  }
+  &.bold {
+    font-weight: 900;
   }
 `;
 

@@ -25,9 +25,8 @@ import {
   ATag,
 } from "./FooterElements";
 
-import Link from "next/link";
 const Footer = () => {
-  const toggleHome = () => {
+  const scrollToTop = () => {
     scroll.scrollToTop();
   };
   return (
@@ -85,27 +84,13 @@ const Footer = () => {
 
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo href="/" onClick={() => toggleHome()}>
+            <SocialLogo href="/" onClick={() => scrollToTop()}>
               Yoruba
             </SocialLogo>
             <WebsiteRights>
               Yoruba © {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
             <SocialIcons>
-              {/* <SocialIconLink
-                href="https://www.linkedin.com/in/kehinde-rabiu/"
-                target="_blank"
-                aria-label="Linkedin"
-              >
-                <FaLinkedin />
-              </SocialIconLink>
-              <SocialIconLink
-                href="https://www.instagram.com/kotrabiu/"
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </SocialIconLink> */}
               <SocialIconLink
                 href="https://www.linkedin.com/in/kehinde-rabiu/"
                 target="_blank"
