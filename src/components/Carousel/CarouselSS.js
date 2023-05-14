@@ -1,5 +1,5 @@
 import { client } from "../../lib/contentful/client";
-import CarouselCL from "./CarouselCS";
+import CarouselCS from "./CarouselCS";
 
 const cleanUpData = (rawData) => {
   const cleanData = rawData.map((slide) => {
@@ -21,7 +21,6 @@ const getData = async () => {
     });
     const responseData = response.items;
     if (responseData) {
-      cleanUpData(responseData);
       const cleanedData = cleanUpData(responseData);
       return cleanedData;
     } else {
@@ -36,7 +35,7 @@ export default async function Carousel() {
   const data = await getData();
   return (
     <>
-      <CarouselCL data={data} />
+      <CarouselCS data={data} />
     </>
   );
 }

@@ -14,7 +14,7 @@ import {
 } from "./HeroElements";
 
 import { ButtonScroll } from "@/components/ButtonElements";
-const HeroSection = ({ BackgroundComponent }) => {
+const HeroSection = ({ children }) => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
@@ -23,9 +23,7 @@ const HeroSection = ({ BackgroundComponent }) => {
 
   return (
     <HeroContainer>
-      <HeroBg></HeroBg>
-      {/* <Carousel /> */}
-      {/* {BackgroundComponent} */}
+      <HeroBg>{children}</HeroBg>
       <HeroContent>
         <HeroH1>Let's Learn Yoruba</HeroH1>
         <HeroH2>Ẹkú dédé àsikoyí</HeroH2>

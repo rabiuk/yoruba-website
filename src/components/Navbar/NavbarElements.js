@@ -6,14 +6,16 @@ import { Link as LinkScroll } from "react-scroll";
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "#0c0c0c" : "transparent") : "#0c0c0c"};
-  transition: 0.5s;
+  /* transition: 0.5s; */
   height: 80px;
   display: flex;
   align-items: center;
   font-size: 1rem;
   position: ${({ home, scrollNav }) =>
-    home ? (scrollNav ? "sticky" : "relative") : "sticky"};
+    home ? (scrollNav ? "sticky" : "absolute") : "sticky"};
   top: 0;
+  width: 100%;
+
   z-index: 10;
 
   @media screen and (max-width: 960px) {
@@ -25,11 +27,11 @@ export const NavbarContainer = styled.div`
   justify-content: space-around;
   height: 100px;
   z-index: 1;
-  width: 100%;
-
-  max-width: 1440px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%; // updated this line
+  /* max-width: 1440px; */
+  /* max-width: 100vw; */ // removed this line
+  /* margin-right: auto; */ // removed this line
+  /* margin-left: auto; */ // removed this line
 
   & * {
     color: ${({ home, isTransparent }) =>

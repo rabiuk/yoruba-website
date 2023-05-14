@@ -4,9 +4,9 @@ import YorubaManTeachingKidsSVG from "../../components/svg/YorubaManTeachingKids
 
 export const homeObjOne = {
   id: "about",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "About Yoruba",
   headline: "Discover the Richness of the Yoruba Culture",
   description:
@@ -18,17 +18,17 @@ export const homeObjOne = {
   alt: "Yoruba culture celebration",
   // width: 555,
   // height: 100,
-  dark: true, //is Dark
+  dark: false, //is Dark
   primary: true, //if dark then primary
-  darkText: false, //dark text?
+  darkText: true, //dark text?
   className: "about-section",
 };
 
 export const homeObjTwo = {
   id: "learn",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "Test and Improve Your Yoruba Skills",
   headline: "Unlock Your Language Potential",
   description:
@@ -40,17 +40,17 @@ export const homeObjTwo = {
   alt: "Yoruba flashcard",
   // width: 555,
   // height: 100,
-  dark: false,
+  dark: true,
   primary: true,
-  darkText: false,
+  darkText: true,
   className: "learn-section",
 };
 
 export const homeObjThree = {
   id: "proverbs-and-wisdom",
-  lightBg: true,
-  lightText: false,
-  lightTextDesc: false,
+  lightBg: false,
+  lightText: true,
+  lightTextDesc: true,
   topLine: "Proverbs & Wisdom",
   headline: "Explore Cultural Insights",
   description:
@@ -61,8 +61,8 @@ export const homeObjThree = {
   alt: "Yoruba elder teaching kids",
   // width: 555,
   // height: 100,
-  dark: false,
+  dark: true,
   primary: true,
-  darkText: true,
+  darkText: false,
   className: "proverbs-and-wisdom-section",
 };

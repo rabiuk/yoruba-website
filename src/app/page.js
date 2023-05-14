@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <>
       {/* <HeroSection BackgroundComponent={<Carousel />} /> */}
-      <HeroSection />
+      <HeroSection>
+        <Carousel />
+      </HeroSection>
       <InfoSection {...homeObjOne} />
       <FunFacts />
       <InfoSection {...homeObjTwo} />

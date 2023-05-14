@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { ButtonLink } from "../ButtonElements";
 import Image from "next/image";
 import {

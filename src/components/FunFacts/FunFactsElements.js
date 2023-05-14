@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const FunFactsContainer = styled.div`
-  height: 800px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f5f5dc;
+  background: #010606;
 
   @media screen and (max-width: 768px) {
     height: 1100px;

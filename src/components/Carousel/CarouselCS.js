@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import { Autoplay } from "swiper";
 
-const CarouselCL = ({ data }) => {
+const CarouselCS = ({ data }) => {
   if (!Array.isArray(data) || !data.length) {
     return null;
   }
@@ -16,7 +16,7 @@ const CarouselCL = ({ data }) => {
       navigation={true}
       modules={[Navigation, Autoplay]}
       loop={true}
-      autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 10000 }}
       className="mySwiper"
     >
       {data.map((slide) => {
@@ -24,8 +24,8 @@ const CarouselCL = ({ data }) => {
         return (
           <SwiperSlide key={id}>
             <CarouselSlide
-              slideTitle={slideTitle}
-              slideDescription={slideDescription}
+              // slideTitle={slideTitle}
+              // slideDescription={slideDescription}
               slideImage={slideImage}
             />
           </SwiperSlide>
@@ -35,4 +35,4 @@ const CarouselCL = ({ data }) => {
   );
 };
 
-export default CarouselCL;
+export default CarouselCS;

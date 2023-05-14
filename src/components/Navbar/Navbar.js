@@ -33,7 +33,7 @@ const Navbar = ({ toggle }) => {
 
   const changeNav = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY >= 800) {
+      if (window.scrollY >= window.innerHeight) {
         setScrollNav(true);
         setIsTransparent(false);
       } else {
