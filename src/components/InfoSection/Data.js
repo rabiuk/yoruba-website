@@ -11,7 +11,7 @@ export const homeObjOne = {
   headline: "Discover the Richness of the Yoruba Culture",
   description:
     "Yoruba culture is known for its deep roots in traditions, art, music, food, and religion, which have been passed down through generations. Our aim is to showcase these elements and share their stories with the world. We offer a range of resources, from language learning tools to cultural insights, to help you immerse yourself in the world of Yoruba and appreciate its uniqueness.",
-  buttonLabel: "More About Yoruba",
+  buttonLabel: "More about yoruba",
   pageLink: "/about",
   imgStart: false,
   imgSrc: <YorubaCultureCelebrationSVG style={{ fontSize: 600 }} />,

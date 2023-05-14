@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import {
   HeroContainer,
+  Overlay,
   HeroBg,
   HeroContent,
   HeroH1,
@@ -23,7 +24,10 @@ const HeroSection = ({ children }) => {
 
   return (
     <HeroContainer>
-      <HeroBg>{children}</HeroBg>
+      <HeroBg>
+        <Overlay />
+        {children}
+      </HeroBg>
       <HeroContent>
         <HeroH1>Let's Learn Yoruba</HeroH1>
         <HeroH2>Ẹkú dédé àsikoyí</HeroH2>

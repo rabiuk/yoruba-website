@@ -46,6 +46,7 @@ export const ButtonLink = styled(Link)`
   align-items: center;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5);
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -79,4 +80,31 @@ export const BtnWrappper = styled.div`
   z-index: 3;
   transform: scale(1.15);
   margin: 0 20px;
+`;
+
+export const SignInButton = styled(Link)`
+  border-radius: 5px;
+  background: ${({ primary }) =>
+    primary ? "#ff7043" : "rgba(255, 255, 255, 0)"};
+  white-space: nowrap;
+  padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
+  /* color: ${({ dark }) => (dark ? "#FAFAFA" : "#FAFAFA")}; */
+  color: rgba(255, 255, 255, 0.75);
+  font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
+  text-decoration: none;
+  /* border: none; */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease—in—out;
+  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    transition: all 0.2s ease—in—out;
+    /* background: ${({ primary }) => (primary ? "#ff7043" : "#ff7043")}; */
+    border-color: #ff7043;
+    color: #ff7043;
+  }
 `;

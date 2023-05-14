@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+const Brown = "#6f3f2c";
 export const Container = styled.div`
   /* background: red; */
   display: flex;
@@ -37,7 +38,8 @@ export const Container = styled.div`
 // `;
 
 export const IntroBackground = styled.div`
-  background-color: rgba(0, 105, 92, 1);
+  /* background-color: rgba(0, 105, 92, 1); */
+  background-color: ${Brown};
   /* background-image: linear-gradient(to right, #424242, #424242); */
   height: 430px;
   width: 100%;

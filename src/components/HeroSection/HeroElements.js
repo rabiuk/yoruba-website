@@ -13,6 +13,15 @@ export const HeroContainer = styled.div`
   /* height: calc(100vh - 80px); */
   z-index: 1;
 `;
+export const Overlay = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+`;
 
 export const HeroBg = styled.div`
   position: absolute;
@@ -40,7 +49,9 @@ export const HeroH1 = styled.h1`
   font-size: 48px;
   text-align: center;
   font-weight: 900;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 1));
+  /* filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 1)); */
+  filter: drop-shadow(10px 10px 10px rgba(255, 112, 67, 0.5));
+
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
@@ -84,7 +95,7 @@ export const HeroP = styled.p`
   color: ${lightTextColour};
   font-size: 22px;
   font-weight: 400;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(10px 10px 10px rgba(255, 255, 255, 0.5));
   text-align: center;
   max-width: 700px;
   @media screen and (max-width: 768px) {

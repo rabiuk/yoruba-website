@@ -5,6 +5,7 @@ import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 import { useRouter, usePathname } from "next/navigation";
 import ScrollToTop from "../ScrollToTop";
+import { SignInButton } from "@/components/ButtonElements";
 
 import {
   Nav,
@@ -197,7 +198,7 @@ const Navbar = ({ toggle }) => {
               )}
             </NavMenu>
             <NavBtn>
-              <NavBtnLink href="/signin">Sign In</NavBtnLink>
+              <SignInButton href="/signin">Sign In</SignInButton>
             </NavBtn>
           </NavbarContainer>
         </Nav>

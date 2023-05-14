@@ -2,6 +2,7 @@ import styled from "styled-components";
 // import { Link as LinkR } from "react-router-dom";
 import Link from "next/link";
 
+const Brown = "#6f3f2c";
 export const UnorderedList = styled.ul`
   width: 10rem;
   position: absolute;
@@ -16,11 +17,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #0c0c0c;
-  /* border-top-left-radius: 10px; */
-  /* border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; */
-  overflow: hidden;
+  background: ${Brown};
+  margin-top: 7.5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 7.5px;
 `;
 
 export const List = styled.li`
@@ -30,8 +31,7 @@ export const ListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-top: 10px;
-  padding-bottom: 10px; */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
 
   /* &:hover {
     background-color: rgba(255, 255, 255, 0.1);

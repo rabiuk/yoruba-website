@@ -5,12 +5,20 @@ import { Link as LinkScroll } from "react-scroll";
 
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
-    home ? (scrollNav ? "#0c0c0c" : "transparent") : "#0c0c0c"};
+    home ? (scrollNav ? "#6f3f2c" : "transparent") : "#6f3f2c"};
   /* transition: 0.5s; */
   height: 80px;
   display: flex;
+  justify-content: center;
   align-items: center;
   font-size: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: ${({ home, scrollNav }) =>
+    home
+      ? scrollNav
+        ? "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        : "none"
+      : "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"};
   position: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "sticky" : "absolute") : "sticky"};
   top: 0;
@@ -24,18 +32,24 @@ export const Nav = styled.nav`
 `;
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100px;
   z-index: 1;
-  width: 100%; // updated this line
-  /* max-width: 1440px; */
-  /* max-width: 100vw; */ // removed this line
-  /* margin-right: auto; */ // removed this line
-  /* margin-left: auto; */ // removed this line
+  width: 60%;
+  /* border-bottom: ${({ home }) =>
+    home ? "2px solid rgba(255, 255, 255, 0.1)" : "none"}; */
+
+  // add the same border-bottom only if home is true and isTransparent is true
+  border-bottom: ${({ home, isTransparent }) =>
+    home && isTransparent ? "2px solid rgba(255, 255, 255, 0.1)" : "none"};
 
   & * {
     color: ${({ home, isTransparent }) =>
-      home ? (isTransparent ? "#00695C" : "#FAFAFA") : "#FAFAFA"};
+      home
+        ? isTransparent
+          ? "rgba(255, 255, 255, 0.5)"
+          : "#FAFAFA"
+        : "#FAFAFA"};
     font-weight: 600;
   }
 `;
@@ -90,11 +104,11 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinksS = styled(LinkScroll)`
-  /* color: ${({ isTransparent }) =>
-    isTransparent ? "#00695C" : "#FAFAFA"}; */
   display: flex;
   align-items: center;
   text-decoration: none;
+  //Wrap the text to no wrap
+  white-space: nowrap;
   /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
@@ -109,7 +123,12 @@ export const NavLinksS = styled(LinkScroll)`
 
   &.home {
     font-weight: 900;
-    color: #ff7043;
+    color: ${({ home, isTransparent }) =>
+      home && isTransparent ? "rgba(255, 255, 255, 1)" : "#fafafa"};
+
+    &:hover {
+      color: #ff7043;
+    }
   }
 `;
 
@@ -119,6 +138,7 @@ export const NavLinksR = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
+  white-space: nowrap;
   /* padding: 1rem; */
   height: 100%;
   width: fit-content;
