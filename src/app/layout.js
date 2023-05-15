@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 const nunitoSans = Nunito({ subsets: ["latin"] });
+import { LayoutProvider } from "./LayoutProvider";
 
 export const metadata = {
   title: "Yoruba Website",
@@ -14,9 +15,9 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en">
         <body className={nunitoSans.className}>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <LayoutProvider>
+            <main>{children}</main>
+          </LayoutProvider>
         </body>
       </html>
     </>

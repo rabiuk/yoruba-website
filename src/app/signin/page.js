@@ -1,7 +1,5 @@
-import React from "react";
+import SigninLayout from "./layout";
 
-const SignInPage = () => {
-  return <div>SignInPage</div>;
-};
-
-export default SignInPage;
+export default function SigninPage() {
+  return <SigninLayout>Signin Page</SigninLayout>;
+}
