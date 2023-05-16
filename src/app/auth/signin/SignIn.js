@@ -17,11 +17,15 @@ import {
   BottomText,
   LinkText,
 } from "./SignInElements";
+import { useSearchParams } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordInputType, setPasswordInputType] = useState("password");
   const [focusedInput, setFocusedInput] = useState("");
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl");
 
   const handlePasswordVisibility = () => {
     setPasswordInputType(
@@ -74,7 +78,12 @@ const SignIn = () => {
           </InputButton>
 
           <InputButton>
-            <ButtonCustom type="button">
+            <ButtonCustom
+              type="button"
+              onClick={() => {
+                signIn("google", { callbackUrl });
+              }}
+            >
               Sign In with Google <FcGoogle />
             </ButtonCustom>
           </InputButton>

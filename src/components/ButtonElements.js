@@ -82,7 +82,7 @@ export const BtnWrappper = styled.div`
   margin: 0 20px;
 `;
 
-export const SignInButton = styled(Link)`
+export const SignInButton = styled.button`
   border-radius: 5px;
   background: ${({ primary }) =>
     primary ? "#ff7043" : "rgba(255, 255, 255, 0)"};
@@ -92,7 +92,8 @@ export const SignInButton = styled(Link)`
   color: rgba(255, 255, 255, 0.75);
   font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
   text-decoration: none;
-  /* border: none; */
+  outline: none;
+  border: none;
   border: 2px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
   display: flex;

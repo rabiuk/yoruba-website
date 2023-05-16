@@ -1,7 +1,5 @@
 import "./globals.css";
 import { Nunito } from "next/font/google";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 const nunitoSans = Nunito({ subsets: ["latin"] });
 import { LayoutProvider } from "./LayoutProvider";
 

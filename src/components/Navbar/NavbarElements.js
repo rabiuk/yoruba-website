@@ -36,10 +36,6 @@ export const NavbarContainer = styled.div`
   height: 100px;
   z-index: 1;
   width: 60%;
-  /* border-bottom: ${({ home }) =>
-    home ? "2px solid rgba(255, 255, 255, 0.1)" : "none"}; */
-
-  // add the same border-bottom only if home is true and isTransparent is true
   border-bottom: ${({ home, isTransparent }) =>
     home && isTransparent ? "2px solid rgba(255, 255, 255, 0.1)" : "none"};
 
@@ -90,7 +86,7 @@ export const NavMenu = styled.ul`
   margin-left: 30px;
   /* grid-column: 17; */
   /* justify-content: space-evenly; */
-  width: 30%;
+  width: fit-content;
   /* gap: 5px; */
   @media screen and (max-width: 760px) {
     display: none;
@@ -152,6 +148,18 @@ export const NavLinksR = styled(Link)`
   &.bold {
     font-weight: 900;
   }
+`;
+
+export const UserContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+`;
+
+export const NavGreeting = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
 `;
 
 export const NavLinksDiv = styled.div`

@@ -114,7 +114,8 @@ const RegisterPage = () => {
         </Form>
 
         <BottomText>
-          Have an account? <LinkText href={"/auth/signin"}>Sign In</LinkText>
+          Already have an account?{" "}
+          <LinkText href={"/auth/signin"}>Sign In</LinkText>
         </BottomText>
       </SignInWrapper>
     </>

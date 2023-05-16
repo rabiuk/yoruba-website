@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
@@ -16,12 +18,14 @@ import {
   NavMenu,
   NavItem,
   NavLinksS,
+  UserContainer,
   NavBtn,
-  NavBtnLink,
   NavLinksR,
+  NavGreeting,
 } from "./NavbarElements";
 import Dropdown from "./NavbarDropDown/Dropdown";
 const Navbar = ({ toggle }) => {
+  // const [session, setSession] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
   const [showDropDown, setshowDropDown] = useState(false);
@@ -31,6 +35,8 @@ const Navbar = ({ toggle }) => {
   const [isInProverbs, setIsInProverbs] = useState(false);
   const router = useRouter();
   const currentPage = usePathname();
+
+  const { data: session } = useSession();
 
   const changeNav = () => {
     if (typeof window !== "undefined") {
@@ -169,9 +175,6 @@ const Navbar = ({ toggle }) => {
                   >
                     <NavLinksR
                       href="/learn"
-                      // className={
-                      //   showDropDown || isInLearn ? "active bold" : "non-active"
-                      // }
                       className={
                         showDropDown && isInLearn
                           ? "active bold"
@@ -197,9 +200,22 @@ const Navbar = ({ toggle }) => {
                 </>
               )}
             </NavMenu>
-            <NavBtn>
-              <SignInButton href="/auth/signin">Sign In</SignInButton>
-            </NavBtn>
+            {session ? (
+              <UserContainer>
+                <NavGreeting>Hello, {session.user.name}!</NavGreeting>
+                <NavBtn>
+                  <SignInButton onClick={() => signOut()}>
+                    Sign Out
+                  </SignInButton>
+                </NavBtn>
+              </UserContainer>
+            ) : (
+              <UserContainer>
+                <NavBtn>
+                  <SignInButton onClick={() => signIn()}>Sign In</SignInButton>
+                </NavBtn>
+              </UserContainer>
+            )}
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
