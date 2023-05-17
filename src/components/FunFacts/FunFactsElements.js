@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
+const burntOrange = "#FF7043";
+const darkTeal = "#00695C";
+const warmYellow = "#FFCA28";
+const beige = "#f5f5dc";
+const textColor = "#424242";
+const offWhite = "#FAFAFA";
+const offBlack = "#010606";
+
 export const FunFactsContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #6f3f2c;
+  background: #f5f5dc;
 
   @media screen and (max-width: 768px) {
     height: 1100px;
@@ -73,8 +81,8 @@ export const FunFactsSVGIcon = styled.div`
 
 export const FunFactsH1 = styled.h1`
   font-size: 2.5rem;
-  /* color: #ff7043; */
-  color: #fafafa;
+  color: #ff7043;
+  /* color: #fafafa; */
   margin-bottom: 64px;
 
   @media screen and (max-width: 480px) {

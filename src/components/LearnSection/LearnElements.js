@@ -8,53 +8,52 @@ export const ImproveSkillsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* padding-top: 20vh; */
+  padding: 20vh 24px;
 
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
+    /* padding: 100px 0; */
   }
 `;
 
 export const ImproveSkillsWrapper = styled.div`
-  display: grid;
+  display: flex;
   height: 860px;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 24px;
+  /* padding: 0 24px; */
   justify-content: center;
   z-index: 0;
 `;
 
 export const ImproveSkillsRow = styled.div`
-  display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
+  display: flex;
+  flex-direction: ${({ imgStart }) => (imgStart ? "row-reverse" : "row")};
+  justify-content: center;
   align-items: center;
-  grid-template-areas: ${({ imgStart }) =>
-    imgStart ? `'col2 col1'` : `'col1 col2'`};
-
-  @media screen and (max-width: 768px) {
-    grid-template-areas: ${({ imgStart }) =>
-      imgStart ? `'col1 col2'` : `'col1 col1' 'col2 col2'`};
-  }
+  width: 100%;
 `;
 
 export const Column1 = styled.div`
-  margin-bottom: 15px;
-  padding: 0 15px;
-  grid-area: col1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 export const Column2 = styled.div`
-  margin-bottom: 15px;
-  padding: 0 15px;
-  grid-area: col2;
+  /* padding: 0 15px; */
+  /* grid-area: col2; */
 `;
 
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
-  padding-bottom: 60px;
+  @media (max-width: 680px) {
+    padding-bottom: 0px;
+  }
 `;
 
 export const TopLine = styled.p`
@@ -65,6 +64,12 @@ export const TopLine = styled.p`
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  //add no wrap
+  white-space: nowrap;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const Heading = styled.h1`
@@ -74,6 +79,9 @@ export const Heading = styled.h1`
   font-weight: 600;
   color: ${({ lightText }) => (lightText ? "#FAFAFA" : "#424242")};
 
+  @media screen and (max-width: 1080px) {
+    font-size: 35px;
+  }
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
@@ -94,6 +102,9 @@ export const BtnWrap = styled.div`
   &.next-btn {
     margin-top: 20px;
     margin-bottom: 400px;
+  }
+  @media (max-width: 480px) {
+    transform: scale(0.8);
   }
 `;
 
@@ -118,6 +129,10 @@ export const ImgWrap = styled.div`
     max-width: 300px;
     margin-top: -40px;
   }
+
+  @media (max-width: 680px) {
+    display: none;
+  }
 `;
 
 export const Img = styled.img`
@@ -134,15 +149,39 @@ export const ArrowDropDown = styled(MdArrowDropDown)`
   margin-left: 8px;
   font-size: 20px;
 `;
+export const IntroContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const H1 = styled.h1`
-  font-size: 48px;
+  font-size: 70px;
   font-weight: 900;
-  color: #424242;
+  color: #010606;
+  @media (max-width: 1280px) {
+    font-size: 60px;
+  }
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+  @media (max-width: 480px) {
+    font-size: 30px;
+  }
 `;
 export const P = styled.p`
   text-align: center;
   font-size: 20px;
   color: #424242;
-  width: 45vw;
+  /* width: 45vw; */
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;

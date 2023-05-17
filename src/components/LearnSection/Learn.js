@@ -16,6 +16,7 @@ import {
   BtnWrap,
   ImgWrap,
   Img,
+  IntroContainer,
   H1,
   P,
   ArrowDownward,
@@ -52,40 +53,40 @@ const ImproveSkillsSection = ({
               <TopLine>{topLine}</TopLine>
               <Heading lightText={lightText}>{headline}</Heading>
               <Subtitle darkText={darkText}>{description}</Subtitle>
-              {id === "curriculum" ? (
-                <>
-                  <BtnWrap>
-                    <Button
-                      onClick={() => setOpenModal(true)}
-                      primary={primary ? 1 : 0}
-                      dark={dark ? 1 : 0}
-                      dark2={dark2 ? 1 : 0}
-                    >
-                      {buttonLabel}
-                    </Button>
-                  </BtnWrap>
-                </>
-              ) : (
-                <>
-                  <BtnWrap>
-                    <ButtonLink
-                      href={pageLink}
-                      // target="_blank"
-                      smooth={true}
-                      duration={500}
-                      spy={true}
-                      exact="true"
-                      offset={-80}
-                      primary={primary ? 1 : 0}
-                      dark={dark ? 1 : 0}
-                      dark2={dark2 ? 1 : 0}
-                    >
-                      {buttonLabel}
-                    </ButtonLink>
-                  </BtnWrap>
-                </>
-              )}
             </TextWrapper>
+            {id === "curriculum" ? (
+              <>
+                <BtnWrap>
+                  <Button
+                    onClick={() => setOpenModal(true)}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 1 : 0}
+                    dark2={dark2 ? 1 : 0}
+                  >
+                    {buttonLabel}
+                  </Button>
+                </BtnWrap>
+              </>
+            ) : (
+              <>
+                <BtnWrap>
+                  <ButtonLink
+                    href={pageLink}
+                    // target="_blank"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 1 : 0}
+                    dark2={dark2 ? 1 : 0}
+                  >
+                    {buttonLabel}
+                  </ButtonLink>
+                </BtnWrap>
+              </>
+            )}
           </Column1>
           <Column2>
             <ImgWrap className={className}>{img}</ImgWrap>
@@ -109,35 +110,35 @@ const ImproveSkillsWelcome = () => {
   return (
     <>
       <ImproveSkillsContainer lightBg={true}>
-        <ImgWrap>
+        {/* <ImgWrap>
           <WelcomeElderSVG
             style={{ fontSize: 600 }}
             className="welcome-hands"
           />
-        </ImgWrap>
-        <H1>Improve Your Skills</H1>
-        <P>
-          Welcome to the Improve Your Skills section, offering a structured
-          curriculum for Yoruba language proficiency and cultural understanding.
-          Explore Yoruba through our progressive lessons and quizzes, designed
-          for all skill levels.
-        </P>
-        <BtnWrap className="next-btn">
-          <ButtonScroll
-            to="curriculum"
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact="true"
-            offset={-80}
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary={true}
-          >
-            {/* Next {hover ? <ArrowDownward /> : <ArrowDropDown />} */}
-            Next <ArrowDownward />
-          </ButtonScroll>
-        </BtnWrap>
+        </ImgWrap> */}
+        <IntroContainer>
+          <H1>Improve Your Skills</H1>
+          <P>
+            Explore Yoruba through our progressive lessons and quizzes, designed
+            for all skill levels.
+          </P>
+          <BtnWrap className="next-btn">
+            <ButtonScroll
+              to="curriculum"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+              primary={true}
+            >
+              {/* Next {hover ? <ArrowDownward /> : <ArrowDropDown />} */}
+              Next <ArrowDownward />
+            </ButtonScroll>
+          </BtnWrap>
+        </IntroContainer>
 
         {/* <ImproveSkillsSection {...homeObjOne}></ImproveSkillsSection> */}
         <ImproveSkillsSection {...homeObjOne}></ImproveSkillsSection>

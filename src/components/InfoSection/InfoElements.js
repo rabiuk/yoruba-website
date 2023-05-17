@@ -7,6 +7,8 @@ export const InfoContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(0, 0, 0, 0.5); */
 `;
 
 export const InfoWrapper = styled.div`

@@ -48,9 +48,9 @@ export const homeObjTwo = {
 
 export const homeObjThree = {
   id: "proverbs-and-wisdom",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "Proverbs & Wisdom",
   headline: "Explore Cultural Insights",
   description:
@@ -61,8 +61,8 @@ export const homeObjThree = {
   alt: "Yoruba elder teaching kids",
   // width: 555,
   // height: 100,
-  dark: true,
+  dark: false,
   primary: true,
-  darkText: false,
+  darkText: true,
   className: "proverbs-and-wisdom-section",
 };

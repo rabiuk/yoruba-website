@@ -17,3 +17,5 @@ export { default as NounsSVG } from "./NounsSVG.svg";
 export { default as TallShortSVG } from "./TallShortSVG.svg";
 export { default as WomanTalksToManSVG } from "./WomanTalksToManSVG.svg";
 export { default as ManClappingSVG } from "./ManClappingSVG.svg";
+export { default as ThreeDYorubaWomanWelcomeSVG } from "./ThreeDYorubaWomanWelcomeSVG.svg";
+export { default as YorubaManLoginSVG } from "./YorubaManLoginSVG.svg";

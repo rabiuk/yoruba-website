@@ -5,7 +5,7 @@ import { Link as LinkScroll } from "react-scroll";
 
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
-    home ? (scrollNav ? "#6f3f2c" : "transparent") : "#6f3f2c"};
+    home ? (scrollNav ? "#010606" : "transparent") : "#010606"};
   /* transition: 0.5s; */
   height: 80px;
   display: flex;
@@ -22,7 +22,7 @@ export const Nav = styled.nav`
   position: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "sticky" : "absolute") : "sticky"};
   top: 0;
-  width: 100%;
+  width: 100vw;
 
   z-index: 10;
 
@@ -33,9 +33,10 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100px;
-  z-index: 1;
-  width: 60%;
+  /* z-index: 1; */
+  width: 65%;
   border-bottom: ${({ home, isTransparent }) =>
     home && isTransparent ? "2px solid rgba(255, 255, 255, 0.1)" : "none"};
 
@@ -48,6 +49,16 @@ export const NavbarContainer = styled.div`
         : "#FAFAFA"};
     font-weight: 600;
   }
+  @media screen and (min-width: 1600px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 1440px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 1280px) {
+    width: 80%;
+  }
 `;
 
 export const NavLogo = styled.div`
@@ -55,23 +66,20 @@ export const NavLogo = styled.div`
 `;
 
 export const NavLogoLink = styled(Link)`
-  justify-self: flex-start;
+  /* justify-self: flex-start; */
   cursor: pointer;
   font-size: 1.5rem;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   font-weight: bold;
   text-decoration: none;
+  /* flex: 1; */
 `;
 export const MobileIcon = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
     color: #fff;
@@ -160,6 +168,13 @@ export const NavGreeting = styled.div`
   display: flex;
   align-items: center;
   margin-right: 20px;
+
+  @media (max-width: 1300px) {
+    margin-right: 10px;
+  }
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 export const NavLinksDiv = styled.div`

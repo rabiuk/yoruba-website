@@ -5,12 +5,15 @@ import {
   RightWrapper,
   ChildrenWrapper,
 } from "./LayoutElements";
+import YorubaManLogin from "@/components/svg/YorubaManLoginSVG.svg";
 
 export default function Layout({ children }) {
   return (
     <LayoutWrapper>
       <InnerWrapper>
-        <ImageWrapper>Images</ImageWrapper>
+        <ImageWrapper>
+          <YorubaManLogin />
+        </ImageWrapper>
         <RightWrapper>
           <ChildrenWrapper>{children}</ChildrenWrapper>
         </RightWrapper>
