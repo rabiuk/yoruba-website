@@ -13,13 +13,13 @@ export const LayoutProvider = ({ children }) => {
   return (
     <>
       <SessionProvider>
-        {pathname !== "/auth/signin" && pathname !== "/auth/register" && (
-          <Navbar />
-        )}
+        {pathname !== "/auth/signin" &&
+          pathname !== "/auth/register" &&
+          pathname !== "/api/auth/verify-request" && <Navbar />}
         {children}
-        {pathname !== "/auth/signin" && pathname !== "/auth/register" && (
-          <Footer />
-        )}
+        {pathname !== "/auth/signin" &&
+          pathname !== "/auth/register" &&
+          pathname !== "/api/auth/verify-request" && <Footer />}
       </SessionProvider>
     </>
   );

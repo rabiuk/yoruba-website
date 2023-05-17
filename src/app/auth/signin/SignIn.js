@@ -33,18 +33,22 @@ const SignIn = () => {
     );
     setShowPassword(!showPassword);
   };
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    const email = e.target.elements.email.value;
+    await signIn("email", { email, callbackUrl });
+  };
+
   return (
     <>
       <SignInWrapper>
         <div className="title">
           <Title>Sign In</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-            officia?
-          </Description>
+          <Description>Sign in with email</Description>
         </div>
 
-        <Form>
+        <Form onSubmit={handleSignIn}>
           <InputGroup>
             <Input
               type="email"
@@ -57,7 +61,7 @@ const SignIn = () => {
               <HiAtSymbol size={20} />
             </Icon>
           </InputGroup>
-          <InputGroup>
+          {/* <InputGroup>
             <Input
               type={passwordInputType}
               name="password"
@@ -71,7 +75,7 @@ const SignIn = () => {
             >
               {showPassword ? <HiEyeOff size={20} /> : <HiEye size={20} />}
             </Icon>
-          </InputGroup>
+          </InputGroup> */}
 
           <InputButton>
             <Button type="submit">Login</Button>
@@ -87,17 +91,17 @@ const SignIn = () => {
               Sign In with Google <FcGoogle />
             </ButtonCustom>
           </InputButton>
-          <InputButton>
+          {/* <InputButton>
             <ButtonCustom type="button">
               Sign In with Github <FaGithub />
             </ButtonCustom>
-          </InputButton>
+          </InputButton> */}
         </Form>
 
-        <BottomText>
+        {/* <BottomText>
           don't have an account yet?{" "}
           <LinkText href={"/auth/register"}>Sign Up</LinkText>
-        </BottomText>
+        </BottomText> */}
       </SignInWrapper>
     </>
   );
