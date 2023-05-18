@@ -3,11 +3,13 @@ import styled from "styled-components";
 import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
 
+const beige = "#f5f5dc";
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "#010606" : "transparent") : "#010606"};
   /* transition: 0.5s; */
   height: 80px;
+  transition: background 0.5s, box-shadow 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +79,7 @@ export const NavLogoLink = styled(Link)`
 `;
 export const MobileIcon = styled.div`
   display: none;
+  margin-left: auto;
 
   @media screen and (max-width: 768px) {
     display: block;

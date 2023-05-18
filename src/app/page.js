@@ -13,7 +13,7 @@ export default function Home() {
     <>
       {/* <HeroSection BackgroundComponent={<Carousel />} /> */}
       <HeroSection>
-        <Carousel />
+        <Carousel className="hero-carousel" />
       </HeroSection>
       <InfoSection {...homeObjOne} />
       <FunFacts />

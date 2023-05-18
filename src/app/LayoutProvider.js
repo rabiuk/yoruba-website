@@ -7,20 +7,21 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { SessionProvider } from "next-auth/react";
 
-export const LayoutProvider = ({ children }) => {
+export const LayoutProvider = ({ children, pageProps = {} }) => {
   const pathname = usePathname();
+  const { session, ...otherProps } = pageProps;
 
   return (
-    <>
-      <SessionProvider>
-        {pathname !== "/auth/signin" &&
-          pathname !== "/auth/register" &&
-          pathname !== "/api/auth/verify-request" && <Navbar />}
-        {children}
-        {pathname !== "/auth/signin" &&
-          pathname !== "/auth/register" &&
-          pathname !== "/api/auth/verify-request" && <Footer />}
-      </SessionProvider>
-    </>
+    // <>
+    <SessionProvider session={session}>
+      {pathname !== "/auth/signin" &&
+        pathname !== "/auth/register" &&
+        pathname !== "/api/auth/verify-request" && <Navbar />}
+      {children}
+      {pathname !== "/auth/signin" &&
+        pathname !== "/auth/register" &&
+        pathname !== "/api/auth/verify-request" && <Footer />}
+    </SessionProvider>
+    // </>
   );
 };
