@@ -58,7 +58,6 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap className={className}>
-                {/* <Image src={imgSrc} alt={alt} width={width} height={height} /> */}
                 {imgSrc}
               </ImgWrap>
             </Column2>

@@ -10,6 +10,7 @@ import {
   SidebarRoute,
 } from "./MobileSidebarElements";
 const MobileSidebar = ({ isOpen, toggle }) => {
+
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>

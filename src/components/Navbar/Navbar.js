@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { redirect } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 import { useRouter, usePathname } from "next/navigation";
 import ScrollToTop from "../ScrollToTop";
 import { SignInButton } from "@/components/ButtonElements";
+import MobileSidebar from "../MobileSidebar/MobileSidebar";
 
 import {
   Nav,
@@ -25,10 +25,9 @@ import {
 } from "./NavbarElements";
 import Dropdown from "./NavbarDropDown/Dropdown";
 const Navbar = ({ toggle }) => {
-  // const [session, setSession] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
-  const [showDropDown, setshowDropDown] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
   const [isHome, setIsHome] = useState(false);
   const [isInLearn, setIsInLearn] = useState(false);
   const [isInAbout, setIsInAbout] = useState(false);
@@ -170,8 +169,8 @@ const Navbar = ({ toggle }) => {
                     </NavLinksR>
                   </NavItem>
                   <NavItem
-                    onMouseEnter={() => setshowDropDown(true)}
-                    onMouseLeave={() => setshowDropDown(false)}
+                    onMouseEnter={() => setShowDropDown(true)}
+                    onMouseLeave={() => setShowDropDown(false)}
                   >
                     <NavLinksR
                       href="/learn"

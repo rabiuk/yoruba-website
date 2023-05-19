@@ -99,7 +99,7 @@ export const NavMenu = styled.ul`
   /* justify-content: space-evenly; */
   width: fit-content;
   /* gap: 5px; */
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
