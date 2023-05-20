@@ -2,6 +2,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 const nunitoSans = Nunito({ subsets: ["latin"] });
 import { LayoutProvider } from "./LayoutProvider";
+import Head from "next/head";
 
 export const metadata = {
   title: "Yoruba Website",
@@ -11,11 +12,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+      </Head>
       <html lang="en">
         <body className={nunitoSans.className}>
-          <LayoutProvider>
-            <main>{children}</main>
-          </LayoutProvider>
+          <main>
+            <LayoutProvider>{children}</LayoutProvider>
+          </main>
         </body>
       </html>
     </>

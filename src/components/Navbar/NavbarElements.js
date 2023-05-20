@@ -24,7 +24,8 @@ export const Nav = styled.nav`
   position: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "sticky" : "absolute") : "sticky"};
   top: 0;
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
 
   z-index: 10;
 
@@ -38,7 +39,8 @@ export const NavbarContainer = styled.div`
   align-items: center;
   height: 100px;
   /* z-index: 1; */
-  width: 65%;
+  /* width: 65%; */
+  width: ${({ isTransparent }) => (isTransparent ? "65%" : "65%")};
   border-bottom: ${({ home, isTransparent }) =>
     home && isTransparent ? "2px solid rgba(255, 255, 255, 0.1)" : "none"};
 
@@ -52,14 +54,14 @@ export const NavbarContainer = styled.div`
     font-weight: 600;
   }
   @media screen and (min-width: 1600px) {
-    width: 70%;
+    width: ${({ isTransparent }) => (isTransparent ? "70%" : "70%")};
   }
 
   @media screen and (max-width: 1440px) {
-    width: 70%;
+    width: ${({ isTransparent }) => (isTransparent ? "70%" : "70%")};
   }
   @media screen and (max-width: 1280px) {
-    width: 80%;
+    width: ${({ isTransparent }) => (isTransparent ? "80%" : "80%")};
   }
 `;
 

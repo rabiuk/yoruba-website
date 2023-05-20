@@ -8,7 +8,7 @@ export const InfoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1100px;
+  /* max-width: 1100px; */
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -20,9 +20,10 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   height: 100%;
   z-index: 1;
+  width: 100%;
 
-  margin-right: auto;
-  margin-left: auto;
+  /* margin-right: auto;
+  margin-left: auto; */
   padding: 0 24px;
 `;
 export const InfoRow = styled.div`
@@ -45,8 +46,8 @@ export const Column2 = styled.div`
   margin-bottom: 15px;
   padding: 0 15px;
   flex: 1;
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
 `;
 
 export const TextWrapper = styled.div`

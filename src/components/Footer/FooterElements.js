@@ -4,6 +4,8 @@ import Link from "next/link";
 
 export const FooterContainer = styled.footer`
   background-color: #101522;
+  width: 100%;
+  /* width: 100vw; */
 `;
 
 export const FooterWrap = styled.div`

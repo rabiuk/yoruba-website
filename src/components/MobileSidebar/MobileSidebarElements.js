@@ -19,6 +19,10 @@ export const SidebarContainer = styled.aside`
     isOpen ? "100%" : "0"}; //display side bar when isOpen is true
   top: ${({ isOpen }) =>
     isOpen ? "0" : "-100%"}; //display top bar when isOpen is true
+
+  @media only screen and (max-device-width: 926px) and (orientation: landscape) {
+    display: none;
+  }
 `;
 
 export const CloseIcon = styled(FaTimes)`
