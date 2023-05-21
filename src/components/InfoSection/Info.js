@@ -1,6 +1,6 @@
 "use client";
 import { ButtonLink } from "../ButtonElements";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {
   InfoContainer,
   InfoWrapper,
@@ -27,6 +27,7 @@ const InfoSection = ({
   description,
   buttonLabel,
   pageLink,
+  isSVG,
   imgSrc,
   alt,
   primary,
@@ -58,7 +59,7 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap className={className}>
-                {imgSrc}
+                {isSVG ? imgSrc : <Image src={imgSrc} alt="" fill={true} />}
               </ImgWrap>
             </Column2>
           </InfoRow>

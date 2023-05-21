@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "#010606" : "transparent") : "#010606"};
   /* transition: 0.5s; */
-  height: 80px;
+  /* height: 80px; */
   transition: background 0.5s, box-shadow 0.5s;
   display: flex;
   justify-content: center;
@@ -37,7 +37,8 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  max-height: 100px;
+  min-height: 80px;
   /* z-index: 1; */
   /* width: 65%; */
   width: ${({ isTransparent }) => (isTransparent ? "65%" : "65%")};
@@ -107,7 +108,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  height: 80px;
+  height: 100%;
   padding-left: 16px;
   padding-right: 16px;
 `;
@@ -119,6 +120,7 @@ export const NavLinksS = styled(LinkScroll)`
   //Wrap the text to no wrap
   white-space: nowrap;
   /* padding: 1rem; */
+  padding: 1rem 0;
   height: 100%;
   cursor: pointer;
   &:hover {

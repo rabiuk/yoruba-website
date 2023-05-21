@@ -32,6 +32,7 @@ export const FunFactsWrapper = styled.div`
   align-items: center;
   grid-gap: 20px;
   padding: 0 50px;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr;

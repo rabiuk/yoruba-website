@@ -11,6 +11,19 @@ export const HeroContainer = styled.div`
   height: 100vh;
   z-index: 1;
 `;
+export const HeroBg = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* width: 100%;
+    height: 100vh; */
+  overflow: hidden;
+  @media only screen and (max-device-width: 926px) and (orientation: landscape) {
+    /* width: 120vw; */
+  }
+`;
 export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -21,24 +34,11 @@ export const Overlay = styled.div`
   z-index: 3;
 `;
 
-export const HeroBg = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  @media only screen and (max-device-width: 926px) and (orientation: landscape) {
-    /* width: 120vw; */
-  }
-`;
-
 export const HeroContent = styled.div`
   z-index: 3;
   max-width: 100%;
-  position: absolute;
+  /* min-height: 100%; */
+  /* position: absolute; */
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
@@ -64,6 +64,9 @@ export const HeroH1 = styled.h1`
   @media only screen and (max-device-width: 926px) and (orientation: landscape) {
     font-size: 32px;
   }
+  @media screen and (max-height: 380px) {
+    font-size: 28px;
+  }
 `;
 
 export const HeroH2 = styled.h2`
@@ -83,6 +86,9 @@ export const HeroH2 = styled.h2`
   @media only screen and (max-device-width: 926px) and (orientation: landscape) {
     font-size: 18px;
   }
+  @media screen and (max-height: 380px) {
+    font-size: 16px;
+  }
 `;
 export const HeroH22 = styled.p`
   margin-top: 0px;
@@ -99,6 +105,9 @@ export const HeroH22 = styled.p`
   }
   @media only screen and (max-device-width: 926px) and (orientation: landscape) {
     font-size: 18px;
+  }
+  @media screen and (max-height: 380px) {
+    font-size: 16px;
   }
 `;
 
@@ -119,6 +128,9 @@ export const HeroP = styled.p`
   @media only screen and (max-device-width: 926px) and (orientation: landscape) {
     font-size: 18px;
   }
+  @media screen and (max-height: 380px) {
+  font-size: 16px;
+  }
 `;
 
 export const HeroBtnWrapper = styled.div`
@@ -128,6 +140,9 @@ export const HeroBtnWrapper = styled.div`
   align-items: center;
   @media only screen and (max-device-width: 926px) and (orientation: landscape) {
     transform: scale(0.8);
+  }
+  @media screen and (max-height: 380px) {
+  margin-top: 16px;
   }
 `;
 

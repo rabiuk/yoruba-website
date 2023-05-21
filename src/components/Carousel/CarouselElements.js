@@ -26,7 +26,7 @@ export const SlideWrap = styled.div`
     padding: 70px 20px;
   }
   @media screen and (max-width: 768px) and (orientation: portrait) {
-    min-height: 80vh;
+    min-height: 100vh;
     padding: 70px 20px;
   }
 `;

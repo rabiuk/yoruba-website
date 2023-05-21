@@ -1,6 +1,7 @@
-export { default as YorubaCultureCelebrationSVG } from "./YorubaCultureCelebrationSVG.svg";
+// export { default as YorubaCultureCelebrationSVG } from "./YorubaCultureCelebrationSVG.svg";
+export { default as YorubaCultureCelebrationSVG } from "./YorubaCultureCelebration.png";
 export { default as YorubaFlashCardSVG } from "./YorubaFlashCardSVG.svg";
-export { default as YorubaManTeachingKidsSVG } from "./YorubaManTeachingKidsSVG.svg";
+// export { default as YorubaManTeachingKidsSVG } from "./YorubaManTeachingKidsSVG.svg";
 export { default as MapOfAfricaSVG } from "./MapOfAfricaSVG.svg";
 export { default as ToneSVG } from "./ToneSVG.svg";
 export { default as TwinSVG } from "./TwinSVG.svg";

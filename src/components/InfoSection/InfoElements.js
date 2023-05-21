@@ -6,8 +6,9 @@ export const InfoContainer = styled.div`
   padding: 100px 0;
   display: flex;
   justify-content: center;
+  justify-self: center;
   align-items: center;
-  width: 100%;
+  min-width: 80%;
   /* max-width: 1100px; */
 
   @media screen and (max-width: 768px) {
@@ -40,6 +41,10 @@ export const Column1 = styled.div`
   margin-bottom: 15px;
   padding: 0 15px;
   flex: 1;
+  display: flex;
+  /* justify-content: ${({ imgStart }) =>
+    imgStart ? "center" : "flex-end"}; */
+  justify-content: center;
 `;
 
 export const Column2 = styled.div`
@@ -47,6 +52,8 @@ export const Column2 = styled.div`
   padding: 0 15px;
   flex: 1;
   display: flex;
+  /* justify-content: ${({ imgStart }) =>
+    imgStart ? "flex-start" : "center"}; */
   justify-content: center;
 `;
 

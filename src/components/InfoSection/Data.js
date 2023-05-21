@@ -1,6 +1,7 @@
-import YorubaCultureCelebrationSVG from "../../components/svg/YorubaCultureCelebrationSVG.svg";
-import YorubaFlashCardSVG from "../../components/svg/YorubaFlashCardSVG.svg";
-import YorubaManTeachingKidsSVG from "../../components/svg/YorubaManTeachingKidsSVG.svg";
+import YorubaCultureCelebrationPNG from "@/components/svg/YorubaCultureCelebration.png";
+import YorubaFlashCard from "@/components/svg/YorubaFlashCard.png";
+import YorubaManTeachingKidsSVG from "@/components/svg/YorubaManTeachingKids.png";
+import YorubaFlashCardSVG from "@/components/svg/YorubaFlashCardSVG.svg";
 
 export const homeObjOne = {
   id: "about",
@@ -13,8 +14,9 @@ export const homeObjOne = {
     "Yoruba culture is known for its deep roots in traditions, art, music, food, and religion, which have been passed down through generations. Our aim is to showcase these elements and share their stories with the world. We offer a range of resources, from language learning tools to cultural insights, to help you immerse yourself in the world of Yoruba and appreciate its uniqueness.",
   buttonLabel: "More about yoruba",
   pageLink: "/about",
+  isSVG: false,
   imgStart: false,
-  imgSrc: <YorubaCultureCelebrationSVG style={{ fontSize: 600 }} />,
+  imgSrc: YorubaCultureCelebrationPNG,
   alt: "Yoruba culture celebration",
   // width: 555,
   // height: 100,
@@ -35,8 +37,9 @@ export const homeObjTwo = {
     "Discover the ultimate destination for evaluating and improving your Yoruba language skills. Featuring interactive quizzes and lessons for all skill levels, you'll challenge your grammar, vocabulary, and pronunciation. Embark on this engaging learning experience to boost your Yoruba proficiency and connect with the language's vibrant culture.",
   buttonLabel: "Lets Go",
   pageLink: "/learn",
+  isSVG: true,
   imgStart: true,
-  imgSrc: <YorubaFlashCardSVG style={{ fontSize: 600 }} />,
+  imgSrc: <YorubaFlashCardSVG />,
   alt: "Yoruba flashcard",
   // width: 555,
   // height: 100,
@@ -57,7 +60,8 @@ export const homeObjThree = {
     "Immerse yourself in the captivating realm of Yoruba proverbs, a tradition cherished by the Yoruba people for their significant cultural value. These insightful sayings embody the culture's values and wisdom, serving as a fascinating resource that strengthens your connection with the Yoruba language and heritage.",
   buttonLabel: "Dive Deeper",
   pageLink: "/proverbs-and-wisdom",
-  imgSrc: <YorubaManTeachingKidsSVG style={{ fontSize: 600 }} />,
+  isSVG: false,
+  imgSrc: YorubaManTeachingKidsSVG,
   alt: "Yoruba elder teaching kids",
   // width: 555,
   // height: 100,
