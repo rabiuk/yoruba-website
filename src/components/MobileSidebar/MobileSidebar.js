@@ -30,7 +30,7 @@ const MobileSidebar = ({ isOpen, toggle }) => {
           </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute href="/signin">Sign In</SidebarRoute>
+          <SidebarRoute href="/auth/signin">Sign In</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

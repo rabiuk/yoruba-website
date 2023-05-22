@@ -4,8 +4,11 @@ import Link from "next/link";
 
 const burntOrange = "#FF7043";
 export const SignInWrapper = styled.section`
-  width: 75%;
-  margin: auto;
+  max-width: 70%;
+  min-width: 70%;
+  /* width: 100%; */
+  /* width: 75%; */
+  /* margin: auto; */
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -34,6 +37,7 @@ export const InputGroup = styled.div`
   display: flex;
   border: 1px solid #cbd5e0;
   border-radius: 0.375rem;
+  background-color: #f1f5f9;
   position: relative;
   color: rgba(0, 0, 0, 0.25);
 `;
@@ -42,14 +46,15 @@ export const Input = styled.input`
   width: 100%;
   padding: 1rem 1.5rem;
   border: none;
-  border-radius: 0.375rem;
-  background-color: #f1f5f9;
+  background-color: transparent;
+  /* border-radius: 0.375rem; */
+  /* background-color: #f1f5f9; */
   outline: none;
 `;
 export const Icon = styled.span`
   display: flex;
   align-items: center;
-  background-color: #f1f5f9;
+  /* background-color: #f1f5f9; */
   padding-left: 8px;
   padding-right: 8px;
   cursor: pointer;

@@ -8,46 +8,62 @@ const darkTeal = "#00695C";
 
 export const LayoutWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  width: 100vw;
   background-color: ${beige};
 `;
 
 export const InnerWrapper = styled.div`
-  margin: auto;
+  /* margin: auto; */
   background-color: #ffffff;
-  border-radius: 0.375rem;
-  width: 80%; // increase initial width for smaller screens
-  height: 75%;
-  display: grid;
-  grid-template-columns: 1fr;
-
-  @media (min-width: 768px) {
-    // switch to two columns on larger screens
-    width: 60%;
-    grid-template-columns: 1fr 1fr;
-  }
-`;
-
-export const ImageWrapper = styled.div`
-  background-color: ${burntOrange};
+  border-radius: 0.5rem;
+  width: 90%;
+  height: 90%;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
+  //add some box shadow
+  box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.25);
 
-  svg {
-    width: 100%; // make the SVG responsive by setting width to 100%
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  @media (max-width: 860px) {
+    // switch to two columns on larger screens
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
   }
 `;
 
-export const RightWrapper = styled.div`
+export const LeftWrapper = styled.div`
+  /* background-color: ${beige}; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  width: 100%;
+  /* border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem; */
+`;
+export const ImageWrapper = styled.div`
+  background-color: ${burntOrange};
+  overflow: hidden;
+  width: 100%; // This will make it take the full width of its parent
+  height: 100%; // This will make it take the full height of its parent
+  display: flex; // Keep this if it solved your previous issue
+  img {
+    width: 100%; // This will make the image take the full width of ImageWrapper
+    height: auto; // This will keep the image's aspect ratio consistent
+    object-fit: cover;
+  }
+  @media (max-width: 860px) {
+    // switch to two columns on larger screens
+    display: none;
+  }
 `;
 
 export const ChildrenWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   text-align: center;
-  padding: 2.5rem 0;
+  /* padding: 2.5rem 0; */
+  /* padding: 5rem; */
 `;
