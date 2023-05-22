@@ -10,7 +10,9 @@ export const SidebarContainer = styled.aside`
   width: 100%;
   height: 100%;
   background: #0d0d0d;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
@@ -41,6 +43,10 @@ export const Icon = styled.div`
 
 export const SidebarWrapper = styled.div`
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const SidebarMenu = styled.ul`
@@ -58,7 +64,7 @@ export const SidebarLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-decoration: none;
   list-style: none;
   transition: 0 2s ease-in-out;
@@ -94,5 +100,22 @@ export const SidebarRoute = styled(Link)`
     transition: all 0.2 ease-in-out;
     background: #fff;
     color: #010606;
+  }
+`;
+export const UserContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+`;
+
+export const Greeting = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  span {
+    color: #ff7043;
   }
 `;

@@ -17,7 +17,7 @@ const InrtoLabel = ({ title, description, scrollToID, quizPath, svg }) => {
   return (
     <>
       <Container>
-        <IntroBackground>
+        {/* <IntroBackground> */}
           <IntroWrapper>
             <Content1>
               <IntroH1>{title}</IntroH1>
@@ -54,7 +54,7 @@ const InrtoLabel = ({ title, description, scrollToID, quizPath, svg }) => {
               <ImgWrap>{svg}</ImgWrap>
             </Content2>
           </IntroWrapper>
-        </IntroBackground>
+        {/* </IntroBackground> */}
         <h1>...</h1>
       </Container>
     </>

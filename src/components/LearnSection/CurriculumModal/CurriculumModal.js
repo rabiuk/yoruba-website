@@ -1,13 +1,13 @@
-import React from "react";
 import {
   CloseIcon,
   Container,
-  H2,
+  H1,
   LI,
   Overlay,
   PContainer,
   UL,
   MarginLine,
+  P,
 } from "./CurriculumModalElements";
 
 const CurriculumModal = ({ open, onClose }) => {
@@ -17,14 +17,34 @@ const CurriculumModal = ({ open, onClose }) => {
       <Container>
         <MarginLine />
         <CloseIcon onClick={onClose} />
-        <H2 className="title">Curriculum</H2>
+        <H1>Curriculum</H1>
         <PContainer>
           <UL>
-            <LI>Lesson I: Learn The Yoruba Alphabet</LI>
-            <LI>Lesson II: Numbers & Counting</LI>
-            <LI>Lesson III: Basic Phrases I (Verbs)</LI>
-            <LI>Lesson IV: Basic Phrases II (Nouns)</LI>
-            <LI>Lesson V: Advanced Phrases I</LI>
+            <LI>
+              <P>
+                <span>Lesson I:</span> Learn The Yoruba Alphabet
+              </P>
+            </LI>
+            <LI>
+              <P>
+                <span>Lesson II:</span> Numbers & Counting
+              </P>
+            </LI>
+            <LI>
+              <P>
+                <span>Lesson III:</span> Basic Phrases I (Verbs)
+              </P>
+            </LI>
+            <LI>
+              <P>
+                <span>Lesson IV:</span> Basic Phrases II (Nouns)
+              </P>
+            </LI>
+            <LI>
+              <P>
+                <span>Lesson V: </span>Advanced Phrases I
+              </P>
+            </LI>
           </UL>
         </PContainer>
       </Container>

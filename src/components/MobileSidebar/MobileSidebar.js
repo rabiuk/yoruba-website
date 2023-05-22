@@ -8,13 +8,26 @@ import {
   SidebarLink,
   SideBtnWrap,
   SidebarRoute,
+  UserContainer,
+  Greeting,
 } from "./MobileSidebarElements";
+import { SignInButton } from "@/components/ButtonElements";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 const MobileSidebar = ({ isOpen, toggle }) => {
+  const { data: session } = useSession();
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
+      {session ? (
+        <Greeting>
+          Hello,&nbsp;<span>{session.user.name}!</span>
+        </Greeting>
+      ) : (
+        <></>
+      )}
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink href="#about" onClick={toggle}>
@@ -29,9 +42,21 @@ const MobileSidebar = ({ isOpen, toggle }) => {
             Proverbs & Wisdom
           </SidebarLink>
         </SidebarMenu>
-        <SideBtnWrap>
-          <SidebarRoute href="/auth/signin">Sign In</SidebarRoute>
-        </SideBtnWrap>
+        <UserContainer>
+          {session ? (
+            <>
+              <SideBtnWrap onClick={() => signOut()}>
+                <SignInButton>Sign Out</SignInButton>
+              </SideBtnWrap>
+            </>
+          ) : (
+            <>
+              <SideBtnWrap onClick={() => signIn()}>
+                <SignInButton>Sign In</SignInButton>
+              </SideBtnWrap>
+            </>
+          )}
+        </UserContainer>
       </SidebarWrapper>
     </SidebarContainer>
   );

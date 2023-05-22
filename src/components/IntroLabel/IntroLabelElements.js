@@ -9,6 +9,7 @@ export const Container = styled.div`
   height: 1000px;
   position: relative;
   z-index: 1;
+  overflow: auto;
   :before {
     content: "";
     position: absolute;
@@ -25,18 +26,6 @@ export const Container = styled.div`
   }
 `;
 
-// export const Bg = styled.div`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   background: white;
-// `;
-
 export const IntroBackground = styled.div`
   /* background-color: rgba(0, 105, 92, 1); */
   background-color: ${Brown};
@@ -50,21 +39,55 @@ export const IntroBackground = styled.div`
 `;
 
 export const IntroWrapper = styled.div`
-  margin: 80px 7.5vw;
-  width: fit-content;
+  padding: 2.5rem 10vw 0 10vw;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* creates 2 columns of equal width */
-  grid-gap: 10px; /* adds a gap of 10px between columns */
-  justify-content: center; /* centers items horizontally */
-  align-items: center; /* centers items vertically */
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${Brown};
+    /* height: 430px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const Content1 = styled.div`
   /* display: flex; */
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    /* height: 50%; */
+    width: 100%;
+  }
 `;
 export const Content2 = styled.div`
   /* display: flex; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    /* height: 50%; */
+    width: 100%;
+  }
 `;
 export const ImgWrap = styled.div`
   /* margin-top: 40px; */
@@ -80,9 +103,8 @@ export const ImgWrap = styled.div`
     height: 100%;
   }
   .verbs-svg {
-    width: 85%;
-    height: 85%;
-    margin-top: -40px;
+    width: 50%;
+    height: 50%;
   }
   .nouns-svg {
     width: 70%;
@@ -91,10 +113,21 @@ export const ImgWrap = styled.div`
   .adjectives-svg {
     transform: scale(1.25);
   }
+
+  @media screen and (max-width: 768px) {
+    .verbs-svg {
+      width: 75%;
+      height: 75%;
+    }
+    .nouns-svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 export const IntroH1 = styled.h1`
-  margin-top: 20px;
+  /* margin-top: 20px; */
   /* grid-column: 1 / 9; */
   color: #fafafa;
   font-size: 48px;
@@ -124,14 +157,11 @@ export const IntroP = styled.p`
 
 export const BtnContainer = styled.div`
   width: 100%;
-  grid-row: 3;
-  grid-column: 1;
   display: flex;
   justify-content: center;
   /* justify-content: space-evenly; */
 `;
 export const BtnWrapper = styled.div`
-  margin-top: 32px;
   align-items: center;
-  margin: 20px 10px;
+  margin: 32px 10px 10px;
 `;

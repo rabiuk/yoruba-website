@@ -8,19 +8,23 @@ export const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 `;
 export const Container = styled.div`
-  max-width: 45vw;
-  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  height: 80%;
   width: 100%;
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   position: relative;
+  top: 0;
+  left: 0;
+  margin: auto;
   box-sizing: border-box;
   font-size: 20px;
   border-radius: 10px;
@@ -28,7 +32,9 @@ export const Container = styled.div`
   background-image: linear-gradient(#f5f5f0 1.2rem, #ccc 1.3rem);
   background-size: 100% 1.3rem;
   line-height: 1.5rem;
-  padding: 1.8rem 0.5rem 0.3rem 4.5rem;
+  /* padding: 1.8rem 0.5rem 0.3rem 4.5rem; */
+  padding: 5rem 5vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `;
 
 export const MarginLine = styled.div`
@@ -40,47 +46,82 @@ export const MarginLine = styled.div`
 `;
 
 export const CloseIcon = styled(FaTimes)`
-  color: #010606;
-  position: fixed;
+  color: #424242;
+  position: absolute;
   top: 15px;
   right: 15px;
   cursor: pointer;
   font-size: 30px;
+  //add a filter shadow to the icon
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.25));
 `;
-export const H2 = styled.h2`
+export const H1 = styled.h1`
   color: #424242;
-  font-size: 40px;
+  font-size: 4rem;
 
-  &.title {
-    margin-top: 3%;
+  @media screen and (max-width: 540px) {
+    font-size: 3rem;
   }
-`;
+  @media screen and (max-width: 428px) {
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 300px) {
+    font-size: 2rem;
+  }
+  `;
 export const PContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  /* align-items: center; */
-  margin-top: 20px;
+  height: 100%;
+  padding: 5rem 0;
+  /* width: 70%; */
+  @media screen and (max-width: 470px) {
+    padding-left: 5rem;
+    padding-right: 0;
+  }
+  /* @media screen and (max-width: 360px) {
+    padding-left: 5rem;
+    padding-right: 0;
+  } */
 `;
 
 export const UL = styled.ul`
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
   color: #424242;
-  margin-left: 2.5rem;
+  height: 100%;
+  @media screen and (max-width: 428px) {
+    width: 100%;
+  }
 `;
 export const LI = styled.li`
   /* margin: 0; */
-  text-indent: 1rem;
-  padding-bottom: 1.3rem;
-  color: black;
+  text-indent: 0.5rem;
   line-height: 1.5rem;
   font-weight: 600;
+  margin-bottom: 5vh;
 `;
 
 export const P = styled.p`
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 600;
   color: #424242;
-  text-align: left;
-  margin: 7px 0px;
-  justify-content: space-evenly;
+  span {
+    font-weight: 900;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 540px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 428px) {
+    font-size: 1.5rem;
+  }
+  /* @media screen and (max-width: 360px) {
+    font-size: 0.75rem;
+  } */
 `;

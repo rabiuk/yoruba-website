@@ -93,12 +93,12 @@ export const FunFactsH1 = styled.h1`
 `;
 
 export const FunFactsH2 = styled.h2`
-  font-size: 1rem;
+  font-size: 1.75rem;
   margin-bottom: 10px;
   color: #424242;
 `;
 export const FunFactsP = styled.p`
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   text-align: center;
   color: #424242;
 `;

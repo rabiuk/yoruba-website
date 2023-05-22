@@ -6,7 +6,9 @@
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
 }
+
 :root {
+  font-size: 62.5%; /* Now 1rem = 10px, and 10rem = 100px, and so forth. */
   background: #f5f5dc;
   /* background: #fafafa; */
 }
@@ -21,6 +23,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
 body {
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left); */
