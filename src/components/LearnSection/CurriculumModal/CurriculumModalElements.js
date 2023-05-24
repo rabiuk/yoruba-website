@@ -18,9 +18,10 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 80%;
+  max-width: 1000px;
+  max-height: 500px;
   height: 80%;
-  width: 100%;
+  width: 90%;
   position: relative;
   top: 0;
   left: 0;
@@ -32,9 +33,8 @@ export const Container = styled.div`
   background-image: linear-gradient(#f5f5f0 1.2rem, #ccc 1.3rem);
   background-size: 100% 1.3rem;
   line-height: 1.5rem;
-  /* padding: 1.8rem 0.5rem 0.3rem 4.5rem; */
   padding: 5rem 5vw;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 20px 20px 60px #68685d, -20px -20px 60px #8c8c7d;
 `;
 
 export const MarginLine = styled.div`
@@ -71,7 +71,7 @@ export const H1 = styled.h1`
   `;
 export const PContainer = styled.div`
   height: 100%;
-  padding: 5rem 0;
+  padding: 5rem 0 0 0;
   /* width: 70%; */
   @media screen and (max-width: 470px) {
     padding-left: 5rem;

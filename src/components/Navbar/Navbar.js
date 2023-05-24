@@ -98,7 +98,7 @@ const Navbar = ({ toggle }) => {
               </NavLogo>
             </NavLogoLink>
             <MobileIcon onClick={toggle}>
-              <FaBars></FaBars>
+              <FaBars fontSize={25}></FaBars>
             </MobileIcon>
             <NavMenu>
               {isHome ? (

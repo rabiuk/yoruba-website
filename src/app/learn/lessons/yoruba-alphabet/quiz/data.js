@@ -52,7 +52,7 @@ export const alphabetsData = [
     card: "gb",
     word: "ìgbálẹ̀", //
     emphasis: "gb",
-    pronounciation: "g be",
+    pronounciation: "gbe",
     translation: "broom",
   },
   {

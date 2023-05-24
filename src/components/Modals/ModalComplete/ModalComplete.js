@@ -6,6 +6,7 @@ import {
   H2,
   Overlay,
   ImgWrap,
+  PContainer,
   P,
   PLine,
   PLink,
@@ -33,12 +34,14 @@ const ModalComplete = ({
           <CloseIcon onClick={onClose} />
           <H2 className="title">{title}</H2>
           <P>{body}</P>
+          <PContainer>
           <P className="bold">Ready for the next step? </P>
           <P>{continue_text}</P>
           <PLine>
             <P className="continue-to-text">Continue to </P>
             <PLink href={continue_link}>{continue_link_text}</PLink>
           </PLine>
+          </PContainer>
         </ModalRight>
       </Container>
     </Overlay>

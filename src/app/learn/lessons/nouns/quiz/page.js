@@ -21,7 +21,7 @@ const NounsQuizPage = () => {
       <ModalComplete
         open={openModal}
         onClose={() => setOpenModal(false)}
-        title={"Impressive work! "}
+        title={"Impressive! "}
         svg={<GrowingSaplingSVG />}
         bg_color={"#00695C"}
         body={

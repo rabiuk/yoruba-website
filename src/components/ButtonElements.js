@@ -101,9 +101,9 @@ export const SignInButton = styled.button`
   align-items: center;
   transition: all 0.2s ease—in—out;
   box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    transition: all 0.2s ease—in—out;
     /* background: ${({ primary }) => (primary ? "#ff7043" : "#ff7043")}; */
     border-color: #ff7043;
     color: #ff7043;

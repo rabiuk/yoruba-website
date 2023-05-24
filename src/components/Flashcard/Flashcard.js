@@ -87,7 +87,7 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
             isNextClicked={isNextClicked}
           >
             <CardFront>
-              <EmphasizedText>{card}</EmphasizedText>{" "}
+              <EmphasizedText isFront={true}>{card}</EmphasizedText>{" "}
               <CardText>({pronounciation})</CardText>
             </CardFront>
             <CardBack>

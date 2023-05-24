@@ -9,10 +9,10 @@ import { useSession } from "next-auth/react";
 const LearnPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect("/auth/signin?callbackUrl=/learn");
-    },
+    // required: true,
+    // onUnauthenticated() {
+    //   redirect("/auth/signin?callbackUrl=/learn");
+    // },
   });
 
   const toggle = () => {

@@ -33,7 +33,7 @@ const LearnTheYorubaAlphabetQuizPage = () => {
           "Continue to the next section to learn how to count in Yoruba!"
         }
         continue_link={"learn/lessons/numbers-and-counting/learn"}
-        continue_link_text={"Continue to Numbers & Counting"}
+        continue_link_text={"Numbers & Counting"}
       />
     </>
   );

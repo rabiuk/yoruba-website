@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  height: 1000px;
+  height: 100vh;
   position: relative;
   z-index: 1;
   :before {
@@ -25,9 +25,11 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-  margin-top: 120px;
+  /* margin-top: 120px;*/
   margin-bottom: 20px;
   background-color: transparent;
+  max-width: 700px;
+  max-height: 600px;
   width: 45vw;
   height: 45vh;
   min-width: 600px;
@@ -35,20 +37,22 @@ export const Card = styled.div`
   /* border-radius: 75px; */
   cursor: pointer;
   color: #fafafa;
-  @media screen and (max-width: 480px) {
-    width: 90vw;
-    height: 30vh;
-  }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     width: 50vw;
     height: 45vh;
     min-width: 80vw;
     min-height: 100px;
   }
+  @media screen and (max-width: 480px) {
+    /* width: 90vw; */
+    height: 70vh;
+  }
 `;
 
 export const CardInner = styled.div`
   position: relative;
+  font-size: 48px;
+  font-weight: 900;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -65,6 +69,11 @@ export const CardInner = styled.div`
   transform: ${({ isFlipped }) => (isFlipped ? "rotateY(180deg)" : "")};
   /* transform: ${({ isFlipped, isWord }) =>
     !isWord ? (isFlipped ? "rotateY(180deg)" : "") : ""}; */
+
+  @media screen and (max-width: 480px) {
+    /* border-radius: 25px; */
+    font-size: 32px;
+  }
 `;
 
 export const CardFront = styled.div`
@@ -76,9 +85,13 @@ export const CardFront = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25); */
-  box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.5);
-  border-radius: 75px;
+  /* box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.5); */
+  box-shadow: 11px 11px 74px #d0d0bb, -11px -11px 74px #fffffd;
+  border-radius: 35px;
+
+  @media screen and (max-width: 480px) {
+    border-radius: 25px;
+  }
 `;
 
 export const CardBack = styled.div`
@@ -92,24 +105,25 @@ export const CardBack = styled.div`
   height: 100%;
   backface-visibility: hidden;
   /* box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25); */
-  box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.5); */
+  box-shadow: 11px 11px 74px #d0d0bb, -11px -11px 74px #fffffd;
 
-  border-radius: 75px;
+  border-radius: 35px;
+
+  @media screen and (max-width: 480px) {
+    border-radius: 25px;
+  }
 `;
 
-export const CardTextFirstChar = styled.p`
-  font-size: 48px;
-  font-weight: 900;
-`;
 
 export const EmphasizedText = styled.span`
-  font-size: 48px;
   font-weight: 900;
+  color: ${({ isFront }) => (isFront ? "#fafafa" : "#FF7043")};
 `;
 
 export const CardText = styled.p`
-  font-size: 48px;
   margin-left: 20px;
+  font-weight: 600;
 `;
 
 export const BtnContainer = styled.div`

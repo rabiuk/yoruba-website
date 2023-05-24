@@ -56,12 +56,17 @@ export const FunFactsCard = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 20px 20px 60px #dadac4, -20px -20px 60px #fffff4;
 
   &:hover {
     transform: scale(1.1);
     transition: all 0.2s ease—in-out;
     cursor: pointer;
+  }
+  @media screen and (max-width: 768px) {
+    &:hover {
+      transform: scale(1);
+    }
   }
 `;
 

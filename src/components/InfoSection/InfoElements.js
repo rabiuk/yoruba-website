@@ -113,13 +113,19 @@ export const ImgWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* overflow: hidden; */
+  background: linear-gradient(145deg, #ffffeb, #ddddc6);
+  box-shadow: 20px 20px 41px #dadac4, -20px -20px 41px #fffff4;
+
   &.learn-section {
-    max-width: 400px;
+    /* max-width: 400px; */
+    box-shadow: none;
+    background: none;
   }
   svg {
     max-width: 100%;
     max-height: 100%;
-    margin: 0 0 10px 0;
+    filter: drop-shadow(2px 1px 10px #000);
   }
 
   @media screen and (max-width: 768px) {

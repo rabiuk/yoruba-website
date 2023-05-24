@@ -3,82 +3,94 @@ import { FaTimes } from "react-icons/fa";
 import Link from "next/link";
 
 export const Overlay = styled.div`
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 `;
 export const Container = styled.div`
-  max-width: 50vw;
+  max-width: 1200px;
   height: fit-content;
-  width: 100%;
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 80%;
   position: relative;
+  /* position: fixed; */
+  /* top: 40%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
   box-sizing: border-box;
   display: flex;
   font-size: 20px;
   border-radius: 10px;
   background: #fafafa;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* background-image: linear-gradient(#f5f5f0 1.2rem, #ccc 1.3rem); */
-  background-size: 100% 1.3rem;
+  /* background-size: 100% 1.3rem; */
   /* line-height: 1.5rem; */
   /* padding: 3rem 0.5rem 3rem 4.5rem; */
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    /* width: fit-content; */
+  }
 `;
 
 export const ImgWrap = styled.div`
-  width: 60%;
-  height: auto;
-  position: relative;
-  top: 0;
-  right: 0;
+  width: 75%;
   background-color: ${({ bg_color }) => (bg_color ? bg_color : "#ff7043")};
-  padding: 1rem 1rem 1rem 1rem;
-
+  padding: 5rem 2rem 5rem 2rem;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   svg {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    svg {
+      max-width: 60%;
+    }
   }
 `;
 
 export const ModalRight = styled.div`
-  width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  /* padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;  */
+  padding: 5rem 5rem 5rem 5rem;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  /* align-items: center; */
-`;
+  /* justify-content: space-evenly; */
 
-export const MarginLine = styled.div`
-  position: absolute;
-  border-left: 1px solid #d88;
-  height: 100%;
-  left: 3.3rem;
-  top: 0;
+  @media screen and (max-width: 968px) {
+    padding: 3rem 3rem 3rem 3rem;
+  }
+  @media screen and (max-width: 768px) {
+    /* align-items: center; */
+  }
 `;
 
 export const CloseIcon = styled(FaTimes)`
-  color: #010606;
-  position: fixed;
+  color: #424242;
+  position: absolute;
   top: 15px;
   right: 15px;
   cursor: pointer;
   font-size: 30px;
+  @media screen and (max-width: 768px) {
+    color: #fafafa;
+  }
 `;
 export const H2 = styled.h2`
   color: #424242;
@@ -91,26 +103,21 @@ export const H2 = styled.h2`
 export const PContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* align-items: center; */
-  margin-top: 20px;
-`;
-
-export const UL = styled.ul`
-  color: #424242;
-  margin-left: 2.5rem;
-`;
-export const LI = styled.li`
-  /* margin: 0; */
-  text-indent: 1rem;
-  padding-bottom: 1.3rem;
-  color: black;
-  line-height: 1.5rem;
-  font-weight: 600;
+  /* margin-top: 20px; */
+  height: 100%;
+  padding-top: 3rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1460px) {
+    max-height: 250px;
+  }
 `;
 
 export const P = styled.p`
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: 600;
   color: #424242;
   text-align: left;
@@ -122,19 +129,44 @@ export const P = styled.p`
   &.continue-to-text {
     margin-right: 5px;
   }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 2.25rem;
+  }
+  @media screen and (max-width: 1080px) {
+    font-size: 1.7rem;
+  }
+  @media screen and (max-width: 790px) {
+    font-size: 1.5rem;
+  }
+  /* @media screen and (max-width: 480px) {
+    font-size: 1.5rem;
+  } */
 `;
 
 export const PLink = styled(Link)`
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: 900;
   color: #424242;
   text-align: left;
-  margin: 6px 0px;
+  margin-top: 5px;
   justify-content: space-evenly;
-  /* text-decoration: none; */
+  text-decoration: none;
   &:hover {
     color: #424242;
-    /* text-decoration: none; */
+    text-decoration: underline;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 2.25rem;
+  }
+  @media screen and (max-width: 1080px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 790px) {
+    font-size: 1.45rem;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1.45rem;
   }
 `;
 

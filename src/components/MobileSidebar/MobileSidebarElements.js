@@ -70,10 +70,11 @@ export const SidebarLink = styled(Link)`
   transition: 0 2s ease-in-out;
   text-decoration: none;
   color: #fff;
+  font-size: 2rem;
   cursor: pointer;
 
   &:hover {
-    color: #01bf71;
+    color: #ff7043;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -112,7 +113,7 @@ export const UserContainer = styled.div`
 export const Greeting = styled.div`
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
   margin-bottom: 2rem;
   span {
