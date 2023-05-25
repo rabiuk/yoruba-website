@@ -39,7 +39,7 @@ export const IntroBackground = styled.div`
 `;
 
 export const IntroWrapper = styled.div`
-  padding: 2.5rem 10vw 0 10vw;
+  padding: 2.5rem 10vw 10vw 10vw;
   z-index: 1;
   height: fit-content;
   display: flex;

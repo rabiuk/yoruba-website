@@ -50,18 +50,23 @@ export const ImgWrap = styled.div`
   padding: 5rem 2rem 5rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  svg {
+  border-bottom-left-radius: 10px;
+
+  img {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
   }
   @media screen and (max-width: 768px) {
     width: 100%;
     justify-content: center;
-    svg {
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    div {
       max-width: 60%;
+      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
     }
   }
 `;

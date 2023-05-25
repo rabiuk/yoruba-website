@@ -144,7 +144,7 @@ export const Quiz = ({ data, openModal, setOpenModal }) => {
   return (
     <>
       <QuizContainer>
-        <QuizBg />
+        {/* <QuizBg /> */}
         {!isQuizOver && (
           <>
             <QuestionContainer>

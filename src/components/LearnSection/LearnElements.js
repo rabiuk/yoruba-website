@@ -104,7 +104,7 @@ export const BtnWrap = styled.div`
     margin-bottom: 400px;
   }
   @media (max-width: 480px) {
-    transform: scale(0.8);
+    /* transform: scale(0.8); */
   }
 `;
 

@@ -29,7 +29,7 @@ export const Card = styled.div`
   margin-bottom: 20px;
   background-color: transparent;
   max-width: 700px;
-  max-height: 600px;
+  max-height: 550px;
   width: 45vw;
   height: 45vh;
   min-width: 600px;

@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import ElderRaisingHandsSVG from "@/components/svg/ElderRaisingHandsSVG.svg";
+import ElderRaisingHandsPNG from "@/components/svg/ElderRaisingHandsPNG.png";
 import { alphabetsData } from "./data";
 // import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
 import Flashcard from "@/components/Flashcard/Flashcard";
@@ -23,7 +24,9 @@ const LearnTheYorubaAlphabetQuizPage = () => {
       <ModalComplete
         open={openModal}
         onClose={() => setOpenModal(false)}
-        svg={<ElderRaisingHandsSVG />}
+        // svg={<ElderRaisingHandsSVG />}
+        imgSrc={ElderRaisingHandsPNG}
+        alt=""
         bg_color={"#FF7043"}
         title={"Good Work!"}
         body={

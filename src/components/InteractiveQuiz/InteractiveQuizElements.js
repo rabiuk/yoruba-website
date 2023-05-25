@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const QuizContainer = styled.div`
   /* background: #f5f5dc; */
-  margin-top: 80px;
-  background: brown;
+  /* margin-top: 80px; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  height: 85vh;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  /* max-height: 500px; */
   position: relative;
   z-index: 1;
 
@@ -47,7 +48,7 @@ export const QuestionContainer = styled.div`
   /* height: 430px; */
   width: 60%;
   z-index: 3;
-  max-width: width;
+  /* max-width: width; */
   justify-content: center;
   z-index: 2;
 `;
@@ -81,17 +82,17 @@ export const ChoicesContainer = styled.div`
   margin-top: 40px;
   margin-bottom: 20px;
   /* height: 430px; */
-  width: 40%;
-  max-width: width;
+  width: 100%;
+  max-width: 650px;
   justify-content: center;
   z-index: 2;
 
   @media screen and (max-width: 768px) {
-    transform: scale(1.25);
+    width: 90%;
   }
-  @media screen and (max-width: 480px) {
-    transform: scale(1.25);
-  }
+  /* @media screen and (max-width: 480px) {
+    width: 70%;
+  } */
 `;
 
 export const ChoiceWrapper = styled.div`
@@ -127,7 +128,7 @@ export const Choice = styled.p`
   color: #fafafa;
   font-size: 30px;
   text-align: center;
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 10px;
   /* z-index: 3; */
   @media screen and (max-width: 768px) {
@@ -138,22 +139,19 @@ export const Choice = styled.p`
   }
 `;
 export const SubmitBtnContainer = styled.div`
-  height: fit-content;
-  z-index: 0;
+  display: flex;
 `;
 export const NextBtnContainer = styled.div`
-  height: fit-content;
-  z-index: 0;
+  display: flex;
 `;
 export const ButtonContainer = styled.div`
-  height: fit-content;
-  z-index: 0;
+  display: flex;
 `;
 
 export const BtnWrappper = styled.div`
   align-items: center;
   z-index: 3;
-  transform: scale(1.15);
+  /* transform: scale(1.15); */
 `;
 export const SelectAChoiceContainer = styled.div`
   align-items: center;
