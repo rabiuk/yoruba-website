@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
-// import { Link as LinkR } from "react-router-dom";
 import Link from "next/link";
 
 export const ButtonScroll = styled(LinkScroll)`

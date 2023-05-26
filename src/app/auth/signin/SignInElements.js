@@ -16,13 +16,14 @@ export const SignInWrapper = styled.section`
 
 export const Title = styled.h1`
   color: #1f2937;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 4rem;
+  font-weight: 900;
   padding: 1rem 0;
 `;
 
 export const Description = styled.p`
   width: 75%;
+  font-size: 2rem;
   margin: auto;
   color: #9ca3af;
 `;
@@ -70,7 +71,7 @@ export const Button = styled.button`
   border-radius: 0.375rem;
   padding: 0.75rem;
   color: #f8fafc;
-  font-size: 1.125rem;
+  font-size: 2rem;
   cursor: pointer;
   &:hover {
     background: linear-gradient(to right, #f8fafc, #f8fafc);
@@ -81,6 +82,7 @@ export const Button = styled.button`
 
 export const ButtonCustom = styled(Button)`
   border: 1px solid #e5e7eb;
+  font-size: 2rem;
   background: #f8fafc;
   display: flex;
   justify-content: center;

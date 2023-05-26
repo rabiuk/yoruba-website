@@ -159,7 +159,7 @@ export const IntroContainer = styled.div`
 export const H1 = styled.h1`
   font-size: 70px;
   font-weight: 900;
-  color: #010606;
+  color: #424242;
   @media (max-width: 1280px) {
     font-size: 60px;
   }

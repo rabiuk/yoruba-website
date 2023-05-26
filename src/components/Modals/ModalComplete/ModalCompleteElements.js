@@ -45,7 +45,8 @@ export const Container = styled.div`
 `;
 
 export const ImgWrap = styled.div`
-  width: 75%;
+  /* width: 75%; */
+  max-width: 350px;
   background-color: ${({ bg_color }) => (bg_color ? bg_color : "#ff7043")};
   padding: 5rem 2rem 5rem 2rem;
   display: flex;

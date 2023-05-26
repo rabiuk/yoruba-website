@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import ManClappingSVG from "@/components/svg/ManClappingSVG.svg";
+import ManClappingPNGcompressed from "@/components/svg/ManClappingPNGcompressed.png";
 import yorubaAdjectivesData from "./data";
 import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
 import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
@@ -21,7 +20,8 @@ const AdjectivesQuizPage = () => {
       <ModalComplete
         open={openModal}
         onClose={() => setOpenModal(false)}
-        svg={<ManClappingSVG />}
+        imgSrc={ManClappingPNGcompressed}
+        alt=""
         title={"Excellent progress! "}
         body={
           "You have completed the Adjectives section! Your command of the Yoruba language is getting better with each new skill you learn."

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ButtonLink, ButtonScroll, Button } from "../ButtonElements";
-import WelcomeElderSVG from "../../components/svg/WelcomeElderSVG.svg";
 
 import { homeObjOne, homeObjTwo } from "./Data";
 import {

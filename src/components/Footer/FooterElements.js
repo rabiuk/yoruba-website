@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
 import Link from "next/link";
 
 export const FooterContainer = styled.footer`
@@ -64,7 +63,7 @@ export const FooterLink = styled(Link)`
   font-size: 14px;
 
   &:hover {
-    color: #01bf71;
+    color: #ff7043;
     transition: 0.3s ease-out;
   }
 `;
@@ -80,6 +79,7 @@ export const SocialMediaWrap = styled.div`
   align-items: center;
   max-width: 1100px;
   margin: 40px auto 0 auto;
+  font-size: 1.5rem;
 
   @media screen and (max-width: 820px) {
     flex-direction: column;
@@ -120,7 +120,7 @@ export const ATag = styled.a`
   font-size: 14px;
 
   &:hover {
-    color: #01bf71;
+    color: #ff7043;
     transition: 0.3s ease-out;
   }
 `;

@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 // import { useLocation } from "react-router-dom";
 import { useRouter } from "next/navigation";
 

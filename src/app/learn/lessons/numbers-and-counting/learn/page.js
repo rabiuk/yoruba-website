@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import IntroLabel from "@/components/IntroLabel/IntroLabel";
-import BlackBoardWithNumbersSVG from "@/components/svg/BlackBoardWithNumbersSVG.svg";
+// import BlackBoardWithNumbersSVG from "@/components/svg/BlackBoardWithNumbersSVG.svg";
+import BlackBoardWithNumbersPNG from "@/components/svg/BlackBoardWithNumbersPNG.png";
 
 const NumbersAndCountingPage = () => {
   return (
@@ -17,7 +17,8 @@ const NumbersAndCountingPage = () => {
                 Quiz' to test your skills."
         scrollToID="#"
         quizPath="learn/lessons/numbers-and-counting/quiz"
-        svg={<BlackBoardWithNumbersSVG />}
+        imgSrc={BlackBoardWithNumbersPNG}
+        alt="Black Board With Numbers"
       />
     </>
   );

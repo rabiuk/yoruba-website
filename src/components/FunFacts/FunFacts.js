@@ -1,5 +1,4 @@
 "use client";
-import React, { use } from "react";
 // import mapAfricaSVG from "../../../public/images/map-of-africa.svg";
 // import toneSVG from "../../../public/images/tone(1).svg";
 // import twinSVG from "../../../public/images/twins(1).svg";
@@ -29,8 +28,8 @@ const FunFacts = () => {
           <FunFactsH2>Origins</FunFactsH2>
           <FunFactsP>
             The Yoruba people reside mainly in southwest Nigeria, Benin, and
-            Togo, making them one of Africa's largest ethnic groups with 20-40
-            million people.
+            Togo, making them one of Africa&#39;s largest ethnic groups with
+            20-40 million people.
           </FunFactsP>
         </FunFactsCard>
         <FunFactsCard>

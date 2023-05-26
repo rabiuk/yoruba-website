@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
@@ -7,7 +7,6 @@ import { animateScroll as scroll } from "react-scroll";
 import { useRouter, usePathname } from "next/navigation";
 import ScrollToTop from "../ScrollToTop";
 import { SignInButton } from "@/components/ButtonElements";
-import MobileSidebar from "../MobileSidebar/MobileSidebar";
 
 import {
   Nav,

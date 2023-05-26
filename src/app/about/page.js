@@ -1,5 +1,4 @@
 import Carousel from "@/components/Carousel/CarouselSS";
-import React from "react";
 
 const AboutPage = () => {
   return (

@@ -5,7 +5,6 @@ import {
   LeftWrapper,
   ChildrenWrapper,
 } from "./LayoutElements";
-import YorubaManLogin from "@/components/svg/YorubaManLoginSVG.svg";
 import Image from "next/legacy/image";
 import YorubaWomanSideProfile from "@/components/svg/YorubaWomanSideProfile.jpg";
 

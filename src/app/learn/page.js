@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-// import Sidebar from "@/components/MobileSidebar/MobileSidebar";
+import { useState } from "react";
 import LearnSection from "@/components/LearnSection/Learn";
 import ScrollToTop from "@/components/ScrollToTop";
 import { redirect } from "next/navigation";

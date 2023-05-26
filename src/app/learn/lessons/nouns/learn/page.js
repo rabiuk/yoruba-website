@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import IntroLabel from "@/components/IntroLabel/IntroLabel";
-import NounsSVG from "@/components/svg/NounsSVG.svg";
+// import NounsSVG from "@/components/svg/NounsSVG.svg";
+import NounsPNG from "@/components/svg/NounsPNG.png";
 
 const NounsPage = () => {
   return (
@@ -18,7 +18,9 @@ const NounsPage = () => {
                 skills."
         scrollToID="#"
         quizPath="learn/lessons/nouns/quiz"
-        svg={<NounsSVG className="nouns-svg" />}
+        imgSrc={NounsPNG}
+        alt="Nouns"
+        className="nouns-img"
       />
     </>
   );

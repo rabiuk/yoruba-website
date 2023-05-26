@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import ElderRaisingHandsSVG from "@/components/svg/ElderRaisingHandsSVG.svg";
+import { useState, useEffect } from "react";
 import {
   Container,
   Card,
@@ -10,11 +9,9 @@ import {
   BtnContainer,
   EmphasizedText,
 } from "./FlashcardElements";
-// import { alphabetsData } from "./alphabet_data";
 import { Button, BtnWrappper } from "@/components/ButtonElements";
 
 const FlashcardComp = ({ data, openModal, setOpenModal }) => {
-  //   const alphabetData = data;
 
   const [card, setCard] = useState("");
   const [word, setWord] = useState("");

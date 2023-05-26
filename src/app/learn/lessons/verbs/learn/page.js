@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import IntroLabel from "@/components/IntroLabel/IntroLabel";
-import ManFacingCameraSVG from "@/components/svg/ManFacingCameraSVG.svg";
+import ManFacingCameraPNG from "@/components/svg/ManFacingCameraPNG.png";
 
 const VerbsPage = () => {
   return (
@@ -16,7 +15,9 @@ const VerbsPage = () => {
                 explore the content and 'Start Quiz' to test your skills."
         scrollToID="#"
         quizPath="learn/lessons/verbs/quiz"
-        svg={<ManFacingCameraSVG className="verbs-svg" />}
+        imgSrc={ManFacingCameraPNG}
+        alt=""
+        className="verbs-img"
       />
     </>
   );

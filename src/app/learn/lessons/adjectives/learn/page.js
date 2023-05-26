@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import IntroLabel from "@/components/IntroLabel/IntroLabel";
-import TallShortSVG from "@/components/svg/TallShortSVG.svg";
+import TallShortPNG from "@/components/svg/TallShortPNG.png";
 
 const AdjectivesPage = () => {
   return (
@@ -18,7 +17,9 @@ const AdjectivesPage = () => {
                 adjectives."
         scrollToID="#"
         quizPath="learn/lessons/adjectives/quiz"
-        svg={<TallShortSVG className="adjectives-svg" />}
+        imgSrc={TallShortPNG}
+        alt="tall-short"
+        className="tall-short-img"
       />
     </>
   );

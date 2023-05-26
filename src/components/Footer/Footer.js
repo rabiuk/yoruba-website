@@ -1,11 +1,8 @@
 "use client";
-import React from "react";
 import { animateScroll as scroll } from "react-scroll";
 import {
   FaFacebook,
-  FaTwitter,
   FaLinkedin,
-  FaYoutube,
   FaInstagram,
 } from "react-icons/fa";
 import {

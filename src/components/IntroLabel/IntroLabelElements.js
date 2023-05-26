@@ -39,7 +39,7 @@ export const IntroBackground = styled.div`
 `;
 
 export const IntroWrapper = styled.div`
-  padding: 2.5rem 10vw 10vw 10vw;
+  padding: 2.5rem 10vw 2.5rem 10vw;
   z-index: 1;
   height: fit-content;
   display: flex;
@@ -91,38 +91,25 @@ export const Content2 = styled.div`
 `;
 export const ImgWrap = styled.div`
   /* margin-top: 40px; */
-  max-width: 555px;
-  height: 80%;
-  width: 80%;
+  max-width: 300px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  svg {
-    width: 100%;
-    height: 100%;
+  &.alphabet-blocks {
+    width: 75%;
   }
-  .verbs-svg {
-    width: 50%;
-    height: 50%;
+  &.verbs-img {
+    width: 60%;
   }
-  .nouns-svg {
-    width: 70%;
-    height: 70%;
-  }
-  .adjectives-svg {
-    transform: scale(1.25);
-  }
-
-  @media screen and (max-width: 768px) {
-    .verbs-svg {
-      width: 75%;
-      height: 75%;
+  @media screen and (min-width: 1440px) {
+    &.alphabet-blocks {
+      width: 50%;
     }
-    .nouns-svg {
-      width: 100%;
-      height: 100%;
-    }
+    /* &.verbs-img {
+      width: 40%;
+    } */
   }
 `;
 

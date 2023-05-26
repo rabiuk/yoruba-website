@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   HeroContainer,
   Overlay,
@@ -29,7 +29,7 @@ const HeroSection = ({ children }) => {
         {children}
       </HeroBg>
       <HeroContent>
-        <HeroH1>Let's Learn Yoruba</HeroH1>
+        <HeroH1>Let&#39;s Learn Yoruba</HeroH1>
         <HeroH2>Ẹkú dédé àsikoyí</HeroH2>
         <HeroH22>&#40;Welcome&#41;</HeroH22>
         <HeroP>
@@ -40,7 +40,7 @@ const HeroSection = ({ children }) => {
         </HeroP>
         <HeroBtnWrapper>
           <ButtonScroll
-            to="learn"
+            to="about"
             smooth={true}
             duration={500}
             spy={true}

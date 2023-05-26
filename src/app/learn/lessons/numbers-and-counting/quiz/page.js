@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import ManHandsOnHipsSVG from "@/components/svg/ManHandsOnHipsSVG.svg";
+import ManHandsOnHipsPNG from "@/components/svg/ManHandsOnHipsPNG.png";
 import yorubaNumbersData from "./data";
 import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
 import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
@@ -21,7 +20,8 @@ const NumbersAndCountingQuizPage = () => {
       <ModalComplete
         open={openModal}
         onClose={() => setOpenModal(false)}
-        svg={<ManHandsOnHipsSVG />}
+        imgSrc={ManHandsOnHipsPNG}
+        alt=""
         bg_color={"#00695C"}
         title={"Good Work!"}
         body={

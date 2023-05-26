@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import ClipboardCheckmarkSVG from "@/components/svg/ClipboardCheckmarkSVG.svg";
+import ClipboardCheckmarkPNG from "@/components/svg/ClipboardCheckmarkPNG.png";
 import yorubaVerbsData from "./data";
 import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
 import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
@@ -22,7 +21,8 @@ const VerbsQuizPage = () => {
       <ModalComplete
         open={openModal}
         onClose={() => setOpenModal(false)}
-        svg={<ClipboardCheckmarkSVG />}
+        imgSrc={ClipboardCheckmarkPNG}
+        alt=""
         bg_color={"#FF7043"}
         title={"Fantastic job! "}
         body={

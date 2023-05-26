@@ -1,11 +1,8 @@
 "use client";
-import React from "react";
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import ElderRaisingHandsSVG from "@/components/svg/ElderRaisingHandsSVG.svg";
 import ElderRaisingHandsPNG from "@/components/svg/ElderRaisingHandsPNG.png";
 import { alphabetsData } from "./data";
-// import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
 import Flashcard from "@/components/Flashcard/Flashcard";
 import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
 
