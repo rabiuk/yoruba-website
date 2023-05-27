@@ -41,6 +41,8 @@ export const IntroBackground = styled.div`
 export const IntroWrapper = styled.div`
   padding: 2.5rem 10vw 2.5rem 10vw;
   z-index: 1;
+  min-height: 400px;
+  max-height: 400px;
   height: fit-content;
   display: flex;
   justify-content: center;
@@ -66,6 +68,9 @@ export const IntroWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
+    // eremove max-height property
+    max-height: 100%;
+    /* min-height: 100%; */
   }
 `;
 
@@ -76,21 +81,19 @@ export const Content1 = styled.div`
     /* height: 50%; */
     width: 100%;
   }
+
 `;
 export const Content2 = styled.div`
-  /* display: flex; */
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    /* height: 50%; */
     width: 100%;
   }
 `;
 export const ImgWrap = styled.div`
-  /* margin-top: 40px; */
   max-width: 300px;
   width: 100%;
   display: flex;
@@ -101,7 +104,11 @@ export const ImgWrap = styled.div`
     width: 75%;
   }
   &.verbs-img {
-    width: 60%;
+    /* width: 32%; */
+    max-width: 32%;
+  }
+  &.numbers-img {
+    max-width: 80%;
   }
   @media screen and (min-width: 1440px) {
     &.alphabet-blocks {
@@ -110,6 +117,11 @@ export const ImgWrap = styled.div`
     /* &.verbs-img {
       width: 40%;
     } */
+  }
+  @media screen and (min-width: 768px) and (max-width: 1440px) {
+    &.verbs-img {
+      max-width: 45%;
+    }
   }
 `;
 
@@ -121,6 +133,9 @@ export const IntroH1 = styled.h1`
   font-weight: 900;
   z-index: 1;
   text-align: center;
+  @media screen and (max-width: 1000px) {
+    font-size: 42px;
+  }
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
@@ -134,11 +149,14 @@ export const IntroP = styled.p`
   color: #fafafa;
   z-index: 1;
   text-align: center;
+  @media screen and (max-width: 1000px) {
+    font-size: 16.5px;
+  }
   @media screen and (max-width: 768px) {
-    font-size: 22px;
+    font-size: 16.5px;
   }
   @media screen and (max-width: 480px) {
-    font-size: 16.5px;
+    font-size: 14px;
   }
 `;
 

@@ -2,9 +2,9 @@ import styled from "styled-components";
 // import { Link as LinkR } from "react-router-dom";
 import Link from "next/link";
 
-const Brown = "#6f3f2c";
+const OFFBLACK = "#010606";
 export const UnorderedList = styled.ul`
-  width: 10rem;
+  width: 15rem;
   position: absolute;
   list-style: none;
   text-align: start;
@@ -17,8 +17,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: ${Brown};
+  background: ${OFFBLACK};
   margin-top: 7.5px;
+  background: linear-gradient(145deg, #010606, #010505);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 7.5px;

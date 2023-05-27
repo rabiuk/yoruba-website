@@ -14,12 +14,10 @@ import {
   Subtitle,
   BtnWrap,
   ImgWrap,
-  Img,
   IntroContainer,
   H1,
   P,
   ArrowDownward,
-  ArrowDropDown,
 } from "./LearnElements";
 import CurriculumModal from "./CurriculumModal/CurriculumModal";
 
@@ -36,7 +34,6 @@ const ImproveSkillsSection = ({
   pageLink,
   img,
   alt,
-  primary,
   dark,
   dark2,
   className,
@@ -58,7 +55,7 @@ const ImproveSkillsSection = ({
                 <BtnWrap>
                   <Button
                     onClick={() => setOpenModal(true)}
-                    primary={primary ? 1 : 0}
+                    // primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
                   >
@@ -71,13 +68,7 @@ const ImproveSkillsSection = ({
                 <BtnWrap>
                   <ButtonLink
                     href={pageLink}
-                    // target="_blank"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 1 : 0}
+                    // primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
                   >
@@ -131,7 +122,7 @@ const ImproveSkillsWelcome = () => {
               offset={-80}
               onMouseEnter={onHover}
               onMouseLeave={onHover}
-              primary={true}
+              // primary={true}
             >
               {/* Next {hover ? <ArrowDownward /> : <ArrowDropDown />} */}
               Next <ArrowDownward />

@@ -1,8 +1,8 @@
 "use client";
-import CarouselSlide from "./CarouselSlide";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import CarouselSlide from "./CarouselSlide";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // import { Navigation } from "swiper";
 import { Autoplay } from "swiper";
@@ -21,7 +21,8 @@ const CarouselCS = ({ data }) => {
       className="mySwiper"
     >
       {data.map((slide) => {
-        const { id, slideTitle, slideDescription, slideImage } = slide;
+        // const { id, slideTitle, slideDescription, slideImage } = slide;
+        const { id, slideImage } = slide;
         return (
           <SwiperSlide key={id}>
             <CarouselSlide

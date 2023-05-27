@@ -48,8 +48,6 @@ const HeroSection = ({ children }) => {
             offset={0}
             onMouseEnter={onHover}
             onMouseLeave={onHover}
-            primary="true"
-            dark="true"
           >
             Start Learning {hover ? <ArrowDownward /> : <ArrowDropDown />}
           </ButtonScroll>

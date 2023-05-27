@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export const ButtonScroll = styled(LinkScroll)`
   border-radius: 50px;
-  background: ${({ primary }) => (primary ? "#ff7043" : "#010606")};
+  /* background: ${({ isPrimary }) => (isPrimary ? "#ff7043" : "#010606")}; */
+  background: #ff7043;
   white-space: nowrap;
   padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
   color: ${({ dark }) => (dark ? "#FAFAFA" : "#fff")};
@@ -21,18 +22,15 @@ export const ButtonScroll = styled(LinkScroll)`
 
   &:hover {
     transition: all 0.2s ease—in—out;
-    background: ${({ primary }) => (primary ? "#424242" : "#01BF71")};
+    /* background: ${({ isPrimary }) => (isPrimary ? "#424242" : "#01BF71")}; */
+    background: #424242;
   }
 `;
-export const ButtonScrollLink = ({ children, href, ...rest }) => (
-  <Link href={href} passHref>
-    <ButtonScroll {...rest}>{children}</ButtonScroll>
-  </Link>
-);
 
 export const ButtonLink = styled(Link)`
   border-radius: 50px;
-  background: ${({ primary }) => (primary ? "#ff7043" : "#010606")};
+  /* background: ${({ isPrimary }) => (isPrimary ? "#ff7043" : "#010606")}; */
+  background: #ff7043;
   white-space: nowrap;
   padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
   color: ${({ dark }) => (dark ? "#FAFAFA" : "#fff")};
@@ -49,12 +47,14 @@ export const ButtonLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? "#424242" : "#01BF71")};
+    /* background: ${({ isPrimary }) => (isPrimary ? "#424242" : "#01BF71")}; */
+    background: #424242;
   }
 `;
 export const Button = styled.button`
   border-radius: 50px;
-  background: ${({ primary }) => (primary ? "#ff7043" : "#010606")};
+  /* background: ${({ isPrimary }) => (isPrimary ? "#ff7043" : "#010606")}; */
+  background: #ff7043;
   white-space: nowrap;
   padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
   color: ${({ dark }) => (dark ? "#FAFAFA" : "#fff")};
@@ -70,7 +70,8 @@ export const Button = styled.button`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? "#424242" : "#01BF71")};
+    /* background: ${({ isPrimary }) => (isPrimary ? "#424242" : "#01BF71")}; */
+    background: #424242;
   }
 `;
 
@@ -83,8 +84,8 @@ export const BtnWrappper = styled.div`
 
 export const SignInButton = styled.button`
   border-radius: 5px;
-  background: ${({ primary }) =>
-    primary ? "#ff7043" : "rgba(255, 255, 255, 0)"};
+  background: ${({ isPrimary }) =>
+    isPrimary ? "#ff7043" : "rgba(255, 255, 255, 0)"};
   white-space: nowrap;
   padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
   /* color: ${({ dark }) => (dark ? "#FAFAFA" : "#FAFAFA")}; */
@@ -103,7 +104,7 @@ export const SignInButton = styled.button`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    /* background: ${({ primary }) => (primary ? "#ff7043" : "#ff7043")}; */
+    /* background: ${({ isPrimary }) => (isPrimary ? "#ff7043" : "#ff7043")}; */
     border-color: #ff7043;
     color: #ff7043;
   }

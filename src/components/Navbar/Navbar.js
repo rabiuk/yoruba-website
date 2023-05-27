@@ -7,6 +7,8 @@ import { animateScroll as scroll } from "react-scroll";
 import { useRouter, usePathname } from "next/navigation";
 import ScrollToTop from "../ScrollToTop";
 import { SignInButton } from "@/components/ButtonElements";
+// import { MdArrowDropDown } from "react-icons/md";
+// import { RiArrowDropDownLine } from "react-icons/ri";
 
 import {
   Nav,
@@ -21,12 +23,13 @@ import {
   NavBtn,
   NavLinksR,
   NavGreeting,
+  RiArrowDropDownLineStyled,
 } from "./NavbarElements";
 import Dropdown from "./NavbarDropDown/Dropdown";
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(true);
   const [isHome, setIsHome] = useState(false);
   const [isInLearn, setIsInLearn] = useState(false);
   const [isInAbout, setIsInAbout] = useState(false);
@@ -57,29 +60,11 @@ const Navbar = ({ toggle }) => {
     );
     setIsInAbout(currentPage.includes("about"));
     setIsInProverbs(currentPage.includes("proverbs-and-wisdom"));
+    setShowDropDown(false);
   }, [currentPage]);
 
   const scrollToTop = () => {
     scroll.scrollToTop();
-  };
-  const handleNavItemClick = (e, section) => {
-    e.preventDefault();
-    if (section === "#learn") {
-      router.push("/learn/");
-      if (typeof window !== "undefined") {
-        window.scrollTo(0, 0);
-      }
-    } else {
-      // navigate("/");
-      router.push("/");
-      setTimeout(() => {
-        if (typeof window !== "undefined") {
-          const sectionElement = document.querySelector(section);
-          const topOffset = sectionElement.offsetTop - 80;
-          window.scrollTo({ top: topOffset, behavior: "smooth" });
-        }
-      }, 100);
-    }
   };
 
   return (
@@ -183,7 +168,8 @@ const Navbar = ({ toggle }) => {
                           : "non-active"
                       }
                     >
-                      Learn
+                      Learn{" "}
+                      <RiArrowDropDownLineStyled showDropDown={showDropDown} />
                     </NavLinksR>
                     {showDropDown && <Dropdown title="Learn" />}
                   </NavItem>

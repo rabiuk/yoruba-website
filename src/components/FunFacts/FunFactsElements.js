@@ -30,7 +30,7 @@ export const FunFactsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   padding: 0 50px;
   margin-bottom: 100px;
 
@@ -87,7 +87,7 @@ export const FunFactsSVGIcon = styled.div`
 `;
 
 export const FunFactsH1 = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: #ff7043;
   /* color: #fafafa; */
   margin-bottom: 64px;

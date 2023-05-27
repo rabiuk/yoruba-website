@@ -30,6 +30,8 @@ const InfoSection = ({
   isSVG,
   imgSrc,
   alt,
+  width,
+  height,
   primary,
   dark,
   dark2,
@@ -48,7 +50,7 @@ const InfoSection = ({
                 <BtnWrap>
                   <ButtonLink
                     href={pageLink}
-                    primary={primary ? 1 : 0}
+                    // primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
                   >
@@ -59,7 +61,19 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap className={className}>
-                {isSVG ? imgSrc : <Image src={imgSrc} alt="" fill={true} />}
+                {isSVG ? (
+                  imgSrc
+                ) : (
+                  <Image
+                    src={imgSrc}
+                    alt={alt}
+                    width={width}
+                    height={height}
+                    // fill={true}
+                    // style={{ objectFit: "cover" }}
+                    // priority={true}
+                  />
+                )}
               </ImgWrap>
             </Column2>
           </InfoRow>

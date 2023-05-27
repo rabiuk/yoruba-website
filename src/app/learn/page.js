@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import LearnSection from "@/components/LearnSection/Learn";
 import ScrollToTop from "@/components/ScrollToTop";
 import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 const LearnPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const { data: session } = useSession({
     // required: true,
     // onUnauthenticated() {
@@ -14,9 +14,9 @@ const LearnPage = () => {
     // },
   });
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggle = () => {
+  //   setIsOpen(!isOpen);
+  // };
   return (
     <>
       <ScrollToTop />

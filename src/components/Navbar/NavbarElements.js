@@ -2,6 +2,7 @@ import styled from "styled-components";
 // import { Link as LinkR } from "react-router-dom";
 import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const beige = "#f5f5dc";
 export const Nav = styled.nav`
@@ -12,7 +13,7 @@ export const Nav = styled.nav`
   transition: background 0.5s, box-shadow 0.5s;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-size: 1.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: ${({ home, scrollNav }) =>
@@ -95,10 +96,11 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   list-style: none;
   text-align: center;
   margin-left: 30px;
+  height: 100%;
   /* grid-column: 17; */
   /* justify-content: space-evenly; */
   width: fit-content;
@@ -124,8 +126,10 @@ export const NavLinksS = styled(LinkScroll)`
   padding: 1rem 0;
   height: 100%;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   &:hover {
     color: #ff7043;
+    transition: all 0.2s ease-in-out;
   }
 
   &.active {
@@ -155,7 +159,9 @@ export const NavLinksR = styled(Link)`
   height: 100%;
   width: fit-content;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   &:hover {
+    transition: all 0.2s ease-in-out;
     color: #ff7043;
   }
   &.active {
@@ -163,6 +169,12 @@ export const NavLinksR = styled(Link)`
   }
   &.bold {
     font-weight: 900;
+  }
+  svg {
+    transition: color 0.2s ease-in-out;
+  }
+  &:hover svg {
+    color: #ff7043;
   }
 `;
 
@@ -193,8 +205,10 @@ export const NavLinksDiv = styled.div`
   /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   &:hover {
     color: #ff7043;
+    transition: all 0.2s ease-in-out;
   }
 `;
 
@@ -226,4 +240,9 @@ export const NavBtnLink = styled(Link)`
     background: #fff;
     color: #010606;
   }
+`;
+
+export const RiArrowDropDownLineStyled = styled(RiArrowDropDownLine)`
+  font-size: 2.5rem;
+  opacity: ${({ showDropDown }) => (!showDropDown ? "1" : "0")};
 `;

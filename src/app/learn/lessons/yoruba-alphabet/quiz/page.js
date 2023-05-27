@@ -4,7 +4,13 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ElderRaisingHandsPNG from "@/components/svg/ElderRaisingHandsPNG.png";
 import { alphabetsData } from "./data";
 import Flashcard from "@/components/Flashcard/Flashcard";
-import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
+import dynamic from "next/dynamic";
+// import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
+
+const ModalComplete = dynamic(
+  () => import("@/components/Modals/ModalComplete/ModalComplete"),
+  { ssr: false }
+);
 
 const LearnTheYorubaAlphabetQuizPage = () => {
   const [openModal, setOpenModal] = useState(false);

@@ -19,6 +19,7 @@ const NumbersAndCountingPage = () => {
         quizPath="learn/lessons/numbers-and-counting/quiz"
         imgSrc={BlackBoardWithNumbersPNG}
         alt="Black Board With Numbers"
+        className="numbers-img"
       />
     </>
   );

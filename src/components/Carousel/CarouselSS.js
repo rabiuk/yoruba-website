@@ -7,7 +7,8 @@ const cleanUpData = (rawData) => {
     const { id } = sys;
     const slideTitle = fields.title;
     const slideDescription = fields.description;
-    const slideImage = fields.image.fields.file.url;
+    // const slideImage = fields.image.fields.file.url;
+    const slideImage = "https:" + fields.image.fields.file.url;
     const updatedSlide = { id, slideTitle, slideDescription, slideImage };
     return updatedSlide;
   });

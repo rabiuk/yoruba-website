@@ -4,7 +4,13 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ClipboardCheckmarkPNG from "@/components/svg/ClipboardCheckmarkPNG.png";
 import yorubaVerbsData from "./data";
 import InteractiveQuiz from "@/components/InteractiveQuiz/InteractiveQuiz";
-import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
+import dynamic from "next/dynamic";
+// import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
+
+const ModalComplete = dynamic(
+  () => import("@/components/Modals/ModalComplete/ModalComplete"),
+  { ssr: false }
+);
 
 const VerbsQuizPage = () => {
   const [openModal, setOpenModal] = useState(false);

@@ -18,8 +18,8 @@ export const homeObjOne = {
   imgStart: false,
   imgSrc: YorubaCultureCelebrationPNG,
   alt: "Yoruba culture celebration",
-  // width: 555,
-  // height: 100,
+  width: 555,
+  height: 555,
   dark: false, //is Dark
   primary: true, //if dark then primary
   darkText: true, //dark text?
@@ -41,8 +41,8 @@ export const homeObjTwo = {
   imgStart: true,
   imgSrc: <YorubaFlashCardSVG />,
   alt: "Yoruba flashcard",
-  // width: 555,
-  // height: 100,
+  width: null,
+  height: null,
   dark: true,
   primary: true,
   darkText: true,
@@ -63,8 +63,8 @@ export const homeObjThree = {
   isSVG: false,
   imgSrc: YorubaManTeachingKidsSVG,
   alt: "Yoruba elder teaching kids",
-  // width: 555,
-  // height: 100,
+  width: 555,
+  height: 555,
   dark: false,
   primary: true,
   darkText: true,

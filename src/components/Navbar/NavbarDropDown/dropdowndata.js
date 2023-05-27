@@ -7,32 +7,32 @@ export const dropdownItems = [
     subItems: [
       {
         id: 1,
-        title: "Lesson I",
+        title: "Alphabet",
         href: "learn/lessons/yoruba-alphabet/learn",
       },
       {
         id: 2,
-        title: "Lesson II",
+        title: "Numbers",
         href: "learn/lessons/numbers-and-counting/learn",
       },
       {
         id: 3,
-        title: "Lesson III",
+        title: "Verbs",
         href: "learn/lessons/verbs/learn",
       },
       {
         id: 4,
-        title: "Lesson IV",
+        title: "Nouns",
         href: "learn/lessons/nouns/learn",
       },
       {
         id: 5,
-        title: "Lesson V",
+        title: "Adjectives",
         href: "learn/lessons/adjectives/learn",
       },
       {
         id: 6,
-        title: "Lesson VI",
+        title: "Sentences",
         href: "learn/lessons/sentences/learn",
       },
     ],
