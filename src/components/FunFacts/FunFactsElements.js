@@ -87,7 +87,7 @@ export const FunFactsSVGIcon = styled.div`
 `;
 
 export const FunFactsH1 = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4.8rem;
   color: #ff7043;
   /* color: #fafafa; */
   margin-bottom: 64px;

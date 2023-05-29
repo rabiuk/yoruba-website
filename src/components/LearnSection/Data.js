@@ -29,7 +29,7 @@ export const homeObjTwo = {
   topLine: "Test Your Knowledge After Each Lesson",
   headline: "INTERACTIVE QUIZZES",
   description:
-    "After completing each lesson, challenge your newly acquired Yoruba language skills with our interactive quizzes. These quizzes are tailored to assess your comprehension, vocabulary, and grammar skills based on the content of the corresponding lesson, providing instant feedback and enabling you to pinpoint areas for improvement.",
+    "After completing each lesson, challenge your newly acquired Yoruba language skills with our interactive quizzes. These quizzes are tailored to assess your comprehension, vocabulary, and grammar skills based on the content of the corresponding lesson.",
   buttonLabel: "Start Learning",
   pageLink: "learn/lessons/yoruba-alphabet/learn",
   imgStart: true,

@@ -11,7 +11,7 @@ export const homeObjOne = {
   topLine: "About Yoruba",
   headline: "Discover the Richness of the Yoruba Culture",
   description:
-    "Yoruba culture is known for its deep roots in traditions, art, music, food, and religion, which have been passed down through generations. Our aim is to showcase these elements and share their stories with the world. We offer a range of resources, from language learning tools to cultural insights, to help you immerse yourself in the world of Yoruba and appreciate its uniqueness.",
+    "Yoruba culture is a vibrant mix of traditions, art, music, food, and religion. These pillars of the Yoruba community are deeply rooted in history, passed down through many generations. \n Our aim is to showcase these elements and share their stories with the world.",
   buttonLabel: "More about yoruba",
   pageLink: "/about",
   isSVG: false,
@@ -34,7 +34,7 @@ export const homeObjTwo = {
   topLine: "Test and Improve Your Yoruba Skills",
   headline: "Unlock Your Language Potential",
   description:
-    "Discover the ultimate destination for evaluating and improving your Yoruba language skills. Featuring interactive quizzes and lessons for all skill levels, you'll challenge your grammar, vocabulary, and pronunciation. Embark on this engaging learning experience to boost your Yoruba proficiency and connect with the language's vibrant culture.",
+    "Dive into the definitive platform for honing your Yoruba language skills. Our interactive quizzes and lessons cater to all abilities, testing your grammar, vocabulary, and pronunciation. \n Embark on this vibrant linguistic journey to enhance your Yoruba fluency and embrace its rich culture.",
   buttonLabel: "Lets Go",
   pageLink: "/learn",
   isSVG: true,

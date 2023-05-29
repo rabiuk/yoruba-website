@@ -1,6 +1,7 @@
 "use client";
 import { ButtonLink } from "../ButtonElements";
 import Image from "next/legacy/image";
+import React from "react";
 import {
   InfoContainer,
   InfoWrapper,
@@ -46,7 +47,15 @@ const InfoSection = ({
               <TextWrapper>
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
+                <Subtitle darkText={darkText}>
+                  {description.split("\n").map((text, index) => (
+                    <React.Fragment key={`${text}-${index}`}>
+                      {text}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </Subtitle>
+
                 <BtnWrap>
                   <ButtonLink
                     href={pageLink}

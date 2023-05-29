@@ -1,46 +1,10 @@
 import styled from "styled-components";
 
 const Brown = "#6f3f2c";
-export const Container = styled.div`
-  /* background: red; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 1000px;
-  position: relative;
-  z-index: 1;
-  overflow: auto;
-  :before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.2) 0% rgba(0, 0, 0, 0.6) 100%
-      ),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-    /* z-index: 2; */
-  }
-`;
-
-export const IntroBackground = styled.div`
-  /* background-color: rgba(0, 105, 92, 1); */
-  background-color: ${Brown};
-  /* background-image: linear-gradient(to right, #424242, #424242); */
-  height: 430px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 export const IntroWrapper = styled.div`
   padding: 2.5rem 10vw 2.5rem 10vw;
-  z-index: 1;
+  /* z-index: 1; */
   min-height: 400px;
   max-height: 400px;
   height: fit-content;
@@ -131,7 +95,7 @@ export const IntroH1 = styled.h1`
   color: #fafafa;
   font-size: 48px;
   font-weight: 900;
-  z-index: 1;
+  /* z-index: 1; */
   text-align: center;
   @media screen and (max-width: 1000px) {
     font-size: 42px;
@@ -147,7 +111,7 @@ export const IntroH1 = styled.h1`
 export const IntroP = styled.p`
   font-size: 18px;
   color: #fafafa;
-  z-index: 1;
+  /* z-index: 1; */
   text-align: center;
   @media screen and (max-width: 1000px) {
     font-size: 16.5px;
