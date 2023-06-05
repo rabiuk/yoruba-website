@@ -170,6 +170,7 @@ const Navbar = ({ toggle }) => {
                     >
                       Learn{" "}
                       <RiArrowDropDownLineStyled showDropDown={showDropDown} />
+
                     </NavLinksR>
                     {showDropDown && <Dropdown title="Learn" />}
                   </NavItem>

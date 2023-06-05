@@ -3,11 +3,12 @@ import styled from "styled-components";
 import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { colors } from "@/components/colors";
 
 const beige = "#f5f5dc";
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
-    home ? (scrollNav ? "#010606" : "transparent") : "#010606"};
+    home ? (scrollNav ? "#101522" : "transparent") : "#101522"};
   /* transition: 0.5s; */
   /* height: 80px; */
   transition: background 0.5s, box-shadow 0.5s;
@@ -244,5 +245,9 @@ export const NavBtnLink = styled(Link)`
 
 export const RiArrowDropDownLineStyled = styled(RiArrowDropDownLine)`
   font-size: 2.5rem;
-  opacity: ${({ showDropDown }) => (!showDropDown ? "1" : "0")};
+  color: ${({ showDropDown }) => (showDropDown ? colors.primaryColor : "#fff")};
+  transition: all 0.3s ease-in-out;
+  transform: rotate(${({ showDropDown }) => (showDropDown ? "180deg" : "0")});
+  position: ${({ showDropDown }) => (showDropDown ? "relative" : "static")};
+  top: ${({ showDropDown }) => (showDropDown ? "-5px" : "0")};
 `;

@@ -11,6 +11,8 @@ import {
   Span,
   LineBreak,
 } from "@/components/Typography/Typography";
+import AlphabetTable from "@/components/Table/AlphabetTable/AlphabetTable";
+import Aside from "@/components/Aside/Aside";
 const LearnTheYorubaAlphabetPage = () => {
   return (
     <>
@@ -25,6 +27,7 @@ const LearnTheYorubaAlphabetPage = () => {
           imgSrc={AlphabetBlocksPNG}
           alt="Alphabet Blocks"
           className="alphabet-blocks"
+          btnName="Flashcards"
         />
         <ContentContainer>
           <section>
@@ -32,7 +35,7 @@ const LearnTheYorubaAlphabetPage = () => {
               In Yoruba culture, the language is regarded as a crucial aspect of
               the society{"'"}s identity. An essential component of learning
               Yoruba is understanding the alphabet, known as{" "}
-              <Span secondary fontWeight={900}>
+              <Span textColour fontWeight={900}>
                 Álífábẹ́ẹ̀tì
               </Span>
               . The Yoruba alphabet consists of 25 letters, each having its own
@@ -55,8 +58,28 @@ const LearnTheYorubaAlphabetPage = () => {
             <P secondary fontWeight={900}>
               Here are the 25 letters in the Yoruba alphabet:
             </P>
+            <LineBreak />
+            <LineBreak />
+            <AlphabetTable />
+            <P>
+              <Span secondary fontWeight={900}>
+                Fun Fact:{" "}
+              </Span>
+              There does not exist a word in Yoruba that begins with the letter{" "}
+              <Span fontWeight={900}> u</Span>.
+            </P>
+            <LineBreak />
+            <LineBreak />
+            <P>
+              Remember, practice makes perfect. Keep revising and applying the
+              sounds in different words. You can feel free to use the
+              flashcards.
+            </P>
+            <LineBreak />
+            <P>Next lesson, we'll delve into numbers & counting.</P>
           </section>
         </ContentContainer>
+        <Aside />
       </Container>
     </>
   );

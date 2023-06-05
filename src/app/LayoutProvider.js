@@ -1,14 +1,26 @@
-// Use the client directive for using usePathname hook.
 "use client";
 
-// Use usePathname for catching route name.
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import { SessionProvider } from "next-auth/react";
-import MobileSidebar from "@/components/MobileSidebar/MobileSidebar";
 import { useState } from "react";
+// import Navbar from "@/components/Navbar/Navbar";
+// import MobileSidebar from "@/components/MobileSidebar/MobileSidebar";
+// import Footer from "@/components/Footer/Footer";
 
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("@/components/Navbar/Navbar"), {
+  ssr: false,
+});
+const MobileSidebar = dynamic(
+  () => import("@/components/MobileSidebar/MobileSidebar"),
+  {
+    ssr: false,
+  }
+);
+
+const Footer = dynamic(() => import("@/components/Footer/Footer"), {
+  ssr: false,
+});
 export const LayoutProvider = ({ children, pageProps = {} }) => {
   const pathname = usePathname();
   const { session, ...otherProps } = pageProps;

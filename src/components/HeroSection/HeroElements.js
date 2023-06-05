@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { colors } from "@/components/colors.js";
 import { MdArrowDownward, MdArrowDropDown } from "react-icons/md";
 
 const lightTextColour = "#FAFAFA";
 const darkTextColour = "#424242";
 export const HeroContainer = styled.div`
-  background: #f5f5dc;
+  background: ${colors.backgroundColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +37,7 @@ export const Overlay = styled.div`
 
 export const HeroContent = styled.div`
   z-index: 3;
-  max-width: 100%;
+  max-width: 75%;
   /* min-height: 100%; */
   /* position: absolute; */
   padding: 8px 24px;
@@ -49,8 +50,9 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroH1 = styled.h1`
-  color: #ff7043;
-  font-size: 48px;
+  color: ${colors.primaryColor};
+  /* font-size: 48px; */
+  font-size: max(48px, min(5vw, 76px));
   text-align: center;
   font-weight: 900;
   filter: drop-shadow(10px 10px 10px rgba(255, 112, 67, 0.5));
@@ -72,7 +74,8 @@ export const HeroH1 = styled.h1`
 export const HeroH2 = styled.h2`
   margin-top: 12px;
   color: #00695c;
-  font-size: 28px;
+  /* font-size: 28px; */
+  font-size: max(25px, min(3vw, 36px));
   font-weight: 900;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
 
@@ -91,7 +94,6 @@ export const HeroH2 = styled.h2`
   }
 `;
 export const HeroH22 = styled.p`
-  margin-top: 0px;
   color: #00695c;
   font-size: 18px;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
@@ -114,11 +116,12 @@ export const HeroH22 = styled.p`
 export const HeroP = styled.p`
   /* margin-top: 24px; */
   color: ${lightTextColour};
-  font-size: 22px;
+  /* font-size: 20px; */
+  font-size: max(15px, min(2vw, 20px));
   font-weight: 400;
   filter: drop-shadow(10px 10px 10px rgba(255, 255, 255, 0.5));
   text-align: center;
-  max-width: 700px;
+  /* max-width: 700px; */
   @media screen and (max-width: 768px) {
     font-size: 18px;
   }
@@ -129,7 +132,7 @@ export const HeroP = styled.p`
     font-size: 18px;
   }
   @media screen and (max-height: 380px) {
-  font-size: 16px;
+    font-size: 16px;
   }
 `;
 
@@ -142,7 +145,7 @@ export const HeroBtnWrapper = styled.div`
     transform: scale(0.8);
   }
   @media screen and (max-height: 380px) {
-  margin-top: 16px;
+    margin-top: 16px;
   }
 `;
 

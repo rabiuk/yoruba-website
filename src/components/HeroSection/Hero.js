@@ -30,13 +30,13 @@ const HeroSection = ({ children }) => {
       </HeroBg>
       <HeroContent>
         <HeroH1>Let&#39;s Learn Yoruba</HeroH1>
-        <HeroH2>Ẹkú dédé àsikoyí</HeroH2>
-        <HeroH22>&#40;Welcome&#41;</HeroH22>
+        {/* <HeroH2>Ẹkú dédé àsikoyí</HeroH2>
+        <HeroH22>&#40;Welcome&#41;</HeroH22> */}
         <HeroP>
-          Welcome to [insert website name here] , here we celebrate the beauty
-          and richness of Yoruba culture and language. Our goal is to provide a
-          comprehensive resource for those who want to learn more about the
-          vibrant culture and deepen their connection to it.
+          Discover the richness of Yoruba. Your ultimate
+          guide to learning the language and connecting with the culture.
+          Experience the beauty, dive into the vibrancy, and enrich your
+          understanding of Yoruba today.
         </HeroP>
         <HeroBtnWrapper>
           <ButtonScroll
@@ -49,7 +49,7 @@ const HeroSection = ({ children }) => {
             onMouseEnter={onHover}
             onMouseLeave={onHover}
           >
-            Start Learning {hover ? <ArrowDownward /> : <ArrowDropDown />}
+            Get Started {hover ? <ArrowDownward /> : <ArrowDropDown />}
           </ButtonScroll>
         </HeroBtnWrapper>
       </HeroContent>

@@ -6,7 +6,6 @@ import {
   SidebarMenu,
   SidebarLink,
   SideBtnWrap,
-  SidebarRoute,
   UserContainer,
   Greeting,
 } from "./MobileSidebarElements";

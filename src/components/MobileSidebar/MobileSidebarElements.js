@@ -9,7 +9,7 @@ export const SidebarContainer = styled.aside`
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: #0d0d0d;
+  background: #101522;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,25 +84,6 @@ export const SideBtnWrap = styled.div`
   justify-content: center;
 `;
 
-export const SidebarRoute = styled(Link)`
-  border-radius: 50px;
-  background: #ff7043;
-  white-space: nowrap;
-  padding: 16px 64px;
-  color: #010606;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2 ease-in-out;
-    background: #fff;
-    color: #010606;
-  }
-`;
 export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;

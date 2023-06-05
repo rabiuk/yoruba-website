@@ -19,6 +19,7 @@ const IntroLabel = ({
   imgSrc,
   alt,
   className,
+  btnName,
 }) => {
   return (
     <>
@@ -50,7 +51,7 @@ const IntroLabel = ({
                 dark={true ? 1 : 0}
                 dark2={true ? 1 : 0}
               >
-                Start Quiz
+                {btnName}
               </ButtonLink>
             </BtnWrapper>
           </BtnContainer>

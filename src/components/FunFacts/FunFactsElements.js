@@ -87,7 +87,7 @@ export const FunFactsSVGIcon = styled.div`
 `;
 
 export const FunFactsH1 = styled.h1`
-  font-size: 4.8rem;
+  font-size: 4.2rem;
   color: #ff7043;
   /* color: #fafafa; */
   margin-bottom: 64px;
@@ -98,12 +98,12 @@ export const FunFactsH1 = styled.h1`
 `;
 
 export const FunFactsH2 = styled.h2`
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin-bottom: 10px;
   color: #424242;
 `;
 export const FunFactsP = styled.p`
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   text-align: center;
-  color: #424242;
+  color: #707070;
 `;
