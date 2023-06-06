@@ -91,6 +91,7 @@ export const SignInButton = styled.button`
   /* color: ${({ dark }) => (dark ? "#FAFAFA" : "#FAFAFA")}; */
   color: rgba(255, 255, 255, 0.75);
   font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
+  font-weight: 400;
   text-decoration: none;
   outline: none;
   border: none;

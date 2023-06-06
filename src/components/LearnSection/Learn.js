@@ -15,12 +15,17 @@ import {
   BtnWrap,
   ImgWrap,
   IntroContainer,
-  H1,
-  P,
-  ArrowDownward,
 } from "./LearnElements";
-import CurriculumModal from "./CurriculumModal/CurriculumModal";
 
+import dynamic from "next/dynamic";
+// import Modal from "@/components/Modal";
+import { H1, P, Span } from "@/components/Typography/Typography";
+import Books from "@/components/svg/bookstack.png";
+// import CurriculumModal from "./CurriculumModal/CurriculumModal";
+
+const Modal = dynamic(() => import("@/components/Modal"), {
+  ssr: false,
+});
 const ImproveSkillsSection = ({
   lightBg,
   id,
@@ -38,7 +43,11 @@ const ImproveSkillsSection = ({
   dark2,
   className,
 }) => {
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
   return (
     <>
       {/* <ImproveSkillsContainer lightBg={lightBg} id={id}> */}
@@ -54,7 +63,7 @@ const ImproveSkillsSection = ({
               <>
                 <BtnWrap>
                   <Button
-                    onClick={() => setOpenModal(true)}
+                    onClick={openModal}
                     // primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
@@ -84,7 +93,50 @@ const ImproveSkillsSection = ({
         </ImproveSkillsRow>
       </ImproveSkillsWrapper>
       {id === "curriculum" && (
-        <CurriculumModal open={openModal} onClose={() => setOpenModal(false)} />
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          imgSrc={Books}
+          alt={"books"}
+          width={300}
+          height={300}
+        >
+          <H1 textColor fontSize="40">
+            Curriculum
+          </H1>
+          <ul>
+            <li>
+              <P fontSize="20" fontWeight={400}>
+                The Yoruba Alphabet
+              </P>
+            </li>
+            <li>
+              <P fontSize="20" fontWeight={400}>
+                Numbers & Counting
+              </P>
+            </li>
+            <li>
+              <P fontSize="20" fontWeight={400}>
+                Basic Phrases I (Verbs)
+              </P>
+            </li>
+            <li>
+              <P fontSize="20" fontWeight={400}>
+                Basic Phrases II (Nouns)
+              </P>
+            </li>
+            <li>
+              <P fontSize="20" fontWeight={400}>
+                Advanced Phrases I
+              </P>
+            </li>
+            <li>
+              <P fontSize="20" fontWeight={400}>
+                Sentences
+              </P>
+            </li>
+          </ul>
+        </Modal>
       )}
       {/* </ImproveSkillsContainer> */}
     </>
@@ -100,37 +152,6 @@ const ImproveSkillsWelcome = () => {
   return (
     <>
       <ImproveSkillsContainer lightBg={true}>
-        {/* <ImgWrap>
-          <WelcomeElderSVG
-            style={{ fontSize: 600 }}
-            className="welcome-hands"
-          />
-        </ImgWrap> */}
-        <IntroContainer>
-          <H1>Improve Your Skills</H1>
-          <P>
-            Explore Yoruba through our progressive lessons and quizzes, designed
-            for all skill levels.
-          </P>
-          <BtnWrap className="next-btn">
-            <ButtonScroll
-              to="curriculum"
-              smooth={true}
-              duration={500}
-              spy={true}
-              exact="true"
-              offset={-80}
-              onMouseEnter={onHover}
-              onMouseLeave={onHover}
-              // primary={true}
-            >
-              {/* Next {hover ? <ArrowDownward /> : <ArrowDropDown />} */}
-              Next <ArrowDownward />
-            </ButtonScroll>
-          </BtnWrap>
-        </IntroContainer>
-
-        {/* <ImproveSkillsSection {...homeObjOne}></ImproveSkillsSection> */}
         <ImproveSkillsSection {...homeObjOne}></ImproveSkillsSection>
         <ImproveSkillsSection {...homeObjTwo}></ImproveSkillsSection>
       </ImproveSkillsContainer>

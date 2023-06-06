@@ -2,8 +2,13 @@ import styled from "styled-components";
 import { colors } from "@/components/colors";
 
 export const H1 = styled.h1`
-  font-size: 3.6rem; // scaled down from 4rem
-  margin-bottom: 0.9rem; // scaled down from 1rem
+  font-size: ${({ fontSize }) =>
+    fontSize
+      ? `clamp(${parseFloat(fontSize) * 0.8}px, ${
+          parseFloat(fontSize) / 100
+        }vw + ${parseFloat(fontSize) * 0.8}px, ${fontSize}px)`
+      : "32px"};
+  margin-bottom: 8px;
   font-weight: ${(props) => props.fontWeight || 900};
   color: ${(props) =>
     props.primary
@@ -11,14 +16,16 @@ export const H1 = styled.h1`
       : props.secondary
       ? colors.secondaryColor
       : colors.textColor};
-  @media (max-width: 768px) {
-    font-size: 2.7rem; // scaled down from 3rem
-  }
 `;
 
 export const H2 = styled.h2`
-  font-size: 2.7rem; // scaled down from 3rem
-  margin-bottom: 0.9rem; // scaled down from 1rem
+  font-size: ${({ fontSize }) =>
+    fontSize
+      ? `clamp(${parseFloat(fontSize) * 0.8}px, ${
+          parseFloat(fontSize) / 100
+        }vw + ${parseFloat(fontSize) * 0.8}px, ${fontSize}px)`
+      : "24px"};
+  margin-bottom: 8px;
   font-weight: ${(props) => props.fontWeight || 900};
   color: ${(props) =>
     props.primary
@@ -26,14 +33,16 @@ export const H2 = styled.h2`
       : props.secondary
       ? colors.secondaryColor
       : colors.textColor};
-  @media (max-width: 768px) {
-    font-size: 2.25rem; // scaled down from 2.5rem
-  }
 `;
 
 export const H3 = styled.h3`
-  font-size: 2.16rem; // scaled down from 2.4rem
-  margin-bottom: 0.9rem; // scaled down from 1rem
+  font-size: ${({ fontSize }) =>
+    fontSize
+      ? `clamp(${parseFloat(fontSize) * 0.8}px, ${
+          parseFloat(fontSize) / 100
+        }vw + ${parseFloat(fontSize) * 0.8}px, ${fontSize}px)`
+      : "19.2px"};
+  margin-bottom: 8px;
   font-weight: ${(props) => props.fontWeight || 900};
   color: ${(props) =>
     props.primary
@@ -41,14 +50,16 @@ export const H3 = styled.h3`
       : props.secondary
       ? colors.secondaryColor
       : colors.textColor};
-  @media (max-width: 768px) {
-    font-size: 1.8rem; // scaled down from 2rem
-  }
 `;
 
 export const P = styled.p`
-  font-size: ${({ large }) => (large ? "2.25rem" : "1.8rem")};
-  line-height: 1.8; // scaled down from 2
+  font-size: ${({ fontSize }) =>
+    fontSize
+      ? `clamp(${parseFloat(fontSize) * 0.8}px, ${
+          parseFloat(fontSize) / 100
+        }vw + ${parseFloat(fontSize) * 0.8}px, ${fontSize}px)`
+      : "16px"};
+  line-height: 1.6;
   font-weight: ${(props) => props.fontWeight || "normal"};
   color: ${(props) =>
     props.primary
@@ -56,13 +67,15 @@ export const P = styled.p`
       : props.secondary
       ? colors.secondaryColor
       : colors.textColor};
-  @media (max-width: 768px) {
-    font-size: ${({ large }) =>
-      large ? "1.8rem" : "1.575rem"}; // scaled down from "2rem" and "1.75rem"
-  }
 `;
 
 export const Span = styled.span`
+  font-size: ${({ fontSize }) =>
+    fontSize
+      ? `clamp(${parseFloat(fontSize) * 0.8}px, ${
+          parseFloat(fontSize) / 100
+        }vw + ${parseFloat(fontSize) * 0.8}px, ${fontSize}px)`
+      : "16px"};
   color: ${(props) =>
     props.primary
       ? colors.primaryColor
@@ -73,5 +86,5 @@ export const Span = styled.span`
 `;
 
 export const LineBreak = styled.div`
-  height: 1.35rem; // scaled down from 1.5rem
+  height: 12px;
 `;

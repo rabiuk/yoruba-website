@@ -1,8 +1,9 @@
 import {
   LayoutWrapper,
+  LoginText,
   InnerWrapper,
   ImageWrapper,
-  LeftWrapper,
+  CredWrapper,
   ChildrenWrapper,
 } from "./LayoutElements";
 import Image from "next/legacy/image";
@@ -12,12 +13,13 @@ export default function Layout({ children }) {
   return (
     <LayoutWrapper>
       <InnerWrapper>
-        <LeftWrapper>
-          <ChildrenWrapper>{children}</ChildrenWrapper>
-        </LeftWrapper>
         <ImageWrapper>
           <Image src={YorubaWomanSideProfile} alt="" fill={true} />
         </ImageWrapper>
+        <CredWrapper>
+          {/* <LoginText>Sign In</LoginText> */}
+          <ChildrenWrapper>{children}</ChildrenWrapper>
+        </CredWrapper>
       </InnerWrapper>
     </LayoutWrapper>
   );

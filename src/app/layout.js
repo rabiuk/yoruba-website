@@ -1,8 +1,10 @@
 import "./globals.css";
-// import { Nunito } from "next/font/google";
-// const nunitoSans = Nunito({ subsets: ["latin"] });
+import { Inter, Montserrat } from "next/font/google";
 import { LayoutProvider } from "./LayoutProvider";
 // import Head from "next/head";
+
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Yoruba Website",
@@ -30,7 +32,7 @@ export default function RootLayout({ children }) {
             content="width=device-width, initial-scale=1, viewport-fit=cover"
           />
         </head>
-        <body>
+        <body className={montserrat.className}>
           <LayoutProvider>{children}</LayoutProvider>
         </body>
       </html>

@@ -35,7 +35,7 @@ const LearnTheYorubaAlphabetPage = () => {
               In Yoruba culture, the language is regarded as a crucial aspect of
               the society{"'"}s identity. An essential component of learning
               Yoruba is understanding the alphabet, known as{" "}
-              <Span textColour fontWeight={900}>
+              <Span textColor fontWeight={900}>
                 Álífábẹ́ẹ̀tì
               </Span>
               . The Yoruba alphabet consists of 25 letters, each having its own

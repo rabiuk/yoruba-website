@@ -10,14 +10,14 @@ const Container = styled.div`
 
 const Title = styled.h1`
   color: #333;
-  font-size: 2em;
+  font-size: 2.4rem;
   text-align: center;
   /* Add more styles as needed */
 `;
 
 const Message = styled.p`
   color: #666;
-  font-size: 1.2em;
+  font-size: 1.4rem;
   text-align: center;
   /* Add more styles as needed */
 `;

@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { HiAtSymbol, HiEyeOff, HiEye } from "react-icons/hi";
 import { useState } from "react";
-
+import { Separator } from "@/components/Separator";
 import {
   SignInWrapper,
   Title,
@@ -46,11 +46,13 @@ const SignIn = () => {
       <SignInWrapper>
         <div className="title">
           <Title>Sign In</Title>
-          <Description>Sign in with email</Description>
+          <Description>
+            Enter your email below to get a magic link sent to your inbox.
+          </Description>
         </div>
 
         <Form onSubmit={handleSignIn}>
-          <InputGroup>
+          <InputGroup focused={focusedInput === "email"}>
             <Input
               type="email"
               name="email"
@@ -77,11 +79,10 @@ const SignIn = () => {
               {showPassword ? <HiEyeOff size={20} /> : <HiEye size={20} />}
             </Icon>
           </InputGroup> */}
-
           <InputButton>
             <Button type="submit">Login</Button>
           </InputButton>
-
+          <Separator text={"Or continue with"} />
           <InputButton>
             <ButtonCustom
               type="button"

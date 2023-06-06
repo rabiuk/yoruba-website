@@ -78,7 +78,7 @@ export const Heading = styled.h1`
   margin-bottom: 24px;
   font-size: 42px;
   line-height: 1.1;
-  font-weight: 900;
+  font-weight: 600;
   color: ${({ lightText }) => (lightText ? "#FAFAFA" : "#424242")};
 
   @media screen and (max-width: 1080px) {

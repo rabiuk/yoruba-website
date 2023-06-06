@@ -9,7 +9,7 @@ export const ImproveSkillsContainer = styled.div`
   justify-content: center;
   align-items: center;
   /* padding-top: 20vh; */
-  padding: 20vh 24px;
+  padding: 0 24px;
 
   @media screen and (max-width: 768px) {
     /* padding: 100px 0; */
