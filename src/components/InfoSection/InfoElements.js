@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "@/components/colors";
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -66,9 +67,8 @@ export const TextWrapper = styled.div`
 export const TopLine = styled.p`
   color: #ff7043;
   font-size: 1.4rem;
-  font-weight: 900;
   line-height: 16px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -79,7 +79,8 @@ export const Heading = styled.h1`
   font-size: 42px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? "#FAFAFA" : "#424242")};
+  /* color: ${({ lightText }) => (lightText ? "#FAFAFA" : "#424242")}; */
+  color: ${colors.textColor};
 
   @media screen and (max-width: 1080px) {
     font-size: 38px;
@@ -95,7 +96,8 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 1.6rem;
   line-height: 3.5rem;
-  color: ${({ darkText }) => (darkText ? "#0D1821" : "#fff")};
+  /* color: ${({ darkText }) => (darkText ? "#0D1821" : "#fff")}; */
+  color: ${colors.textColor};
   @media screen and (max-width: 1080px) {
     font-size: 16px;
   }

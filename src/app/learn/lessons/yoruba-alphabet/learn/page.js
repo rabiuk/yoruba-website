@@ -61,6 +61,7 @@ const LearnTheYorubaAlphabetPage = () => {
             <LineBreak />
             <LineBreak />
             <AlphabetTable />
+            <LineBreak />
             <P>
               <Span secondary fontWeight={900}>
                 Fun Fact:{" "}

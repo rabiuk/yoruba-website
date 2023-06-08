@@ -8,6 +8,7 @@ import {
   GridDataHeader,
   GridDataTranslation,
 } from "./TableElements";
+import { P } from "@/components/Typography/Typography";
 
 const alphabetData = [
   { letter: "a", pronunciation: "ah", example: "aso", translation: "cloth" },

@@ -1,8 +1,7 @@
 export const colors = {
-  primaryColor: "#FF7043",
-  hoverPrimaryColor: "#ff7e56",
+  primaryColor: "rgba(255, 112, 67, 1)",
   secondaryColor: "#3F6C51",
-  textColor: "#101522",
-  lightTextColor: "#fafafa",
+  textColor: "rgba(0, 0, 0, 0.75)",
+  lightTextColor: "rgba(255, 255, 255, 1)",
   backgroundColor: "#f5f5dc",
 };

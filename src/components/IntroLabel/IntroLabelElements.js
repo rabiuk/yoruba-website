@@ -1,17 +1,15 @@
 import styled from "styled-components";
-
+import { colors } from "@/components/colors";
 const Brown = "#6f3f2c";
 
 export const IntroWrapper = styled.div`
-  padding: 2.5rem 10vw 2.5rem 10vw;
-  /* z-index: 1; */
-  min-height: 400px;
-  max-height: 400px;
-  height: fit-content;
+  width: 100%;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  color: ${colors.lightTextColor};
 
   &:before {
     content: "";
@@ -21,31 +19,32 @@ export const IntroWrapper = styled.div`
     right: 0;
     bottom: 0;
     background-color: ${Brown};
-    /* height: 430px; */
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: -1;
   }
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  max-width: 1200px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
-    // eremove max-height property
     max-height: 100%;
-    /* min-height: 100%; */
   }
 `;
 
 export const Content1 = styled.div`
   /* display: flex; */
   width: 50%;
+  height: 100%;
   @media screen and (max-width: 768px) {
     /* height: 50%; */
     width: 100%;
   }
-
 `;
 export const Content2 = styled.div`
   width: 50%;
@@ -65,7 +64,7 @@ export const ImgWrap = styled.div`
   align-items: center;
 
   &.alphabet-blocks {
-    width: 75%;
+    width: 50%;
   }
   &.verbs-img {
     /* width: 32%; */
@@ -90,47 +89,36 @@ export const ImgWrap = styled.div`
 `;
 
 export const IntroH1 = styled.h1`
-  /* margin-top: 20px; */
-  /* grid-column: 1 / 9; */
-  color: #fafafa;
-  font-size: 48px;
+  /* color: #fafafa; */
+  font-size: clamp(
+    ${parseFloat(42) * 0.8}px,
+    ${parseFloat(42) / 100}vw + ${parseFloat(42) * 0.8}px,
+    ${42}px
+  );
+  margin-bottom: 16px;
   font-weight: 900;
-  /* z-index: 1; */
   text-align: center;
-  @media screen and (max-width: 1000px) {
-    font-size: 42px;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 40px;
-  }
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
-  }
 `;
 
 export const IntroP = styled.p`
-  font-size: 18px;
-  color: #fafafa;
-  /* z-index: 1; */
+  font-size: clamp(
+    ${parseFloat(16) * 0.8}px,
+    ${parseFloat(16) / 100}vw + ${parseFloat(16) * 0.8}px,
+    ${16}px
+  );
+  margin-bottom: 16px;
+  /* color: #fafafa; */
   text-align: center;
-  @media screen and (max-width: 1000px) {
-    font-size: 16.5px;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 16.5px;
-  }
-  @media screen and (max-width: 480px) {
-    font-size: 14px;
-  }
 `;
 
 export const BtnContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  /* justify-content: space-evenly; */
+  height: 100%;
 `;
 export const BtnWrapper = styled.div`
   align-items: center;
-  margin: 32px 10px 10px;
+  margin: 0 10px;
+  /* margin: 32px 10px 10px; */
 `;

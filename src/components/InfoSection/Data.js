@@ -31,7 +31,7 @@ export const homeObjTwo = {
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: "Test and Improve Your Yoruba Skills",
+  topLine: "Test and Improve",
   headline: "Unlock Your Language Potential",
   description:
     "Dive into the definitive platform for honing your Yoruba language skills. Our interactive quizzes and lessons cater to all abilities, testing your grammar, vocabulary, and pronunciation. \n Embark on this vibrant linguistic journey to enhance your Yoruba fluency and embrace its rich culture.",

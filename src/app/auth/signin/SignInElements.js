@@ -76,6 +76,7 @@ export const InputButton = styled.div``;
 export const Button = styled.button`
   width: 100%;
   height: 4rem;
+  font-weight: 700;
   background: linear-gradient(to right, ${burntOrange}, #e64a19);
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
@@ -85,7 +86,7 @@ export const Button = styled.button`
   cursor: pointer;
   overflow: hidden;
   &:hover {
-    background: ${colors.hoverPrimaryColor};
+    background: ${colors.primaryColor};
     /* border: 1px solid #3b82f6; */
   }
 `;
@@ -99,6 +100,7 @@ export const ButtonCustom = styled(Button)`
   align-items: center;
   gap: 0.5rem;
   color: ${colors.textColor};
+  font-weight: 700;
   &:hover {
     background: #f1f5f9;
   }

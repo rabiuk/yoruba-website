@@ -1,70 +1,53 @@
 import styled from "styled-components";
-// import { Link as LinkR } from "react-router-dom";
 import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { colors } from "@/components/colors";
 
-const beige = "#f5f5dc";
 export const Nav = styled.nav`
   background: ${({ home, scrollNav }) =>
-    home ? (scrollNav ? "#101522" : "transparent") : "#101522"};
-  /* transition: 0.5s; */
-  /* height: 80px; */
+    home
+      ? scrollNav
+        ? `rgba(245, 245, 220, 0.90)`
+        : "transparent"
+      : "rgba(245, 245, 220, 0.90)"};
   transition: background 0.5s, box-shadow 0.5s;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  font-size: 1.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: ${({ home, scrollNav }) =>
-    home
-      ? scrollNav
-        ? "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
-        : "none"
-      : "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"};
+  font-size: 1.4rem;
+  backdrop-filter: ${({ home, scrollNav }) =>
+    home ? (scrollNav ? `blur(5px)` : "none") : "blur(5px)"};
   position: ${({ home, scrollNav }) =>
     home ? (scrollNav ? "sticky" : "absolute") : "sticky"};
   top: 0;
-  /* width: 100vw; */
   width: 100%;
-
+  height: 60px;
   z-index: 10;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
 `;
+
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 100px;
-  min-height: 80px;
-  /* z-index: 1; */
-  /* width: 65%; */
-  width: ${({ isTransparent }) => (isTransparent ? "65%" : "65%")};
+  width: 80%;
+  max-width: 1200px;
+  min-width: 300px;
   border-bottom: ${({ home, isTransparent }) =>
-    home && isTransparent ? "2px solid rgba(255, 255, 255, 0.1)" : "none"};
-
+    home && isTransparent
+      ? "1px solid rgba(255, 255, 255, 0.1)"
+      : "1px solid #E0E3E7"};
   & * {
     color: ${({ home, isTransparent }) =>
       home
         ? isTransparent
           ? "rgba(255, 255, 255, 0.5)"
-          : "#FAFAFA"
-        : "#FAFAFA"};
-    font-weight: 600;
-  }
-  @media screen and (min-width: 1600px) {
-    width: ${({ isTransparent }) => (isTransparent ? "70%" : "70%")};
-  }
-
-  @media screen and (max-width: 1440px) {
-    width: ${({ isTransparent }) => (isTransparent ? "70%" : "70%")};
-  }
-  @media screen and (max-width: 1280px) {
-    width: ${({ isTransparent }) => (isTransparent ? "80%" : "80%")};
+          : `rgba(0, 0, 0, 0.75)`
+        : `rgba(0, 0, 0, 0.75)`};
+    font-weight: 400;
   }
 `;
 
@@ -74,15 +57,16 @@ export const NavLogo = styled.div`
 `;
 
 export const NavLogoLink = styled(Link)`
-  /* justify-self: flex-start; */
   cursor: pointer;
-  font-size: 1.5rem;
-  /* display: flex;
-  align-items: center; */
-  font-weight: bold;
   text-decoration: none;
-  /* flex: 1; */
 `;
+
+export const NavLogoLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
+
 export const MobileIcon = styled.div`
   display: none;
   margin-left: auto;
@@ -97,15 +81,13 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   list-style: none;
   text-align: center;
   margin-left: 30px;
   height: 100%;
-  /* grid-column: 17; */
-  /* justify-content: space-evenly; */
   width: fit-content;
-  /* gap: 5px; */
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -121,52 +103,42 @@ export const NavLinksS = styled(LinkScroll)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  //Wrap the text to no wrap
   white-space: nowrap;
-  /* padding: 1rem; */
   padding: 1rem 0;
   height: 100%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    color: #ff7043;
+    color: ${colors.primaryColor};
     transition: all 0.2s ease-in-out;
   }
 
   &.active {
-    border-bottom: 3px solid #ff7043;
-    color: #ff7043;
+    color: ${colors.primaryColor};
   }
 
   &.home {
-    font-weight: 900;
-    color: ${({ home, isTransparent }) =>
-      home && isTransparent ? "rgba(255, 255, 255, 1)" : "#fafafa"};
-
     &:hover {
-      color: #ff7043;
+      ${colors.primaryColor};
     }
   }
 `;
 
 export const NavLinksR = styled(Link)`
-  /* color: #fafafa; */
-  color: ${({ isInLearn }) => (isInLearn ? "#ff7043" : "#fafafa")};
+  color: ${({ isInLearn }) => (isInLearn ? "#ff7043" : "none")};
   display: flex;
   align-items: center;
   text-decoration: none;
   white-space: nowrap;
-  /* padding: 1rem; */
   height: 100%;
-  width: fit-content;
+  /* width: fit-content; */
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    transition: all 0.2s ease-in-out;
-    color: #ff7043;
+    color: ${colors.primaryColor};
   }
   &.active {
-    color: #ff7043;
+    color: ${colors.primaryColor};
   }
   &.bold {
     font-weight: 900;
@@ -199,16 +171,13 @@ export const NavGreeting = styled.div`
 `;
 
 export const NavLinksDiv = styled.div`
-  color: #fafafa;
   display: flex;
   align-items: center;
-  /* text-decoration: none; */
-  /* padding: 1rem; */
   height: 100%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    color: #ff7043;
+    color: ${colors.primaryColor};
     transition: all 0.2s ease-in-out;
   }
 `;
@@ -220,26 +189,6 @@ export const NavBtn = styled.nav`
 
   @media screen and (max-width: 768px) {
     display: none;
-  }
-`;
-
-export const NavBtnLink = styled(Link)`
-  border-radius: 50px;
-  background: #ff7043;
-  white-space: nowrap;
-  padding: 10px 22px;
-  color: #fafafa;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
   }
 `;
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 import Link from "next/link";
+import { colors } from "@/components/colors";
 
 export const ButtonScroll = styled(LinkScroll)`
   border-radius: 50px;
@@ -84,24 +85,24 @@ export const BtnWrappper = styled.div`
 
 export const SignInButton = styled.button`
   border-radius: 5px;
-  background: ${({ isPrimary }) =>
-    isPrimary ? "#ff7043" : "rgba(255, 255, 255, 0)"};
+  background: rgba(255, 255, 255, 0);
   white-space: nowrap;
-  padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
-  /* color: ${({ dark }) => (dark ? "#FAFAFA" : "#FAFAFA")}; */
-  color: rgba(255, 255, 255, 0.75);
-  font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
-  font-weight: 400;
+  padding: 12px 30px;
   text-decoration: none;
   outline: none;
-  border: none;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
+  border: ${({ isHome, dark }) =>
+    isHome
+      ? dark
+        ? "1px solid #e0e3e7"
+        : "1px solid rgba(255, 255, 255, 0.5)"
+      : "1px solid #e0e3e7"};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease—in—out;
-  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
 
   &:hover {

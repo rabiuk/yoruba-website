@@ -1,10 +1,15 @@
 import "./globals.css";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Montserrat, Noto_Sans } from "next/font/google";
 import { LayoutProvider } from "./LayoutProvider";
 // import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
+const noto = Noto_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Yoruba Website",
@@ -32,7 +37,7 @@ export default function RootLayout({ children }) {
             content="width=device-width, initial-scale=1, viewport-fit=cover"
           />
         </head>
-        <body className={montserrat.className}>
+        <body className={noto.className}>
           <LayoutProvider>{children}</LayoutProvider>
         </body>
       </html>

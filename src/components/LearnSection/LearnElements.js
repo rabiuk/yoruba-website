@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MdArrowDownward, MdArrowDropDown } from "react-icons/md";
+import { colors } from "@/components/colors";
 
 export const ImproveSkillsContainer = styled.div`
   color: #fff;
@@ -59,12 +60,11 @@ export const TextWrapper = styled.div`
 export const TopLine = styled.p`
   color: #ff7043;
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 16px;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
-  //add no wrap
   white-space: nowrap;
 
   @media (max-width: 480px) {
@@ -77,8 +77,9 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? "#FAFAFA" : "#424242")};
-
+  /* color: ${({ lightText }) =>
+    lightText ? "#FAFAFA" : "rgba(0, 0, 0, 0.75)"}; */
+  color: ${colors.textColor};
   @media screen and (max-width: 1080px) {
     font-size: 35px;
   }
@@ -92,7 +93,8 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ darkText }) => (darkText ? "#010606" : "#fff")};
+  /* color: ${({ darkText }) => (darkText ? "rgba(0, 0, 0, 0.75)" : "#fff")}; */
+  color: ${colors.textColor};
 `;
 
 export const BtnWrap = styled.div`

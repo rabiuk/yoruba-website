@@ -15,6 +15,7 @@ import {
   NavbarContainer,
   NavLogoLink,
   NavLogo,
+  NavLogoLinkContainer,
   MobileIcon,
   NavMenu,
   NavItem,
@@ -69,10 +70,11 @@ const Navbar = ({ toggle }) => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
-        <ScrollToTop />
-        <Nav home={isHome} scrollNav={scrollNav}>
-          <NavbarContainer home={isHome} isTransparent={isTransparent}>
+      {/* <IconContext.Provider value={{ color: "#fff" }}> */}
+      <ScrollToTop />
+      <Nav home={isHome} scrollNav={scrollNav} isTransparent={isTransparent}>
+        <NavbarContainer home={isHome} isTransparent={isTransparent}>
+          <NavLogoLinkContainer>
             <NavLogoLink href="/">
               <NavLogo
                 isTransparent={isTransparent}
@@ -81,9 +83,7 @@ const Navbar = ({ toggle }) => {
                 Yoruba
               </NavLogo>
             </NavLogoLink>
-            <MobileIcon onClick={toggle}>
-              <FaBars fontSize={25}></FaBars>
-            </MobileIcon>
+
             <NavMenu>
               {isHome ? (
                 <>
@@ -94,9 +94,10 @@ const Navbar = ({ toggle }) => {
                       duration={500}
                       spy={true}
                       exact="true"
-                      offset={-80}
+                      offset={0}
                       className="home"
                       onClick={scrollToTop}
+                      isTransparent={isTransparent}
                     >
                       Home
                     </NavLinksS>
@@ -108,7 +109,7 @@ const Navbar = ({ toggle }) => {
                       duration={500}
                       spy={true}
                       exact="true"
-                      offset={0}
+                      offset={100}
                     >
                       About
                     </NavLinksS>
@@ -169,8 +170,10 @@ const Navbar = ({ toggle }) => {
                       }
                     >
                       Learn{" "}
-                      <RiArrowDropDownLineStyled showDropDown={showDropDown} />
-
+                      <RiArrowDropDownLineStyled
+                        showDropDown={showDropDown}
+                        color="red"
+                      />
                     </NavLinksR>
                     {showDropDown && <Dropdown title="Learn" />}
                   </NavItem>
@@ -185,25 +188,39 @@ const Navbar = ({ toggle }) => {
                 </>
               )}
             </NavMenu>
-            {session ? (
-              <UserContainer>
-                <NavGreeting>Hello, {session.user.name}!</NavGreeting>
-                <NavBtn>
-                  <SignInButton onClick={() => signOut()}>
-                    Sign Out
-                  </SignInButton>
-                </NavBtn>
-              </UserContainer>
-            ) : (
-              <UserContainer>
-                <NavBtn>
-                  <SignInButton onClick={() => signIn()}>Sign In</SignInButton>
-                </NavBtn>
-              </UserContainer>
-            )}
-          </NavbarContainer>
-        </Nav>
-      </IconContext.Provider>
+          </NavLogoLinkContainer>
+          <MobileIcon onClick={toggle}>
+            <FaBars fontSize={25}></FaBars>
+          </MobileIcon>
+          {session ? (
+            <UserContainer>
+              <NavGreeting>Hello, {session.user.name}!</NavGreeting>
+              <NavBtn>
+                <SignInButton
+                  onClick={() => signOut()}
+                  dark={!isTransparent}
+                  isHome={isHome}
+                >
+                  Sign Out
+                </SignInButton>
+              </NavBtn>
+            </UserContainer>
+          ) : (
+            <UserContainer>
+              <NavBtn>
+                <SignInButton
+                  onClick={() => signIn()}
+                  dark={!isTransparent}
+                  isHome={isHome}
+                >
+                  Sign In
+                </SignInButton>
+              </NavBtn>
+            </UserContainer>
+          )}
+        </NavbarContainer>
+      </Nav>
+      {/* </IconContext.Provider> */}
     </>
   );
 };

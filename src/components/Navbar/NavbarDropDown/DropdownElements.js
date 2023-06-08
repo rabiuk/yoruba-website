@@ -1,14 +1,14 @@
 import styled from "styled-components";
 // import { Link as LinkR } from "react-router-dom";
 import Link from "next/link";
+import { colors } from "@/components/colors";
 
-const OFFBLACK = "#010606";
 export const UnorderedList = styled.ul`
   width: 15rem;
   position: absolute;
   list-style: none;
   text-align: start;
-  top: 80px;
+  top: 50px;
   /* opacity: ${(showDropDown) => (showDropDown ? "1" : "0")}; */
   transition: opacity 0.3s ease-in-out;
 `;
@@ -17,12 +17,13 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: ${OFFBLACK};
-  margin-top: 7.5px;
-  background: linear-gradient(145deg, #010606, #010505);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: ${colors.backgroundColor};
+  border: 1px solid #e0e3e7;
+  box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.1);
   border-radius: 7.5px;
+  & > *:last-child {
+    border-bottom: none;
+  }
 `;
 
 export const List = styled.li`
@@ -32,18 +33,14 @@ export const ListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
-
-  /* &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  } */
+  border-bottom: 1px solid #e0e3e7;
 `;
 
 export const ItemLink = styled(Link)`
   font-size: 12px;
   text-align: center;
   text-decoration: none;
-  color: #fafafa;
+  /* color: #fafafa; */
   width: 100%;
   padding: 16px;
   &:hover {

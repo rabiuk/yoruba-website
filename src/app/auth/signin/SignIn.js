@@ -80,7 +80,7 @@ const SignIn = () => {
             </Icon>
           </InputGroup> */}
           <InputButton>
-            <Button type="submit">Login</Button>
+            <Button type="submit">Sign In With Email</Button>
           </InputButton>
           <Separator text={"Or continue with"} />
           <InputButton>
