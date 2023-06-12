@@ -20,6 +20,7 @@ const NumbersAndCountingPage = () => {
         imgSrc={BlackBoardWithNumbersPNG}
         alt="Black Board With Numbers"
         className="numbers-img"
+        btnName="Quiz"
       />
     </>
   );

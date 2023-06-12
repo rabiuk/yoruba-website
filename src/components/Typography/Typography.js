@@ -15,6 +15,8 @@ export const H1 = styled.h1`
       ? colors.primaryColor
       : props.secondary
       ? colors.secondaryColor
+      : props.lightText
+      ? colors.lightTextColor
       : colors.textColor};
 `;
 
@@ -32,6 +34,8 @@ export const H2 = styled.h2`
       ? colors.primaryColor
       : props.secondary
       ? colors.secondaryColor
+      : props.lightText
+      ? colors.lightTextColor
       : colors.textColor};
 `;
 
@@ -49,6 +53,8 @@ export const H3 = styled.h3`
       ? colors.primaryColor
       : props.secondary
       ? colors.secondaryColor
+      : props.lightText
+      ? colors.lightTextColor
       : colors.textColor};
 `;
 
@@ -66,6 +72,8 @@ export const P = styled.p`
       ? colors.primaryColor
       : props.secondary
       ? colors.secondaryColor
+      : props.lightText
+      ? colors.lightTextColor
       : colors.textColor};
 `;
 
@@ -81,6 +89,8 @@ export const Span = styled.span`
       ? colors.primaryColor
       : props.secondary
       ? colors.secondaryColor
+      : props.lightText
+      ? colors.lightTextColor
       : colors.textColor};
   font-weight: ${(props) => props.fontWeight || "normal"};
 `;

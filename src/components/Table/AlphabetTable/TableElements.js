@@ -87,7 +87,7 @@ export const GridDataHeader = styled(GridData)`
   /* border-bottom: 1px solid rgba(0,0,0,1); */
 
   &:hover {
-    color: ${colors.secondaryColor};
+    color: ${colors.textColor};
   }
 `;
 

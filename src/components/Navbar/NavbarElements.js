@@ -45,8 +45,8 @@ export const NavbarContainer = styled.div`
       home
         ? isTransparent
           ? "rgba(255, 255, 255, 0.5)"
-          : `rgba(0, 0, 0, 0.75)`
-        : `rgba(0, 0, 0, 0.75)`};
+          : `rgba(0, 0, 0, 0.90)`
+        : `rgba(0, 0, 0, 0.90)`};
     font-weight: 400;
   }
 `;

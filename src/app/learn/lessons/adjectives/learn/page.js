@@ -20,6 +20,7 @@ const AdjectivesPage = () => {
         imgSrc={TallShortPNG}
         alt="tall-short"
         className="tall-short-img"
+        btnName="Flashcards"
       />
     </>
   );

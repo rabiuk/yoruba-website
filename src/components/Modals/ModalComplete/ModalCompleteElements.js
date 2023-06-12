@@ -1,11 +1,13 @@
+
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import { colors } from "@/components/colors";
 
 export const Overlay = styled.div`
   /* width: 100vw;
   height: 100vh; */
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -17,36 +19,31 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 export const Container = styled.div`
-  max-width: 1200px;
-  height: fit-content;
-  width: 80%;
+  max-width: 800px;
+  max-height: 500px;
+  width: 100%;
   position: relative;
-  /* position: fixed; */
-  /* top: 40%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
+
   box-sizing: border-box;
   display: flex;
   font-size: 20px;
   border-radius: 10px;
   background: #fafafa;
-  /* overflow: hidden; */
-  /* background-image: linear-gradient(#f5f5f0 1.2rem, #ccc 1.3rem); */
-  /* background-size: 100% 1.3rem; */
-  /* line-height: 1.5rem; */
-  /* padding: 3rem 0.5rem 3rem 4.5rem; */
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+  @media screen and (max-width: 860px) {
+    max-width: 760px;
+  }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    /* width: fit-content; */
+    max-width: 90vw;
+    max-height: 100vh;
   }
 `;
 
 export const ImgWrap = styled.div`
-  /* width: 75%; */
-  max-width: 350px;
+  width: 100%;
   background-color: ${({ bg_color }) => (bg_color ? bg_color : "#ff7043")};
   padding: 5rem 2rem 5rem 2rem;
   display: flex;
@@ -60,13 +57,13 @@ export const ImgWrap = styled.div`
     height: auto;
   }
   @media screen and (max-width: 768px) {
-    width: 100%;
+    /* height: 50%; */
     justify-content: center;
     border-radius: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     div {
-      max-width: 60%;
+      max-width: 40%;
       filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
     }
   }
@@ -151,18 +148,12 @@ export const P = styled.p`
 `;
 
 export const PLink = styled(Link)`
-  font-size: 2rem;
-  font-weight: 900;
-  color: #424242;
-  text-align: left;
-  margin-top: 5px;
-  justify-content: space-evenly;
-  text-decoration: none;
+  text-decoration: underline;
+  color: ${colors.primaryColor};
   &:hover {
-    color: #424242;
-    text-decoration: underline;
+    text-decoration: none;
   }
-  @media screen and (min-width: 1440px) {
+  /* @media screen and (min-width: 1440px) {
     font-size: 2.25rem;
   }
   @media screen and (max-width: 1080px) {
@@ -173,7 +164,7 @@ export const PLink = styled(Link)`
   }
   @media screen and (max-width: 480px) {
     font-size: 1.45rem;
-  }
+  } */
 `;
 
 export const PLine = styled.div`

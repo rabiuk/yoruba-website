@@ -18,6 +18,7 @@ const VerbsPage = () => {
         imgSrc={ManFacingCameraPNG}
         alt=""
         className="verbs-img"
+        btnName="Flashcards"
       />
     </>
   );

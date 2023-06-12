@@ -21,6 +21,7 @@ const NounsPage = () => {
         imgSrc={NounsPNG}
         alt="Nouns"
         className="nouns-img"
+        btnName="Flashcards"
       />
     </>
   );
