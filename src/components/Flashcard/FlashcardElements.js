@@ -65,8 +65,8 @@ export const CardFront = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.5); */
-  /* box-shadow: 11px 11px 74px #d0d0bb, -11px -11px 74px #fffffd; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 15px;
   overflow: hidden;
 
@@ -85,9 +85,8 @@ export const CardBack = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25); */
-  /* box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.5); */
-  /* box-shadow: 11px 11px 74px #d0d0bb, -11px -11px 74px #fffffd; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
   border-radius: 15px;
 `;
@@ -136,7 +135,9 @@ export const BottomContainer = styled.div`
   padding: 5px 0;
 `;
 export const IconWrap = styled.div`
-  color: ${colors.secondaryColor};
+  /* color: ${colors.secondaryColor}; */
+  color: ${({ isDone }) =>
+    isDone ? colors.primaryColor : colors.secondaryColor};
   padding: 10px;
   cursor: ${({ greyOut }) => (greyOut ? "auto" : "pointer")};
   opacity: ${({ greyOut }) => (greyOut ? 0.5 : 1)};

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Container,
@@ -12,11 +12,14 @@ import {
   BottomContainer,
   IconWrap,
 } from "./FlashcardElements";
-import { Button, BtnWrappper } from "@/components/ButtonElements";
+import { BtnWrappper } from "@/components/ButtonElements";
 import { P } from "../Typography/Typography";
 import { CiCircleChevRight, CiCircleChevLeft } from "react-icons/ci";
+import { CiCircleCheck } from "react-icons/ci";
+import { playSound } from "@/lib/utils/audioControl";
 
 const FlashcardComp = ({ data, openModal, setOpenModal }) => {
+  const audioRef = useRef();
   const [card, setCard] = useState("");
   const [word, setWord] = useState("");
   const [emphasized, setEmphasized] = useState("");
@@ -45,6 +48,11 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
       opacity: 1,
     }),
   };
+  const iconVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.3 } },
+    exit: { x: -100, opacity: 0, transition: { duration: 0.3 } },
+  };
 
   const handleCardClick = () => {
     setIsFlipped(!isFlipped);
@@ -70,11 +78,12 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
   };
   useEffect(() => {
     if (data && data.length > 0) {
-      setCard(data[currentCardIndex].card);
-      setWord(data[currentCardIndex].word);
-      setEmphasized(data[currentCardIndex].emphasis);
-      setPronounciation(data[currentCardIndex].pronounciation);
+      setCard(data[currentCardIndex].letter);
+      setWord(data[currentCardIndex].example);
+      setEmphasized(data[currentCardIndex].letter);
+      setPronounciation(data[currentCardIndex].pronunciation);
       setTranslation(data[currentCardIndex].translation);
+      playSound(audioRef, data[currentCardIndex].audio);
     }
 
     if (currentCardIndex === data.length - 1) {
@@ -82,7 +91,7 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
     } else {
       setIsFinish(false);
     }
-  }, [data, currentCardIndex]);
+  }, [data, currentCardIndex, audioRef]);
 
   const getEmphasizedIndices = (word, emphasized) => {
     let indices = [];
@@ -100,6 +109,7 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
   return (
     <>
       <Container>
+        <audio ref={audioRef} preload="auto" />
         <motion.div
           variants={cardVariants}
           initial="hidden"
@@ -158,22 +168,32 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
             )}
           </BtnWrappper>
           {!isFinish && (
-            <BtnWrappper onClick={() => loadNextCard()}>
-              <IconWrap>
-                <CiCircleChevRight size={40} />
-              </IconWrap>
-            </BtnWrappper>
+            <motion.div
+              variants={iconVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <BtnWrappper onClick={() => loadNextCard()}>
+                <IconWrap>
+                  <CiCircleChevRight size={40} />
+                </IconWrap>
+              </BtnWrappper>
+            </motion.div>
           )}
           {isFinish && (
-            <BtnWrappper onClick={() => setOpenModal(!openModal)}>
-              <Button
-                primary={true ? 1 : 0}
-                dark={true ? 1 : 0}
-                dark2={true ? 1 : 0}
-              >
-                Done
-              </Button>
-            </BtnWrappper>
+            <motion.div
+              variants={iconVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <BtnWrappper onClick={() => setOpenModal(!openModal)}>
+                <IconWrap isDone={true}>
+                  <CiCircleCheck size={40} />
+                </IconWrap>
+              </BtnWrappper>
+            </motion.div>
           )}
         </BtnContainer>
       </Container>

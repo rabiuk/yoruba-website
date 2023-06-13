@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import ElderRaisingHandsPNG from "@/components/svg/ElderRaisingHandsPNG.png";
-import { alphabetsData } from "./data";
+import { alphabetData } from "@/lib/utils/alphabetData";
 import Flashcard from "@/components/Flashcard/Flashcard";
 import dynamic from "next/dynamic";
 // import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
@@ -19,7 +19,7 @@ const LearnTheYorubaAlphabetQuizPage = () => {
     <>
       <ScrollToTop />
       <Flashcard
-        data={alphabetsData}
+        data={alphabetData}
         openModal={openModal}
         setOpenModal={setOpenModal}
       />

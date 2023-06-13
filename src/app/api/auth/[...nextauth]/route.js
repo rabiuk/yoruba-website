@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import EmailProvider from "next-auth/providers/email";
-import { sendVerificationRequest } from "../../../../lib/uitls/sendVerificationRequest";
+import { sendVerificationRequest } from "../../../../lib/utils/sendVerificationRequest";
 
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "../../../../lib/MongoDB/mongodb";

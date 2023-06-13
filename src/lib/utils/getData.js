@@ -1,5 +1,5 @@
 import "server-only";
-import { client } from "../../lib/contentful/client";
+import { client } from "../contentful/client";
 
 const cleanUpData = (rawData) => {
   const cleanData = rawData.map((slide) => {
