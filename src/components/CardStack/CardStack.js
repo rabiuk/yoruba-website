@@ -2,6 +2,7 @@ import React from "react";
 import { Stack } from "./Stack";
 import { Card } from "./Card";
 import styled from "@emotion/styled";
+import TalkingDrumSVG from "@/components/svg/TalkingDrumSVG.svg";
 
 const Appp = styled.div`
   width: 100%;
@@ -19,9 +20,10 @@ const Wrapper = styled(Stack)`
 
 const Item = styled.div`
   background: #f9fafb;
-  width: 200px;
-  height: 250px;
+  width: 240px;
+  height: 300px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 80px;
@@ -33,6 +35,13 @@ const Item = styled.div`
     return `rotate(${rotation}deg)`;
   }};
 `;
+const StyledTalkingDrumSVG = ({ color }) => {
+  return (
+    <svg>
+      <path fill={color} d="..." />
+    </svg>
+  );
+};
 
 export default function CardStack() {
   return (
@@ -51,7 +60,7 @@ export default function CardStack() {
         <Card className="Card">
           <Item data-value="pancakes" whileTap={{ scale: 1.15 }}>
             <span role="img" aria-label="pancakes">
-              🥞
+              <TalkingDrumSVG />
             </span>
           </Item>
         </Card>
