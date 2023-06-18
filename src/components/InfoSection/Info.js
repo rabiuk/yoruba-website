@@ -16,6 +16,7 @@ import {
   ImgWrap,
   Img,
 } from "./InfoElements";
+import { P } from "../Typography/Typography";
 
 const InfoSection = ({
   lightBg,
@@ -41,52 +42,54 @@ const InfoSection = ({
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
-            <Column1>
-              <TextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>
+        {/* <InfoWrapper> */}
+        <InfoRow imgStart={imgStart}>
+          <Column1>
+            <TextWrapper>
+              <TopLine>{topLine}</TopLine>
+              <Heading lightText={lightText}>{headline}</Heading>
+              <Subtitle>
+                <P>
                   {description.split("\n").map((text, index) => (
                     <React.Fragment key={`${text}-${index}`}>
                       {text}
                       <br />
                     </React.Fragment>
                   ))}
-                </Subtitle>
+                </P>
+              </Subtitle>
 
-                <BtnWrap>
-                  <ButtonLink
-                    href={pageLink}
-                    // primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >
-                    {buttonLabel}
-                  </ButtonLink>
-                </BtnWrap>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <ImgWrap className={className}>
-                {isSVG ? (
-                  imgSrc
-                ) : (
-                  <Image
-                    src={imgSrc}
-                    alt={alt}
-                    width={width}
-                    height={height}
-                    // fill={true}
-                    // style={{ objectFit: "cover" }}
-                    // priority={true}
-                  />
-                )}
-              </ImgWrap>
-            </Column2>
-          </InfoRow>
-        </InfoWrapper>
+              <BtnWrap>
+                <ButtonLink
+                  href={pageLink}
+                  // primary={primary ? 1 : 0}
+                  dark={dark ? 1 : 0}
+                  dark2={dark2 ? 1 : 0}
+                >
+                  {buttonLabel}
+                </ButtonLink>
+              </BtnWrap>
+            </TextWrapper>
+          </Column1>
+          <Column2>
+            <ImgWrap className={className}>
+              {isSVG ? (
+                imgSrc
+              ) : (
+                <Image
+                  src={imgSrc}
+                  alt={alt}
+                  width={width}
+                  height={height}
+                  // fill={true}
+                  // style={{ objectFit: "cover" }}
+                  // priority={true}
+                />
+              )}
+            </ImgWrap>
+          </Column2>
+        </InfoRow>
+        {/* </InfoWrapper> */}
       </InfoContainer>
     </>
   );

@@ -78,12 +78,12 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
   };
   useEffect(() => {
     if (data && data.length > 0) {
-      setCard(data[currentCardIndex].letter);
-      setWord(data[currentCardIndex].example);
-      setEmphasized(data[currentCardIndex].letter);
-      setPronounciation(data[currentCardIndex].pronunciation);
-      setTranslation(data[currentCardIndex].translation);
-      playSound(audioRef, data[currentCardIndex].audio);
+      setCard(data[currentCardIndex].letter.value);
+      setWord(data[currentCardIndex].example.value);
+      setEmphasized(data[currentCardIndex].letter.value);
+      setPronounciation(data[currentCardIndex].letter.pronunciation);
+      setTranslation(data[currentCardIndex].example.translation);
+      playSound(audioRef, data[currentCardIndex].letter.audio);
     }
 
     if (currentCardIndex === data.length - 1) {
@@ -91,7 +91,7 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
     } else {
       setIsFinish(false);
     }
-  }, [data, currentCardIndex, audioRef]);
+  }, [data, currentCardIndex]);
 
   const getEmphasizedIndices = (word, emphasized) => {
     let indices = [];
@@ -142,13 +142,14 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
               </CardFront>
               <CardBack>
                 <CardText>
-                  {word.split("").map((letter, index) => {
-                    return emphasizedIndices.includes(index) ? (
-                      <EmphasizedText key={index}>{letter}</EmphasizedText>
-                    ) : (
-                      letter
-                    );
-                  })}
+                  {word &&
+                     word.split("").map((letter, index) => {
+                      return emphasizedIndices.includes(index) ? (
+                        <EmphasizedText key={index}>{letter}</EmphasizedText>
+                      ) : (
+                        letter
+                      );
+                    })}
                 </CardText>
                 <CardText>&nbsp;&nbsp;({translation})</CardText>
               </CardBack>

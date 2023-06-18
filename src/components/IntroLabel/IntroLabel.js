@@ -22,6 +22,7 @@ const IntroLabel = ({
   className,
   btnName,
 }) => {
+  scrollToID = scrollToID || "content";
   return (
     <>
       {/* <IntroBackground> */}

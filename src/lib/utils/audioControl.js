@@ -1,6 +1,4 @@
-export const playSound = (audioRef, audioFile) => {
-  if (audioRef.current) {
-    audioRef.current.src = audioFile;
-    audioRef.current.play();
-  }
+export const playSound = (audioRef, audioUrl) => {
+  audioRef.current.src = audioUrl;
+  audioRef.current.play();
 };

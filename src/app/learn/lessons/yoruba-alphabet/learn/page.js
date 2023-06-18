@@ -3,6 +3,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import IntroLabel from "@/components/IntroLabel/IntroLabel";
 import AlphabetBlocksPNG from "@/components/svg/AlphabetBlocksPNG.png";
 import { ContentContainer } from "../../../layoutElements";
+import { useRef } from "react";
 import {
   H1,
   H2,
@@ -11,8 +12,29 @@ import {
   Span,
   LineBreak,
 } from "@/components/Typography/Typography";
-import AlphabetTable from "@/components/Table/AlphabetTable/AlphabetTable";
+import { alphabetData } from "@/lib/utils/alphabetData";
 import Aside from "@/components/Aside/Aside";
+import Table from "@/components/Table/Table";
+import { playSound } from "@/lib/utils/audioControl";
+
+const AlphabetTable = () => {
+  const audioRef = useRef(null);
+  const headers = ["Letter", "Example"];
+  const data = alphabetData.map((item) => [
+    item.letter,
+    item.example,
+  ]);
+
+  return (
+    <Table
+      headers={headers}
+      data={data}
+      onRowClick={(audioRef, audioUrl) => playSound(audioRef, audioUrl)}
+      audioRef={audioRef}
+    />
+  );
+};
+
 const LearnTheYorubaAlphabetPage = () => {
   return (
     <>
@@ -20,7 +42,7 @@ const LearnTheYorubaAlphabetPage = () => {
       <IntroLabel
         title="The Yoruba Alphabet"
         description="Explore Yoruba's alphabet with engaging flashcards in an interactive quiz. Learn letter sounds and example words, flip cards to reveal pronunciation and meaning, and use next/previous buttons to learn at your pace."
-        scrollToID="#"
+        scrollToID={""}
         quizPath="learn/lessons/yoruba-alphabet/quiz"
         // svg={<AlphabetBlocksSVG />}
         imgSrc={AlphabetBlocksPNG}
@@ -28,7 +50,7 @@ const LearnTheYorubaAlphabetPage = () => {
         className="alphabet-blocks"
         btnName="Flashcards"
       />
-      <ContentContainer>
+      <ContentContainer id="content">
         <section>
           <P>
             In Yoruba culture, the language is regarded as a crucial aspect of
@@ -41,11 +63,13 @@ const LearnTheYorubaAlphabetPage = () => {
             distinct pronunciation.
           </P>
           <LineBreak />
+          <LineBreak />
           <P>
             While it might take some time to get familiar with the Yoruba
             letters, it's an incredibly enriching journey as you open a gateway
             to a beautiful culture and language.
           </P>
+          <LineBreak />
           <LineBreak />
           <P>
             In Yoruba, each letter is pronounced as it appears. However, there
@@ -54,10 +78,10 @@ const LearnTheYorubaAlphabetPage = () => {
             (ẹ, ọ), and the letters with an accent above them (é, ó, ú).
           </P>
           <LineBreak />
+          <LineBreak />
           <P secondary fontWeight={900}>
             Here are the 25 letters in the Yoruba alphabet:
           </P>
-          <LineBreak />
           <LineBreak />
           <AlphabetTable />
           <LineBreak />
@@ -78,7 +102,6 @@ const LearnTheYorubaAlphabetPage = () => {
           <P>Next lesson, we'll delve into numbers & counting.</P>
         </section>
       </ContentContainer>
-      <Aside />
     </>
   );
 };

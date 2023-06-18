@@ -32,9 +32,6 @@ const AlphabetTable = () => {
               {data.letter}
             </GridData>
           </GridColumn>
-          {/* <GridColumn>
-            <GridData>{data.pronunciation}</GridData>
-          </GridColumn> */}
           <GridColumn>
             <GridData>
               <GridData>

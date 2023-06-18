@@ -20,13 +20,22 @@ const InfoSection = dynamic(() => import("@/components/InfoSection/Info"), {
 const FunFacts = dynamic(() => import("@/components/FunFacts/FunFacts"), {
   ssr: false,
 });
+// const Banner = dynamic(() => import("@/components/Banner"), {
+//   ssr: false,
+// });
+const AboutYoruba = dynamic(
+  () => import("@/components/AboutYoruba/AboutYoruba"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
     <>
-        <HeroSection>
-          <Carousel className="hero-carousel" />
-        </HeroSection>
+      <HeroSection>{/* <Carousel className="hero-carousel" /> */}</HeroSection>
+      {/* <Banner /> */}
+      <AboutYoruba />
       <ContentContainer>
         <InfoSection {...homeObjOne} />
         <FunFacts />

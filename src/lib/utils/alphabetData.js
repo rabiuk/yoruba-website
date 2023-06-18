@@ -1,177 +1,327 @@
 export const alphabetData = [
   {
-    letter: "a",
-    pronunciation: "ah",
-    example: "aso",
-    translation: "cloth",
-    audio: "/assets/audio/yorubaAlphabet/a.mp3",
+    letter: {
+      value: "a",
+      pronunciation: "ah",
+      audio: "/assets/audio/yorubaAlphabet/a.mp3",
+    },
+
+    example: {
+      value: "aṣọ",
+      audio: "/assets/audio/yorubaWords/aṣo.mp3",
+      translation: "cloth",
+    },
   },
   {
-    letter: "b",
-    pronunciation: "bi",
-    example: "bàtà",
-    translation: "ball",
-    audio: "/assets/audio/yorubaAlphabet/b.mp3",
+    letter: {
+      value: "b",
+      pronunciation: "bi",
+      audio: "/assets/audio/yorubaAlphabet/b.mp3",
+    },
+
+    example: {
+      value: "bàtà",
+      audio: "/assets/audio/yorubaWords/bàtà.mp3",
+      translation: "ball",
+    },
   },
   {
-    letter: "d",
-    pronunciation: "di",
-    example: "daduro",
-    translation: "stop/detain",
-    audio: "/assets/audio/yorubaAlphabet/d.mp3",
+    letter: {
+      value: "d",
+      pronunciation: "di",
+      audio: "/assets/audio/yorubaAlphabet/d.mp3",
+    },
+
+    example: {
+      value: "daduro",
+      audio: "/assets/audio/yorubaWords/daduro.mp3",
+      translation: "stop/detain",
+    },
   },
   {
-    letter: "e",
-    pronunciation: "hay",
-    example: "etí",
-    translation: "ear",
-    audio: "/assets/audio/yorubaAlphabet/e.mp3",
+    letter: {
+      value: "e",
+      pronunciation: "hay",
+      audio: "/assets/audio/yorubaAlphabet/e.mp3",
+    },
+
+    example: {
+      value: "etí",
+      audio: "/assets/audio/yorubaWords/etí.mp3",
+      translation: "ear",
+    },
   },
   {
-    letter: "ẹ",
-    pronunciation: "hen",
-    example: "ẹja",
-    translation: "fish",
-    audio: "/assets/audio/yorubaAlphabet/ẹ.mp3",
+    letter: {
+      value: "ẹ",
+      pronunciation: "hen",
+      audio: "/assets/audio/yorubaAlphabet/ẹ.mp3",
+    },
+
+    example: {
+      value: "ẹja",
+      audio: "/assets/audio/yorubaWords/ẹja.mp3",
+      translation: "fish",
+    },
   },
   {
-    letter: "f",
-    pronunciation: "fi",
-    example: "fàmóra",
-    translation: "adhere",
-    audio: "/assets/audio/yorubaAlphabet/f.mp3",
+    letter: {
+      value: "f",
+      pronunciation: "fi",
+      audio: "/assets/audio/yorubaAlphabet/f.mp3",
+    },
+
+    example: {
+      value: "fàmóra",
+      audio: "/assets/audio/yorubaWords/fàmóra.mp3",
+      translation: "adhere",
+    },
   },
   {
-    letter: "g",
-    pronunciation: "gi",
-    example: "ga",
-    translation: "tall",
-    audio: "/assets/audio/yorubaAlphabet/g.mp3",
+    letter: {
+      value: "g",
+      pronunciation: "gi",
+      audio: "/assets/audio/yorubaAlphabet/g.mp3",
+    },
+
+    example: {
+      value: "ga",
+      audio: "/assets/audio/yorubaWords/ga.mp3",
+      translation: "tall",
+    },
   },
   {
-    letter: "gb",
-    pronunciation: "gbi",
-    example: "gbàdurà",
-    translation: "pray",
-    audio: "/assets/audio/yorubaAlphabet/gb.mp3",
+    letter: {
+      value: "gb",
+      pronunciation: "gbi",
+      audio: "/assets/audio/yorubaAlphabet/gb.mp3",
+    },
+
+    example: {
+      value: "gbàdurà",
+      audio: "/assets/audio/yorubaWords/gbàdurà.mp3",
+      translation: "pray",
+    },
   },
   {
-    letter: "h",
-    pronunciation: "in",
-    example: "hó",
-    translation: "boil",
-    audio: "/assets/audio/yorubaAlphabet/h.mp3",
+    letter: {
+      value: "h",
+      pronunciation: "in",
+      audio: "/assets/audio/yorubaAlphabet/h.mp3",
+    },
+
+    example: {
+      value: "hó",
+      audio: "/assets/audio/yorubaWords/hó.mp3",
+      translation: "boil",
+    },
   },
   {
-    letter: "i",
-    pronunciation: "hei",
-    example: "ibí",
-    translation: "birth",
-    audio: "/assets/audio/yorubaAlphabet/i.mp3",
+    letter: {
+      value: "i",
+      pronunciation: "hei",
+      audio: "/assets/audio/yorubaAlphabet/i.mp3",
+    },
+
+    example: {
+      value: "ibí",
+      audio: "/assets/audio/yorubaWords/ibí.mp3",
+      translation: "birth",
+    },
   },
   {
-    letter: "j",
-    pronunciation: "ji",
-    example: "jẹun",
-    translation: "eat",
-    audio: "/assets/audio/yorubaAlphabet/j.mp3",
+    letter: {
+      value: "j",
+      pronunciation: "ji",
+      audio: "/assets/audio/yorubaAlphabet/j.mp3",
+    },
+
+    example: {
+      value: "jẹun",
+      audio: "/assets/audio/yorubaWords/jẹun.mp3",
+      translation: "eat",
+    },
   },
   {
-    letter: "k",
-    pronunciation: "ki",
-    example: "kà",
-    translation: "read",
-    audio: "/assets/audio/yorubaAlphabet/k.mp3",
+    letter: {
+      value: "k",
+      pronunciation: "ki",
+      audio: "/assets/audio/yorubaAlphabet/k.mp3",
+    },
+
+    example: {
+      value: "kà",
+      audio: "/assets/audio/yorubaWords/kà.mp3",
+      translation: "read",
+    },
   },
   {
-    letter: "l",
-    pronunciation: "li",
-    example: "lò",
-    translation: "use",
-    audio: "/assets/audio/yorubaAlphabet/l.mp3",
+    letter: {
+      value: "l",
+      pronunciation: "li",
+      audio: "/assets/audio/yorubaAlphabet/l.mp3",
+    },
+
+    example: {
+      value: "lò",
+      audio: "/assets/audio/yorubaWords/lò.mp3",
+      translation: "use",
+    },
   },
   {
-    letter: "m",
-    pronunciation: "mi",
-    example: "mo",
-    translation: "i",
-    audio: "/assets/audio/yorubaAlphabet/m.mp3",
+    letter: {
+      value: "m",
+      pronunciation: "mi",
+      audio: "/assets/audio/yorubaAlphabet/m.mp3",
+    },
+
+    example: {
+      value: "mo",
+      audio: "/assets/audio/yorubaWords/mo.mp3",
+      translation: "i",
+    },
   },
   {
-    letter: "n",
-    pronunciation: "ni",
-    example: "nla",
-    translation: "great/big",
-    audio: "/assets/audio/yorubaAlphabet/n.mp3",
+    letter: {
+      value: "n",
+      pronunciation: "ni",
+      audio: "/assets/audio/yorubaAlphabet/n.mp3",
+    },
+
+    example: {
+      value: "nla",
+      audio: "/assets/audio/yorubaWords/nla.mp3",
+      translation: "great/big",
+    },
   },
   {
-    letter: "o",
-    pronunciation: "oh",
-    example: "ohùn",
-    translation: "sound",
-    audio: "/assets/audio/yorubaAlphabet/o.mp3",
+    letter: {
+      value: "o",
+      pronunciation: "oh",
+      audio: "/assets/audio/yorubaAlphabet/o.mp3",
+    },
+
+    example: {
+      value: "ohùn",
+      audio: "/assets/audio/yorubaWords/ohùn.mp3",
+      translation: "sound",
+    },
   },
   {
-    letter: "ọ",
-    pronunciation: "or",
-    example: "ọkọ",
-    translation: "vehicle",
-    audio: "/assets/audio/yorubaAlphabet/ọ.mp3",
+    letter: {
+      value: "ọ",
+      pronunciation: "or",
+      audio: "/assets/audio/yorubaAlphabet/ọ.mp3",
+    },
+
+    example: {
+      value: "ọkọ",
+      audio: "/assets/audio/yorubaWords/ọkọ.mp3",
+      translation: "vehicle",
+    },
   },
   {
-    letter: "p",
-    pronunciation: "pi",
-    example: "pẹpẹrẹ",
-    translation: "quick",
-    audio: "/assets/audio/yorubaAlphabet/p.mp3",
+    letter: {
+      value: "p",
+      pronunciation: "pi",
+      audio: "/assets/audio/yorubaAlphabet/p.mp3",
+    },
+
+    example: {
+      value: "pẹpẹrẹ",
+      audio: "/assets/audio/yorubaWords/pẹpẹrẹ.mp3",
+      translation: "quick",
+    },
   },
   {
-    letter: "r",
-    pronunciation: "ri",
-    example: "ràra",
-    translation: "not at all",
-    audio: "/assets/audio/yorubaAlphabet/r.mp3",
+    letter: {
+      value: "r",
+      pronunciation: "ri",
+      audio: "/assets/audio/yorubaAlphabet/r.mp3",
+    },
+
+    example: {
+      value: "ràra",
+      audio: "/assets/audio/yorubaWords/ràra.mp3",
+      translation: "not at all",
+    },
   },
   {
-    letter: "s",
-    pronunciation: "si",
-    example: "sùrù",
-    translation: "patience",
-    audio: "/assets/audio/yorubaAlphabet/s.mp3",
+    letter: {
+      value: "s",
+      pronunciation: "si",
+      audio: "/assets/audio/yorubaAlphabet/s.mp3",
+    },
+
+    example: {
+      value: "sùrù",
+      audio: "/assets/audio/yorubaWords/sùrù.mp3",
+      translation: "patience",
+    },
   },
   {
-    letter: "ṣ",
-    pronunciation: "shi",
-    example: "ṣo",
-    translation: "throw",
-    audio: "/assets/audio/yorubaAlphabet/ṣ.mp3",
+    letter: {
+      value: "ṣ",
+      pronunciation: "shi",
+      audio: "/assets/audio/yorubaAlphabet/ṣ.mp3",
+    },
+
+    example: {
+      value: "ṣo",
+      audio: "/assets/audio/yorubaWords/ṣo.mp3",
+      translation: "throw",
+    },
   },
   {
-    letter: "t",
-    pronunciation: "ti",
-    example: "tọ",
-    translation: "grind",
-    audio: "/assets/audio/yorubaAlphabet/t.mp3",
+    letter: {
+      value: "t",
+      pronunciation: "ti",
+      audio: "/assets/audio/yorubaAlphabet/t.mp3",
+    },
+
+    example: {
+      value: "tọ",
+      audio: "/assets/audio/yorubaWords/tọ.mp3",
+      translation: "grind",
+    },
   },
   {
-    letter: "u",
-    pronunciation: "oo",
-    example: "un",
-    translation: "that is",
-    audio: "/assets/audio/yorubaAlphabet/u.mp3",
+    letter: {
+      value: "u",
+      pronunciation: "oo",
+      audio: "/assets/audio/yorubaAlphabet/u.mp3",
+    },
+
+    example: {
+      value: "un",
+      audio: "/assets/audio/yorubaWords/un.mp3",
+      translation: "that is",
+    },
   },
   {
-    letter: "w",
-    pronunciation: "wi",
-    example: "wọ",
-    translation: "look",
-    audio: "/assets/audio/yorubaAlphabet/w.mp3",
+    letter: {
+      value: "w",
+      pronunciation: "wi",
+      audio: "/assets/audio/yorubaAlphabet/w.mp3",
+    },
+
+    example: {
+      value: "wọ",
+      audio: "/assets/audio/yorubaWords/wọ.mp3",
+      translation: "look",
+    },
   },
   {
-    letter: "y",
-    pronunciation: "yi",
-    example: "ya",
-    translation: "divide",
-    audio: "/assets/audio/yorubaAlphabet/y.mp3",
+    letter: {
+      value: "y",
+      pronunciation: "yi",
+      audio: "/assets/audio/yorubaAlphabet/y.mp3",
+    },
+
+    example: {
+      value: "ya",
+      audio: "/assets/audio/yorubaWords/ya.mp3",
+      translation: "divide",
+    },
   },
 ];
