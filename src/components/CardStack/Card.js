@@ -15,6 +15,7 @@ export const Card = ({ children, style, onVote, id, ...props }) => {
   const controls = useAnimation();
   const [constrained, setConstrained] = useState(true);
   const [velocity, setVelocity] = useState();
+  const [rotation, setRotation] = useState(Math.random() * (5 - -5) + -5); // rotation state
 
   const getDirection = () => {
     return velocity >= 1 ? "right" : velocity <= -1 ? "left" : undefined;
@@ -27,15 +28,18 @@ export const Card = ({ children, style, onVote, id, ...props }) => {
   };
 
   useEffect(() => {
-    if (props.isTop) {
-      // Only auto-swipe the top card
-      const timer = setTimeout(() => {
-        flyAway(500, "left"); // Change 'right' to 'left'
-      }, 2000); // Adjust delay as needed
-
-      return () => clearTimeout(timer); // Cleanup on component unmount
+    if (!props.isTop) {
+      // Recalculate rotation value when the card is not on top
+      setRotation(Math.random() * (5 - -5) + -5);
     }
-  }, [props.isTop]); // Add dependency to re-run effect when isTop changes
+    if (props.isTop) {
+      const timer = setTimeout(() => {
+        flyAway(500, "left");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [props.isTop]);
 
   const flyAway = (min, direction) => {
     const flyAwayDistance = (direction) => {
@@ -55,6 +59,7 @@ export const Card = ({ children, style, onVote, id, ...props }) => {
       });
     }
   };
+
   return (
     <>
       <StyledCard
@@ -71,7 +76,7 @@ export const Card = ({ children, style, onVote, id, ...props }) => {
         whileTap={{ scale: 1.1 }}
         {...props}
       >
-        {children}
+        {React.cloneElement(children, { rotation })}
       </StyledCard>
     </>
   );

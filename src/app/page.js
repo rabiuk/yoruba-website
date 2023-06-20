@@ -33,9 +33,11 @@ const AboutYoruba = dynamic(
 export default function Home() {
   return (
     <>
-      <HeroSection>{/* <Carousel className="hero-carousel" /> */}</HeroSection>
+      <HeroSection>
+        <Carousel className="hero-carousel" />
+      </HeroSection>
       {/* <Banner /> */}
-      <AboutYoruba />
+      {/* <AboutYoruba /> */}
       <ContentContainer>
         <InfoSection {...homeObjOne} />
         <FunFacts />

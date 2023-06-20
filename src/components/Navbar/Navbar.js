@@ -72,8 +72,8 @@ const Navbar = ({ toggle }) => {
     <>
       {/* <IconContext.Provider value={{ color: "#fff" }}> */}
       <ScrollToTop />
-      <Nav home={isHome} scrollNav={scrollNav} isTransparent={false}>
-        <NavbarContainer home={isHome} isTransparent={false}>
+      <Nav home={isHome} scrollNav={scrollNav} isTransparent={isTransparent}>
+        <NavbarContainer home={isHome} isTransparent={isTransparent}>
           <NavLogoLinkContainer>
             <NavLogoLink href="/">
               <NavLogo
