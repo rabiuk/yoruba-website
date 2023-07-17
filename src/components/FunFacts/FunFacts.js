@@ -1,10 +1,8 @@
 "use client";
-// import mapAfricaSVG from "../../../public/images/map-of-africa.svg";
-// import toneSVG from "../../../public/images/tone(1).svg";
-// import twinSVG from "../../../public/images/twins(1).svg";
 import { MapOfAfricaSVG } from "../svg";
 import { ToneSVG } from "../svg";
 import { TwinSVG } from "../svg";
+import Image from "next/image";
 import {
   FunFactsContainer,
   FunFactsH1,

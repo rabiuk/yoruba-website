@@ -8,32 +8,32 @@ export const dropdownItems = [
       {
         id: 1,
         title: "Alphabet",
-        href: "learn/lessons/yoruba-alphabet/learn",
+        href: "/learn/lessons/yoruba-alphabet/learn",
       },
       {
         id: 2,
         title: "Numbers",
-        href: "learn/lessons/numbers-and-counting/learn",
+        href: "/learn/lessons/numbers-and-counting/learn",
       },
       {
         id: 3,
         title: "Verbs",
-        href: "learn/lessons/verbs/learn",
+        href: "/learn/lessons/verbs/learn",
       },
       {
         id: 4,
         title: "Nouns",
-        href: "learn/lessons/nouns/learn",
+        href: "/learn/lessons/nouns/learn",
       },
       {
         id: 5,
         title: "Adjectives",
-        href: "learn/lessons/adjectives/learn",
+        href: "/learn/lessons/adjectives/learn",
       },
       {
         id: 6,
         title: "Sentences",
-        href: "learn/lessons/sentences/learn",
+        href: "/learn/lessons/sentences/learn",
       },
     ],
   },

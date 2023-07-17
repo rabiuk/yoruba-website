@@ -19,7 +19,7 @@ export const IntroWrapper = styled.div`
     right: 0;
     bottom: 0;
     background-color: ${Brown};
-    width: 100%;
+    width: 100;
     z-index: -1;
   }
 `;

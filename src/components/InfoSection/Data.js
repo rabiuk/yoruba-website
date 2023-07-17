@@ -12,7 +12,7 @@ export const homeObjOne = {
   headline: "Discover the Richness of the Yoruba Culture",
   description:
     "Yoruba culture is a vibrant mix of traditions, art, music, food, and religion. These pillars of the Yoruba community are deeply rooted in history, passed down through many generations. \n Our aim is to showcase these elements and share their stories with the world.",
-  buttonLabel: "More about yoruba",
+  buttonLabel: "More",
   pageLink: "/about",
   isSVG: false,
   imgStart: false,

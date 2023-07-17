@@ -15,6 +15,7 @@ export const FunFactsContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: #f5f5dc;
+  font-weight: 700;
 
   @media screen and (max-width: 768px) {
     height: 1100px;
@@ -31,7 +32,7 @@ export const FunFactsWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   grid-gap: 2rem;
-  padding: 0 50px;
+  /* padding: 0 50px; */
   margin-bottom: 100px;
 
   @media screen and (max-width: 1000px) {
@@ -50,13 +51,14 @@ export const FunFactsCard = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
+  width: 300px;
+  height: 375px;
   /* max-height: 340px;
   min-height: 340px; */
   padding: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  box-shadow: 20px 20px 60px #dadac4, -20px -20px 60px #fffff4;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   &:hover {
     transform: scale(1.1);
@@ -87,7 +89,7 @@ export const FunFactsSVGIcon = styled.div`
 `;
 
 export const FunFactsH1 = styled.h1`
-  font-size: 4.2rem;
+  font-size: 42px;
   color: #ff7043;
   /* color: #fafafa; */
   margin-bottom: 64px;
@@ -98,12 +100,12 @@ export const FunFactsH1 = styled.h1`
 `;
 
 export const FunFactsH2 = styled.h2`
-  font-size: 2rem;
+  font-size: 20px;
   margin-bottom: 10px;
   color: #424242;
 `;
 export const FunFactsP = styled.p`
-  font-size: 1.6rem;
+  font-size: 14px;
   text-align: center;
-  color: #707070;
+  color: #424242;
 `;

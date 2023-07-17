@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   height: fit-content;
   position: relative;
+  width: 100%;
   /* overflow: auto; */
 `;
 

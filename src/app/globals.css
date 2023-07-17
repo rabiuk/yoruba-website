@@ -1,32 +1,17 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: "Nunito Sans", sans-serif; */
+  /* border: red 1px solid; */
 }
 
 :root {
-  font-size: 62.5%; /* Now 1rem = 10px, and 10rem = 100px, and so forth. */
   background: #f5f5dc;
-  /* background: #fafafa; */
 }
 
-main {
-  /* padding-top: 16px;
-  padding-left: max(-16px, env(safe-area-inset-left));
-  padding-right: max(-16px, env(safe-area-inset-right));
-  padding-bottom: env(safe-area-inset-bottom); */
-  /* border: 1px solid red; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-}
-
-body {
-  /* padding: 0 15rem; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* body {
+} */

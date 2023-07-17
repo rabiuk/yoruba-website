@@ -1,10 +1,6 @@
 "use client";
 import { animateScroll as scroll } from "react-scroll";
-import {
-  FaFacebook,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import {
   FooterContainer,
   FooterWrap,
@@ -21,11 +17,16 @@ import {
   SocialIconLink,
   ATag,
 } from "./FooterElements";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const currentPage = usePathname();
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
+  if (currentPage === "/auth/signin" || currentPage === "/log-in") {
+    return null;
+  }
   return (
     <FooterContainer>
       <FooterWrap>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Balancer } from "react-wrap-balancer";
 import {
   HeroContainer,
   Overlay,
@@ -29,13 +30,16 @@ const HeroSection = ({ children }) => {
         {children}
       </HeroBg>
       <HeroContent>
-        <HeroH1 fontSize="60">Experience Yoruba Culture Reimagined</HeroH1>
+        <HeroH1 fontSize="60">Experience Yoruba Reimagined</HeroH1>
         {/* <HeroH2>Ẹkú dédé àsikoyí</HeroH2>
         <HeroH22>&#40;Welcome&#41;</HeroH22> */}
         <HeroP>
-          Discover the richness of Yoruba. Your ultimate guide to learning the
-          language and connecting with the culture. Experience the beauty, dive
-          into the vibrancy, and enrich your understanding of Yoruba today.
+          <Balancer>
+            Discover the richness of Yoruba. Your ultimate guide to learning the
+            language and connecting with the culture. Experience the beauty,
+            dive into the vibrancy, and enrich your understanding of Yoruba
+            today.
+          </Balancer>
         </HeroP>
         <HeroBtnWrapper>
           <ButtonScroll

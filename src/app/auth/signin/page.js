@@ -1,4 +1,4 @@
-import { metadata } from "src/app/layout";
+import { metadata } from "@/app/layout";
 // import SignIn from "./SignIn";
 import dynamic from "next/dynamic";
 

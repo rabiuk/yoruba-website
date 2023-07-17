@@ -21,14 +21,14 @@ export const SlideWrap = styled.div`
   background-size: cover;
   position: relative;
 
-  @media screen and (max-width: 768px) and (orientation: landscape) {
+  /* @media screen and (max-width: 768px) and (orientation: landscape) {
     min-height: 110vh;
     padding: 70px 20px;
   }
   @media screen and (max-width: 768px) and (orientation: portrait) {
     min-height: 100vh;
     padding: 70px 20px;
-  }
+  } */
 `;
 
 // export const TextWrap = styled.div`

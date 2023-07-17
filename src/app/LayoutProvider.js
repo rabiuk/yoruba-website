@@ -8,7 +8,7 @@ import { useState } from "react";
 // import Footer from "@/components/Footer/Footer";
 
 import dynamic from "next/dynamic";
-const Navbar = dynamic(() => import("@/components/Navbar/Navbar"), {
+const Navbar = dynamic(() => import("@/components/Navbar/Navbartw"), {
   ssr: false,
 });
 const MobileSidebar = dynamic(
@@ -21,7 +21,7 @@ const MobileSidebar = dynamic(
 const Footer = dynamic(() => import("@/components/Footer/Footer"), {
   ssr: false,
 });
-export const LayoutProvider = ({ children, pageProps = {} }) => {
+export const LayoutProvider = ({ authModal, children, pageProps = {} }) => {
   const pathname = usePathname();
   const { session, ...otherProps } = pageProps;
   const [showSidebar, setShowSidebar] = useState(false);
@@ -33,18 +33,21 @@ export const LayoutProvider = ({ children, pageProps = {} }) => {
   return (
     // <>
     <SessionProvider session={session}>
-      {pathname !== "/auth/signin" &&
+      {/* {pathname !== "/auth/signin" &&
         pathname !== "/auth/register" &&
         pathname !== "/api/auth/verify-request" && (
           <MobileSidebar isOpen={showSidebar} toggle={toggleSidebar} />
-        )}
+        )} */}
       {pathname !== "/auth/signin" &&
+        pathname !== "/log-in" &&
         pathname !== "/auth/register" &&
         pathname !== "/api/auth/verify-request" && (
           <Navbar toggle={toggleSidebar} />
         )}
+      {authModal}
       {children}
       {pathname !== "/auth/signin" &&
+        pathname !== "/log-in" &&
         pathname !== "/auth/register" &&
         pathname !== "/api/auth/verify-request" && <Footer />}
     </SessionProvider>

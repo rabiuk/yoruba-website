@@ -1,9 +1,10 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { HiAtSymbol, HiEyeOff, HiEye } from "react-icons/hi";
-import { useState } from "react";
+import { HiAtSymbol } from "react-icons/hi";
 import { Separator } from "@/components/Separator";
+import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 import {
   SignInWrapper,
   Title,
@@ -12,100 +13,92 @@ import {
   InputGroup,
   Input,
   Icon,
-  InputButton,
   Button,
   ButtonCustom,
-  BottomText,
-  LinkText,
+  DisabledButton,
+  WarningText,
 } from "./SignInElements";
-import { useSearchParams } from "next/navigation";
-import { signIn } from "next-auth/react";
 
 const SignIn = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [passwordInputType, setPasswordInputType] = useState("password");
-  const [focusedInput, setFocusedInput] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
   const searchParams = useSearchParams();
+  const [focusedInput, setFocusedInput] = useState("");
   const callbackUrl = searchParams.get("callbackUrl");
 
-  const handlePasswordVisibility = () => {
-    setPasswordInputType(
-      passwordInputType === "password" ? "text" : "password"
-    );
-    setShowPassword(!showPassword);
+  // Email validation function
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
   };
+
+  useEffect(() => {
+    setEmailValid(validateEmail(email));
+  }, [email]);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    const email = e.target.elements.email.value;
-    await signIn("email", { email, callbackUrl });
+    if (emailValid) {
+      await signIn("email", { email, callbackUrl });
+    }
   };
 
   return (
-    <>
-      <SignInWrapper>
-        <div className="title">
-          <Title>Sign In</Title>
-          <Description>
-            Enter your email below to get a magic link sent to your inbox.
-          </Description>
-        </div>
+    <SignInWrapper>
+      <div className="title">
+        <Title>Sign In</Title>
+        <Description>
+          Enter your email below to get a magic link sent to your inbox.
+        </Description>
+      </div>
 
-        <Form onSubmit={handleSignIn}>
-          <InputGroup focused={focusedInput === "email"}>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Email"
-              onFocus={() => setFocusedInput("email")}
-              onBlur={() => setFocusedInput("")}
-            />
-            <Icon focused={focusedInput === "email"}>
-              <HiAtSymbol size={20} />
-            </Icon>
-          </InputGroup>
-          {/* <InputGroup>
-            <Input
-              type={passwordInputType}
-              name="password"
-              placeholder="Password"
-              onFocus={() => setFocusedInput("password")}
-              onBlur={() => setFocusedInput("")}
-            />
-            <Icon
-              onClick={handlePasswordVisibility}
-              focused={focusedInput === "password"}
-            >
-              {showPassword ? <HiEyeOff size={20} /> : <HiEye size={20} />}
-            </Icon>
-          </InputGroup> */}
-          <InputButton>
-            <Button type="submit">Sign In With Email</Button>
-          </InputButton>
-          <Separator text={"Or continue with"} />
-          <InputButton>
-            <ButtonCustom
-              type="button"
-              onClick={() => {
-                signIn("google", { callbackUrl });
-              }}
-            >
-              Sign In with Google <FcGoogle />
-            </ButtonCustom>
-          </InputButton>
-          {/* <InputButton>
-            <ButtonCustom type="button">
-              Sign In with Github <FaGithub />
-            </ButtonCustom>
-          </InputButton> */}
-        </Form>
+      <Form onSubmit={handleSignIn}>
+        {!emailValid && emailTouched && (
+          <WarningText fontSize="12">
+            Please enter a valid email address.
+          </WarningText>
+        )}
+        <InputGroup focused={focusedInput === "email"}>
+          <Input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (!emailTouched) {
+                setEmailTouched(true);
+              }
+            }}
+            onFocus={() => setFocusedInput("email")}
+            onBlur={() => setFocusedInput("")}
+          />
+          <Icon
+            focused={focusedInput === "email"}
+            onFocus={() => setFocusedInput("email")}
+            onBlur={() => setFocusedInput("")}
+          >
+            <HiAtSymbol size={20} />
+          </Icon>
+        </InputGroup>
 
-        {/* <BottomText>
-          don't have an account yet?{" "}
-          <LinkText href={"/auth/register"}>Sign Up</LinkText>
-        </BottomText> */}
-      </SignInWrapper>
-    </>
+        {emailValid ? (
+          <Button type="submit">Sign In With Email</Button>
+        ) : (
+          <DisabledButton type="button">Sign In With Email</DisabledButton>
+        )}
+        <Separator text={"Or continue with"} />
+        <ButtonCustom
+          type="button"
+          onClick={() => {
+            signIn("google", { callbackUrl });
+          }}
+        >
+          Sign In with Google <FcGoogle />
+        </ButtonCustom>
+      </Form>
+    </SignInWrapper>
   );
 };
 

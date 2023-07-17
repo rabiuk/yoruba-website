@@ -11,7 +11,8 @@ export const Nav = styled.nav`
         ? `rgba(245, 245, 220, 0.90)`
         : "transparent"
       : "rgba(245, 245, 220, 0.90)"};
-  transition: background 0.5s, box-shadow 0.5s;
+  /* transition: background 0.5s, box-shadow 0.5s; */
+  transition: 0.8s all ease;
   display: flex;
   justify-content: center;
   font-size: 1.4rem;
@@ -23,10 +24,6 @@ export const Nav = styled.nav`
   width: 100%;
   height: 60px;
   z-index: 10;
-
-  @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
-  }
 `;
 
 export const NavbarContainer = styled.div`
@@ -45,8 +42,8 @@ export const NavbarContainer = styled.div`
       home
         ? isTransparent
           ? "rgba(255, 255, 255, 0.5)"
-          : `rgba(0,0,0,0.75);`
-        : `rrgba(0,0,0,0.75);`};
+          : `rgba(0, 0, 0, 0.90)`
+        : `rgba(0, 0, 0, 0.90)`};
     font-weight: 400;
   }
 `;

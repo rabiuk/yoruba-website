@@ -20,10 +20,7 @@ import { playSound } from "@/lib/utils/audioControl";
 const AlphabetTable = () => {
   const audioRef = useRef(null);
   const headers = ["Letter", "Example"];
-  const data = alphabetData.map((item) => [
-    item.letter,
-    item.example,
-  ]);
+  const data = alphabetData.map((item) => [item.letter, item.example]);
 
   return (
     <Table
@@ -43,7 +40,7 @@ const LearnTheYorubaAlphabetPage = () => {
         title="The Yoruba Alphabet"
         description="Explore Yoruba's alphabet with engaging flashcards in an interactive quiz. Learn letter sounds and example words, flip cards to reveal pronunciation and meaning, and use next/previous buttons to learn at your pace."
         scrollToID={""}
-        quizPath="learn/lessons/yoruba-alphabet/quiz"
+        quizPath="/learn/lessons/yoruba-alphabet/quiz"
         // svg={<AlphabetBlocksSVG />}
         imgSrc={AlphabetBlocksPNG}
         alt="Alphabet Blocks"

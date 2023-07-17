@@ -31,6 +31,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.ctfassets.net",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
 };

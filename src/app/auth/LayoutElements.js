@@ -12,26 +12,19 @@ export const LayoutWrapper = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: ${colors.backgroundColor};
+  background-color: #fafafa;
+  padding: 5rem;
 `;
 
 export const InnerWrapper = styled.div`
-  /* margin: auto; */
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  /* width: 90%;
-  height: 90%; */
-  width: 95%;
-  height: 95%;
-  /* height: 800px; */
-
-  /* height: fit-content; */
+  background-color: #fafafa;
+  max-width: 1200px;
+  max-height: 1000px;
   display: flex;
-  //add some box shadow
-  border: 1px solid #e5e7eb;
+  border-radius: 20px;
   overflow: hidden;
 
-  box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
   @media (max-width: 860px) {
     // switch to two columns on larger screens
@@ -54,7 +47,7 @@ export const CredWrapper = styled.div`
   @media screen and (max-width: 860px) {
     position: absolute;
     top: 0;
-    left: 0;  
+    left: 0;
     width: 100vw;
     height: 100vh;
   }
@@ -70,7 +63,6 @@ export const LoginText = styled.h1`
 export const ImageWrapper = styled.div`
   position: relative; // Add this to establish a stacking context
   background-color: ${burntOrange};
-  overflow: hidden;
   width: 100%;
   height: 100%;
   display: flex;

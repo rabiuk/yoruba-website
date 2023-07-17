@@ -21,9 +21,6 @@ export const HeroBg = styled.div`
   /* width: 100%;
     height: 100vh; */
   overflow: hidden;
-  @media only screen and (max-device-width: 926px) and (orientation: landscape) {
-    /* width: 120vw; */
-  }
 `;
 export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);

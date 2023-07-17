@@ -47,10 +47,13 @@ export const InputGroup = styled.div`
 
   /* box-shadow: 0 0 0 2px #fafafa, 0 0 0 5px ${colors.primaryColor}; */
   /* color: rgba(0, 0, 0, 0.25); */
-  box-shadow: ${(props) =>
+  /* box-shadow: ${(props) =>
     props.focused
       ? `0 0 0 2px #fafafa, 0 0 0 4px ${colors.primaryColor}`
-      : "none"};
+      : "none"}; */
+  border: ${({ focused }) =>
+    focused ? `2px solid ${colors.primaryColor}` : "1px solid #cbd5e0"};
+  transition: all 0.3s ease-in-out;
 `;
 
 export const Input = styled.input`
@@ -69,6 +72,7 @@ export const Icon = styled.span`
   padding-right: 8px;
   cursor: pointer;
   color: ${(props) => (props.focused ? burntOrange : "rgba(0, 0, 0, 0.25)")};
+  transition: all 0.3s ease-in-out;
 `;
 
 export const InputButton = styled.div``;
@@ -114,4 +118,23 @@ export const BottomText = styled.p`
 export const LinkText = styled(Link)`
   color: #1d4ed8;
   text-decoration: none;
+`;
+
+export const DisabledButton = styled(Button)`
+  background: rgba(0, 0, 0, 0.5);
+  cursor: default;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+`;
+
+export const WarningText = styled.p`
+  color: red;
+  font-size: ${({ fontSize }) =>
+    fontSize
+      ? `clamp(${parseFloat(fontSize) * 0.8}px, ${
+          parseFloat(fontSize) / 100
+        }vw + ${parseFloat(fontSize) * 0.8}px, ${fontSize}px)`
+      : "14px"};
 `;

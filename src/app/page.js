@@ -10,7 +10,7 @@ import Carousel from "@/components/Carousel/CarouselSS";
 import dynamic from "next/dynamic";
 import { ContentContainer } from "./HomepageElements";
 
-const HeroSection = dynamic(() => import("@/components/HeroSection/Hero"), {
+const HeroSection = dynamic(() => import("@/components/HeroSection/Herotw"), {
   ssr: false,
 });
 
@@ -23,12 +23,12 @@ const FunFacts = dynamic(() => import("@/components/FunFacts/FunFacts"), {
 // const Banner = dynamic(() => import("@/components/Banner"), {
 //   ssr: false,
 // });
-const AboutYoruba = dynamic(
-  () => import("@/components/AboutYoruba/AboutYoruba"),
-  {
-    ssr: false,
-  }
-);
+// const AboutYoruba = dynamic(
+//   () => import("@/components/AboutYoruba/AboutYoruba"),
+//   {
+//     ssr: false,
+//   }
+// );
 
 export default function Home() {
   return (
@@ -38,12 +38,12 @@ export default function Home() {
       </HeroSection>
       {/* <Banner /> */}
       {/* <AboutYoruba /> */}
-      <ContentContainer>
-        <InfoSection {...homeObjOne} />
-        <FunFacts />
-        <InfoSection {...homeObjTwo} />
-        <InfoSection {...homeObjThree} />
-      </ContentContainer>
+      {/* <ContentContainer> */}
+      <InfoSection {...homeObjOne} />
+      <FunFacts />
+      <InfoSection {...homeObjTwo} />
+      <InfoSection {...homeObjThree} />
+      {/* </ContentContainer> */}
     </>
   );
 }
