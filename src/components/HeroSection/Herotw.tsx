@@ -30,7 +30,7 @@ const Herotw = ({ children }: HeroProps) => {
         </div>
         {/* Content */}
         <div className="z-10 text-white">
-          <h2 className="mb-6 text-center text-5xl font-extrabold md:min-w-[58vw] md:text-left lg:text-6xl xl:text-7xl">
+          <h2 className=" mb-6 text-center text-5xl font-extrabold leading-tight -tracking-wider md:min-w-[53vw] md:text-left lg:text-6xl xl:text-7xl">
             Experience Yoruba,{" "}
             <div className="inline-block max-w-[26.375rem] text-left">
               <AnimatePresence mode="wait">
@@ -47,7 +47,7 @@ const Herotw = ({ children }: HeroProps) => {
               </AnimatePresence>
             </div>
           </h2>
-          <p className="mb-6 text-center text-sm md:text-base lg:text-lg xl:text-xl">
+          <p className="mb-6 text-center text-sm leading-normal md:text-base lg:text-lg xl:text-xl">
             Experience the beauty, dive into the vibrancy, and enrich your
             understanding of Yoruba today.
           </p>

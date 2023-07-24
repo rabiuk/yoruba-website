@@ -37,7 +37,7 @@ const Navbar = dynamic(
 
 const Footer = dynamic(
   () =>
-    import("@/components/Footer/Footer").then((mod) => mod.default) as Promise<
+    import("@/components/Footer").then((mod) => mod.default) as Promise<
       React.FC<{}>
     >,
   { ssr: false },

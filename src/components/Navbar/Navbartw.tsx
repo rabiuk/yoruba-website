@@ -134,7 +134,7 @@ const Navbar = () => {
             className={
               nav
                 ? "absolute bottom-0 left-0 right-0 top-0 flex h-screen w-full flex-col items-center justify-center bg-black text-center text-white duration-300 ease-in sm:hidden"
-                : "absolute bottom-0 left-[-100%] right-0 top-0 flex h-screen w-full flex-col items-center justify-center bg-black text-center text-white duration-300 ease-in sm:hidden"
+                : "absolute bottom-0 left-[100%] right-[100%] top-0 flex h-screen w-full flex-col items-center justify-center bg-black text-center text-white duration-300 ease-in sm:hidden"
             }
           >
             <ul>

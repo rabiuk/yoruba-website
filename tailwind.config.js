@@ -22,6 +22,12 @@ module.exports = {
           500: "#ff7043",
           600: "#e6653c",
         },
+        secondary: {
+          500: "#15616d",
+        },
+        tertiary: {
+          500: "#101522",
+        },
         text_color: {
           500: "#77919d",
         },

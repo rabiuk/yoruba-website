@@ -30,35 +30,35 @@ const InfoSection = ({
       id={id}
     >
       <div
-        className={`container mx-auto flex w-full max-w-screen-lg flex-col px-0 lg:w-fit lg:flex-row 2xl:max-w-screen-xl ${
+        className={`container mx-auto flex w-full max-w-screen-lg flex-col justify-between px-0 lg:w-full lg:flex-row 2xl:max-w-screen-xl ${
           imgStart ? "flex-row-reverse" : "flex-row"
         } items-center gap-10`}
       >
-        <div className="text-content w-full">
+        <div className="text-content w-full max-w-[60%]">
           <div className="text-wrap flex w-full flex-col items-center lg:items-start">
             <p className="top-line text-center text-sm font-bold uppercase tracking-widest text-primary-500 lg:text-left">
               {topLine}
             </p>
 
-            <Balancer>
-              <h1
-                className={`heading ${
-                  lightText ? "text-zinc-700" : "text-zinc-700"
-                } mt-2 text-center text-3xl font-bold uppercase sm:text-3xl lg:text-left`}
-              >
-                {headline}
-              </h1>
-            </Balancer>
-            <Balancer>
-              <p className="description mt-4 text-center text-sm text-zinc-700 sm:text-base lg:text-left">
-                {description.split("\n").map((text, i) => (
-                  <React.Fragment key={`${text}-${i}`}>
-                    {text}
-                    <br />
-                  </React.Fragment>
-                ))}
-              </p>
-            </Balancer>
+            {/* <Balancer> */}
+            <h1
+              className={`heading ${
+                lightText ? "text-zinc-700" : "text-zinc-700"
+              } mt-2 w-[90vw] text-center text-3xl font-bold uppercase leading-tight -tracking-wider sm:text-3xl lg:w-auto lg:text-left`}
+            >
+              {headline}
+            </h1>
+            {/* </Balancer> */}
+            {/* <Balancer> */}
+            <p className="description mt-4 w-[90vw] text-center text-sm leading-normal text-zinc-700 sm:text-base lg:w-auto lg:text-left">
+              {description.split("\n").map((text, i) => (
+                <React.Fragment key={`${text}-${i}`}>
+                  {text}
+                  <br />
+                </React.Fragment>
+              ))}
+            </p>
+            {/* </Balancer> */}
 
             <div className="button-wrap mb-8 mt-6 lg:mb-0">
               <Button href={pageLink} isLink>

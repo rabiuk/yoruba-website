@@ -72,11 +72,11 @@ export const FunFactsCard = styled.div`
   }
 `;
 
-export const FunFactsIcon = styled.img`
-  height: 160px;
-  width: 160px;
-  margin-bottom: 10px;
-`;
+// export const FunFactsIcon = styled.img`
+//   height: 160px;
+//   width: 160px;
+//   margin-bottom: 10px;
+// `;
 export const FunFactsSVGIcon = styled.div`
   width: 160px; // Or any desired width
   height: 160px; // Or any desired height
