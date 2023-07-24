@@ -2,7 +2,6 @@
 import { animateScroll as scroll } from "react-scroll";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
@@ -10,123 +9,96 @@ const Footer = () => {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
+
+  const footerSectionsOne = [
+    {
+      title: "About Us",
+      links: [
+        { name: "Contact Information", url: "#" },
+        { name: "Social Media Links", url: "#" },
+        { name: "Privacy Policy", url: "#" },
+        { name: "Terms and Conditions", url: "#" },
+      ],
+    },
+    {
+      title: "Feedback",
+      links: [
+        { name: "Send Feedback", url: "#" },
+        { name: "Social Media Links", url: "#" },
+        { name: "Privacy Policy", url: "#" },
+        { name: "Terms and Conditions", url: "#" },
+      ],
+    },
+  ];
+  const footerSectionsTwo = [
+    {
+      title: "Resources",
+      links: [
+        { name: "Yoruba Dictionary", url: "#" },
+        { name: "Yoruba Textbook", url: "#" },
+        { name: "Destinations", url: "#" },
+        { name: "Sponsorships", url: "#" },
+      ],
+    },
+    {
+      title: "Social Media",
+      links: [
+        { name: "LinkedIn", url: "//www.linkedin.com/in/kehinde-rabiu/" },
+        { name: "Threads", url: "#" },
+        { name: "Instagram", url: "//www.instagram.com/kotrabiu/" },
+      ],
+    },
+  ];
+
   if (currentPage === "/auth/signin" || currentPage === "/log-in") {
     return null;
   }
+
   return (
     <footer className="footer__container w-full bg-tertiary-500 text-white">
       <div className="footer__wrap mx-auto flex max-w-[1100px] flex-col items-center justify-center px-6 py-12">
-        <div className="footer__links-container flex w-full justify-center pt-8 md:pt-0">
-          <div className="footer__links-wrapper flex h-fit flex-col md:flex-row">
-            <div className="footer__link-items mx-6 flex w-[160px] flex-col items-start text-left text-sm text-white sm:m-4">
-              <h1 className="footer__link-title mb-4 font-bold">About Us</h1>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
+        <div className="footer__links-container flex w-full flex-row justify-center pt-8 md:pt-0">
+          <div className="footer__links-wrapper flex h-fit flex-col items-center md:flex-row">
+            {footerSectionsOne.map((section, index) => (
+              <div
+                className="footer__link-items m-4 flex w-[160px] flex-col items-start text-left text-sm text-white sm:m-4"
+                key={index}
               >
-                Contact Information
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Social Media Links
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Terms and Conditions
-              </Link>
-            </div>
-
-            <div className="footer__link-items mx-6 flex w-[160px] flex-col items-start text-left text-sm text-white sm:m-4">
-              <h1 className="footer__link-title mb-4 font-bold">Feedback</h1>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Send Feedback
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Social Media Links
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Terms and Conditions
-              </Link>
-            </div>
+                <h1 className="footer__link-title mb-4 font-bold">
+                  {section.title}
+                </h1>
+                {section.links.map((link, linkIndex) => (
+                  <Link
+                    href={link.url}
+                    className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
+                    key={linkIndex}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            ))}
           </div>
-
-          <div className="footer__links-wrapper flex flex-col md:flex-row">
-            <div className="footer__link-items mx-6 flex w-[160px] flex-col items-start text-left text-sm text-white sm:m-4">
-              <h1 className="footer__link-title mb-4 font-bold">Resourses</h1>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
+          <div className="footer__links-wrapper flex h-fit flex-col items-center md:flex-row">
+            {footerSectionsTwo.map((section, index) => (
+              <div
+                className="footer__link-items m-4 flex w-[160px] flex-col items-start text-left text-sm text-white sm:m-4"
+                key={index}
               >
-                Yoruba Dictionary
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Yoruba Textbook
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Destinations
-              </Link>
-              <Link
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Sponsorships
-              </Link>
-            </div>
-
-            <div className="footer__link-items mx-6 flex w-[160px] flex-col items-start text-left text-sm text-white sm:m-4">
-              <h1 className="footer__link-title mb-4 font-bold">
-                Social Media
-              </h1>
-              <a
-                href="//www.linkedin.com/in/kehinde-rabiu/"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="#"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Threads
-              </a>
-              <a
-                href="//www.instagram.com/kotrabiu/"
-                className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-              >
-                Instagram
-              </a>
-            </div>
+                <h1 className="footer__link-title mb-4 font-bold">
+                  {section.title}
+                </h1>
+                {section.links.map((link, linkIndex) => (
+                  <Link
+                    href={link.url}
+                    className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
+                    key={linkIndex}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
 
