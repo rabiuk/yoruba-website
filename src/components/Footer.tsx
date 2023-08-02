@@ -3,8 +3,10 @@ import { animateScroll as scroll } from "react-scroll";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useToast } from "@/components/ui/use-toast";
 
 const Footer = () => {
+  const { toast } = useToast();
   const currentPage = usePathname();
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -43,9 +45,9 @@ const Footer = () => {
     {
       title: "Social Media",
       links: [
-        { name: "LinkedIn", url: "//www.linkedin.com/in/kehinde-rabiu/" },
-        { name: "Threads", url: "#" },
-        { name: "Instagram", url: "//www.instagram.com/kotrabiu/" },
+        { name: "LinkedIn", url: null },
+        { name: "Threads", url: null },
+        { name: "Instagram", url: null },
       ],
     },
   ];
@@ -88,15 +90,29 @@ const Footer = () => {
                 <h1 className="footer__link-title mb-4 font-bold">
                   {section.title}
                 </h1>
-                {section.links.map((link, linkIndex) => (
-                  <Link
-                    href={link.url}
-                    className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
-                    key={linkIndex}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+                {section.links.map((link, linkIndex) =>
+                  link.url !== null ? (
+                    <Link
+                      href={link.url}
+                      className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
+                      key={linkIndex}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <div
+                      className="footer__link mb-2 cursor-pointer duration-300 ease-in-out hover:text-primary-500"
+                      key={linkIndex}
+                      onClick={() => {
+                        toast({
+                          description: "Commig soon!",
+                        });
+                      }}
+                    >
+                      {link.name}
+                    </div>
+                  ),
+                )}
               </div>
             ))}
           </div>
@@ -116,33 +132,54 @@ const Footer = () => {
               Yoruba © {new Date().getFullYear()} All rights reserved.
             </div>
             <div className="social__icons__container flex w-[240px] justify-between text-lg">
-              <Link
+              {/* <Link
                 className="social__icon__link"
                 href="https://www.linkedin.com/in/kehinde-rabiu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 passHref={true}
-              >
-                <FaLinkedin />
-              </Link>
-              <Link
-                className="social__icon__link"
-                href="https://www.instagram.com/kotrabiu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                passHref={true}
-              >
-                <FaInstagram />
-              </Link>
-              <Link
+              > */}
+              <FaLinkedin
+                className="cursor-pointer"
+                onClick={() => {
+                  toast({
+                    description: "Commig soon!",
+                  });
+                }}
+              />
+              {/* </Link> */}
+              {/* <Link
                 className="social__icon__link"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 passHref={true}
-              >
-                <FaFacebook />
-              </Link>
+              > */}
+              <FaInstagram
+                className="cursor-pointer"
+                onClick={() => {
+                  toast({
+                    description: "Commig soon!",
+                  });
+                }}
+              />
+              {/* </Link> */}
+              {/* <Link
+                className="social__icon__link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref={true}
+              > */}
+              <FaFacebook
+                className="cursor-pointer"
+                onClick={() => {
+                  toast({
+                    description: "Commig soon!",
+                  });
+                }}
+              />
+              {/* </Link> */}
             </div>
           </div>
         </section>

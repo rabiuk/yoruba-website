@@ -2,15 +2,15 @@ import NotepadWithPencilSVG from "@/components/svg/NotepadWithPencilSVG.svg";
 import LaptopDisplayingBirdSVG from "@/components/svg/LaptopDisplayingBirdSVG.svg";
 
 export const homeObjOne = {
-  id: "curriculum",
+  id: "master-skills",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: "CURRICULUM",
-  headline: "Follow Our Structured Lesson Plan",
+  topLine: "MASTER YOUR SKILLS",
+  headline: "Explore Our Comprehensive Modules",
   description:
     "Take advantage of our comprehensive and structured lesson plan that covers everything from basic Yoruba vocabulary to advanced grammar concepts.",
-  buttonLabel: "View Curriculum",
+  buttonLabel: "Modules",
   pageLink: "#",
   imgStart: false,
   img: <NotepadWithPencilSVG style={{ fontSize: 300 }} />,

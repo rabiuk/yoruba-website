@@ -8,6 +8,7 @@ import { Ubuntu } from "next/font/google";
 import SessionProviderWrapper from "./SessionProviderWrapper";
 import dynamic from "next/dynamic";
 import { ReactNode } from "react";
+import { Toaster } from "@/components/ui/toaster";
 
 // const inter = Inter({ subsets: ["latin"] });
 // const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: LayoutProps) {
             <div className="container mx-auto h-full max-w-7xl px-4 pt-12 md:px-8">
               {children}
             </div>
+            <Toaster />
             <Footer />
           </SessionProviderWrapper>
         </body>

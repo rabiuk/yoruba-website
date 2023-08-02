@@ -1,9 +1,8 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
-import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
-
+import { AiOutlineClose } from "react-icons/ai";
 import { colors } from "@/components/colors";
 const Background = styled.div`
   width: 100vw;
@@ -58,22 +57,9 @@ const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  line-height: 1.8;
-  color: #141414;
-
-  p {
-    margin-bottom: 1rem;
-  }
-
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
 `;
 
-const CloseModalButton = styled(FaTimes)`
+const CloseModalButton = styled(AiOutlineClose)`
   cursor: pointer;
   position: absolute;
   top: 20px;
@@ -115,7 +101,7 @@ const Modal = ({
         setShowModal(false);
       }
     },
-    [setShowModal, showModal]
+    [setShowModal, showModal],
   );
 
   useEffect(() => {
