@@ -30,9 +30,9 @@ export const metadata = {
 
 const Navbar = dynamic(
   () =>
-    import("@/components/Navbar/Navbartw").then(
-      (mod) => mod.default,
-    ) as Promise<React.FC<{}>>,
+    import("@/components/Navbartw").then((mod) => mod.default) as Promise<
+      React.FC<{}>
+    >,
   { ssr: false },
 );
 
@@ -45,7 +45,6 @@ const Footer = dynamic(
 );
 
 interface LayoutProps {
-  // authModal: ReactNode;
   children: ReactNode;
 }
 

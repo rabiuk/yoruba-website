@@ -1,13 +1,17 @@
 // app/@authModal/(.)log-in/page.jsx
-
+import CloseModal from "@/components/CloseModal";
 import LogIn from "@/components/LogIn";
 
 const page = () => {
   return (
-    <div className="fixed inset-0 bg-zinc-900/200 z-10">
-      <div className="container flex items-center h-full max-w-lg mx-auto">
-        <div className="relative bg-white w-full h-fit py-20 px-2 rounded-lg">
-          <div className="absolute top-4 right-4"> X </div>
+    // <></>
+    <div className="intercept fixed inset-0 z-[100000] bg-zinc-900/20">
+      <div className="intercept container mx-auto flex h-full max-w-lg items-center">
+        <div className="intercept relative h-fit w-full rounded-lg bg-background-500 px-2 py-20">
+          <div className="intercept absolute right-4 top-4">
+            {" "}
+            <CloseModal />{" "}
+          </div>
           <LogIn />
         </div>
       </div>

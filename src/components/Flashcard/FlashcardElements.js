@@ -6,7 +6,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 1000px;
   @media screen and (max-width: 578px) {
     justify-content: flex-start;
     padding-top: 20px;
@@ -65,7 +66,8 @@ export const CardFront = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 15px;
   overflow: hidden;
@@ -85,7 +87,8 @@ export const CardBack = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
   border-radius: 15px;

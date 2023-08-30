@@ -1,6 +1,11 @@
+import ComingSoon from "@/components/ComingSoon";
 
 const ProverbsAndWisdomPage = () => {
-  return <div>Proverbs & Wisdom</div>;
+  return (
+    <div>
+      <ComingSoon />
+    </div>
+  );
 };
 
 export default ProverbsAndWisdomPage;

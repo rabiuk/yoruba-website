@@ -2,19 +2,19 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import Image from "next/image";
-import { AiOutlineClose } from "react-icons/ai";
 import { colors } from "@/components/colors";
+import CloseModal from "@/components/CloseModal";
+
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 100000;
 `;
 
 const ModalWrapper = styled.div`
@@ -22,12 +22,13 @@ const ModalWrapper = styled.div`
   height: 500px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
-  color: #000;
+  color: #3f3f46;
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
   z-index: 10;
   border-radius: 10px;
+
   @media screen and (max-width: 860px) {
     width: 760px;
   }
@@ -57,17 +58,6 @@ const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-`;
-
-const CloseModalButton = styled(AiOutlineClose)`
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  z-index: 10;
 `;
 
 const Modal = ({
@@ -124,10 +114,12 @@ const Modal = ({
                 ></Image>
               </ModalImgWrap>
               <ModalContent>{children}</ModalContent>
-              <CloseModalButton
-                aria-label="Close modal"
+              <div
+                className="absolute right-4 top-4 h-fit w-fit"
                 onClick={() => setShowModal((prev) => !prev)}
-              />
+              >
+                <CloseModal height={6} width={6} />
+              </div>
             </ModalWrapper>
           </animated.div>
         </Background>

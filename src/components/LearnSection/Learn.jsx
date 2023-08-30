@@ -66,16 +66,19 @@ const ImproveSkillsSection = (props) => {
             </p>
           </div>
           <div className="flex justify-start">
-            {id === "master-skills" ? (
-              <Button onClick={openModal}>{buttonLabel}</Button>
-            ) : (
-              <Button isLink={true} href={buttonHref}>
-                {buttonLabel}
-              </Button>
-            )}
+            {buttonLabel &&
+              (id === "master-skills" ? (
+                <Button onClick={openModal}>{buttonLabel}</Button>
+              ) : (
+                <Button isLink={true} href={buttonHref}>
+                  {buttonLabel}
+                </Button>
+              ))}
           </div>
         </div>
-        <div className={`${className} img-field flex w-1/4 justify-center`}>
+        <div
+          className={`${className} img-field hidden min-w-[25%] justify-center sm:flex`}
+        >
           {img}
         </div>
       </div>

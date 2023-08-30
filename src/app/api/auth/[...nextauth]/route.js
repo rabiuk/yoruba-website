@@ -26,7 +26,7 @@ export const authOptions = {
   ],
   pages: {
     signIn: "/log-in",
-    // verifyRequest: "/auth/verify-request",
+    verifyRequest: "/auth/verify-request",
   },
   adapter: MongoDBAdapter(clientPromise),
 };

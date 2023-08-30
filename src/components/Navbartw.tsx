@@ -4,11 +4,12 @@
 import { useEffect, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter, usePathname } from "next/navigation";
-import ScrollToTop from "../ScrollToTop";
+import ScrollToTop from "./ScrollToTop";
 import Link from "@/components/ui/Link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Button from "@/components/ui/Button";
 import UserAccountNav from "@/components/UserAccountNav";
+import LoginModal from "@/components/LoginModal";
 
 const Navbar = () => {
   const [isHome, setIsHome] = useState<boolean>(false);
@@ -23,6 +24,8 @@ const Navbar = () => {
   const currentPage = usePathname();
 
   const { data: session } = useSession();
+
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
     const updateNavbarStyle = () => {
@@ -46,12 +49,20 @@ const Navbar = () => {
       window.removeEventListener("scroll", updateNavbarStyle);
     };
   }, [currentPage]);
-  if (currentPage === "/auth/signin" || currentPage === "/log-in") {
+  if (
+    currentPage === "/auth/signin" ||
+    currentPage === "/log-in" ||
+    currentPage === "/api/auth/verify-request"
+  ) {
     return null;
   }
 
   const handleNav = () => {
     setNav(!nav);
+  };
+
+  const closeMobileNav = () => {
+    setNav(false);
   };
 
   return (
@@ -105,8 +116,7 @@ const Navbar = () => {
           ) : (
             <Button
               className={`login__button hidden sm:flex sm:border border-[${textColor}] duration-300 ease-in-out sm:px-8 sm:py-2 sm:hover:border-primary-500 sm:hover:text-primary-500`}
-              isLink={true}
-              href="/log-in"
+              onClick={() => setShowLoginModal(true)}
             >
               LOGIN
             </Button>
@@ -136,11 +146,12 @@ const Navbar = () => {
                 ? "absolute bottom-0 left-0 right-0 top-0 flex h-screen w-full flex-col items-center justify-center bg-black text-center text-white duration-300 ease-in sm:hidden"
                 : "absolute bottom-0 left-[100%] right-[100%] top-0 flex h-screen w-full flex-col items-center justify-center bg-black text-center text-white duration-300 ease-in sm:hidden"
             }
+            onClick={closeMobileNav}
           >
             <ul>
               <li
                 className="p-4 text-xl duration-300 ease-in-out hover:text-primary-500"
-                onClick={handleNav}
+                onClick={closeMobileNav}
               >
                 <Link isLink={true} href="/">
                   Home
@@ -148,7 +159,7 @@ const Navbar = () => {
               </li>
               <li
                 className="p-4 text-xl duration-300 ease-in-out hover:text-primary-500"
-                onClick={handleNav}
+                onClick={closeMobileNav}
               >
                 <Link isLink={true} href="/#about">
                   About
@@ -156,7 +167,7 @@ const Navbar = () => {
               </li>
               <li
                 className="p-4 text-xl duration-300 ease-in-out hover:text-primary-500"
-                onClick={handleNav}
+                onClick={closeMobileNav}
               >
                 <Link isLink={true} href="/#learn">
                   Learn
@@ -164,7 +175,7 @@ const Navbar = () => {
               </li>
               <li
                 className="p-4 text-xl duration-300 ease-in-out hover:text-primary-500"
-                onClick={handleNav}
+                onClick={closeMobileNav}
               >
                 <Link isLink={true} href="/#proverbs-and-wisdom">
                   Proverbs
@@ -173,12 +184,19 @@ const Navbar = () => {
             </ul>
             <Button
               className={`login__button flex border border-[${textColor}] px-8 py-2 duration-300 ease-in-out hover:border-primary-500 hover:text-primary-500`}
+              onClick={() => setShowLoginModal(true)}
             >
               LOGIN
             </Button>
           </div>
         </div>
       </div>
+      {showLoginModal && (
+        <LoginModal
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+        />
+      )}
     </>
   );
 };

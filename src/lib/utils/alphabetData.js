@@ -8,7 +8,8 @@ export const alphabetData = [
 
     example: {
       value: "aṣọ",
-      audio: "/assets/audio/yorubaWords/aṣo.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/aṣo.mp3",
       translation: "cloth",
     },
   },
@@ -21,7 +22,8 @@ export const alphabetData = [
 
     example: {
       value: "bàtà",
-      audio: "/assets/audio/yorubaWords/bàtà.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/bàtà.mp3",
       translation: "ball",
     },
   },
@@ -34,7 +36,8 @@ export const alphabetData = [
 
     example: {
       value: "daduro",
-      audio: "/assets/audio/yorubaWords/daduro.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/daduro.mp3",
       translation: "stop/detain",
     },
   },
@@ -47,7 +50,8 @@ export const alphabetData = [
 
     example: {
       value: "etí",
-      audio: "/assets/audio/yorubaWords/etí.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/etí.mp3",
       translation: "ear",
     },
   },
@@ -60,7 +64,8 @@ export const alphabetData = [
 
     example: {
       value: "ẹja",
-      audio: "/assets/audio/yorubaWords/ẹja.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ẹja.mp3",
       translation: "fish",
     },
   },
@@ -73,7 +78,8 @@ export const alphabetData = [
 
     example: {
       value: "fàmóra",
-      audio: "/assets/audio/yorubaWords/fàmóra.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/fàmóra.mp3",
       translation: "adhere",
     },
   },
@@ -86,7 +92,8 @@ export const alphabetData = [
 
     example: {
       value: "ga",
-      audio: "/assets/audio/yorubaWords/ga.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ga.mp3",
       translation: "tall",
     },
   },
@@ -99,7 +106,8 @@ export const alphabetData = [
 
     example: {
       value: "gbàdurà",
-      audio: "/assets/audio/yorubaWords/gbàdurà.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/gbàdurà.mp3",
       translation: "pray",
     },
   },
@@ -112,7 +120,8 @@ export const alphabetData = [
 
     example: {
       value: "hó",
-      audio: "/assets/audio/yorubaWords/hó.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/hó.mp3",
       translation: "boil",
     },
   },
@@ -125,7 +134,8 @@ export const alphabetData = [
 
     example: {
       value: "ibí",
-      audio: "/assets/audio/yorubaWords/ibí.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ibí.mp3",
       translation: "birth",
     },
   },
@@ -138,7 +148,8 @@ export const alphabetData = [
 
     example: {
       value: "jẹun",
-      audio: "/assets/audio/yorubaWords/jẹun.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/jẹun.mp3",
       translation: "eat",
     },
   },
@@ -151,7 +162,8 @@ export const alphabetData = [
 
     example: {
       value: "kà",
-      audio: "/assets/audio/yorubaWords/kà.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/kà.mp3",
       translation: "read",
     },
   },
@@ -164,7 +176,8 @@ export const alphabetData = [
 
     example: {
       value: "lò",
-      audio: "/assets/audio/yorubaWords/lò.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/lò.mp3",
       translation: "use",
     },
   },
@@ -177,7 +190,8 @@ export const alphabetData = [
 
     example: {
       value: "mo",
-      audio: "/assets/audio/yorubaWords/mo.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/mo.mp3",
       translation: "i",
     },
   },
@@ -190,7 +204,8 @@ export const alphabetData = [
 
     example: {
       value: "nla",
-      audio: "/assets/audio/yorubaWords/nla.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/nla.mp3",
       translation: "great/big",
     },
   },
@@ -203,7 +218,8 @@ export const alphabetData = [
 
     example: {
       value: "ohùn",
-      audio: "/assets/audio/yorubaWords/ohùn.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ohùn.mp3",
       translation: "sound",
     },
   },
@@ -216,7 +232,8 @@ export const alphabetData = [
 
     example: {
       value: "ọkọ",
-      audio: "/assets/audio/yorubaWords/ọkọ.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ọkọ.mp3",
       translation: "vehicle",
     },
   },
@@ -229,7 +246,8 @@ export const alphabetData = [
 
     example: {
       value: "pẹpẹrẹ",
-      audio: "/assets/audio/yorubaWords/pẹpẹrẹ.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/pẹpẹrẹ.mp3",
       translation: "quick",
     },
   },
@@ -242,7 +260,8 @@ export const alphabetData = [
 
     example: {
       value: "ràra",
-      audio: "/assets/audio/yorubaWords/ràra.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ràra.mp3",
       translation: "not at all",
     },
   },
@@ -255,7 +274,8 @@ export const alphabetData = [
 
     example: {
       value: "sùrù",
-      audio: "/assets/audio/yorubaWords/sùrù.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/sùrù.mp3",
       translation: "patience",
     },
   },
@@ -268,7 +288,8 @@ export const alphabetData = [
 
     example: {
       value: "ṣo",
-      audio: "/assets/audio/yorubaWords/ṣo.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ṣo.mp3",
       translation: "throw",
     },
   },
@@ -281,7 +302,8 @@ export const alphabetData = [
 
     example: {
       value: "tọ",
-      audio: "/assets/audio/yorubaWords/tọ.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/tọ.mp3",
       translation: "grind",
     },
   },
@@ -294,7 +316,8 @@ export const alphabetData = [
 
     example: {
       value: "un",
-      audio: "/assets/audio/yorubaWords/un.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/un.mp3",
       translation: "that is",
     },
   },
@@ -307,7 +330,8 @@ export const alphabetData = [
 
     example: {
       value: "wọ",
-      audio: "/assets/audio/yorubaWords/wọ.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/wọ.mp3",
       translation: "look",
     },
   },
@@ -320,7 +344,8 @@ export const alphabetData = [
 
     example: {
       value: "ya",
-      audio: "/assets/audio/yorubaWords/ya.mp3",
+      audio: null,
+      // audio: "/assets/audio/yorubaWords/ya.mp3",
       translation: "divide",
     },
   },

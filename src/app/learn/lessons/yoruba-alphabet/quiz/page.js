@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const ModalComplete = dynamic(
   () => import("@/components/Modals/ModalComplete/ModalComplete"),
-  { ssr: false }
+  { ssr: false },
 );
 
 const LearnTheYorubaAlphabetQuizPage = () => {
@@ -38,7 +38,7 @@ const LearnTheYorubaAlphabetQuizPage = () => {
         continue_text={
           "Continue to the next section to learn how to count in Yoruba!"
         }
-        continue_link={"learn/lessons/numbers-and-counting/learn"}
+        continue_link={"/learn/lessons/numbers-and-counting/learn"}
         continue_link_text={"Numbers & Counting"}
       />
     </>

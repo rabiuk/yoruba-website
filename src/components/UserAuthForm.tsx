@@ -4,7 +4,10 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 
-const UserAuthForm = () => {
+type UserAuthFormProps = {
+  setShowLoginModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const UserAuthForm = ({ setShowLoginModal }: UserAuthFormProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const loginWithGoogle = async () => {
@@ -16,16 +19,17 @@ const UserAuthForm = () => {
       // maybe toast notification
     } finally {
       setIsLoading(false);
+      setShowLoginModal(false);
     }
   };
   return (
     <div className="flex justify-center">
       <Button
-        className="bg-primary-500 text-white hover:bg-primary-600 px-8 py-2 w-full h-auto flex justify-center items-center rounded-md shadow-lg whitespace-nowrap cursor-pointer ease-in-out duration-300"
+        className="flex h-auto w-full cursor-pointer items-center justify-center whitespace-nowrap rounded-md bg-primary-500 px-8 py-2 text-white shadow-lg duration-300 ease-in-out hover:bg-primary-600"
         onClick={loginWithGoogle}
         isLoading={isLoading}
       >
-        {isLoading ? null : <FcGoogle className="h-4 w-4 mr-2" />}
+        {isLoading ? null : <FcGoogle className="mr-2 h-4 w-4" />}
         Google
       </Button>
     </div>

@@ -1,10 +1,9 @@
-import Carousel from "@/components/Carousel/CarouselSS";
+import ComingSoon from "@/components/ComingSoon";
 
 const AboutPage = () => {
   return (
     <div>
-      <Carousel />
-      About page
+      <ComingSoon />
     </div>
   );
 };

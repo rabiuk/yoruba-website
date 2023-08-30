@@ -31,11 +31,23 @@ const Table = ({ headers, data, onRowClick }) => {
         </GridData>
       );
     }
-    return <GridData noAudio={true}>{cell}</GridData>;
+    return (
+      <GridData noAudio={true}>
+        {" "}
+        {cell.value && <div>{cell.value}</div>}
+        {/* {cell.number} */}
+        {cell.pronunciation && (
+          <GridDataTranslation> ({cell.pronunciation})</GridDataTranslation>
+        )}
+        {cell.translation && (
+          <GridDataTranslation>({cell.translation})</GridDataTranslation>
+        )}
+      </GridData>
+    );
   };
 
   return (
-    <GridContainer>
+    <GridContainer classname="shadow-md">
       <audio ref={audioRef} preload="auto"></audio>
       <GridItemHeader>
         {headers.map((header, index) => (

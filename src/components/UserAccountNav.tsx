@@ -45,7 +45,7 @@ const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
         <DropdownMenuItem
           onSelect={(event) => {
             event.preventDefault();
-            signOut({ callbackUrl: `${window.location.origin}/log-in` });
+            signOut({ callbackUrl: `${window.location.origin}` });
           }}
           className="cursor-pointer focus:bg-background-600"
         >

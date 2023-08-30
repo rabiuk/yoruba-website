@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Switch } from "@/components/ui/switch";
 import {
   Container,
   Card,
@@ -109,6 +110,14 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
   return (
     <>
       <Container>
+        {/* Sound Toggle */}
+        <div className="flex w-full items-center justify-end font-medium text-zinc-700">
+          {" "}
+          Audio{" "}
+          <div className="mx-2">
+            <Switch />
+          </div>
+        </div>
         <audio ref={audioRef} preload="auto" />
         <motion.div
           variants={cardVariants}
@@ -143,7 +152,7 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
               <CardBack>
                 <CardText>
                   {word &&
-                     word.split("").map((letter, index) => {
+                    word.split("").map((letter, index) => {
                       return emphasizedIndices.includes(index) ? (
                         <EmphasizedText key={index}>{letter}</EmphasizedText>
                       ) : (

@@ -5,28 +5,24 @@ export const GridContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  /* gap: 1.5rem; */
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  color: ${colors.textColor};
+  color: rgb(63 63 70); //zinc-700
   border-radius: 5px;
-  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   font-size: clamp(
     ${parseFloat(16) * 0.8}px,
     ${parseFloat(16) / 100}vw + ${parseFloat(16) * 0.8}px,
     ${16}px
   );
-  @media screen and (max-width: 560px) {
-    /* width: 80%; */
-  }
 `;
 
 export const GridItem = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: transparent;
-  /* font-size: 1.8rem; */
   border-radius: 5px;
   transition: all 0.5s;
 `;
@@ -66,7 +62,6 @@ export const GridData = styled.div`
   gap: 10px;
   padding: 5px 10px;
   height: fit-content;
-  /* cursor: pointer; */
   cursor: ${({ noAudio }) => (noAudio ? "default" : "pointer")};
   font-weight: bold;
 
@@ -83,10 +78,8 @@ export const GridItemHeader = styled(GridItem)``;
 export const GridDataHeader = styled(GridData)`
   font-weight: 900;
   width: fit-content;
-  /* color: ${colors.secondaryColor}; */
   cursor: default;
   padding: 15px 15px;
-  /* border-bottom: 1px solid rgba(0,0,0,1); */
 
   &:hover {
     color: ${colors.textColor};

@@ -55,7 +55,7 @@ const NumbersAndCountingPage = () => {
                 speaking Yoruba. Click 'Learn' to explore the content and 'Start
                 Quiz' to test your skills."
         scrollToID={""}
-        quizPath="learn/lessons/numbers-and-counting/quiz"
+        quizPath="/learn/lessons/numbers-and-counting/quiz"
         imgSrc={BlackBoardWithNumbersPNG}
         alt="Black Board With Numbers"
         className="numbers-img"

@@ -35,6 +35,7 @@ module.exports = {
           500: "#f5f5dc",
           600: "#ddddc6",
         },
+        label: { 500: "#6f3f2c" },
       },
       keyframes: {
         "accordion-down": {

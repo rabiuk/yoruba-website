@@ -15,11 +15,13 @@ export const IntroWrapper = styled.div`
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     right: 0;
     bottom: 0;
     background-color: ${Brown};
-    width: 100;
+    width: 100vw;
+    height: 100%;
     z-index: -1;
   }
 `;

@@ -10,7 +10,7 @@ export const homeObjOne = {
   headline: "Explore Our Comprehensive Modules",
   description:
     "Take advantage of our comprehensive and structured lesson plan that covers everything from basic Yoruba vocabulary to advanced grammar concepts.",
-  buttonLabel: "Modules",
+  buttonLabel: null,
   pageLink: "#",
   imgStart: false,
   img: <NotepadWithPencilSVG style={{ fontSize: 300 }} />,
