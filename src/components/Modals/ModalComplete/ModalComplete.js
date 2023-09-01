@@ -1,4 +1,5 @@
 import Image from "next/legacy/image";
+import CloseModal from "@/components/CloseModal";
 import {
   CloseIcon,
   Container,
@@ -46,7 +47,12 @@ const ModalComplete = ({
             </div>
           </ImgWrap>
           <ModalRight>
-            <CloseIcon onClick={onClose} />
+            <div
+              onClick={onClose}
+              className="absolute right-4 top-4 h-fit w-fit"
+            >
+              <CloseModal height={6} width={6} />
+            </div>
             <H2 className="title" fontSize={40}>
               {title}
             </H2>

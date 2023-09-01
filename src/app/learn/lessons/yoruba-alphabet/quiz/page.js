@@ -6,6 +6,7 @@ import { alphabetData } from "@/lib/utils/alphabetData";
 import Flashcard from "@/components/Flashcard/Flashcard";
 import dynamic from "next/dynamic";
 // import ModalComplete from "@/components/Modals/ModalComplete/ModalComplete";
+import { Switch } from "@/components/ui/switch";
 
 const ModalComplete = dynamic(
   () => import("@/components/Modals/ModalComplete/ModalComplete"),
@@ -14,14 +15,29 @@ const ModalComplete = dynamic(
 
 const LearnTheYorubaAlphabetQuizPage = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(false);
+
+  const toggleSound = () => {
+    setIsSoundEnabled((prevState) => !prevState);
+    // console.log("Sound is now " + !isSoundEnabled);
+  };
 
   return (
     <>
       <ScrollToTop />
+      {/* Sound Toggle */}
+      <div className="mt-40 flex w-full max-w-[1000px] items-center justify-end font-medium text-zinc-700">
+        {" "}
+        Audio{" "}
+        <div className="mx-2">
+          <Switch onCheckedChange={toggleSound} checked={isSoundEnabled} />
+        </div>
+      </div>
       <Flashcard
         data={alphabetData}
         openModal={openModal}
         setOpenModal={setOpenModal}
+        isSoundEnabled={isSoundEnabled}
       />
 
       <ModalComplete

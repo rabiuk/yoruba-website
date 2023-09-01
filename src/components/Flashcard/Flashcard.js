@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Switch } from "@/components/ui/switch";
 import {
   Container,
   Card,
@@ -19,7 +18,7 @@ import { CiCircleChevRight, CiCircleChevLeft } from "react-icons/ci";
 import { CiCircleCheck } from "react-icons/ci";
 import { playSound } from "@/lib/utils/audioControl";
 
-const FlashcardComp = ({ data, openModal, setOpenModal }) => {
+const FlashcardComp = ({ data, openModal, setOpenModal, isSoundEnabled }) => {
   const audioRef = useRef();
   const [card, setCard] = useState("");
   const [word, setWord] = useState("");
@@ -77,22 +76,28 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
       setIsFlipped(false);
     }
   };
-  useEffect(() => {
-    if (data && data.length > 0) {
-      setCard(data[currentCardIndex].letter.value);
-      setWord(data[currentCardIndex].example.value);
-      setEmphasized(data[currentCardIndex].letter.value);
-      setPronounciation(data[currentCardIndex].letter.pronunciation);
-      setTranslation(data[currentCardIndex].example.translation);
-      playSound(audioRef, data[currentCardIndex].letter.audio);
-    }
+  useEffect(
+    () => {
+      if (data && data.length > 0) {
+        setCard(data[currentCardIndex].letter.value);
+        setWord(data[currentCardIndex].example.value);
+        setEmphasized(data[currentCardIndex].letter.value);
+        setPronounciation(data[currentCardIndex].letter.pronunciation);
+        setTranslation(data[currentCardIndex].example.translation);
+        if (isSoundEnabled) {
+          playSound(audioRef, data[currentCardIndex].letter.audio);
+        }
+      }
 
-    if (currentCardIndex === data.length - 1) {
-      setIsFinish(true);
-    } else {
-      setIsFinish(false);
-    }
-  }, [data, currentCardIndex]);
+      if (currentCardIndex === data.length - 1) {
+        setIsFinish(true);
+      } else {
+        setIsFinish(false);
+      }
+    },
+    [data, currentCardIndex],
+    isSoundEnabled,
+  );
 
   const getEmphasizedIndices = (word, emphasized) => {
     let indices = [];
@@ -110,14 +115,6 @@ const FlashcardComp = ({ data, openModal, setOpenModal }) => {
   return (
     <>
       <Container>
-        {/* Sound Toggle */}
-        <div className="flex w-full items-center justify-end font-medium text-zinc-700">
-          {" "}
-          Audio{" "}
-          <div className="mx-2">
-            <Switch />
-          </div>
-        </div>
         <audio ref={audioRef} preload="auto" />
         <motion.div
           variants={cardVariants}
