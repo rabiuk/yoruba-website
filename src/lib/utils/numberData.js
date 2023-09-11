@@ -1,12 +1,4 @@
 export const numberData = [
-  // {
-  //   number: "0",
-  //   yoruba: {
-  //     value: "odo",
-  //     pronunciation: "oh-doh",
-  //     audio: "/assets/audio/yorubaNumbers/0.mp3",
-  //   },
-  // },
   {
     number: "1",
     yoruba: {

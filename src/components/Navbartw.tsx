@@ -22,6 +22,7 @@ const Navbar = () => {
   const [backDrop, setBackDrop] = useState("");
 
   const currentPage = usePathname();
+  // console.log(currentPage)
 
   const { data: session } = useSession();
 
@@ -94,19 +95,37 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="cursor-pointer p-4 duration-300 ease-in-out hover:text-primary-500">
-                <Link isScroll={true} to="about">
-                  About
-                </Link>
+                {currentPage === "/" ? (
+                  <Link isScroll={true} to="about">
+                    About
+                  </Link>
+                ) : (
+                  <Link isLink={true} href="/#about">
+                    About
+                  </Link>
+                )}
               </li>
               <li className="cursor-pointer p-4 duration-300 ease-in-out hover:text-primary-500">
-                <Link isScroll={true} to="learn">
-                  Learn
-                </Link>
+                {currentPage === "/" ? (
+                  <Link isScroll={true} to="learn">
+                    Learn
+                  </Link>
+                ) : (
+                  <Link isLink={true} href="/#learn">
+                    Learn
+                  </Link>
+                )}
               </li>
               <li className="cursor-pointer p-4 duration-300 ease-in-out hover:text-primary-500">
-                <Link isScroll={true} to="proverbs-and-wisdom">
-                  Proverbs
-                </Link>
+                {currentPage === "/" ? (
+                  <Link isScroll={true} to="proverbs-and-wisdom">
+                    Proverbs
+                  </Link>
+                ) : (
+                  <Link isLink={true} href="/#proverbs-and-wisdom">
+                    Proverbs
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
