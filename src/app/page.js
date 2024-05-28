@@ -1,12 +1,10 @@
-// import HeroSection from "@/components/HeroSection/Hero";
-// import FunFacts from "@/components/FunFacts/FunFacts";
-// import InfoSection from "@/components/InfoSection/Info";
+// page.js
 import {
   homeObjOne,
   homeObjTwo,
   homeObjThree,
 } from "@/components/InfoSection/Data";
-import Carousel from "@/components/Carousel/CarouselSS";
+import Carousel from "../components/Carousel/Carousel";
 import dynamic from "next/dynamic";
 // import { ContentContainer } from "./HomepageElements";
 

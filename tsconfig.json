@@ -30,6 +30,6 @@
     "**/*.ts",
     "**/*.tsx",
     "src/app/api/auth/verify-request/VerifyRequest.js"
-  ],
+, "src/app/page.js"  ],
   "exclude": ["node_modules"]
 }
