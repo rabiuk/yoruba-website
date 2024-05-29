@@ -1,10 +1,11 @@
+// src/app/api/auth/[...nextauth]/route.js
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import EmailProvider from "next-auth/providers/email";
 import { sendVerificationRequest } from "../../../../lib/utils/sendVerificationRequest";
 
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "../../../../lib/MongoDB/mongodb";
+import clientPromise from "../../../../lib/mongodb";
 export const authOptions = {
   providers: [
     GoogleProvider({
@@ -33,11 +34,3 @@ export const authOptions = {
 
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
-
-// database: process.env.DATABASE_URL,
-// database: {
-//   type: "mongodb",
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   url: process.env.DATABASE_URL,
-// },

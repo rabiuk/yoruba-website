@@ -1,27 +1,10 @@
 // app/layout.tsx
-
 import "./globals.css";
-// import { Inter, Montserrat, Noto_Sans } from "next/font/google";
-
-import { Ubuntu } from "next/font/google";
 
 import SessionProviderWrapper from "./SessionProviderWrapper";
 import dynamic from "next/dynamic";
 import { ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
-
-// const inter = Inter({ subsets: ["latin"] });
-// const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
-// const noto = Noto_Sans({
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-//   subsets: ["latin"],
-//   display: "swap",
-// });
-
-const ubuntu = Ubuntu({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Yoruba Website",
@@ -58,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps) {
             content="width=device-width, initial-scale=1, viewport-fit=cover"
           />
         </head>
-        <body className={ubuntu.className}>
+        <body>
           <SessionProviderWrapper>
             <Navbar />
 
