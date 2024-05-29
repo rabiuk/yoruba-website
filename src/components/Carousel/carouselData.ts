@@ -1,4 +1,4 @@
-// carouselData.js
+// carouselData.ts
 export interface Slide {
   id: number;
   slideTitle: string;

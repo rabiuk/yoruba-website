@@ -1,9 +1,31 @@
-import YorubaCultureCelebrationPNG from "@/components/svg/YorubaCultureCelebration.png";
-import YorubaFlashCard from "@/components/svg/YorubaFlashCard.png";
-import YorubaManTeachingKidsSVG from "@/components/svg/YorubaManTeachingKids.png";
-import YorubaFlashCardSVG from "@/components/svg/YorubaFlashCardSVG.svg";
+import { StaticImageData } from "next/image";
+import YorubaCultureCelebrationPNG from "../../components/svg/YorubaCultureCelebration.png";
+import YorubaFlashCardPNG from "../../components/svg/YorubaFlashCard.png";
+import YorubaManTeachingKidsSVG from "../../components/svg/YorubaManTeachingKids.png";
 
-export const homeObjOne = {
+interface InfoSectionData {
+  id: string;
+  lightBg: boolean;
+  lightText: boolean;
+  lightTextDesc: boolean;
+  topLine: string;
+  headline: string;
+  description: string;
+  buttonLabel: string;
+  pageLink: string;
+  isSVG: boolean;
+  imgStart: boolean;
+  imgSrc: StaticImageData | null;
+  alt: string;
+  width: number | null;
+  height: number | null;
+  dark: boolean;
+  primary: boolean;
+  darkText: boolean;
+  className: string;
+}
+
+export const homeObjOne: InfoSectionData = {
   id: "about",
   lightBg: true,
   lightText: false,
@@ -20,13 +42,13 @@ export const homeObjOne = {
   alt: "Yoruba culture celebration",
   width: 555,
   height: 555,
-  dark: false, //is Dark
-  primary: true, //if dark then primary
-  darkText: true, //dark text?
+  dark: false,
+  primary: true,
+  darkText: true,
   className: "about-section",
 };
 
-export const homeObjTwo = {
+export const homeObjTwo: InfoSectionData = {
   id: "learn",
   lightBg: true,
   lightText: false,
@@ -39,7 +61,7 @@ export const homeObjTwo = {
   pageLink: "/learn",
   isSVG: true,
   imgStart: true,
-  imgSrc: <YorubaFlashCardSVG />,
+  imgSrc: null,
   alt: "Yoruba flashcard",
   width: null,
   height: null,
@@ -49,7 +71,7 @@ export const homeObjTwo = {
   className: "learn-section",
 };
 
-export const homeObjThree = {
+export const homeObjThree: InfoSectionData = {
   id: "proverbs-and-wisdom",
   lightBg: true,
   lightText: false,
@@ -61,6 +83,7 @@ export const homeObjThree = {
   buttonLabel: "Dive Deeper",
   pageLink: "/proverbs-and-wisdom",
   isSVG: false,
+  imgStart: false,
   imgSrc: YorubaManTeachingKidsSVG,
   alt: "Yoruba elder teaching kids",
   width: 555,

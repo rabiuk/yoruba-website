@@ -1,4 +1,4 @@
-// components/Navbar/Navbar.jsx
+// src/components/Navbartw.tsx
 
 "use client";
 import { useEffect, useState } from "react";
@@ -11,7 +11,11 @@ import Button from "@/components/ui/Button";
 import UserAccountNav from "@/components/UserAccountNav";
 import LoginModal from "@/components/LoginModal";
 
-const Navbar = () => {
+interface NavbarProps {
+  toggle: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({toggle}) => {
   const [isHome, setIsHome] = useState<boolean>(false);
   const [isInLearn, setIsInLearn] = useState<boolean>(false);
   const [isInAbout, setIsInAbout] = useState<boolean>(false);
