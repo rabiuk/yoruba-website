@@ -9,13 +9,13 @@ import dynamic from "next/dynamic";
 const Carousel = dynamic(() => import("../components/Carousel/Carousel"), {
   ssr: false,
 });
-const HeroSection = dynamic(() => import("@/components/HeroSection/Herotw"), {
+const HeroSection = dynamic(() => import("../components/HeroSection/Herotw"), {
   ssr: false,
 });
-const InfoSection = dynamic(() => import("@/components/InfoSection/Info"), {
+const InfoSection = dynamic(() => import("../components/InfoSection/InfoSection"), {
   ssr: false,
 });
-const FunFacts = dynamic(() => import("@/components/FunFacts/FunFacts"), {
+const FunFacts = dynamic(() => import("../components/FunFacts/FunFacts"), {
   ssr: false,
 });
 

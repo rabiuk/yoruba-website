@@ -1,9 +1,8 @@
 import { FC } from "react";
 import Button from "@/components/ui/Button";
 
-interface BannerProps {}
 
-const Banner: FC<BannerProps> = ({}) => {
+const Banner:FC = () => {
   return (
     <div className="banner__container -mt-40 mb-20 flex h-[400px] w-full flex-col items-center justify-center px-4 text-zinc-700">
       <h1 className="mb-4 text-center text-3xl font-bold">

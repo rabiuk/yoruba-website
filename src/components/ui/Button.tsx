@@ -1,8 +1,19 @@
 "use client";
-import PropTypes from "prop-types";
 import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
 import Spinner from "@/components/ui/Spinner";
+
+interface ButtonProps {
+  isLink?: boolean;
+  isScroll?: boolean;
+  isTransparent?: boolean;
+  href?: string;
+  to?: string;
+  className?: string;
+  isLoading?: boolean;
+  onClick?: () => void;
+  children: React.ReactNode;
+}
 
 const BUTTON_CLASSES = {
   regular:
@@ -11,7 +22,7 @@ const BUTTON_CLASSES = {
     "button__transparent border px-8 py-3 hover:border-primary-500 hover:text-primary-500 cursor-pointer ease-in-out duration-300",
 };
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   isLink = false,
   isScroll = false,
   isTransparent = false,
@@ -27,9 +38,10 @@ const Button = ({
     : isTransparent
     ? BUTTON_CLASSES.transparent
     : BUTTON_CLASSES.regular;
+
   if (isLink) {
     return (
-      <Link href={href} className={`button__link ${buttonClassName}`}>
+      <Link href={href || "#"} className={`button__link ${buttonClassName}`}>
         {children}
       </Link>
     );
@@ -38,11 +50,10 @@ const Button = ({
   if (isScroll) {
     return (
       <LinkScroll
-        to={to}
+        to={to || ""}
         smooth={true}
         duration={300}
         spy={true}
-        exact="true"
         offset={0}
         className={`button__scroll ${buttonClassName}`}
       >
@@ -50,11 +61,9 @@ const Button = ({
       </LinkScroll>
     );
   }
+
   return (
-    <button
-      className={`button ${buttonClassName}`}
-      onClick={onClick} // attach onClick handler
-    >
+    <button className={`button ${buttonClassName}`} onClick={onClick}>
       {isLoading ? (
         <>
           <Spinner /> {children}
@@ -64,17 +73,6 @@ const Button = ({
       )}
     </button>
   );
-};
-Button.propTypes = {
-  isLink: PropTypes.bool,
-  isScroll: PropTypes.bool,
-  isTransparent: PropTypes.bool,
-  href: PropTypes.string,
-  to: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  isLoading: PropTypes.bool,
-  onClick: PropTypes.func,
 };
 
 export default Button;

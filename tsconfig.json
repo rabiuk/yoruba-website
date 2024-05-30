@@ -30,6 +30,6 @@
     "**/*.ts",
     "**/*.tsx",
     "src/app/api/auth/verify-request/VerifyRequest.js"
-, "src/app/page.tsx"  ],
+, "src/app/page.tsx", "src/components/ui/Spinner.tsx"  ],
   "exclude": ["node_modules"]
 }

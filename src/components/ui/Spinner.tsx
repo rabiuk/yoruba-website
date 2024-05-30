@@ -21,7 +21,7 @@ const Loader = styled.div`
   animation: ${spin} 1s linear infinite;
 `;
 
-const Spinner = () => {
+const Spinner: React.FC = () => {
   return <Loader />;
 };
 

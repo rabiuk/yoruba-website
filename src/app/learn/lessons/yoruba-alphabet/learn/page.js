@@ -5,7 +5,6 @@ import AlphabetBlocksPNG from "@/components/svg/AlphabetBlocksPNG.png";
 import { ContentContainer } from "../../../layoutElements";
 import { useRef } from "react";
 import { alphabetData } from "@/lib/utils/alphabetData";
-import Aside from "@/components/Aside/Aside";
 import Table from "@/components/Table/Table";
 import { playSound } from "@/lib/utils/audioControl";
 
