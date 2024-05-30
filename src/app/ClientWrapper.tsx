@@ -1,3 +1,4 @@
+// src/app/ClientWrapper.tsx
 "use client";
 
 import { ReactNode, useState } from "react";
@@ -27,7 +28,9 @@ const ClientWrapper = ({ children, session }: ClientWrapperProps) => {
       {pathname !== "/auth/signin" && pathname !== "/log-in" && pathname !== "/auth/register" && pathname !== "/api/auth/verify-request" && (
         <Navbar toggle={toggleSidebar} />
       )}
-      <div className="container mx-auto h-full max-w-7xl px-4 pt-12 md:px-8">{children}</div>
+      <div className="container h-full max-w-7xl">
+        {children}
+        </div>
       <Toaster />
       {pathname !== "/auth/signin" && pathname !== "/log-in" && pathname !== "/auth/register" && pathname !== "/api/auth/verify-request" && <Footer />}
     </SessionProvider>

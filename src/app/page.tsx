@@ -6,9 +6,6 @@ import {
 } from "../components/InfoSection/Data";
 import dynamic from "next/dynamic";
 
-const Carousel = dynamic(() => import("../components/Carousel/Carousel"), {
-  ssr: false,
-});
 const HeroSection = dynamic(() => import("../components/HeroSection/Herotw"), {
   ssr: false,
 });
@@ -22,13 +19,11 @@ const FunFacts = dynamic(() => import("../components/FunFacts/FunFacts"), {
 const Home: React.FC = () => {
   return (
     <>
-      <HeroSection>
-        <Carousel />
-      </HeroSection>
+      <HeroSection/>
       <InfoSection {...homeObjOne} />
-      <FunFacts />
       <InfoSection {...homeObjTwo} />
       <InfoSection {...homeObjThree} />
+      <FunFacts />
     </>
   );
 };

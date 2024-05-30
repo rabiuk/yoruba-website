@@ -1,5 +1,4 @@
 // src/app/layout.tsx
-// src/app/layout.tsx
 import "./globals.css";
 import { ReactNode } from "react";
 import ClientWrapper from "./ClientWrapper";

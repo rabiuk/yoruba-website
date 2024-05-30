@@ -1,13 +1,15 @@
+// src/components/HeroSection/Herotw.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import dynamic from "next/dynamic";
 
-interface HeroProps {
-  children: React.ReactNode;
-}
+const Carousel = dynamic(() => import("../Carousel/Carousel"), {
+  ssr: false,
+});
 
-const Herotw = ({ children }: HeroProps) => {
+const Herotw = () => {
   const taglines = ["A Culture.", "A Language.", "A Lifestyle."];
   const [index, setIndex] = useState(0);
 
@@ -23,10 +25,10 @@ const Herotw = ({ children }: HeroProps) => {
 
   return (
     <>
-      <div className="-mt-10 mb-12 flex h-screen items-center justify-center bg-cover bg-fixed">
+      <div className="hero-container flex h-screen items-center justify-center bg-cover bg-fixed">
         {/* Background Image */}
         <div className="hero__bg absolute bottom-0 left-0 right-0 top-0">
-          {children}
+        <Carousel />
         </div>
         {/* Content */}
         <div className="z-10 text-white">

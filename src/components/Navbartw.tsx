@@ -1,9 +1,7 @@
-// src/components/Navbartw.tsx
-
 "use client";
 import { useEffect, useState } from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useRouter, usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 import ScrollToTop from "./ScrollToTop";
 import Link from "@/components/ui/Link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -15,45 +13,41 @@ interface NavbarProps {
   toggle: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({toggle}) => {
-  const [isHome, setIsHome] = useState<boolean>(false);
-  const [isInLearn, setIsInLearn] = useState<boolean>(false);
-  const [isInAbout, setIsInAbout] = useState<boolean>(false);
-  const [isInProverbs, setIsInProverbs] = useState<boolean>(false);
+const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   const [nav, setNav] = useState<boolean>(false);
-  const [color, setColor] = useState("transparent");
-  const [textColor, setTextColor] = useState(`white`);
-  const [backDrop, setBackDrop] = useState("");
+  const [isSticky, setIsSticky] = useState(false);
+  const [hasPassed, setHasPassed] = useState(false);
 
   const currentPage = usePathname();
-  // console.log(currentPage)
-
   const { data: session } = useSession();
-
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
-    const updateNavbarStyle = () => {
-      if (
-        (window.scrollY >= 90 && currentPage === "/") ||
-        currentPage !== "/"
-      ) {
-        setColor(`rgba(245, 245, 220, 0.97)`);
-        setTextColor("rgb(63 63 70)");
-        setBackDrop("blur(10px)");
+    const handleScroll = () => {
+      const heroSectionHeight = window.innerHeight + 75; // Adjust this value based on your hero section height
+      if (window.scrollY >= heroSectionHeight) {
+        setHasPassed(true);
       } else {
-        setColor("transparent");
-        setTextColor("white");
-        setBackDrop("");
+        setHasPassed(false);
       }
     };
-    window.addEventListener("scroll", updateNavbarStyle);
-    updateNavbarStyle();
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", updateNavbarStyle);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [currentPage]);
+  }, []);
+
+  useEffect(() => {
+    if (hasPassed || currentPage !== "/") {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  }, [hasPassed, currentPage]);
+
   if (
     currentPage === "/auth/signin" ||
     currentPage === "/log-in" ||
@@ -74,19 +68,12 @@ const Navbar: React.FC<NavbarProps> = ({toggle}) => {
     <>
       <ScrollToTop />
       <div
-        style={{
-          backgroundColor: `${color}`,
-          backdropFilter: `${backDrop}`,
-        }}
-        className={`fixed left-0 top-0 z-40 w-full duration-300 ease-in-out ${
-          color !== "transparent" ? "shadow-lg" : ""
-        }`}
+        className={`navbar-container ${
+          isSticky ? "sticky top-0 bg-beige-300 backdrop-blur-lg text-zinc-700 shadow-lg" : "relative bg-transparent text-white"
+        } left-0 z-40 w-full ease-in-out`}
       >
         <div
-          style={{
-            color: `${textColor}`,
-          }}
-          className={`m-auto flex h-[75px] max-w-screen-xl items-center justify-between px-4 font-medium text-white duration-300 ease-in-out xl:px-8`}
+          className={`nav-content-container m-auto flex h-[75px] max-w-screen-xl items-center justify-between px-4 font-medium xl:px-8`}
         >
           <Link href="/" isLink={true}>
             <h1 className="title text-2xl font-extrabold">Yoruba</h1>
@@ -138,7 +125,9 @@ const Navbar: React.FC<NavbarProps> = ({toggle}) => {
             <UserAccountNav user={session.user} />
           ) : (
             <Button
-              className={`login__button hidden sm:flex sm:border border-[${textColor}] duration-300 ease-in-out sm:px-8 sm:py-2 sm:hover:border-primary-500 sm:hover:text-primary-500`}
+              className={`login__button hidden sm:flex sm:border duration-300 ease-in-out sm:px-8 sm:py-2 sm:hover:border-primary-500 sm:hover:text-primary-500 ${
+                isSticky ? "border-gray-700 text-gray-700" : "border-white text-white"
+              }`}
               onClick={() => setShowLoginModal(true)}
             >
               LOGIN
@@ -156,7 +145,7 @@ const Navbar: React.FC<NavbarProps> = ({toggle}) => {
             ) : (
               <AiOutlineMenu
                 size={20}
-                style={{ color: `${textColor}`, cursor: "pointer" }}
+                style={{ color: `${isSticky ? "gray-700" : "white"}`, cursor: "pointer" }}
                 onClick={handleNav}
               />
             )}
@@ -206,7 +195,9 @@ const Navbar: React.FC<NavbarProps> = ({toggle}) => {
               </li>
             </ul>
             <Button
-              className={`login__button flex border border-[${textColor}] px-8 py-2 duration-300 ease-in-out hover:border-primary-500 hover:text-primary-500`}
+              className={`login__button flex border px-8 py-2 duration-300 ease-in-out hover:border-primary-500 hover:text-primary-500 ${
+                isSticky ? "border-gray-700 text-gray-700" : "border-white text-white"
+              }`}
               onClick={() => setShowLoginModal(true)}
             >
               LOGIN

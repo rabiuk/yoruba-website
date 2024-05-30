@@ -43,7 +43,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     <div
       className={`section bg-${
         lightBg ? "bg-background-500" : "bg-background-500"
-      } py-60`}
+      } py-40`}
       id={id}
     >
       <div
