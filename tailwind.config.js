@@ -33,7 +33,7 @@ module.exports = {
         },
         background: {
           500: "#f5f5dc",
-          600: "#ddddc6",
+          // 600: "#ddddc6",
         },
         label: { 500: "#6f3f2c" },
       },

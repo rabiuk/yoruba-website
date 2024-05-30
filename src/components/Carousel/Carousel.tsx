@@ -8,7 +8,7 @@ import carouselData, { Slide } from "./carouselData";
 
 const Carousel = () => {
   const data: Slide[] = carouselData;
-  
+
   if (!Array.isArray(data) || !data.length) {
     return null;
   }
@@ -20,22 +20,18 @@ const Carousel = () => {
       modules={[Autoplay]}
       loop={true}
       autoplay={{ delay: 10000 }}
-      className="mySwiper"
+      className="mySwiper h-full w-full"
     >
       {data.map((slide) => (
-        <SwiperSlide key={slide.id} className="SwiperSlide">
-          <div className="slide-container min-h-screen w-full flex items-center justify-center bg-no-repeat bg-cover relative">
+        <SwiperSlide key={slide.id} className="carousel-slide h-full w-full">
+          <div className="slide-container relative h-full w-full">
             <Image
               src={slide.slideImage}
               alt={slide.slideTitle}
               layout="fill"
               priority={true}
-              className="object-cover"
+              className="slide-image object-cover"
             />
-            <div className="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-              <div className="overlay-content text-white text-center">
-              </div>
-            </div>
           </div>
         </SwiperSlide>
       ))}

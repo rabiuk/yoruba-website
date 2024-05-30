@@ -1,15 +1,13 @@
-// src/components/HeroSection/Herotw.tsx
+// src/components/HeroSection/HeroSection.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/components/ui/Button";
-import dynamic from "next/dynamic";
+import Carousel from "../Carousel/Carousel";
 
-const Carousel = dynamic(() => import("../Carousel/Carousel"), {
-  ssr: false,
-});
 
-const Herotw = () => {
+
+const HeroSection = () => {
   const taglines = ["A Culture.", "A Language.", "A Lifestyle."];
   const [index, setIndex] = useState(0);
 
@@ -24,17 +22,18 @@ const Herotw = () => {
   }, []);
 
   return (
-    <>
-      <div className="hero-container flex h-screen items-center justify-center bg-cover bg-fixed">
-        {/* Background Image */}
-        <div className="hero__bg absolute bottom-0 left-0 right-0 top-0">
+    <section className="hero-section relative h-screen w-full -mt-[75px]">
+      {/* Background Carousel */}
+      <div className="hero-background absolute inset-0 h-full w-full">
         <Carousel />
-        </div>
+      </div>
+      {/* Overlay */}
+      <div className="hero-overlay absolute inset-0 flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-50 z-10">
         {/* Content */}
-        <div className="z-10 text-white">
-          <h2 className=" mb-6 text-center text-5xl font-extrabold leading-tight -tracking-wider md:min-w-[53vw] md:text-left lg:text-6xl xl:text-7xl">
+        <div className="hero-content z-10 text-white text-center w-[1205px]">
+          <h2 className="hero-title mb-6 text-5xl font-extrabold leading-tight tracking-wider md:min-w-[53vw] md:text-left lg:text-6xl xl:text-7xl">
             Experience Yoruba,{" "}
-            <div className="inline-block max-w-[26.375rem] text-left">
+            <div className="hero-tagline inline-block max-w-[500px] text-left">
               <AnimatePresence mode="wait">
                 <motion.span
                   className="text-primary-500"
@@ -49,19 +48,18 @@ const Herotw = () => {
               </AnimatePresence>
             </div>
           </h2>
-          <p className="mb-6 text-center text-sm leading-normal md:text-base lg:text-lg xl:text-xl">
-            Experience the beauty, dive into the vibrancy, and enrich your
-            understanding of Yoruba today.
+          <p className="hero-subtitle mb-6 text-sm leading-normal md:text-base lg:text-lg xl:text-xl">
+            Experience the beauty, dive into the vibrancy, and enrich your understanding of Yoruba today.
           </p>
-          <div className="button__wrap mx-auto mt-5 w-fit max-w-xs text-base">
+          <div className="hero-button-wrap button__wrap mx-auto mt-5 w-fit max-w-xs text-base">
             <Button isScroll={true} to="about" isTransparent={true}>
               Get Started
             </Button>
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
-export default Herotw;
+export default HeroSection;

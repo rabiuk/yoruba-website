@@ -5,10 +5,8 @@ import {
   homeObjThree,
 } from "../components/InfoSection/Data";
 import dynamic from "next/dynamic";
+import HeroSection from "../components/HeroSection/HeroSection";
 
-const HeroSection = dynamic(() => import("../components/HeroSection/Herotw"), {
-  ssr: false,
-});
 const InfoSection = dynamic(() => import("../components/InfoSection/InfoSection"), {
   ssr: false,
 });

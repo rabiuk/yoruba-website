@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "@/components/ui/toaster";
 import dynamic from "next/dynamic";
+import Navbar from "../components/Navbartw";
 
-const Navbar = dynamic(() => import("@/components/Navbartw").then((mod) => mod.default), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer").then((mod) => mod.default), { ssr: false });
 
 interface ClientWrapperProps {
@@ -28,7 +28,7 @@ const ClientWrapper = ({ children, session }: ClientWrapperProps) => {
       {pathname !== "/auth/signin" && pathname !== "/log-in" && pathname !== "/auth/register" && pathname !== "/api/auth/verify-request" && (
         <Navbar toggle={toggleSidebar} />
       )}
-      <div className="container h-full max-w-7xl">
+      <div className="h-full">
         {children}
         </div>
       <Toaster />

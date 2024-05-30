@@ -12,6 +12,7 @@ import LoginModal from "@/components/LoginModal";
 interface NavbarProps {
   toggle: () => void;
 }
+export const NAVBAR_HEIGHT: number = 75;
 
 const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   const [nav, setNav] = useState<boolean>(false);
@@ -24,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSectionHeight = window.innerHeight + 75; // Adjust this value based on your hero section height
+      const heroSectionHeight = window.innerHeight - NAVBAR_HEIGHT; // Adjust this value based on your hero section height
       if (window.scrollY >= heroSectionHeight) {
         setHasPassed(true);
       } else {
@@ -67,13 +68,15 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   return (
     <>
       <ScrollToTop />
+      {/* Navbar placeholder */}
+      <div className={`h-[${NAVBAR_HEIGHT}px]`}></div>
       <div
         className={`navbar-container ${
-          isSticky ? "sticky top-0 bg-beige-300 backdrop-blur-lg text-zinc-700 shadow-lg" : "relative bg-transparent text-white"
-        } left-0 z-40 w-full ease-in-out`}
+          isSticky ? "fixed top-0 bg-background-500 text-zinc-700 shadow-lg" : "absolute top-0 bg-transparent text-white"
+        } left-0 z-40 w-full transition-all duration-300 ease-in-out`}
       >
         <div
-          className={`nav-content-container m-auto flex h-[75px] max-w-screen-xl items-center justify-between px-4 font-medium xl:px-8`}
+          className={`nav-content-container m-auto flex h-[${NAVBAR_HEIGHT}px] max-w-screen-xl items-center justify-between px-4 font-medium xl:px-8`}
         >
           <Link href="/" isLink={true}>
             <h1 className="title text-2xl font-extrabold">Yoruba</h1>
